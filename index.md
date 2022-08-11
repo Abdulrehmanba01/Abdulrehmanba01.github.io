@@ -1,4 +1,5 @@
 # API Documentation (Verify API)
+# For HTTP
 ## Getting Started
 
 ### Description
@@ -134,3 +135,10 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 POST /IcgVerifyLegacy/Process
 ```
 #### Response Type
+
+# For Java
+# For .NET
+# For typescript
+# For PHP
+# For Python
+# For Ruby
