@@ -137,6 +137,14 @@ POST /IcgVerifyLegacy/Process
 #### Response Type
 
 # For Java
+## How to get started
+## API Endpoints
+### ICG Verify
+
+### ICG Verify Legacy
+
+#### Description
+#### 
 # For .NET
 # For typescript
 # For PHP
