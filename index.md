@@ -62,12 +62,15 @@ curl -X POST \
 |Content-type|application/json;charset=utf-8|
 
 #### Verify process configuration
-|Object|Status|Parameter|
+|Object|Status|Parameters|Data type|Description|
+|------|------|----------|---------|-----------|
+|Show complete file|Required|Show complete file|-|Show complete file for code, with bootstrap and error handling included.|
+|Client configuration|Required|Authorization|String|API Access token provided by the Auth API after User authentication|
 
 #### Parameters details
 |Object|Status|Parameters|JSON|
 |------|------|----------|----|
-|
+|requests|Required|
 
 
 
