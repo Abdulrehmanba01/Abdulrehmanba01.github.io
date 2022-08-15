@@ -35,7 +35,7 @@ Authorization: {AUTHORIZATION}
 ### ICG Verify Process
 #### Description
 Validates the check based on the routing and account numbers provided.
-#### POST
+#### POST-JSON
 ```markdown
 curl -X POST \
   --url 'https://verify.icheckdev.com/IcgVerify/Process' \
@@ -49,6 +49,28 @@ curl -X POST \
   }
 }`
 ```
+#### Response body-JSON
+{
+  "Message": "Authorization has been denied for this request."
+}
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Verify process configuration
+|Object|Status|Parameter|
+
+#### Parameters details
+|Object|Status|Parameters|JSON|
+|------|------|----------|----|
+|
+
+
+
 Above are listed all the possible codes returned from the process
 
 |ICG Code | ICG Decision Value | Description |
@@ -72,8 +94,7 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 POST /IcgVerify/Process
 ```
 #### Explorer 
-> Parameter*
-> Request*
+
 
 |Names|Description|
 |-----|-----------|
