@@ -4,6 +4,7 @@
 
 ### Description
 
+Welcome to the iCheckGateway JSON API. iCheckGateway.com makes it easy to integrate any online application or back office solution for ACH check payment processing and credit card processing. Using iCheckGateway.com’s APIs, developer tools, and plugins, you can create a payment platform that is customized to the needs of your business. The integration of these APIs will allow the customers to pay by echeck, ACH transfer, or credit/debit card. 
 ICG Verify API endpoints include all the information to use the ICG Verify Service and perform ACH Verification
 
 #### Base URL
