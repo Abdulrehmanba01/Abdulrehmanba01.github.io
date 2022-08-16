@@ -4,12 +4,11 @@
 
 ### Description
 
-Welcome to the iCheckGateway JSON API. iCheckGateway.com makes it easy to integrate any online application or back office solution for ACH check payment processing and credit card processing. Using iCheckGateway.com’s APIs, developer tools, and plugins, you can create a payment platform that is customized to the needs of your business. The integration of these APIs will allow the customers to pay by echeck, ACH transfer, or credit/debit card. 
+Welcome to the iCheckGateway Verify API. iCheckGateway.com makes it easy to integrate any online application or back office solution for ACH check payment processing and credit card processing. Using iCheckGateway.com’s APIs, developer tools, and plugins, you can create a payment platform that is customized to the needs of your business. The integration of these APIs will allow the customers to pay by echeck, ACH transfer, or credit/debit card. 
 ICG Verify API endpoints include all the information to use the ICG Verify Service and perform ACH Verification
 
 #### Base URL
 The API uses the following base URL:
-
 
 > https://verify.icheckdev.com 
 
@@ -35,7 +34,7 @@ Authorization: {AUTHORIZATION}
 ## ICG Verify
 ### ICG Verify Process
 #### Description
-Validates the check based on the routing and account numbers provided.
+ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated.
 #### POST-JSON
 ```markdown
 curl -X POST \
@@ -69,6 +68,8 @@ curl -X POST \
 |Client configuration|Required|Authorization|String|API Access token provided by the Auth API after User authentication|
 
 #### Parameters details
+Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
+
 |Object|Status|Parameters|JSON|
 |------|------|----------|----|
 |requests|Required|
