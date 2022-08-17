@@ -72,7 +72,7 @@ Listed below is a list of all the parameters that the end point can receive. We 
 
 |Object|Status|Parameters|JSON|
 |------|------|----------|----|
-|requests|Required|
+|requests|Required|bankAccount|
 
 
 
