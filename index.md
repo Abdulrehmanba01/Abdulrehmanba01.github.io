@@ -34,7 +34,7 @@ Authorization: {AUTHORIZATION}
 ## ICG Verify
 ### ICG Verify Process
 #### Description
-ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated.
+ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated. After the account has been created,  you will need to verify the information by making a **POST /IcgVerify/Process** request
 #### POST-JSON
 ```markdown
 curl -X POST \
@@ -67,13 +67,6 @@ curl -X POST \
 |Show complete file|Required|Show complete file|-|Show complete file for code, with bootstrap and error handling included.|
 |Client configuration|Required|Authorization|String|API Access token provided by the Auth API after User authentication|
 
-#### Parameters details
-Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
-
-|Object|Status|Parameters|JSON|
-|------|------|----------|----|
-|requests|Required|bankAccount|
-
 
 
 Above are listed all the possible codes returned from the process
@@ -98,6 +91,15 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 ```markdown
 POST /IcgVerify/Process
 ```
+#### Parameters details
+Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
+
+##### 'request' Object Parameters
+![image](https://user-images.githubusercontent.com/110983629/185380812-6612f04c-39d8-4d0d-9d9b-63ed3eee0c69.png)
+##### 'bankAccount' Object Parameters
+![image](https://user-images.githubusercontent.com/110983629/185381223-722ea2c6-fe07-4fcf-821a-b0d83ec477e9.png)
+
+
 #### Explorer 
 
 
