@@ -213,8 +213,7 @@ The following list describes the parameters that user must have to define for ge
 
 |Names|Description|
 |-----|-----------|
-|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account]
-(https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
 |personInfo|[ICG Verify Models Icg Verification ICG Verify Person Info](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-person-info)
 |incomeInfo|[ICG Verify Models Icg Verification ICG Verify Income Info](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-income-info)
 |references|[array<ICG Verify Models Icg Verification ICG Verify References>](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-references)
