@@ -113,9 +113,7 @@ Listed below is a list of all the parameters that the end point can receive. We 
 
 ### ICG Verify Process Extended
 #### Description
-This is the extended version of the ICG Verify feature. It only can be used if the merchant provided has the permission FEATURE_ICG_VERIFY_EXTENDED assigned to the related user authenticated.
-
-This feature exploits all the microbilt options to validate an account based on many other parameters besides the Bank Route Number and Account Number.
+This is the extended version of the ICG Verify feature. It only can be used if the merchant provided has the permission FEATURE_ICG_VERIFY_EXTENDED assigned to the related user authenticated. This feature exploits all the microbilt options to validate an account based on many other parameters besides the Bank Route Number and Account Number.
 
 The responses on this endpoint are same as the one listed above in the 'ICG Verify Process' section
 
@@ -138,8 +136,9 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 POST /IcgVerify/ProcessExt
 ```
 #### Parameters details
-The following list describes the parameters that user must have to define for getting varified through the ICG extended process.  
-Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
+The following list describes the parameters that user must have to define for getting varified through the ICG extended process. Many of them are not required depends upon the importance of the parameter. For example, the **bankAccount** object is required to add in order to get verified sccuessfully. Lets have a look on the following list for getting detail informations about the parameters i.e. objects and single attributes of the API call.    
+
+
 
 
 
