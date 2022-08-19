@@ -261,9 +261,6 @@ The response of the ICG verification extend process is 200, ok. It will contains
 
 
  
-  
-   
-  
 ## ICG Verify Legacy
 ### ICG Verify Legacy Process
 #### Description
@@ -288,6 +285,15 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 ```markdown
 POST /IcgVerifyLegacy/Process
 ```
+  
+  
+  
+  
+  
+  
+  
+  
+  
 #### Response Type
 
 # For Java
