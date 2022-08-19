@@ -116,7 +116,7 @@ The response of the ICG verification process is 200, ok. It will contains a **Ty
   1. Code (it will be of string type)
   2. decision (it will be of string type)
   3. description (it will be of string type)
-  4. addendaRecords. it will be an object that further contians the key, value, description fields of string type.
+  4. addendaRecords. it will be an object that further contains the key, value, description fields of string type.
   5. error (it will be of string type)
   
  ##### 'Type' Object Parameters
