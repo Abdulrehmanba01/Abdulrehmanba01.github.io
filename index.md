@@ -208,16 +208,23 @@ The following list describes the parameters that user must have to define for ge
 ![6  checkAmt](https://user-images.githubusercontent.com/110983629/185611998-13e65e85-d21b-49c9-8dff-4ba7a690c388.png)
 
 
-
-6. checkNum
-
-8. laneId
+#### Explorer 
 
 
-10. ruleNum
+|Names|Description|
+|-----|-----------|
+|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account]
+(https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|personInfo|[ICG Verify Models Icg Verification ICG Verify Person Info](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-person-info)
+|incomeInfo|[ICG Verify Models Icg Verification ICG Verify Income Info](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-income-info)
+|references|[array<ICG Verify Models Icg Verification ICG Verify References>](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-references)
+|checkAmt|[ICG Verify Models Icg Verification ICG Verify Check Amt](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-check-amt)
+|checkNum|String|
+|laneId|String|
+|ruleNum|String Rule number-assigned by MicroBilt|
+|gatewayLive|Boolean Enable or disable the live|
 
-
-12. gatewayLive
+ 
 
 
 
