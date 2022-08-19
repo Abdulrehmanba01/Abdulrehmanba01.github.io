@@ -287,9 +287,15 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 ```markdown
 POST /IcgVerifyLegacy/Process
 ```
+
   
+#### Parameters details
   
+The following list describes the parameters that user must have to define for getting verified through the ICG legacy process.The bank routing number and consumer's account number are required fields for this API call. The organization info, type of bank account etc are other parameters that needs to add for this API call. Lets have a look on the following image for getting informations about all the parameters i.e. objects and single attributes of this API call.    
   
+
+![Uploading 1. legacy.png…]()
+
   
   
   
