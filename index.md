@@ -110,6 +110,23 @@ Listed below is a list of all the parameters that the end point can receive. We 
 |gatewayLive|Boolean Enable or disable the live|
 
 
+#### Responses 
+
+The response of the ICG verification process is 200, ok. It will contains a **Type** object that have the following paramters:
+  1. Code (it will be of string type)
+  2. decision (it will be of string type)
+  3. description (it will be of string type)
+  4. addendaRecords. it will be an object that further contians the key, value, description fields of string type.
+  5. error (it will be of string type)
+  
+ ##### 'Type' Object Parameters
+ 
+ ![2  response of simple verify](https://user-images.githubusercontent.com/110983629/185617059-6db57703-12ca-4286-8da1-6bfa70d6b586.png)
+
+
+
+
+
 
 ### ICG Verify Process Extended
 #### Description
