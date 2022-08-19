@@ -311,6 +311,9 @@ The following list describes the parameters that user must have to define for ge
 |Names|Description|
 |-----|-----------|
 |bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|updateMerchant|Boolean Enable or disable for updating merchant|
+|ruleNum|String Rule number-assigned by MicroBilt|
+|gatewayLive|Boolean Enable or disable the live|
 
   
   
