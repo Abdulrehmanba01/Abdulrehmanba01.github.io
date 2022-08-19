@@ -155,17 +155,17 @@ The following list describes the parameters that user must have to define for ge
     - employmentHistory is the object that contains the organziation info object which further contains the employeer name (of string type)
     
     
-**3.##### 'incomeInfo' Object Parameters**
+**3. 'incomeInfo' Object Parameters**
 
 ![income info](https://user-images.githubusercontent.com/110983629/185611627-769b1abc-d303-4233-b1fa-2b38344d4400.png)
 
 
-**4. ##### 'references' Object Parameters**
+**4. 'references' Object Parameters**
 
 ![5  references](https://user-images.githubusercontent.com/110983629/185611831-1b3ebddd-c49a-4ac2-a878-d05fc7a44d24.png)
 
 
-**5. ##### 'checkAmt' Object Parameters**
+**5.'checkAmt' Object Parameters**
 
 ![6  checkAmt](https://user-images.githubusercontent.com/110983629/185611998-13e65e85-d21b-49c9-8dff-4ba7a690c388.png)
 
