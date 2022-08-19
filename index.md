@@ -112,12 +112,37 @@ Listed below is a list of all the parameters that the end point can receive. We 
 
 #### Responses 
 
+#### Response headers-JSON
+
+|Header|Value|
+|------|-----|
+|Authorization|Authorization|
+|Accept|application/json|
+|Content-type|application/json;charset=utf-8|
+
+#### Response body-JSON
+
+```markdown
+curl -X POST \
+  --url 'https://verify.icheckdev.com/IcgVerify/Process' \
+  -H 'Authorization: Authorization'\
+  -H 'Accept: application/json'\
+  -H 'Content-Type: application/json' \
+  --data-raw '{
+  "bankAccount": {
+    "routingNumber": "routingNumber0",
+    "accountNumber": "accountNumber4"
+  }
+}'
+```
+
+
 The response of the ICG verification process is 200, ok. It will contains a **Type** object that have the following paramters:
-  1. Code (it will be of string type)
-  2. decision (it will be of string type)
-  3. description (it will be of string type)
-  4. addendaRecords. it will be an object that further contains the key, value, description fields of string type.
-  5. error (it will be of string type)
+  1. Code: It will be of string type. This code is the identication key for each type of resposne, this API call returns.
+  2. decision: It will be of string type This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. description: It will be of string type which will acknowlege user about the API response in form of text information. 
+  5. addendaRecords: It will be an object that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
+  6. error: It will be of string type that specifices the error if that occur during the API call. 
   
  ##### 'Type' Object Parameters
  
