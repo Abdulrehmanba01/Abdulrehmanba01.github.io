@@ -153,12 +153,23 @@ The following list describes the parameters that user must have to define for ge
     - tinInfo is the object that contains the tinType (integer type of >= 0 and <=8), taxId which is a text identification number of string type.
     - diverseLicense is the object that contains licenseNum, stateProv parameters (both of string type) where the licenseNum is the driver's license number and stateProv is the state of issuence which is 2-digit state code. 
     - employmentHistory is the object that contains the organziation info object which further contains the employeer name (of string type)
+    
+    
 **3.##### 'incomeInfo' Object Parameters**
+
 ![income info](https://user-images.githubusercontent.com/110983629/185611627-769b1abc-d303-4233-b1fa-2b38344d4400.png)
+
+
 **4. ##### 'references' Object Parameters**
+
 ![5  references](https://user-images.githubusercontent.com/110983629/185611831-1b3ebddd-c49a-4ac2-a878-d05fc7a44d24.png)
+
+
 **5. ##### 'checkAmt' Object Parameters**
+
 ![6  checkAmt](https://user-images.githubusercontent.com/110983629/185611998-13e65e85-d21b-49c9-8dff-4ba7a690c388.png)
+
+
 
 6. checkNum
 
