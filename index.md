@@ -123,17 +123,13 @@ Listed below is a list of all the parameters that the end point can receive. We 
 #### Response body-JSON
 
 ```markdown
-curl -X POST \
-  --url 'https://verify.icheckdev.com/IcgVerify/Process' \
-  -H 'Authorization: Authorization'\
-  -H 'Accept: application/json'\
-  -H 'Content-Type: application/json' \
-  --data-raw '{
-  "bankAccount": {
-    "routingNumber": "routingNumber0",
-    "accountNumber": "accountNumber4"
-  }
-}'
+ {
+  "code": null,
+  "decision": null,
+  "description": null,
+  "addendaRecords": null,
+  "error": null
+}
 ```
 
 
