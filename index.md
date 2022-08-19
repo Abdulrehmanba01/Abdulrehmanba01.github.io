@@ -264,8 +264,10 @@ The response of the ICG verification extend process is 200, ok. It will contains
 ## ICG Verify Legacy
 ### ICG Verify Legacy Process
 #### Description
-Validates the check based on the routing and account numbers provided.
+This is the ICG verify legacy process that will validate the routing number and account number. Both of these fields are required fields. This API call is executed when the merchant want to verify the data by updating merchant rule after getting authenticated. This feature will not exploit the microbilt options to validate an account based on many other parameters besides the Bank Route Number and Consumer Account Number.
 
+The responses on this endpoint are same as the one listed above in the 'ICG Verify Process' section  
+  
 #### POST
 
 ```markdown
