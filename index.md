@@ -140,7 +140,7 @@ The following list describes the parameters that user must have to define for ge
 
 ![API-extended-1](https://user-images.githubusercontent.com/110983629/185582289-e785b0b8-07c6-469b-8509-fba38bd1182c.png)
 
-1. The required **bankAccount** is the object that contains the organziation info object (having name of the employeer in string data type), routingNumber (9-digit string), accountNumber (String), typeOfBankAcct object (having Checking, Savings, Personal Loan in String type)
+1. The required **bankAccount** is the object that contains the organziation info object which further consists of the name of the employeer. The employeer name is os string type. The other parameter are routingNumber (9-digit string), accountNumber (String), typeOfBankAcct object (having Checking, Savings, Personal Loan in String type)
 2. The personal Info object consists of the following objects further:
     1. personName (It has consumer's first name and last name of string type)
     2. contactInfo (It has phoneNumber object (phoneType, 10-digit phone number), emailAddress (string type), postAddr (addr1 (String type), city (String type), stateProv (String type), postalCode(String type)))
