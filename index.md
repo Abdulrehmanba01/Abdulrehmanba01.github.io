@@ -140,14 +140,38 @@ The following list describes the parameters that user must have to define for ge
 
 ![API-extended-1](https://user-images.githubusercontent.com/110983629/185582289-e785b0b8-07c6-469b-8509-fba38bd1182c.png)
 
-1. The required **bankAccount** is the object that contains the organziation info object which further consists of the name of the employeer. The employeer name is os string type. The other parameter are routingNumber (9-digit string), accountNumber (String), typeOfBankAcct object (having Checking, Savings, Personal Loan in String type)
+1. The required **bankAccount** is the object that contains the organziation info object which further consists of the name of the employeer. The employeer name is os string type. The other parameter are routingNumber (9-digit string), accountNumber (String), typeOfBankAcct object (having Checking, Savings, Personal Loan in String type).
+##### 'bankAccount' Object Parameters
+![api-extended-2](https://user-images.githubusercontent.com/110983629/185610417-305af729-4d11-48ae-8bb1-13c7c0b3f1d2.png)
+
 2. The personal Info object consists of the following objects further:
+##### 'personInfo' Object Parameters
+![personal info](https://user-images.githubusercontent.com/110983629/185611209-decd5035-3b5a-4162-9797-972db2ad240e.png)
+
     1. personName (It has consumer's first name and last name of string type)
     2. contactInfo (It has phoneNumber object (phoneType, 10-digit phone number), emailAddress (string type), postAddr (addr1 (String type), city (String type), stateProv (String type), postalCode(String type)))
-3. tinInfo is the object that contains the tinType (integer type of >= 0 and <=8), taxId which is a text identification number of string type.
-4. diverseLicense is the object that contains licenseNum, stateProv parameters (both of string type) where the licenseNum is the driver's license number and stateProv is the state of issuence which is 2-digit state code. 
-5. employmentHistory is the object that contains the organziation info object which further contains the employeer name (of string type)
-   
+    3. tinInfo is the object that contains the tinType (integer type of >= 0 and <=8), taxId which is a text identification number of string type.
+    4. diverseLicense is the object that contains licenseNum, stateProv parameters (both of string type) where the licenseNum is the driver's license number and stateProv is the state of issuence which is 2-digit state code. 
+    5. employmentHistory is the object that contains the organziation info object which further contains the employeer name (of string type)
+3.** ##### 'incomeInfo' Object Parameters**
+![income info](https://user-images.githubusercontent.com/110983629/185611627-769b1abc-d303-4233-b1fa-2b38344d4400.png)
+4. ** ##### 'references' Object Parameters**
+    ![5  references](https://user-images.githubusercontent.com/110983629/185611831-1b3ebddd-c49a-4ac2-a878-d05fc7a44d24.png)
+5.  **##### 'checkAmt' Object Parameters**
+![6  checkAmt](https://user-images.githubusercontent.com/110983629/185611998-13e65e85-d21b-49c9-8dff-4ba7a690c388.png)
+6. checkNum
+7. laneId
+8. ruleNum
+9. gatewayLive
+
+
+
+
+
+
+
+
+ 
 
 
 
