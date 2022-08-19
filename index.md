@@ -178,7 +178,8 @@ The following list describes the parameters that user must have to define for ge
 
 ![API-extended-1](https://user-images.githubusercontent.com/110983629/185582289-e785b0b8-07c6-469b-8509-fba38bd1182c.png)
 
-1. The required **bankAccount** is the object that contains the organziation info object which further consists of the name of the employeer. The employeer name is os string type. The other parameter are routingNumber (9-digit string), accountNumber (String), typeOfBankAcct object (having Checking, Savings, Personal Loan in String type).
+1. The required **bankAccount** is the object that contains the organziation info object which further consists of the name of the employeer. The employeer name is os string type. The other parameter are routingNumber (9-digit string), accountNumber (String), typeOfBankAcct object (having Checking, Savings, Personal Loan in String type). The routingNumber and accountNumber both are required for ICG extended verification process.
+
 ##### 'bankAccount' Object Parameters
 ![api-extended-2](https://user-images.githubusercontent.com/110983629/185610417-305af729-4d11-48ae-8bb1-13c7c0b3f1d2.png)
 
@@ -224,6 +225,45 @@ The following list describes the parameters that user must have to define for ge
 |gatewayLive|Boolean Enable or disable the live|
 
 
+#### Responses 
+
+#### Response headers-JSON
+
+|Header|Value|
+|------|-----|
+|Authorization|Authorization|
+|Accept|application/json|
+|Content-type|application/json;charset=utf-8|
+
+#### Response body-JSON
+
+```markdown
+{
+  "code": null,
+  "decision": null,
+  "description": null,
+  "addendaRecords": null,
+  "error": null
+}
+```
+
+
+The response of the ICG verification extend process is 200, ok. It will contains a **Type** object that have the following paramters:
+  1. Code: It will be of string type. This code is the identication key for each type of resposne, this API call returns.
+  2. decision: It will be of string type. This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. description: It will be of string type which will acknowlege user about the API response in form of text information. 
+  5. addendaRecords: It will be an object that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
+  6. error: It will be of string type that specifices the error if that occur during the API call. 
+  
+ ##### 'Type' Object Parameters
+  
+![1  extend response](https://user-images.githubusercontent.com/110983629/185638275-5193e691-00cd-49a5-8b04-224fc5a94a5c.png)
+
+
+ 
+  
+   
+  
 ## ICG Verify Legacy
 ### ICG Verify Legacy Process
 #### Description
