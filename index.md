@@ -136,7 +136,7 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 POST /IcgVerify/ProcessExt
 ```
 #### Parameters details
-The following list describes the parameters that user must have to define for getting varified through the ICG extended process. Many of them are not required depends upon the importance of the parameter. For example, the **bankAccount** object is required to add in order to get verified sccuessfully. Lets have a look on the following image for getting informations about all the parameters i.e. objects and single attributes of this API call.    
+The following list describes the parameters that user must have to define for getting verified through the ICG extended process. Many of them are not required depends upon the importance of the parameter. For example, the **bankAccount** object is required to add in order to get verified sccuessfully. Lets have a look on the following image for getting informations about all the parameters i.e. objects and single attributes of this API call.    
 
 ![API-extended-1](https://user-images.githubusercontent.com/110983629/185582289-e785b0b8-07c6-469b-8509-fba38bd1182c.png)
 
