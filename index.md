@@ -293,12 +293,25 @@ POST /IcgVerifyLegacy/Process
   
 The following list describes the parameters that user must have to define for getting verified through the ICG legacy process.The bank routing number and consumer's account number are required fields for this API call. The organization info, type of bank account etc are other parameters that needs to add for this API call. Lets have a look on the following image for getting informations about all the parameters i.e. objects and single attributes of this API call.    
   
+  ##### 'ICG Legacy verification Process' API call Parameters
+  
+![1  legacy](https://user-images.githubusercontent.com/110983629/185653468-2b73071b-07c0-4465-a865-ce674e9a1027.png)
 
-![Uploading 1. legacy.png…]()
+  
+ 1. The bankAccount object further contains the 6-digits rounting number, account number, and organization info, type of bank objects. The organization info object contains the employeer name parameter which is of string type. The type of bank account contains the three fields which are checking, Savings, PersonalLoan as shown in the following image:
+  
+##### 'bankAccount' Object Parameters
+  
+![1  legacy bank account](https://user-images.githubusercontent.com/110983629/185653358-059ecf87-af16-4254-b37e-bf0002e4e856.png)
+  
 
-  
-  
-  
+#### Explorer 
+
+
+|Names|Description|
+|-----|-----------|
+|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+
   
   
   
