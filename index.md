@@ -218,24 +218,10 @@ The following list describes the parameters that user must have to define for ge
 |incomeInfo|[ICG Verify Models Icg Verification ICG Verify Income Info](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-income-info)
 |references|[array<ICG Verify Models Icg Verification ICG Verify References>](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-references)
 |checkAmt|[ICG Verify Models Icg Verification ICG Verify Check Amt](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-check-amt)
-|checkNum|String|
-|laneId|String|
+|checkNum|Check number of string type|
+|laneId|Lane number of string type|
 |ruleNum|String Rule number-assigned by MicroBilt|
 |gatewayLive|Boolean Enable or disable the live|
-
- 
-
-
-
-
-
-
-
-
- 
-
-
-
 
 
 ## ICG Verify Legacy
