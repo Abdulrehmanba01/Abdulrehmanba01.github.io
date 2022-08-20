@@ -102,7 +102,6 @@ Listed below is a list of all the parameters that the end point can receive. We 
 
 #### Explorer 
 
-
 |Names|Description|
 |-----|-----------|
 |bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
@@ -134,11 +133,11 @@ Listed below is a list of all the parameters that the end point can receive. We 
 
 
 The response of the ICG verification process is 200, OK. It will contains a **Type** object that have the following paramters:
-  1. Code: It will be of string type. This code is the identication key for each type of response, this API call returns.
-  2. decision: It will be of string type. This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
-  4. description: It will be of string type which will acknowledge user about the API response in form of text information. 
-  5. addendaRecords: It will be an object that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
-  6. error: It will be of string type that specifices the error if that occur during the API call. 
+  1. **Code:** It will be of _string_ type. This code is the identication key for each type of response, this API call returns.
+  2. **decision:** It will be of _string_ type. This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+  5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
+  6. **error:** It will be of _string_ type that specifices the error if that occur during the API call. 
   
  ##### 'Type' Object Parameters
  
@@ -147,11 +146,11 @@ The response of the ICG verification process is 200, OK. It will contains a **Ty
 
 ### ICG Verify Process Extended
 #### Description
-This is the extended version of the ICG Verify feature. It only can be used if the merchant provided has the permission FEATURE_ICG_VERIFY_EXTENDED assigned to the related user authenticated. This feature exploits all the microbilt options to validate an account based on many other parameters besides the Bank Route Number and Account Number.
+This is the extended version of the ICG Verify feature. It only can be used if the merchant provided has the permission _FEATURE_ICG_VERIFY_EXTENDED_  assigned to the related user authenticated. This feature exploits all the microbilt options to validate an account based on many other parameters besides the Bank Route Number and Account Number.
 
 The responses on this endpoint are same as the one listed above in the 'ICG Verify Process' section
 
-#### POST
+#### POST-JSON
 ```markdown
 curl -X POST \
   --url 'https://verify.icheckdev.com/IcgVerify/ProcessExt' \
@@ -165,6 +164,12 @@ curl -X POST \
   }
 }'
 ```
+
+#### Response body-JSON
+
+#### Response header-JSON
+
+#### Verify process extended configuration
 This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/http/getting-started/how-to-get-started/authorization)
 ```markdown
 POST /IcgVerify/ProcessExt
