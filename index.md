@@ -170,6 +170,8 @@ curl -X POST \
 #### Response header-JSON
 
 #### Verify process extended configuration
+![image](https://user-images.githubusercontent.com/110983629/185741637-4488ded8-0adf-4e9f-a9c5-30edf47fad06.png)
+
 This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/http/getting-started/how-to-get-started/authorization)
 ```markdown
 POST /IcgVerify/ProcessExt
