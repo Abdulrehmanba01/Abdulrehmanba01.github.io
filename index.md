@@ -62,11 +62,7 @@ curl -X POST \
 |Content-type|application/json;charset=utf-8|
 
 #### Verify process configuration
-|Object|Status|Parameters|Data type|Description|
-|------|------|----------|---------|-----------|
-|Show complete file|Required|Show complete file|-|Show complete file for code, with bootstrap and error handling included.|
-|Client configuration|Required|Authorization|String|API Access token provided by the Auth API after User authentication|
-
+![image](https://user-images.githubusercontent.com/110983629/185741727-7d22226f-cc5f-4649-a0c6-e28c24ec9858.png)
 
 
 Above are listed all the possible codes returned from the process
