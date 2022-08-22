@@ -142,9 +142,9 @@ The response of the ICG verification process is 200, OK. It will contains a **Ty
 
 ### ICG Verify Process Extended
 #### Description
-This is the extended version of the ICG Verify feature. It only can be used if the merchant provided has the permission _FEATURE_ICG_VERIFY_EXTENDED_  assigned to the related user authenticated. This feature exploits all the microbilt options to validate an account based on many other parameters besides the Bank Route Number and Account Number.
+This is the extended version of the ICG Verify feature. It only can be used if the merchant provided has the permission _FEATURE_ICG_VERIFY_EXTENDED_  assigned to the related user authenticated. As this extended verification process is for the commercial users i.e., merchants so this will need more verification parameters than the usual user. This feature exploits all the microbilt options to validate the merchant account based on many other parameters besides the Bank Route Number and Account Number.
 
-The responses on this endpoint are same as the one listed above in the 'ICG Verify Process' section
+The responses and response codes on this endpoint are same as the one listed above in the 'ICG Verify Process' section.
 
 #### POST-JSON
 ```markdown
@@ -173,11 +173,11 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 POST /IcgVerify/ProcessExt
 ```
 #### Parameters details
-The following list describes the parameters that user must have to define for getting verified through the ICG extended process. Many of them are not required depends upon the importance of the parameter. For example, the **bankAccount** object is required to add in order to get verified sccuessfully. Lets have a look on the following image for getting informations about all the parameters i.e. objects and single attributes of this API call.    
+The following list describes the parameters that user must have to define for getting verified through the ICG extended process. Many of them are not required depends upon the importance of the parameter. For example, the **bankAccount** object is required to add in order to get verified successfully. Lets have a look on the following image for getting informations about all the parameters i.e. objects and single attributes of this API call.    
 
 ![API-extended-1](https://user-images.githubusercontent.com/110983629/185582289-e785b0b8-07c6-469b-8509-fba38bd1182c.png)
 
-1. The required **bankAccount** is the object that contains the organziation info object which further consists of the name of the employeer. The employeer name is os string type. The other parameter are routingNumber (9-digit string), accountNumber (String), typeOfBankAcct object (having Checking, Savings, Personal Loan in String type). The routingNumber and accountNumber both are required for ICG extended verification process.
+1. The required **bankAccount** is the object that contains the _orgInfo_(organization info) object which further consists of the name of the employer. The employer name is of _string_ type. The other parameters are _routingNumber_ (9-digit string), _accountNumber_ (String), _typeOfBankAcct_ object (having Checking, Savings, Personal Loan in String type). The _routingNumber_ and _accountNumber_ both are required for ICG extended verification process.
 
 ##### 'bankAccount' Object Parameters
 ![api-extended-2](https://user-images.githubusercontent.com/110983629/185610417-305af729-4d11-48ae-8bb1-13c7c0b3f1d2.png)
@@ -190,7 +190,7 @@ The following list describes the parameters that user must have to define for ge
     - contactInfo (It has phoneNumber object (phoneType, 10-digit phone number), emailAddress (string type), postAddr (addr1 (String type), city (String type), stateProv (String type), postalCode(String type)))
     - tinInfo is the object that contains the tinType (integer type of >= 0 and <=8), taxId which is a text identification number of string type.
     - diverseLicense is the object that contains licenseNum, stateProv parameters (both of string type) where the licenseNum is the driver's license number and stateProv is the state of issuence which is 2-digit state code. 
-    - employmentHistory is the object that contains the organziation info object which further contains the employeer name (of string type)
+    - employmentHistory is the object that contains the organziation info object which further contains the employer name (of string type)
     
     
 **3. 'incomeInfo' Object Parameters**
