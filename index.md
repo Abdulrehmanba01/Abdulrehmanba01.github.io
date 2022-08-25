@@ -456,20 +456,39 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
    CompletableFuture<ICGVerifyModelsICGVerifyResponse> iCGVerifyProcessAsync(
     final ICGVerifyModelsIcgVerificationICGVerifyRequest request)
 ```
-#### Parameters details
-Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
+#### Parameters details  
 
-##### 'request' Object Parameters
-![image](https://user-images.githubusercontent.com/110983629/185380812-6612f04c-39d8-4d0d-9d9b-63ed3eee0c69.png)
-##### 'bankAccount' Object Parameters
-![image](https://user-images.githubusercontent.com/110983629/185381223-722ea2c6-fe07-4fcf-821a-b0d83ec477e9.png)
+The parameters of the basic request are members of particular classes that are used to validate the ICG process in Java. For the base request, which also includes the **OrgInfo** object, **RoutingNumber**, **AccountNumber**, and **typeofBankAcct**, the **bankAccount** object. The necessary parameters are the consumer's account number (String) and routing number (9 digits). While two fields—orgInfo (organisation information) and typeofBankAcct (type of bank account)—serve as optional entries that are not required to be filled out throughout the verification procedure. The user may choose the bank account type from the list of types and provide their name in *string* format for the orgInfo.
+  
+  
+##### 'request' Object Parameters 
+![1  java-verify process-request](https://user-images.githubusercontent.com/110983629/186711002-7bbc3b60-2be1-4d20-b07a-67c4fa503bf9.png)
+
+The Class Name of the **bankAccount** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
+  
+##### 'bankAccount' Object Parameters 
+
+![2  java request- verify process](https://user-images.githubusercontent.com/110983629/186711705-96ed9a8d-cc93-4929-a6f3-688f226b14e5.png)
+  
+The Class Name of the **OrgInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyOrgInfo```
+  
+##### 'OrgInfo' Object Parameters  
+
+![3  java ](https://user-images.githubusercontent.com/110983629/186712170-968902c9-3682-4774-a440-018ca381dc35.png)
+
+  
+The Class Name of the **TypeOfBankAcct** object is ```markdown TypeOfBankAcctEnum```
+  
+##### 'TypeOfBankAcct' Object Parameters  
+
+![4  java -verify](https://user-images.githubusercontent.com/110983629/186712666-23120dca-e2ba-4ec6-8568-d1000c5d014d.png)
 
 
 #### Explorer 
 
 |Names|Description|
 |-----|-----------|
-|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|bankAccount(required)|[ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
 |ruleNum|String Rule number-assigned by MicroBilt|
 |gatewayLive|Boolean Enable or disable the live|
 
