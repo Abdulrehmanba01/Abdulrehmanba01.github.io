@@ -357,6 +357,41 @@ The response of the ICG legacy verification process is 200, OK. It will contain 
 
 # For Java
 ## How to get started
+  
+#### Description 
+In order to be identified effectively, the ICG verify procedure involves checking the customer's account number and routing number. The JAVA's ICG Verify process endpoints include all the data necessary to use the ICG Verify Service and carry out ACH Verification. By sending the parameters included in the POST request, you must validate the information.
+ 
+  
+#### POST-JSON
+```markdown 
+ICGVerifyModelsIcgVerificationICGVerifyRequest request = new ICGVerifyModelsIcgVerificationICGVerifyRequest();
+request.setBankAccount(new ICGVerifyModelsIcgVerificationICGVerifyBankAccount());
+request.getBankAccount().setRoutingNumber("routingNumber0");
+request.getBankAccount().setAccountNumber("accountNumber4");
+
+icgVerifyController.iCGVerifyProcessAsync(request).thenAccept(result -> {
+    // TODO success callback handler
+}).exceptionally(exception -> {
+    // TODO failure callback handler
+    return null;
+});```
+  
+  
+#### Response body-JSON
+{
+  "Message": "Authorization has been denied for this request."
+}
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 ## API Endpoints
 ### ICG Verify
 
