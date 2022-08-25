@@ -582,8 +582,8 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
 #### Parameters details
 The following parameters are employed for ICG extended process. Where many of them are not required to add. Only the **bankAccount** object is required. Lets have a look on the following image for getting information about all the parameters i.e. objects and single attributes of this API call.       
    
+![7  java extend](https://user-images.githubusercontent.com/110983629/186726899-0c73dca4-1d16-4616-90fb-9a0bf55d2381.png)
 
-![API-extended-1](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-request-ext)
   
 The class name of the extend verify request is ```markdown ICGVerifyModelsIcgVerificationICGVerifyRequestExt ```
 
