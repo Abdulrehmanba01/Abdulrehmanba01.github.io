@@ -392,8 +392,7 @@ The APIn client configuration looks like this:
     .httpClientConfig(configBuilder -> configBuilder
             .timeout(0))
     .customHeaderAuthenticationCredentials("Authorization")
-    .build();  
- ```
+    .build(); ```
  
   
 ## API Endpoints
