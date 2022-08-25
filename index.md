@@ -352,10 +352,8 @@ The response of the ICG legacy verification process is 200, OK. It will contain 
   
  ##### 'Type' Object Parameters
  
-  
-![Uploading 1. legacy response.png…]()
+![1  legacy response](https://user-images.githubusercontent.com/110983629/186683541-5914fc6b-4a1d-4904-9361-cf530a78cff4.png)
 
- 
 
 # For Java
 ## How to get started
