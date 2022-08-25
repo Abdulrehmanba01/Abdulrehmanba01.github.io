@@ -161,8 +161,14 @@ curl -X POST \
 ```
 
 #### Response body-JSON
+![image](https://user-images.githubusercontent.com/110983629/186658697-5ec5e081-daa8-46a0-b62b-0297748d3f72.png)
 
 #### Response header-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
 
 #### Verify process extended configuration
 ![image](https://user-images.githubusercontent.com/110983629/185741637-4488ded8-0adf-4e9f-a9c5-30edf47fad06.png)
