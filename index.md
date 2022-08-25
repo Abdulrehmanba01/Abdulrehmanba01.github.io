@@ -127,10 +127,9 @@ Listed below is a list of all the parameters that the end point can receive. We 
 }
 ```
 
-
-The response of the ICG verification process is 200, OK. It will contains a **Type** object that have the following paramters:
+The response of the ICG verification process is 200, OK. It will contain a **Type** object that have the following paramters:
   1. **Code:** It will be of _string_ type. This code is the identication key for each type of response, this API call returns.
-  2. **decision:** It will be of _string_ type. This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
   5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
   6. **error:** It will be of _string_ type that specifices the error if that occur during the API call. 
