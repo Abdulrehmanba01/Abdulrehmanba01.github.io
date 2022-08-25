@@ -373,7 +373,7 @@ For utilizing this API, Install the SDK by adding the following dependency in yo
 </dependency>
 ```
   
-You can also access the pakcage at:
+You can also access the package at:
 > https://mvnrepository.com/artifact/com.payquicker/sample-sdk-artifact-id/1.0.0
   
   
@@ -385,9 +385,9 @@ You can also access the pakcage at:
   
   
 #### Authorization 
-This API uses the Custom Header Signature 
+This API uses the **Custom Header Signature **
 
-The APIn client configuration looks like this:
+The API client configuration looks like this:
 ```markdown
  ICGAPIVerifyClient client = new ICGAPIVerifyClient.Builder()
     .httpClientConfig(configBuilder -> configBuilder
