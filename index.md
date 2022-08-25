@@ -319,10 +319,43 @@ The following list describes the parameters that user must have to define for ge
 |ruleNum|String Rule number-assigned by MicroBilt|
 |gatewayLive|Boolean Enable or disable the live|
 
+
+ 
+#### Responses 
+
+#### Response headers-JSON
+
+|Header|Value|
+|------|-----|
+|Authorization|Authorization|
+|Accept|application/json|
+|Content-type|application/json;charset=utf-8|
+
+#### Response body-JSON
+
+```markdown
+ {
+  "code": null,
+  "decision": null,
+  "description": null,
+  "addendaRecords": null,
+  "error": null
+}
+```
+
+The response of the ICG legacy verification process is 200, OK. It will contain a **Type** object that have the following paramters:
+  1. **Code:** It will be of _string_ type. This code is the identication key for each type of response, this API call returns.
+  2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+  5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
+  6. **error:** It will be of _string_ type that specifices the error if that occur during the API call. 
   
+ ##### 'Type' Object Parameters
+ 
   
-  
-#### Response Type
+![Uploading 1. legacy response.png…]()
+
+ 
 
 # For Java
 ## How to get started
