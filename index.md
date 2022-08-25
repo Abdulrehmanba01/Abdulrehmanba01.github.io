@@ -357,8 +357,49 @@ The response of the ICG legacy verification process is 200, OK. It will contain 
 
 # For Java
 ## How to get started
-  
 #### Description 
+  
+Welcome to the iCheckGateway Verify API. iCheckGateway.com makes it easy to integrate any online application or back office solution for ACH check payment processing and credit card processing. Using iCheckGateway.com’s APIs, developer tools, and plugins, you can create a payment platform that is customized to the needs of your business. The integration of these APIs will allow the customers to pay by echeck, ACH transfer, or credit/debit card. 
+ICG Verify API endpoints include all the information to use the ICG Verify Service and perform ACH Verification
+
+#### Install the Package
+For utilizing this API, Install the SDK by adding the following dependency in your project's pom.xml file:
+
+```markdown
+<dependency>
+  <groupId>com.payquicker</groupId>
+  <artifactId>sample-sdk-artifact-id</artifactId>
+  <version>1.0.0</version>
+</dependency> ```
+  
+You can also access the pakcage at:
+> https://mvnrepository.com/artifact/com.payquicker/sample-sdk-artifact-id/1.0.0
+  
+  
+#### API Client Configuration Parameters: 
+|Parameter       | Type                           |Description|
+|----------------|--------------------------------|-----------------------------------|
+|httpClientConfig|ReadonlyHttpClientConfiguration |Http Client Configuration instance.|   
+|authorization   | String                         |                                   |
+  
+  
+#### Authorization 
+This API uses the Custom Header Signature 
+
+The APIn client configuration looks like this:
+```markdown
+ ICGAPIVerifyClient client = new ICGAPIVerifyClient.Builder()
+    .httpClientConfig(configBuilder -> configBuilder
+            .timeout(0))
+    .customHeaderAuthenticationCredentials("Authorization")
+    .build();  
+ ```
+ 
+  
+## API Endpoints
+### ICG Verify
+### ICG Verify Prcoess
+#### Description
 In order to be identified effectively, the ICG verify procedure involves checking the customer's account number and routing number. The JAVA's ICG Verify process endpoints include all the data necessary to use the ICG Verify Service and carry out ACH Verification. By sending the parameters included in the POST request, you must validate the information.
  
   
@@ -382,23 +423,7 @@ icgVerifyController.iCGVerifyProcessAsync(request).thenAccept(result -> {
   "Message": "Authorization has been denied for this request."
 }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-## API Endpoints
-### ICG Verify
-
-### ICG Verify Legacy
-
-#### Description
-#### 
+ 
 # For .NET
 # For typescript
 # For PHP
