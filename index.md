@@ -537,44 +537,72 @@ The response of the ICG verification process is 200, OK. It will contain a **Res
 |ResponseType|[ICGVerifyModelsICGVerifyResponse](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verify-response)
  
   
+### ICG Verify Process Extended
+#### Description
+This is the Java-based ICG verify process' expanded version. It may only be used if the merchant given has assigned the corresponding user authenticated the permission FEATURE ICG VERIFY EXTENDED. This functionality makes use of every microbilt option available to validate an account using criteria other than the Bank Route Number and Account Number. The replies on this endpoint are identical to those in the section above titled "ICG Verify Process." 
+  
+The responses and response codes on this endpoint are same as the one listed above in the 'ICG Verify Process' section.
 
+#### Class-Object
+  
+```markdown
+ICGVerifyModelsIcgVerificationICGVerifyRequestExt request = new ICGVerifyModelsIcgVerificationICGVerifyRequestExt();
+request.setBankAccount(new ICGVerifyModelsIcgVerificationICGVerifyBankAccount());
+request.getBankAccount().setRoutingNumber("routingNumber0");
+request.getBankAccount().setAccountNumber("accountNumber4");
+
+icgVerifyController.iCGVerifyProcessExtendedAsync(request).thenAccept(result -> {
+    // TODO success callback handler
+}).exceptionally(exception -> {
+    // TODO failure callback handler
+    return null;
+});
+```
+   
+#### Response body-JSON
+{
+  "Message": "Authorization has been denied for this request."
+}
+ 
+#### Response header-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
+This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/java/getting-started/how-to-get-started/authorization)
+ 
+```markdown
+  CompletableFuture<ICGVerifyModelsICGVerifyResponse> iCGVerifyProcessExtendedAsync(final ICGVerifyModelsIcgVerificationICGVerifyRequestExt request)
+  ```  
   
   
+#### Parameters details
+The following parameters are employed for ICG extended process. Where many of them are not required to add. Only the **bankAccount** object is required. Lets have a look on the following image for getting information about all the parameters i.e. objects and single attributes of this API call.       
+   
+
+![API-extended-1](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-request-ext)
+  
+The class name of the extend verify request is ```markdown ICGVerifyModelsIcgVerificationICGVerifyRequestExt ```
+
+1. The required **bankAccount** is the object that contains the _orgInfo_(organization info) object which further consists of the name of the employer. The employer name is of _string_ type. The other parameters are _routingNumber_ (9-digit string), _accountNumber_ (String), _typeOfBankAcct_ object (having Checking, Savings, Personal Loan in String type). The _routingNumber_ and _accountNumber_ both are required for ICG extended verification process. The class name of the **bankAccount** object ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
   
   
+##### 'bankAccount' Object Parameters
+![6  java verify extend](https://user-images.githubusercontent.com/110983629/186724604-19621235-bb7f-4b0e-909d-ab07adb0b0bd.png)
+
+
+2. The person name object consists of the following objects further:
+The class name of the **personName** object is ```markdown  ICGVerifyModelsIcgVerificationICGVerifyPersonName ```
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+##### 'PersonName' Object Parameters
+![8 java extend](https://user-images.githubusercontent.com/110983629/186725514-ca81248a-b7d7-4209-8f0f-1f11756b9bbe.png)
+
+3. 'contactInfo' Object Parameters**
+
+   
   
   
   
