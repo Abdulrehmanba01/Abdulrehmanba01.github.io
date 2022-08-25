@@ -370,7 +370,8 @@ For utilizing this API, Install the SDK by adding the following dependency in yo
   <groupId>com.payquicker</groupId>
   <artifactId>sample-sdk-artifact-id</artifactId>
   <version>1.0.0</version>
-</dependency> ```
+</dependency>
+```
   
 You can also access the pakcage at:
 > https://mvnrepository.com/artifact/com.payquicker/sample-sdk-artifact-id/1.0.0
@@ -392,7 +393,8 @@ The APIn client configuration looks like this:
     .httpClientConfig(configBuilder -> configBuilder
             .timeout(0))
     .customHeaderAuthenticationCredentials("Authorization")
-    .build(); ```
+    .build(); 
+ ```
  
   
 ## API Endpoints
@@ -414,7 +416,8 @@ icgVerifyController.iCGVerifyProcessAsync(request).thenAccept(result -> {
 }).exceptionally(exception -> {
     // TODO failure callback handler
     return null;
-});```
+});
+```
   
   
 #### Response body-JSON
