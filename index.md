@@ -385,7 +385,7 @@ You can also access the package at:
   
   
 #### Authorization 
-This API uses the **Custom Header Signature **
+This API uses the ```markdown Custom Header Signature ```
 
 The API client configuration looks like this:
 ```markdown
