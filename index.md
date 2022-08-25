@@ -404,7 +404,7 @@ The API client configuration looks like this:
 In order to be identified effectively, the ICG verify procedure involves checking the customer's account number and routing number. The JAVA's ICG Verify process endpoints include all the data necessary to use the ICG Verify Service and carry out ACH Verification. By sending the parameters included in the POST request, you must validate the information.
  
   
-#### POST-JSON
+#### Class-Object
 ```markdown 
 ICGVerifyModelsIcgVerificationICGVerifyRequest request = new ICGVerifyModelsIcgVerificationICGVerifyRequest();
 request.setBankAccount(new ICGVerifyModelsIcgVerificationICGVerifyBankAccount());
@@ -453,8 +453,7 @@ The Following table describes all the possible codes returned from the process.
 
 This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/java/getting-started/how-to-get-started/authorization).
 ```markdown
- 
-  CompletableFuture<ICGVerifyModelsICGVerifyResponse> iCGVerifyProcessAsync(
+   CompletableFuture<ICGVerifyModelsICGVerifyResponse> iCGVerifyProcessAsync(
     final ICGVerifyModelsIcgVerificationICGVerifyRequest request)
 ```
 #### Parameters details
