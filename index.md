@@ -790,10 +790,23 @@ The response of this ICG legacy verification process provides the information to
 ![18](https://user-images.githubusercontent.com/110983629/187042084-eec78002-ba36-491a-87b3-aaee9bbd108b.png)
 
 
-    
-  
+      
   
 # For .NET
+  
+### Description
+For developers and users alike, the iCheckGateway verify API in.NET streamlines the process of integrating other web programmes that might serve as a back office solution. It places a strong focus on processing credit card payments and ACH checks. Your company will become more productive while offering the merchants and the intended audience the efficient and effective services by implementing it into your payment-configured platforms. Customers will be able to pay via eCheck, ACH transfer, or credit/debit card in a more secure method thanks to the integration of these APIs. All the information needed to use the ICG Verify Service and conduct ACH Verification is included in the ICG Verify API endpoints.
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 # For typescript
 # For PHP
 # For Python
@@ -801,4 +814,6 @@ The response of this ICG legacy verification process provides the information to
 
   
   
+  
+
   
