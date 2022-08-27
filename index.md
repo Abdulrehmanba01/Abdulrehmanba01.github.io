@@ -587,18 +587,36 @@ The following parameters are employed for ICG extended process. Where many of th
   
 The class name of the extend verify request is ```markdown ICGVerifyModelsIcgVerificationICGVerifyRequestExt ```
 
-1. The required **bankAccount** is the object that contains the _orgInfo_(organization info) object which further consists of the name of the employer. The employer name is of _string_ type. The other parameters are _routingNumber_ (9-digit string), _accountNumber_ (String), _typeOfBankAcct_ object (having Checking, Savings, Personal Loan in String type). The _routingNumber_ and _accountNumber_ both are required for ICG extended verification process. The class name of the **bankAccount** object ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
+1. The required **BankAccount** is the object that contains the _orgInfo_(organization info) object which further consists of the name of the employer. The employer name is of _string_ type. The other parameters are _routingNumber_ (9-digit string), _accountNumber_ (String), _typeOfBankAcct_ object (having Checking, Savings, Personal Loan in String type). The _routingNumber_ and _accountNumber_ both are required for ICG extended verification process. The class name of the **bankAccount** object ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
   
   
-##### 'bankAccount' Object Parameters
+##### 'BankAccount' Object Parameters
 ![6  java verify extend](https://user-images.githubusercontent.com/110983629/186724604-19621235-bb7f-4b0e-909d-ab07adb0b0bd.png)
 
 
-2. The person name object consists of the following objects further:
-The class name of the **personName** object is ```markdown  ICGVerifyModelsIcgVerificationICGVerifyPersonName ```
+2. The **PersonInfo** object consists of the following objects further:
+![1  java extend personinfo](https://user-images.githubusercontent.com/110983629/187030694-50347bb8-4131-4f3b-826b-e83df4be8911.png)
   
-##### 'personName' Object Parameters
-![8 java extend](https://user-images.githubusercontent.com/110983629/186725514-ca81248a-b7d7-4209-8f0f-1f11756b9bbe.png)
+The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyPersonInfo ```. It further contains the PersonName, ContactInfo, TinInfo, DriversLicense, EmploymentHistory objects that are shown below:
+  
+  ##### 'PersonName' Object class name and Parameters  
+  ![2  java extend personinfo](https://user-images.githubusercontent.com/110983629/187030838-9f27b5aa-5b12-476e-ab81-d07a80d8cdb9.png)
+
+  ##### 'ContactInfo' Object class name and Parameters   
+  ![3  java extend](https://user-images.githubusercontent.com/110983629/187030981-74685bdc-e52c-4583-8a06-295f5fcdea94.png)
+
+  ##### 'TinInfo' Object class name and Parameters   
+  ![4  java extend ](https://user-images.githubusercontent.com/110983629/187031014-4486b633-8aa7-414f-a0f1-fe6ecbdc099a.png)
+
+   ##### 'DriversLicense' Object class name and Parameters   
+   ![5  java extend](https://user-images.githubusercontent.com/110983629/187031050-83fa1b41-69b6-4b06-ade3-5c96fbbf2604.png)
+
+   ##### 'EmploymentHistory' Object class name and Parameters  
+   ![6  java extend](https://user-images.githubusercontent.com/110983629/187031086-93d8403f-8b85-43af-ba71-a3b2917f4c90.png)
+
+  
+  
+  
 
 3. 'contactInfo' Object Parameters**
 
