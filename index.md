@@ -725,29 +725,29 @@ This endpoint also requires [Authentication](https://developers.icheckdev.com/Ve
   
 #### Parameters details
   
-The following list describes the parameters that user must have to define for getting verified through the ICG legacy process.The bank routing number and consumer's account number are required fields for this API call. The organization info, type of bank account etc are other parameters that needs to add for this API call. Lets have a look on the following image for getting informations about all the parameters i.e. objects and single attributes of this API call.    
-  
-  ##### 'ICG Legacy verification Process' API call Parameters
-  
-![1  legacy](https://user-images.githubusercontent.com/110983629/185653468-2b73071b-07c0-4465-a865-ce674e9a1027.png)
+The parameters for the ICG verify legacy process in JAVA includes **BankAccount**, **UpdateMerchant**, **RuleNum**, **GatewayLive**. The **BankAccount** object is required for this process call that contain the **RountingNumber** and Consumer's **AccountNumber** as a required parameters. The **RountingNumber** is the 9-digit number (_String_type). The **BankAccount** also contains the **OrgInfo** and **TypeOfBankAcct** as a non-required parameters. The following image shows the parameters for this process call.
+    
+![16](https://user-images.githubusercontent.com/110983629/187041248-6823dd17-c8a6-4a2e-9da7-72d1e7b6e1dd.png)
 
+##### 'BankAccount' Object Parameters
   
- 1. The bankAccount object further contains the 6-digits rounting number, account number, and organization info, type of bank objects. The organization info object contains the employeer name parameter which is of string type. The type of bank account contains the three fields which are checking, Savings, PersonalLoan as shown in the following image:
+![17](https://user-images.githubusercontent.com/110983629/187041289-76bffe2f-972d-4584-9054-5ddf4bd7b525.png)
+
+The class name for the 'BankAccount' Object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
   
-##### 'bankAccount' Object Parameters
+The class name for the **OrgInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyOrgInfo ```
   
-![1  legacy bank account](https://user-images.githubusercontent.com/110983629/185653358-059ecf87-af16-4254-b37e-bf0002e4e856.png)
-  
+The class name for the **TypeOfBankAcct** is ```markdown TypeOfBankAcctEnum ```
 
 #### Explorer 
 
 
 |Names|Description|
 |-----|-----------|
-|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
-|updateMerchant|Boolean Enable or disable for updating merchant|
-|ruleNum|String Rule number-assigned by MicroBilt|
-|gatewayLive|Boolean Enable or disable the live|
+|BankAccount(required)|[ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|UpdateMerchant|Boolean Enable or disable for updating merchant|
+|RuleNum|String Rule number-assigned by MicroBilt|
+|GatewayLive|Boolean Enable or disable the live|
 
 
  
