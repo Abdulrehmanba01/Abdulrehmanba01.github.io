@@ -651,7 +651,60 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
   
   ![14](https://user-images.githubusercontent.com/110983629/187033005-19498e23-06cb-49ac-bbf9-3a83a506ac07.png)
   
- 
+  
+  
+ #### Explorer 
+
+
+|Names|Description|
+|-----|-----------|
+|BankAccount(required)|[ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|PersonInfo|[ICGVerifyModelsIcgVerificationICGVerifyPersonInfo](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-person-info) 
+|IncomeInfo|[ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-income-info)
+|References|[List<ICGVerifyModelsIcgVerificationICGVerifyReferences>](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-references)
+|checkAmt|[ICGVerifyModelsIcgVerificationICGVerifyCheckAmt](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-check-amt)
+|CheckNum|Check number of string type|
+|LaneId|Lane number of string type|
+|RuleNum|String Rule number-assigned by MicroBilt|
+|GatewayLive|Boolean Enable or disable the live|
+
+
+#### Responses 
+
+#### Response headers-JSON
+
+|Header|Value|
+|------|-----|
+|Authorization|Authorization|
+|Accept|application/json|
+|Content-type|application/json;charset=utf-8|
+
+#### Response body-JSON
+
+```markdown
+{
+  "code": null,
+  "decision": null,
+  "description": null,
+  "addendaRecords": null,
+  "error": null
+}
+```
+
+
+The response of the ICG verification extend process is 200, ok. It will contains a **Type** object that have the following paramters:
+  1. Code: It will be of string type. This code is the identication key for each type of resposne, this API call returns.
+  2. decision: It will be of string type. This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. description: It will be of string type which will acknowlege user about the API response in form of text information. 
+  5. addendaRecords: It will be an object that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
+  6. error: It will be of string type that specifices the error if that occur during the API call. 
+  
+ ##### 'Type' Object Parameters
+  
+![1  extend response](https://user-images.githubusercontent.com/110983629/185638275-5193e691-00cd-49a5-8b04-224fc5a94a5c.png)
+
+
+
   
     
   
