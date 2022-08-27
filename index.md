@@ -631,8 +631,9 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
 
 4. The **References** object contains the **PhoneNum** object and **ContactName** parameter which is the name of the reference(_string_ type). The class name for the **References** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyReferences```
   
-   ![11  ](https://user-images.githubusercontent.com/110983629/187032617-bd60da04-195e-4a84-99b9-dd67b159c096.png)
   
+   ![11](https://user-images.githubusercontent.com/110983629/187033389-d529dbb2-a3b7-487b-9d28-00ec8c7c01c0.png)
+
 
    The **PhoneNum** object class name and Parameters
    ![12](https://user-images.githubusercontent.com/110983629/187032709-5a2c5f97-7d43-4d9c-8107-93dd3ffd6a9a.png)
