@@ -630,16 +630,21 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
    ![10](https://user-images.githubusercontent.com/110983629/187032128-73f8a1e2-bc14-47d9-a870-9d14845ff2cd.png)
 
 4. The **References** object contains the **PhoneNum** object and **ContactName** parameter which is the name of the reference(_string_ type). The class name for the **References** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyReferences```
+  
    ![11  ](https://user-images.githubusercontent.com/110983629/187032617-bd60da04-195e-4a84-99b9-dd67b159c096.png)
+  
 
    The **PhoneNum** object class name and Parameters
    ![12](https://user-images.githubusercontent.com/110983629/187032709-5a2c5f97-7d43-4d9c-8107-93dd3ffd6a9a.png)
+  
   
    The **PhoneType** object class name and parameters
    ![13](https://user-images.githubusercontent.com/110983629/187032780-6a70b900-6527-4554-9239-d3337c2deadc.png)
 
   
+  
  5. The **CheckAmt** object contains the **Amt** check amount parameter which is of _String_ type. The class name of this object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyCheckAmt ```  
+  
   ![14](https://user-images.githubusercontent.com/110983629/187033005-19498e23-06cb-49ac-bbf9-3a83a506ac07.png)
   
  
