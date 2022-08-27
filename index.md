@@ -634,12 +634,15 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
   
    ![11](https://user-images.githubusercontent.com/110983629/187033389-d529dbb2-a3b7-487b-9d28-00ec8c7c01c0.png)
 
+  
 
    The **PhoneNum** object class name and Parameters
+  
    ![12](https://user-images.githubusercontent.com/110983629/187032709-5a2c5f97-7d43-4d9c-8107-93dd3ffd6a9a.png)
   
   
    The **PhoneType** object class name and parameters
+  
    ![13](https://user-images.githubusercontent.com/110983629/187032780-6a70b900-6527-4554-9239-d3337c2deadc.png)
 
   
