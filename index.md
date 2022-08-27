@@ -714,27 +714,13 @@ It will contain a **ResponseType** object that have the following parameters:
 The **routing number** and **account number** of the consumer given as the API call parameters are verified by this legacy ICG process in **JAVA**. The user must submit the aforementioned parameters for the legacy verification in order to research and assess the consumer for identification needs. This API request is sent by the merchant after authentication when they wish to update their merchant rules and check the data.      
   
 
-The responses on this endpoint are same as the one listed above in the 'ICG Verify Process' section  
-  
-#### POST
+The responses on this endpoint are same as the one listed above in the 'ICG Verify Process' section but it will appear in JAVa here as shown below:
 
 ```markdown
-curl -X POST \
-  --url 'https://verify.icheckdev.com/IcgVerifyLegacy/Process' \
-  -H 'Authorization: Authorization'\
-  -H 'Accept: application/json'\
-  -H 'Content-Type: application/json' \
-  --data-raw '{
-  "bankAccount": {
-    "routingNumber": "routingNumber0",
-    "accountNumber": "accountNumber4"
-  }
-}'
+CompletableFuture<ICGVerifyModelsICGVerifyResponse> iCGVerifyLegacyProcessAsync(final ICGVerifyModelsIcgVerificationICGVerifyRequestLegacy request)
 ```
-This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/http/getting-started/how-to-get-started/authorization)
-```markdown
-POST /IcgVerifyLegacy/Process
-```
+This endpoint also requires [Authentication](https://developers.icheckdev.com/Verify/#/java/getting-started/how-to-get-started/authorization)
+  
 
   
 #### Parameters details
