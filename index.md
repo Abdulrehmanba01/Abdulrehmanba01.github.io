@@ -780,7 +780,10 @@ The response of this ICG legacy verification process provides the information to
   5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
   6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
   
-  The class name of the **ResponseType** object is ```markdown ICGVerifyModelsICGVerifyResponse ```
+  The class name of the **ResponseType** object is 
+ ```markdown 
+  ICGVerifyModelsICGVerifyResponse 
+  ```
   
  ##### 'ResponseType' object Parameters
  
