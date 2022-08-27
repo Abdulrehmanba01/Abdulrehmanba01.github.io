@@ -711,9 +711,8 @@ It will contain a **ResponseType** object that have the following parameters:
 ### ICG Verify Legacy Process
 #### Description
 
-This is the ICG verify legacy process in JAVA that validates the routing number and account number of the consumer passed as the API call parameters.    
+The **routing number** and **account number** of the consumer given as the API call parameters are verified by this legacy ICG process in **JAVA**. The user must submit the aforementioned parameters for the legacy verification in order to research and assess the consumer for identification needs. This API request is sent by the merchant after authentication when they wish to update their merchant rules and check the data.      
   
-This is the ICG verify legacy process that will validate the routing number and account number. Both of these fields are required fields. This API call is executed when the merchant want to verify the data by updating merchant rule after getting authenticated. This feature will not exploit the microbilt options to validate an account based on many other parameters besides the Bank Route Number and Consumer Account Number.
 
 The responses on this endpoint are same as the one listed above in the 'ICG Verify Process' section  
   
