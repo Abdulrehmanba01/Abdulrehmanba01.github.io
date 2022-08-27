@@ -706,6 +706,98 @@ It will contain a **ResponseType** object that have the following parameters:
  ![15](https://user-images.githubusercontent.com/110983629/187036736-55938c07-4157-46cb-9abb-1ef3a193cae0.png)
 
 
+ 
+## ICG Verify Legacy
+### ICG Verify Legacy Process
+#### Description
+
+This is the ICG verify legacy process in JAVA that validates the routing number and account number of the consumer passed as the API call parameters.    
+  
+This is the ICG verify legacy process that will validate the routing number and account number. Both of these fields are required fields. This API call is executed when the merchant want to verify the data by updating merchant rule after getting authenticated. This feature will not exploit the microbilt options to validate an account based on many other parameters besides the Bank Route Number and Consumer Account Number.
+
+The responses on this endpoint are same as the one listed above in the 'ICG Verify Process' section  
+  
+#### POST
+
+```markdown
+curl -X POST \
+  --url 'https://verify.icheckdev.com/IcgVerifyLegacy/Process' \
+  -H 'Authorization: Authorization'\
+  -H 'Accept: application/json'\
+  -H 'Content-Type: application/json' \
+  --data-raw '{
+  "bankAccount": {
+    "routingNumber": "routingNumber0",
+    "accountNumber": "accountNumber4"
+  }
+}'
+```
+This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/http/getting-started/how-to-get-started/authorization)
+```markdown
+POST /IcgVerifyLegacy/Process
+```
+
+  
+#### Parameters details
+  
+The following list describes the parameters that user must have to define for getting verified through the ICG legacy process.The bank routing number and consumer's account number are required fields for this API call. The organization info, type of bank account etc are other parameters that needs to add for this API call. Lets have a look on the following image for getting informations about all the parameters i.e. objects and single attributes of this API call.    
+  
+  ##### 'ICG Legacy verification Process' API call Parameters
+  
+![1  legacy](https://user-images.githubusercontent.com/110983629/185653468-2b73071b-07c0-4465-a865-ce674e9a1027.png)
+
+  
+ 1. The bankAccount object further contains the 6-digits rounting number, account number, and organization info, type of bank objects. The organization info object contains the employeer name parameter which is of string type. The type of bank account contains the three fields which are checking, Savings, PersonalLoan as shown in the following image:
+  
+##### 'bankAccount' Object Parameters
+  
+![1  legacy bank account](https://user-images.githubusercontent.com/110983629/185653358-059ecf87-af16-4254-b37e-bf0002e4e856.png)
+  
+
+#### Explorer 
+
+
+|Names|Description|
+|-----|-----------|
+|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|updateMerchant|Boolean Enable or disable for updating merchant|
+|ruleNum|String Rule number-assigned by MicroBilt|
+|gatewayLive|Boolean Enable or disable the live|
+
+
+ 
+#### Responses 
+
+#### Response headers-JSON
+
+|Header|Value|
+|------|-----|
+|Authorization|Authorization|
+|Accept|application/json|
+|Content-type|application/json;charset=utf-8|
+
+#### Response body-JSON
+
+```markdown
+ {
+  "code": null,
+  "decision": null,
+  "description": null,
+  "addendaRecords": null,
+  "error": null
+}
+```
+
+The response of the ICG legacy verification process is 200, OK. It will contain a **Type** object that have the following parameters:
+  1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
+  2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+  5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
+  6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
+  
+ ##### 'Type' Object Parameters
+ 
+![1  legacy response](https://user-images.githubusercontent.com/110983629/186683541-5914fc6b-4a1d-4904-9361-cf530a78cff4.png)
 
 
   
