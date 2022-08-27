@@ -127,12 +127,12 @@ Listed below is a list of all the parameters that the end point can receive. We 
 }
 ```
 
-The response of the ICG verification process is 200, OK. It will contain a **Type** object that have the following paramters:
-  1. **Code:** It will be of _string_ type. This code is the identication key for each type of response, this API call returns.
+The response of the ICG verification process is 200, OK. It will contain a **Type** object that have the following parameters:
+  1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
   5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
-  6. **error:** It will be of _string_ type that specifices the error if that occur during the API call. 
+  6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
   
  ##### 'Type' Object Parameters
  
@@ -252,12 +252,12 @@ The following list describes the parameters that user must have to define for ge
 ```
 
 
-The response of the ICG verification extend process is 200, ok. It will contains a **Type** object that have the following parameters:
-  1. Code: It will be of string type. This code is the identication key for each type of resposne, this API call returns.
-  2. decision: It will be of string type. This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
-  4. description: It will be of string type which will acknowlege user about the API response in form of text information. 
-  5. addendaRecords: It will be an object that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
-  6. error: It will be of string type that specifices the error if that occur during the API call. 
+The response of the ICG verification extend process is 200, ok. It will contain a **Type** object that have the following parameters:
+  1. Code: It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
+  2. decision: It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. description: It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+  5. addendaRecords: It will be an object that further contains the key, value, description fields of _string_ type. This object basically used for providing additional information to the consumers.
+  6. error: It will be of _string_ type that specifies the error if that occur during the API call. 
   
  ##### 'Type' Object Parameters
   
@@ -343,12 +343,12 @@ The following list describes the parameters that user must have to define for ge
 }
 ```
 
-The response of the ICG legacy verification process is 200, OK. It will contain a **Type** object that have the following paramters:
-  1. **Code:** It will be of _string_ type. This code is the identication key for each type of response, this API call returns.
+The response of the ICG legacy verification process is 200, OK. It will contain a **Type** object that have the following parameters:
+  1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
   5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
-  6. **error:** It will be of _string_ type that specifices the error if that occur during the API call. 
+  6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
   
  ##### 'Type' Object Parameters
  
@@ -515,12 +515,12 @@ The Class Name of the **TypeOfBankAcct** object is ```markdown TypeOfBankAcctEnu
 }
 ```
 
-The response of the ICG verification process is 200, OK. It will contain a **ResponseType** object that have the following paramters:
-  1. **Code:** It will be of _string_ type. This code is the identication key for each type of response, this API call returns.
+The response of the ICG verification process is 200, OK. It will contain a **ResponseType** object that have the following parameters:
+  1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
   5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers. The class Name of **theaddendaRecords** object is ```markdown ICGVerifyModelsICGVerifyResposeAddendaRecords```
-  6. **error:** It will be of _string_ type that specifices the error if that occur during the API call. 
+  6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
     
  
  The Class Name of the **ResposneType** object is ```markdown ICGVerifyModelsICGVerifyResponse```
@@ -693,12 +693,12 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
 
 
 The response of the ICG verification extend process in JAVA is 200, ok. The class name of the **ResponseType** object is ```markdown ICGVerifyModelsICGVerifyResponse ```
-It will contains a **ResponseType** object that have the following parameters:
+It will contain a **ResponseType** object that have the following parameters:
   
   1. Code: It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. decision: It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. description: It will be of _string_ type which will acknowledge user about the API response in form of text information. 
-  5. addendaRecords: It will be an object that further contains the key, value, description fields of _string_ type. This object basically used for providing additional information to the consumers.
+  5. addendaRecords: It will be an object that further contain the key, value, description fields of _string_ type. This object basically used for providing additional information to the consumers.
   6. error: It will be of _string_ type that specifies the error if that occur during the API call. 
   
  ##### 'ResponseType' Object Parameters
