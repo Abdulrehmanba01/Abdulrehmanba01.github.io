@@ -616,6 +616,7 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
 
   
 3. The **IncomeInfo** object contains the DtOfNextPaycheck parameter which is the date of next paycheck and DtOfSecondPaycheck parameter which is the date of next second pay check. Both of these dates are of string type. The class name for the **IncomeInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo```
+  
    ![7  java extend income info](https://user-images.githubusercontent.com/110983629/187031425-751f0c3d-f467-4768-9cc7-40db643a9c9c.png)
   
    The **MonthlyIncome** Object Class name and Parameters  
