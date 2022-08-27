@@ -252,7 +252,7 @@ The following list describes the parameters that user must have to define for ge
 ```
 
 
-The response of the ICG verification extend process is 200, ok. It will contains a **Type** object that have the following paramters:
+The response of the ICG verification extend process is 200, ok. It will contains a **Type** object that have the following parameters:
   1. Code: It will be of string type. This code is the identication key for each type of resposne, this API call returns.
   2. decision: It will be of string type. This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. description: It will be of string type which will acknowlege user about the API response in form of text information. 
@@ -662,7 +662,7 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
 |PersonInfo|[ICGVerifyModelsIcgVerificationICGVerifyPersonInfo](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-person-info) 
 |IncomeInfo|[ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-income-info)
 |References|[List<ICGVerifyModelsIcgVerificationICGVerifyReferences>](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-references)
-|checkAmt|[ICGVerifyModelsIcgVerificationICGVerifyCheckAmt](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-check-amt)
+|CheckAmt|[ICGVerifyModelsIcgVerificationICGVerifyCheckAmt](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-check-amt)
 |CheckNum|Check number of string type|
 |LaneId|Lane number of string type|
 |RuleNum|String Rule number-assigned by MicroBilt|
@@ -692,16 +692,19 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
 ```
 
 
-The response of the ICG verification extend process is 200, ok. It will contains a **Type** object that have the following paramters:
-  1. Code: It will be of string type. This code is the identication key for each type of resposne, this API call returns.
-  2. decision: It will be of string type. This paramter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
-  4. description: It will be of string type which will acknowlege user about the API response in form of text information. 
-  5. addendaRecords: It will be an object that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
-  6. error: It will be of string type that specifices the error if that occur during the API call. 
+The response of the ICG verification extend process in JAVA is 200, ok. The class name of the **ResponseType** object is ```markdown ICGVerifyModelsICGVerifyResponse ```
+It will contains a **ResponseType** object that have the following parameters:
   
- ##### 'Type' Object Parameters
+  1. Code: It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
+  2. decision: It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. description: It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+  5. addendaRecords: It will be an object that further contains the key, value, description fields of _string_ type. This object basically used for providing additional information to the consumers.
+  6. error: It will be of _string_ type that specifies the error if that occur during the API call. 
   
-![1  extend response](https://user-images.githubusercontent.com/110983629/185638275-5193e691-00cd-49a5-8b04-224fc5a94a5c.png)
+ ##### 'ResponseType' Object Parameters
+  
+ ![15](https://user-images.githubusercontent.com/110983629/187036736-55938c07-4157-46cb-9abb-1ef3a193cae0.png)
+
 
 
 
