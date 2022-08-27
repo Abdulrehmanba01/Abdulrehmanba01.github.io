@@ -733,11 +733,11 @@ The parameters for the ICG verify legacy process in JAVA includes **BankAccount*
   
 ![17](https://user-images.githubusercontent.com/110983629/187041289-76bffe2f-972d-4584-9054-5ddf4bd7b525.png)
 
-The class name for the 'BankAccount' Object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
+The class name for the **BankAccount** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
   
 The class name for the **OrgInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyOrgInfo ```
   
-The class name for the **TypeOfBankAcct** is ```markdown TypeOfBankAcctEnum ```
+The class name for the **TypeOfBankAcct** object is ```markdown TypeOfBankAcctEnum ```
 
 #### Explorer 
 
@@ -773,19 +773,20 @@ The class name for the **TypeOfBankAcct** is ```markdown TypeOfBankAcctEnum ```
 }
 ```
 
-The response of the ICG legacy verification process is 200, OK. It will contain a **Type** object that have the following parameters:
+The response of this ICG legacy verification process provides the information to the user to understand whether the process is successful or not. The **ResponseType** object contains the following parameters:   
   1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
   5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
   6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
   
- ##### 'Type' Object Parameters
- 
-![1  legacy response](https://user-images.githubusercontent.com/110983629/186683541-5914fc6b-4a1d-4904-9361-cf530a78cff4.png)
-
-
+  The class name of the **ResponseType** object is ```markdown ICGVerifyModelsICGVerifyResponse ```
   
+ ##### 'ResponseType' object Parameters
+ 
+![18](https://user-images.githubusercontent.com/110983629/187042084-eec78002-ba36-491a-87b3-aaee9bbd108b.png)
+
+
     
   
   
