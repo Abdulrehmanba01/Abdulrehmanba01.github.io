@@ -599,33 +599,39 @@ The class name of the extend verify request is ```markdown ICGVerifyModelsIcgVer
   
 The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyPersonInfo ```. It further contains the PersonName, ContactInfo, TinInfo, DriversLicense, EmploymentHistory objects that are shown below:
   
-  ##### 'PersonName' Object class name and Parameters  
+  ##### 'PersonName' Object Class name and Parameters  
   ![2  java extend personinfo](https://user-images.githubusercontent.com/110983629/187030838-9f27b5aa-5b12-476e-ab81-d07a80d8cdb9.png)
 
-  ##### 'ContactInfo' Object class name and Parameters   
+  ##### 'ContactInfo' Object Class name and Parameters   
   ![3  java extend](https://user-images.githubusercontent.com/110983629/187030981-74685bdc-e52c-4583-8a06-295f5fcdea94.png)
 
-  ##### 'TinInfo' Object class name and Parameters   
+  ##### 'TinInfo' Object Class name and Parameters   
   ![4  java extend ](https://user-images.githubusercontent.com/110983629/187031014-4486b633-8aa7-414f-a0f1-fe6ecbdc099a.png)
 
-   ##### 'DriversLicense' Object class name and Parameters   
+   ##### 'DriversLicense' Object Class name and Parameters   
    ![5  java extend](https://user-images.githubusercontent.com/110983629/187031050-83fa1b41-69b6-4b06-ade3-5c96fbbf2604.png)
 
-   ##### 'EmploymentHistory' Object class name and Parameters  
+   ##### 'EmploymentHistory' Object Class name and Parameters  
    ![6  java extend](https://user-images.githubusercontent.com/110983629/187031086-93d8403f-8b85-43af-ba71-a3b2917f4c90.png)
 
   
 3. The **IncomeInfo** object contains the DtOfNextPaycheck parameter which is the date of next paycheck and DtOfSecondPaycheck parameter which is the date of next second pay check. Both of these dates are of string type. The class name for the **IncomeInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo```
-  
-   ##### 'IncomeInfo' Object Parameters  
    ![7  java extend income info](https://user-images.githubusercontent.com/110983629/187031425-751f0c3d-f467-4768-9cc7-40db643a9c9c.png)
   
-  The **MonthlyIncome** objects furthers contains the following objects:
-  ![8](https://user-images.githubusercontent.com/110983629/187031812-35ae335e-a44e-4d12-8d78-3b9fa3a9ca45.png)
+   The **MonthlyIncome** Object Class name and Parameters  
+   ![8](https://user-images.githubusercontent.com/110983629/187031812-35ae335e-a44e-4d12-8d78-3b9fa3a9ca45.png)
+  
+   The **PmtFreq** Object Class name and Parameters  
+   ![9](https://user-images.githubusercontent.com/110983629/187032071-5d1f2a15-36fd-48ec-ac78-fff4c36a1be8.png)
 
   
+   The **PayPerPeriod** Object Class name and Parameters  
+   ![10](https://user-images.githubusercontent.com/110983629/187032128-73f8a1e2-bc14-47d9-a870-9d14845ff2cd.png)
 
-
+  
+  
+  
+   
    
   
   
