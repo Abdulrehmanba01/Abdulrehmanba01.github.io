@@ -597,7 +597,7 @@ The class name of the extend verify request is ```markdown ICGVerifyModelsIcgVer
 2. The person name object consists of the following objects further:
 The class name of the **personName** object is ```markdown  ICGVerifyModelsIcgVerificationICGVerifyPersonName ```
   
-##### 'PersonName' Object Parameters
+##### 'personName' Object Parameters
 ![8 java extend](https://user-images.githubusercontent.com/110983629/186725514-ca81248a-b7d7-4209-8f0f-1f11756b9bbe.png)
 
 3. 'contactInfo' Object Parameters**
