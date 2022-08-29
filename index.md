@@ -936,25 +936,22 @@ The following table describe the list of configured parameters for retries throu
 |`MaximumRetryWaitTime` |`TimeSpan`          |The maximum retry wait time. Default: `0`                                                                             |
 |`StatusCodesToRetry`   |`IList\<int\>`           |List of Http status codes to invoke retry. Default: `408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524`|
 |`RequestMethodsToRetry` |`IList\<HttpMethod\>`   |List of Http request methods to invoke retry. Default: `"GET", "PUT", "GET", "PUT"`|
-
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
 
 ## API Endpoints
 ## ICG Verify
 ### ICG Verify Process
 #### Description
-ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated. After the account has been created,  you will need to verify the information by making a **POST /IcgVerify/Process** request
+     
+ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated. After the account has been created,  you will need to verify the information by accessing the intance of the **IcgVerifyController** from the API client. 
+  
+```markdown
+  IcgVerifyController icgVerifyController = client.IcgVerifyController;
+```
+  
+  
+  
+  
 #### POST-JSON
 ```markdown
 curl -X POST \
