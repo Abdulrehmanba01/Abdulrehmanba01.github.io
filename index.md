@@ -790,12 +790,169 @@ The response of this ICG legacy verification process provides the information to
 ![18](https://user-images.githubusercontent.com/110983629/187042084-eec78002-ba36-491a-87b3-aaee9bbd108b.png)
 
 
+
+ 
       
   
 # For .NET
   
+## Getting Started
+  
 ### Description
 For developers and users alike, the iCheckGateway verify API in.NET streamlines the process of integrating other web programmes that might serve as a back office solution. It places a strong focus on processing credit card payments and ACH checks. Your company will become more productive while offering the merchants and the intended audience the efficient and effective services by implementing it into your payment-configured platforms. Customers will be able to pay via eCheck, ACH transfer, or credit/debit card in a more secure method thanks to the integration of these APIs. All the information needed to use the ICG Verify Service and conduct ACH Verification is included in the ICG Verify API endpoints.
+  
+#### Building
+  
+This API requires you to install ```markdown Newtonsoft Json.NET NuGet ``` package. If you have enabled the **automatic NuGet package restore** then all the dependencies will get installed automatically. Therefore, you will need internet access for build.
+
+**Steps to Proceed:**
+  
+1. Open the solution (ICGAPIVerify.sln) file
+2. Invoke the build process using ```markdown Ctrl + Shift + B ``` shortcut key or using the Build menu.
+3. The build process generates a portable class library, which can be used like a normal class library. The generated library is compatible with 
+     I) Windows Forms
+    II) Windows RT
+    III) Windows Phone 8
+    IV) Silverlight 5 
+     V) Xamarin iOS 
+    VI) Xamarin Android and Mono
+More information on how to use can be found at the **MSDN Portable Class Libraries documentation**.  
+  
+  
+The API uses the following base URL:
+
+> https://verify.icheckdev.com 
+
+#### Authorization 
+This API uses the following header parameters for authentication.
+|Header       | Default   |Description|
+|-------------|-----------|-----------|
+|Authorization| None      | API Access token provided by the Auth API after User authentication| 
+
+The request looks like this:
+```markdown
+curl https://verify.icheckdev.com \
+  -H 'Authorization: {AUTHORIZATION}'
+ ```
+ 
+ ```markdown
+ GET / HTTP/1.1
+Host: {HOST}
+Authorization: {AUTHORIZATION}
+```
+
+## API Endpoints
+## ICG Verify
+### ICG Verify Process
+#### Description
+ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated. After the account has been created,  you will need to verify the information by making a **POST /IcgVerify/Process** request
+#### POST-JSON
+```markdown
+curl -X POST \
+  --url 'https://verify.icheckdev.com/IcgVerify/Process' \
+  -H 'Authorization: Authorization'\
+  -H 'Accept: application/json'\
+  -H 'Content-Type: application/json' \
+  --data-raw '{
+  "bankAccount": {
+    "routingNumber": "routingNumber0",
+    "accountNumber": "accountNumber4"
+  }
+}`
+```
+#### Response body-JSON
+{
+  "Message": "Authorization has been denied for this request."
+}
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Verify process configuration
+![image](https://user-images.githubusercontent.com/110983629/185741727-7d22226f-cc5f-4649-a0c6-e28c24ec9858.png)
+
+
+Above are listed all the possible codes returned from the process
+
+|ICG Code | ICG Decision Value | Description |
+|---------|--------------------|-------------|
+|I001|ACCEPT |There is no negative information known on the account|
+|I002|DECLINED|Customer has returned item(s) in the past 12 months that were returned due to unauthorized.The number of unauthorized returns reported with also be returned in a property message field|
+|I003|DECLINED|The RVD database does not have a current unpaid return but the account has been reported as closed or a returned item that has been paid was returned as account closed|
+|I004|DECLINED|The RVD database does not have a current unpaid return but we have seen returns in the past for Account not Fount or Invalid account number at the bank|
+|I005|DECLINED|Customer has returned items(s) in the past 12 months that were returned due to being ineligible|
+|I006|DECLINED|Customer has no unpaid returns at this time in RVD but has a history of returns in the last 12 months|
+|I007|DECLINED|Account reported Closed|
+|I008|DECLINED|Bank routing number is not a vaild US routing #|
+|I009|DECLINED|Negative Data - Negative information was found|
+|I010|WARNING|The routing number submitted belongs to a financial institution; however, this financial institution does not report information to the National Shared Database.No positive or negative information found for this routing number and account number.|
+|I011|WARNING|Account number format is suspicious|
+|I012|DECLINED|Account Number is less than 3 digits or contains an invalid character|
+
+
+This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/http/getting-started/how-to-get-started/authorization).
+```markdown
+POST /IcgVerify/Process
+```
+#### Parameters details
+Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
+
+##### 'request' Object Parameters
+![image](https://user-images.githubusercontent.com/110983629/185380812-6612f04c-39d8-4d0d-9d9b-63ed3eee0c69.png)
+##### 'bankAccount' Object Parameters
+![image](https://user-images.githubusercontent.com/110983629/185381223-722ea2c6-fe07-4fcf-821a-b0d83ec477e9.png)
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|ruleNum|String Rule number-assigned by MicroBilt|
+|gatewayLive|Boolean Enable or disable the live|
+
+
+#### Responses 
+
+#### Response headers-JSON
+
+|Header|Value|
+|------|-----|
+|Authorization|Authorization|
+|Accept|application/json|
+|Content-type|application/json;charset=utf-8|
+
+#### Response body-JSON
+
+```markdown
+ {
+  "code": null,
+  "decision": null,
+  "description": null,
+  "addendaRecords": null,
+  "error": null
+}
+```
+
+The response of the ICG verification process is 200, OK. It will contain a **Type** object that have the following parameters:
+  1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
+  2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+  5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
+  6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
+  
+ ##### 'Type' Object Parameters
+ 
+ ![2  response of simple verify](https://user-images.githubusercontent.com/110983629/185617059-6db57703-12ca-4286-8da1-6bfa70d6b586.png)
+
+
+
+  
+  
   
   
   
