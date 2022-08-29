@@ -385,7 +385,10 @@ You can also access the package at:
   
   
 #### Authorization 
-This API uses the ```markdown Custom Header Signature ```
+This API uses the 
+```markdown 
+Custom Header Signature 
+```
 
 The API client configuration looks like this:
 ```markdown
@@ -910,17 +913,18 @@ Once the TestConsoleProject is created, a file named Program.cs will be visible 
 |authorization   | String    |                                                       |
   
   
-#### Authorization 
-This API uses the ```markdown Custom Header Signature ```
-
 The API client configuration looks like this:
 ```markdown
- ICGAPIVerifyClient client = new ICGAPIVerifyClient.Builder()
-    .httpClientConfig(configBuilder -> configBuilder
-            .timeout(0))
-    .customHeaderAuthenticationCredentials("Authorization")
-    .build(); 
- ```
+ ICGAPIVerify.Standard.ICGAPIVerifyClient client = new ICGAPIVerify.Standard.ICGAPIVerifyClient.Builder().Build();
+```
+   
+#### Authorization 
+This API uses the 
+```markdown 
+  Custom Header Signature 
+```
+
+
   
   
   
