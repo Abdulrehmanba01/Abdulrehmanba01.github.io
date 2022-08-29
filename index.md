@@ -864,7 +864,36 @@ You need to do some installation before you can use the **ICGAPIVerify.Standard 
   
  1. Create new project: Right click on the current solution from the solution explorer and choose 
   > Add -> New Project
+    
+![19](https://user-images.githubusercontent.com/110983629/187217207-72aba7dd-9ef8-4832-82be-73cde9735dc8.png)
+
+ 2. Next, choose Console Application, provide **TestConsoleProject** as the project name and click OK.
   
+ ![20](https://user-images.githubusercontent.com/110983629/187217949-c08ed6d5-f8a8-4c30-b48f-3c5bae8a4c20.png)
+
+ 3. Set as Startup Project
+  
+ The new console project is the entry point for the eventual execution. This requires us to set the **TestConsoleProject** as the start-up project. To do this, right-click on the TestConsoleProject and choose Set as StartUp Project form the context menu.
+  
+ ![21](https://user-images.githubusercontent.com/110983629/187218304-67953c9b-a76b-452c-a77b-612cfa968118.png)
+
+  4. Add reference of the library project
+  
+  In order to use the Tester library in the new project, first we must add a project reference to the TestConsoleProject. First, right click on the References node in the solution explorer and click Add Reference.
+  
+ ![22](https://user-images.githubusercontent.com/110983629/187218682-edfe46e9-0581-44af-b7ca-89b40bb1db40.png)
+
+  Next, a window will be displayed where we must set the checkbox on Tester.Tests and click OK. By doing this, we have added a reference of the Tester.Tests project into the new TestConsoleProject.
+  
+ ![23](https://user-images.githubusercontent.com/110983629/187219056-c52818fc-b1e6-486a-b6a0-74ea5c592f78.png)
+  
+4. Write a Sample code
+  
+Once the TestConsoleProject is created, a file named Program.cs will be visible in the solution explorer with an empty Main method. This is the entry point for the execution of the entire solution. Here, you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using Controller methods is given in the subsequent sections.
+  
+  
+ ![24](https://user-images.githubusercontent.com/110983629/187219422-f2d8ab42-2cad-4025-8182-6a9bef3b67a4.png)
+
   
   
   
