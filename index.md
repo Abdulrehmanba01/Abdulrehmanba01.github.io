@@ -867,7 +867,8 @@ You need to do some installation before you can use the **ICGAPIVerify.Standard 
     
 ![19](https://user-images.githubusercontent.com/110983629/187217207-72aba7dd-9ef8-4832-82be-73cde9735dc8.png)
 
- 2. Next, choose Console Application, provide **TestConsoleProject** as the project name and click OK.
+ 2. Next, 
+  > hoose Console Application, provide **TestConsoleProject** as the project name and click OK.
   
  ![20](https://user-images.githubusercontent.com/110983629/187217949-c08ed6d5-f8a8-4c30-b48f-3c5bae8a4c20.png)
 
@@ -900,29 +901,37 @@ Once the TestConsoleProject is created, a file named Program.cs will be visible 
  ![24](https://user-images.githubusercontent.com/110983629/187219422-f2d8ab42-2cad-4025-8182-6a9bef3b67a4.png)
 
   
+   
+#### API Client Configuration Parameters: 
+  
+|Parameter       | Type      |Description|
+|----------------|-----------|-------------------------------------------------------|
+|Timeout         |TimeSpan   |Http client timeout. Default: TimeSpan.FromSeconds(100)|   
+|authorization   | String    |                                                       |
   
   
-The API uses the following base URL:
-
-> https://verify.icheckdev.com 
-
 #### Authorization 
-This API uses the following header parameters for authentication.
-|Header       | Default   |Description|
-|-------------|-----------|-----------|
-|Authorization| None      | API Access token provided by the Auth API after User authentication| 
+This API uses the ```markdown Custom Header Signature ```
 
-The request looks like this:
+The API client configuration looks like this:
 ```markdown
-curl https://verify.icheckdev.com \
-  -H 'Authorization: {AUTHORIZATION}'
+ ICGAPIVerifyClient client = new ICGAPIVerifyClient.Builder()
+    .httpClientConfig(configBuilder -> configBuilder
+            .timeout(0))
+    .customHeaderAuthenticationCredentials("Authorization")
+    .build(); 
  ```
- 
- ```markdown
- GET / HTTP/1.1
-Host: {HOST}
-Authorization: {AUTHORIZATION}
-```
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 ## API Endpoints
 ## ICG Verify
