@@ -856,13 +856,13 @@ package. If you have enabled the **automatic NuGet package restore** then all th
   
     VI) Xamarin Android and Mono
   
-More information on how to use can be found at the **MSDN Portable Class Libraries documentation**.  
+More information on how to use can be found at the **MSDN Portable Class Libraries documentation** 
   
 #### Installation
   
 You need to do some installation before you can use the **ICGAPIVerify.Standard ** library in a new project.
   
- ** 1. Create new project ** : Right click on the current solution from the solution explorer and choose 
+ 1. Create new project: Right click on the current solution from the solution explorer and choose 
   > Add -> New Project
   
   
