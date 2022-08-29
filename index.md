@@ -733,11 +733,20 @@ The parameters for the ICG verify legacy process in JAVA includes **BankAccount*
   
 ![17](https://user-images.githubusercontent.com/110983629/187041289-76bffe2f-972d-4584-9054-5ddf4bd7b525.png)
 
-The class name for the **BankAccount** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
+The class name for the **BankAccount** object is 
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyBankAccount 
+  ```
   
-The class name for the **OrgInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyOrgInfo ```
+The class name for the **OrgInfo** object is 
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyOrgInfo 
+  ```
   
-The class name for the **TypeOfBankAcct** object is ```markdown TypeOfBankAcctEnum ```
+The class name for the **TypeOfBankAcct** object is 
+  ```markdown 
+  TypeOfBankAcctEnum 
+  ```
 
 #### Explorer 
 
@@ -805,7 +814,9 @@ For developers and users alike, the iCheckGateway verify API in.NET streamlines 
   
 This API requires you to install 
   
-  ```markdown Newtonsoft Json.NET NuGet ``` 
+  ```markdown 
+  Newtonsoft Json.NET NuGet 
+  ``` 
   
 package. If you have enabled the **automatic NuGet package restore** then all the dependencies will get installed automatically. Therefore, you will need internet access for build.
 
@@ -814,7 +825,9 @@ package. If you have enabled the **automatic NuGet package restore** then all th
 1. Open the solution (ICGAPIVerify.sln) file
 2. Invoke the build process using 
   
-  ```markdown Ctrl + Shift + B ``` 
+  ```markdown 
+  Ctrl + Shift + B 
+  ``` 
   
   shortcut key or using the Build menu.
   
