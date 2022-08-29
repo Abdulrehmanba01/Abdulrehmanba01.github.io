@@ -464,20 +464,31 @@ The parameters of the basic request are members of particular classes that are u
 ##### 'request' Object Parameters 
 ![1  java-verify process-request](https://user-images.githubusercontent.com/110983629/186711002-7bbc3b60-2be1-4d20-b07a-67c4fa503bf9.png)
 
-The Class Name of the **bankAccount** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
+The Class Name of the **bankAccount** object is 
+  
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyBankAccount 
+  ```
   
 ##### 'bankAccount' Object Parameters 
 
 ![2  java request- verify process](https://user-images.githubusercontent.com/110983629/186711705-96ed9a8d-cc93-4929-a6f3-688f226b14e5.png)
   
-The Class Name of the **OrgInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyOrgInfo```
+The Class Name of the **OrgInfo** object is 
+  
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyOrgInfo
+  ```
   
 ##### 'OrgInfo' Object Parameters  
 
 ![3  java ](https://user-images.githubusercontent.com/110983629/186712170-968902c9-3682-4774-a440-018ca381dc35.png)
 
   
-The Class Name of the **TypeOfBankAcct** object is ```markdown TypeOfBankAcctEnum```
+The Class Name of the **TypeOfBankAcct** object is 
+  ```markdown 
+  TypeOfBankAcctEnum
+  ```
   
 ##### 'TypeOfBankAcct' Object Parameters  
 
@@ -834,10 +845,15 @@ package. If you have enabled the **automatic NuGet package restore** then all th
 3. The build process generates a portable class library, which can be used like a normal class library. The generated library is compatible with 
   
      I) Windows Forms
+  
     II) Windows RT
+  
     III) Windows Phone 8
+  
     IV) Silverlight 5 
+  
      V) Xamarin iOS 
+  
     VI) Xamarin Android and Mono
   
 More information on how to use can be found at the **MSDN Portable Class Libraries documentation**.  
