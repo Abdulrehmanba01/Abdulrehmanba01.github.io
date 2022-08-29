@@ -1004,14 +1004,31 @@ ICGVerifyProcessAsync(Models.ICGVerifyModelsIcgVerificationICGVerifyRequest requ
   
   
 #### Parameters details
-Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
+The parameters for the ICG verify process in **.NET** are **BankAccount**, **RuleNum** and **GatewayLive**.  We have one required object here that collects information as the parameter which includes **RoutingNumber** and **AccountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **OrgInfo(organization information)** and other one is **TypeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type which are Checking, Savings, Personal Loan.      
 
 ##### 'request' Object Parameters
-![image](https://user-images.githubusercontent.com/110983629/185380812-6612f04c-39d8-4d0d-9d9b-63ed3eee0c69.png)
-##### 'bankAccount' Object Parameters
-![image](https://user-images.githubusercontent.com/110983629/185381223-722ea2c6-fe07-4fcf-821a-b0d83ec477e9.png)
+  
+![25](https://user-images.githubusercontent.com/110983629/187240602-4a74b5ad-f274-48f7-8b77-898cc10fa968.png)
 
+  
+The class name for the ICG verify base request is
+  
+ ```markdown
+ICGVerifyModelsIcgVerificationICGVerifyRequest
+  ```
+  
+##### 'BankAccount' Object Parameters
 
+![26](https://user-images.githubusercontent.com/110983629/187240843-0813bd45-6759-466a-b9c0-1a6dc2d195b6.png)
+
+The class name for the **BankAccount** is 
+  
+ ```markdown
+ ICGVerifyModelsIcgVerificationICGVerifyBankAccount
+  ```
+  
+  
+ 
 #### Explorer 
 
 |Names|Description|
