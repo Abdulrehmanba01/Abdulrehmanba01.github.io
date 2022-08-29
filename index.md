@@ -871,7 +871,7 @@ You need to do some installation before you can use the **ICGAPIVerify.Standard 
 ![19](https://user-images.githubusercontent.com/110983629/187217207-72aba7dd-9ef8-4832-82be-73cde9735dc8.png)
 
  2. Next, 
-  > hoose Console Application, provide **TestConsoleProject** as the project name and click OK.
+  > Choose Console Application, provide **TestConsoleProject** as the project name and click OK.
   
  ![20](https://user-images.githubusercontent.com/110983629/187217949-c08ed6d5-f8a8-4c30-b48f-3c5bae8a4c20.png)
 
@@ -949,27 +949,26 @@ ICG Verify Process is the process where we validate a pair of information contai
   IcgVerifyController icgVerifyController = client.IcgVerifyController;
 ```
   
-  
-  
-  
-#### POST-JSON
+
+#### Class-Object
 ```markdown
-curl -X POST \
-  --url 'https://verify.icheckdev.com/IcgVerify/Process' \
-  -H 'Authorization: Authorization'\
-  -H 'Accept: application/json'\
-  -H 'Content-Type: application/json' \
-  --data-raw '{
-  "bankAccount": {
-    "routingNumber": "routingNumber0",
-    "accountNumber": "accountNumber4"
-  }
-}`
+ var request = new ICGVerifyModelsIcgVerificationICGVerifyRequest();
+ request.BankAccount = new ICGVerifyModelsIcgVerificationICGVerifyBankAccount();
+ request.BankAccount.RoutingNumber = "routingNumber0";
+ request.BankAccount.AccountNumber = "accountNumber4";
+
+ try
+ {
+    ICGVerifyModelsICGVerifyResponse result = await icgVerifyController.ICGVerifyProcessAsync(request);
+ }
+ catch (ApiException e){};
 ```
+  
 #### Response body-JSON
 {
   "Message": "Authorization has been denied for this request."
 }
+  
 
 #### Response headers-JSON
 |Header|Value|
@@ -978,11 +977,8 @@ curl -X POST \
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
-#### Verify process configuration
-![image](https://user-images.githubusercontent.com/110983629/185741727-7d22226f-cc5f-4649-a0c6-e28c24ec9858.png)
-
-
-Above are listed all the possible codes returned from the process
+ 
+Below are listed all the possible codes returned from the process
 
 |ICG Code | ICG Decision Value | Description |
 |---------|--------------------|-------------|
@@ -1000,10 +996,13 @@ Above are listed all the possible codes returned from the process
 |I012|DECLINED|Account Number is less than 3 digits or contains an invalid character|
 
 
-This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/http/getting-started/how-to-get-started/authorization).
+This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/net-standard-library/getting-started/how-to-get-started/authorization).
+  
 ```markdown
-POST /IcgVerify/Process
+ICGVerifyProcessAsync(Models.ICGVerifyModelsIcgVerificationICGVerifyRequest request)
 ```
+  
+  
 #### Parameters details
 Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
 
