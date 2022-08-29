@@ -803,19 +803,30 @@ For developers and users alike, the iCheckGateway verify API in.NET streamlines 
   
 #### Building
   
-This API requires you to install ```markdown Newtonsoft Json.NET NuGet ``` package. If you have enabled the **automatic NuGet package restore** then all the dependencies will get installed automatically. Therefore, you will need internet access for build.
+This API requires you to install 
+  
+  ```markdown Newtonsoft Json.NET NuGet ``` 
+  
+package. If you have enabled the **automatic NuGet package restore** then all the dependencies will get installed automatically. Therefore, you will need internet access for build.
 
 **Steps to Proceed:**
   
 1. Open the solution (ICGAPIVerify.sln) file
-2. Invoke the build process using ```markdown Ctrl + Shift + B ``` shortcut key or using the Build menu.
+2. Invoke the build process using 
+  
+  ```markdown Ctrl + Shift + B ``` 
+  
+  shortcut key or using the Build menu.
+  
 3. The build process generates a portable class library, which can be used like a normal class library. The generated library is compatible with 
+  
      I) Windows Forms
     II) Windows RT
     III) Windows Phone 8
     IV) Silverlight 5 
      V) Xamarin iOS 
     VI) Xamarin Android and Mono
+  
 More information on how to use can be found at the **MSDN Portable Class Libraries documentation**.  
   
   
