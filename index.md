@@ -1080,7 +1080,176 @@ The class name for the **ResponseType** object is
   
   
   
+### ICG Verify Process Extended
+#### Description
+This is the .NET based ICG verify process extended version that can be employed when the merchant has been assigned the corresponding user authenticated permission FEATURE ICG VERIFY EXTENDED. This functionality makes use of every microbilt option available to validate an account using criteria other than the Bank Route Number and Account Number. The replies on this endpoint are identical to those in the section above titled "ICG Verify Process."      
   
+The responses and response codes on this endpoint are same as the one listed above in the 'ICG Verify Process' section.
+
+#### Class-Object
+  
+```markdown
+var request = new ICGVerifyModelsIcgVerificationICGVerifyRequestExt();
+request.BankAccount = new ICGVerifyModelsIcgVerificationICGVerifyBankAccount();
+request.BankAccount.RoutingNumber = "routingNumber0";
+request.BankAccount.AccountNumber = "accountNumber4";
+
+try
+{
+    ICGVerifyModelsICGVerifyResponse result = await icgVerifyController.ICGVerifyProcessExtendedAsync(request);
+}
+catch (ApiException e){};
+```
+   
+#### Response body-JSON
+{
+  "Message": "Authorization has been denied for this request."
+}
+ 
+#### Response header-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
+This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/java/getting-started/how-to-get-started/authorization)
+ 
+```markdown
+  CompletableFuture<ICGVerifyModelsICGVerifyResponse> iCGVerifyProcessExtendedAsync(final ICGVerifyModelsIcgVerificationICGVerifyRequestExt request)
+  ```  
+  
+  
+#### Parameters details
+The following parameters are employed for ICG extended process. Where many of them are not required to add. Only the **bankAccount** object is required. Lets have a look on the following image for getting information about all the parameters i.e. objects and single attributes of this API call.       
+   
+![7  java extend](https://user-images.githubusercontent.com/110983629/186726899-0c73dca4-1d16-4616-90fb-9a0bf55d2381.png)
+
+  
+The class name of the extend verify request is ```markdown ICGVerifyModelsIcgVerificationICGVerifyRequestExt ```
+
+1. The required **BankAccount** is the object that contains the _orgInfo_(organization info) object which further consists of the name of the employer. The employer name is of _string_ type. The other parameters are _routingNumber_ (9-digit string), _accountNumber_ (String), _typeOfBankAcct_ object (having Checking, Savings, Personal Loan in String type). The _routingNumber_ and _accountNumber_ both are required for ICG extended verification process. The class name of the **bankAccount** object ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
+  
+  
+##### 'BankAccount' Object Parameters
+![6  java verify extend](https://user-images.githubusercontent.com/110983629/186724604-19621235-bb7f-4b0e-909d-ab07adb0b0bd.png)
+
+
+2. The **PersonInfo** object consists of the following objects further:
+![1  java extend personinfo](https://user-images.githubusercontent.com/110983629/187030694-50347bb8-4131-4f3b-826b-e83df4be8911.png)
+  
+The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyPersonInfo ```. It further contains the _PersonName_, _ContactInfo_, _TinInfo_, _DriversLicense_, _EmploymentHistory_ objects that are shown below:
+  
+  ##### 'PersonName' Object Class name and Parameters  
+  ![2  java extend personinfo](https://user-images.githubusercontent.com/110983629/187030838-9f27b5aa-5b12-476e-ab81-d07a80d8cdb9.png)
+
+  ##### 'ContactInfo' Object Class name and Parameters   
+  ![3  java extend](https://user-images.githubusercontent.com/110983629/187030981-74685bdc-e52c-4583-8a06-295f5fcdea94.png)
+
+  ##### 'TinInfo' Object Class name and Parameters   
+  ![4  java extend ](https://user-images.githubusercontent.com/110983629/187031014-4486b633-8aa7-414f-a0f1-fe6ecbdc099a.png)
+
+   ##### 'DriversLicense' Object Class name and Parameters   
+   ![5  java extend](https://user-images.githubusercontent.com/110983629/187031050-83fa1b41-69b6-4b06-ade3-5c96fbbf2604.png)
+
+   ##### 'EmploymentHistory' Object Class name and Parameters  
+   ![6  java extend](https://user-images.githubusercontent.com/110983629/187031086-93d8403f-8b85-43af-ba71-a3b2917f4c90.png)
+
+  
+3. The **IncomeInfo** object contains the _DtOfNextPaycheck_ parameter which is the date of next paycheck and _DtOfSecondPaycheck_ parameter which is the date of next second pay check. Both of these dates are of _string_ type. The class name for the **IncomeInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo```
+  
+   ![7  java extend income info](https://user-images.githubusercontent.com/110983629/187031425-751f0c3d-f467-4768-9cc7-40db643a9c9c.png)
+  
+   The **MonthlyIncome** Object Class name and Parameters  
+   ![8](https://user-images.githubusercontent.com/110983629/187031812-35ae335e-a44e-4d12-8d78-3b9fa3a9ca45.png)
+  
+   The **PmtFreq** Object Class name and Parameters  
+   ![9](https://user-images.githubusercontent.com/110983629/187032071-5d1f2a15-36fd-48ec-ac78-fff4c36a1be8.png)
+
+  
+   The **PayPerPeriod** Object Class name and Parameters  
+   ![10](https://user-images.githubusercontent.com/110983629/187032128-73f8a1e2-bc14-47d9-a870-9d14845ff2cd.png)
+
+4. The **References** object contains the **PhoneNum** object and **ContactName** parameter which is the name of the reference(_string_ type). The class name for the **References** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyReferences```
+  
+  
+   ![11](https://user-images.githubusercontent.com/110983629/187033389-d529dbb2-a3b7-487b-9d28-00ec8c7c01c0.png)
+
+  
+
+   The **PhoneNum** object class name and Parameters
+  
+   ![12](https://user-images.githubusercontent.com/110983629/187032709-5a2c5f97-7d43-4d9c-8107-93dd3ffd6a9a.png)
+  
+  
+   The **PhoneType** object class name and parameters
+  
+   ![13](https://user-images.githubusercontent.com/110983629/187032780-6a70b900-6527-4554-9239-d3337c2deadc.png)
+
+  
+  
+ 5. The **CheckAmt** object contains the **Amt** check amount parameter which is of _String_ type. The class name of this object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyCheckAmt ```  
+  
+  ![14](https://user-images.githubusercontent.com/110983629/187033005-19498e23-06cb-49ac-bbf9-3a83a506ac07.png)
+  
+  
+  
+ #### Explorer 
+
+
+|Names|Description|
+|-----|-----------|
+|BankAccount(required)|[ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|PersonInfo|[ICGVerifyModelsIcgVerificationICGVerifyPersonInfo](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-person-info) 
+|IncomeInfo|[ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-income-info)
+|References|[List<ICGVerifyModelsIcgVerificationICGVerifyReferences>](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-references)
+|CheckAmt|[ICGVerifyModelsIcgVerificationICGVerifyCheckAmt](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-check-amt)
+|CheckNum|Check number of string type|
+|LaneId|Lane number of string type|
+|RuleNum|String Rule number-assigned by MicroBilt|
+|GatewayLive|Boolean Enable or disable the live|
+
+
+#### Responses 
+
+#### Response headers-JSON
+
+|Header|Value|
+|------|-----|
+|Authorization|Authorization|
+|Accept|application/json|
+|Content-type|application/json;charset=utf-8|
+
+#### Response body-JSON
+
+```markdown
+{
+  "code": null,
+  "decision": null,
+  "description": null,
+  "addendaRecords": null,
+  "error": null
+}
+```
+
+
+The response of the ICG verification extend process in JAVA is 200, ok. The class name of the **ResponseType** object is ```markdown ICGVerifyModelsICGVerifyResponse ```
+It will contain a **ResponseType** object that have the following parameters:
+  
+  1. Code: It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
+  2. decision: It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. description: It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+  5. addendaRecords: It will be an object that further contain the key, value, description fields of _string_ type. This object basically used for providing additional information to the consumers.
+  6. error: It will be of _string_ type that specifies the error if that occur during the API call. 
+  
+ ##### 'ResponseType' Object Parameters
+  
+ ![15](https://user-images.githubusercontent.com/110983629/187036736-55938c07-4157-46cb-9abb-1ef3a193cae0.png)
+
+
+
+    
   
   
   
