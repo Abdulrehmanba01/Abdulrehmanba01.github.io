@@ -873,17 +873,22 @@ You need to do some installation before you can use the **ICGAPIVerify.Standard 
 
  3. Set as Startup Project
   
- The new console project is the entry point for the eventual execution. This requires us to set the **TestConsoleProject** as the start-up project. To do this, right-click on the TestConsoleProject and choose Set as StartUp Project form the context menu.
+ The new console project is the entry point for the eventual execution. This requires us to set the **TestConsoleProject** as the start-up project. To do this, 
+  
+  > right-click on the TestConsoleProject and choose Set as StartUp Project form the context menu.
   
  ![21](https://user-images.githubusercontent.com/110983629/187218304-67953c9b-a76b-452c-a77b-612cfa968118.png)
 
   4. Add reference of the library project
   
-  In order to use the Tester library in the new project, first we must add a project reference to the TestConsoleProject. First, right click on the References node in the solution explorer and click Add Reference.
+  In order to use the Tester library in the new project, first we must add a project reference to the TestConsoleProject. First, 
+  
+  > right click on the References node in the solution explorer and click Add Reference.
   
  ![22](https://user-images.githubusercontent.com/110983629/187218682-edfe46e9-0581-44af-b7ca-89b40bb1db40.png)
 
-  Next, a window will be displayed where we must set the checkbox on Tester.Tests and click OK. By doing this, we have added a reference of the Tester.Tests project into the new TestConsoleProject.
+ > Next, a window will be displayed where we must set the checkbox on Tester.Tests and click OK. 
+ By doing this, we have added a reference of the Tester.Tests project into the new TestConsoleProject.
   
  ![23](https://user-images.githubusercontent.com/110983629/187219056-c52818fc-b1e6-486a-b6a0-74ea5c592f78.png)
   
