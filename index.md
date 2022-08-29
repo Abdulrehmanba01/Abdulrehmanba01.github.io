@@ -1033,7 +1033,7 @@ The class name for the **BankAccount** is
 
 |Names|Description|
 |-----|-----------|
-|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|BankAccount(required)|[Models.ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/net-standard-library/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
 |ruleNum|String Rule number-assigned by MicroBilt|
 |gatewayLive|Boolean Enable or disable the live|
 
@@ -1059,21 +1059,24 @@ The class name for the **BankAccount** is
   "error": null
 }
 ```
-
-The response of the ICG verification process is 200, OK. It will contain a **Type** object that have the following parameters:
+  
+The following parameters are provided in the response from the ICG verification procedure in .NET to inform the user of the base request response:  
+  
   1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
   5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
   6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
   
- ##### 'Type' Object Parameters
- 
- ![2  response of simple verify](https://user-images.githubusercontent.com/110983629/185617059-6db57703-12ca-4286-8da1-6bfa70d6b586.png)
-
-
-
+ ##### 'ResponseType' Object Parameters
   
+ ![27](https://user-images.githubusercontent.com/110983629/187244317-b99e5e79-18a2-44a7-ae57-9a39e2faa264.png)
+
+The class name for the **ResponseType** object is 
+  
+  ```markdown
+  ICGVerifyModelsICGVerifyResponse
+  ```
   
   
   
