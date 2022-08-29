@@ -927,15 +927,15 @@ The following table describe the list of configured parameters for retries throu
   
 #### API Client Configuration Parameters: 
   
-|Parameter            | Type      |Description|
-|---------------------|-----------|--------------------------------------------------------------------------------------------------------------------|
-|Timeout              |TimeSpan   |	Http client timeout.Default: 100                                                                                   |   
-|NumberOfRetries      |int        | Number of times the request is retried. Default: 0                                                                 |
-|BackoffFactor        |int        |Exponential backoff factor for duration between retry calls. Default: 2                                             |
-|RetryInterval        |double     |The time interval between the endpoint calls.Default: 1                                                             |
-|MaximumRetryWaitTime |TimeSpan   |The maximum retry wait time. Default: 0                                                                             |
-|StatusCodesToRetry   |IList<int> |List of Http status codes to invoke retry. Default: 408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524|
-|RequestMethodsToRetry|IList<HttpMethod>|List of Http request methods to invoke retry. Default: "GET", "PUT", "GET", "PUT"|
+|Parameter            | Type             |Description|
+|---------------------|------------------|--------------------------------------------------------------------------------------------------------------------|
+|Timeout              |TimeSpan          |	Http client timeout.Default: 100                                                                                   |   
+|NumberOfRetries      |int               | Number of times the request is retried. Default: 0                                                                 |
+|BackoffFactor        |int               |Exponential backoff factor for duration between retry calls. Default: 2                                             |
+|RetryInterval        |double            |The time interval between the endpoint calls.Default: 1                                                             |
+|MaximumRetryWaitTime |TimeSpan          |The maximum retry wait time. Default: 0                                                                             |
+|StatusCodesToRetry   |IList<int>        |List of Http status codes to invoke retry. Default: 408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524|
+|RequestMethodsToRetry|IList<HttpMethod> |List of Http request methods to invoke retry. Default: "GET", "PUT", "GET", "PUT"|
 
 
   
