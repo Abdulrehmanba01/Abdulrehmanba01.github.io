@@ -1060,7 +1060,7 @@ The class name for the **BankAccount** is
 }
 ```
   
-The following parameters are provided in the response from the ICG verification procedure in .NET to inform the user of the base request response:  
+The following parameters are provided in the response from the ICG verification procedure in **.NET** to inform the user of the base request response:  
   
   1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
@@ -1122,39 +1122,65 @@ This endpoint requires [authentication](https://developers.icheckdev.com/Verify/
   
   
 #### Parameters details
-The following parameters are employed for ICG extended process. Where many of them are not required to add. Only the **bankAccount** object is required. Lets have a look on the following image for getting information about all the parameters i.e. objects and single attributes of this API call.       
+The following parameters are employed for ICG extended process. Where many of them are not required to add. Only the **BankAccount** object is required. Lets have a look on the following image for getting information about all the parameters i.e. objects and single attributes of this API call.       
    
-![7  java extend](https://user-images.githubusercontent.com/110983629/186726899-0c73dca4-1d16-4616-90fb-9a0bf55d2381.png)
+ 
+![2   net](https://user-images.githubusercontent.com/110983629/187463714-2ac9ad56-381c-47fd-8753-10ea095eb162.png)
 
   
-The class name of the extend verify request is ```markdown ICGVerifyModelsIcgVerificationICGVerifyRequestExt ```
+The class name of the extend verify request is 
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyRequestExt 
+  ```
 
-1. The required **BankAccount** is the object that contains the _orgInfo_(organization info) object which further consists of the name of the employer. The employer name is of _string_ type. The other parameters are _routingNumber_ (9-digit string), _accountNumber_ (String), _typeOfBankAcct_ object (having Checking, Savings, Personal Loan in String type). The _routingNumber_ and _accountNumber_ both are required for ICG extended verification process. The class name of the **bankAccount** object ```markdown ICGVerifyModelsIcgVerificationICGVerifyBankAccount ```
+1. The required **BankAccount** is the object that contains the _OrgInfo_(organization info) object which further consists of the name of the employer. The employer name is of _string_ type. The other parameters are _RoutingNumber_ (9-digit string), _AccountNumber_ (String), _TypeOfBankAcct_ object (having Checking, Savings, Personal Loan in String type). The _RoutingNumber_ and _AccountNumber_ both are required for ICG extended verification process. 
+  
+The class name of the **BankAccount** object 
+  
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyBankAccount
+  ```
   
   
 ##### 'BankAccount' Object Parameters
-![6  java verify extend](https://user-images.githubusercontent.com/110983629/186724604-19621235-bb7f-4b0e-909d-ab07adb0b0bd.png)
+![1  bankaccount](https://user-images.githubusercontent.com/110983629/187464693-9bad26ce-5c81-4163-930b-f6ae36713099.png)
 
 
 2. The **PersonInfo** object consists of the following objects further:
-![1  java extend personinfo](https://user-images.githubusercontent.com/110983629/187030694-50347bb8-4131-4f3b-826b-e83df4be8911.png)
+ ![1   Net](https://user-images.githubusercontent.com/110983629/187462972-3d56bb49-ec9e-44a1-839a-39628c049ab2.png)
+
   
-The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyPersonInfo ```. It further contains the _PersonName_, _ContactInfo_, _TinInfo_, _DriversLicense_, _EmploymentHistory_ objects that are shown below:
+  
+The Class Name for the **PersonInfo** object is 
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyPersonInfo
+  ```
+  
+It further contains the _PersonName_, _ContactInfo_, _TinInfo_, _DriversLicense_, _EmploymentHistory_ objects that are shown below:
   
   ##### 'PersonName' Object Class name and Parameters  
-  ![2  java extend personinfo](https://user-images.githubusercontent.com/110983629/187030838-9f27b5aa-5b12-476e-ab81-d07a80d8cdb9.png)
+ 
+ ![2  personName](https://user-images.githubusercontent.com/110983629/187465389-190f7489-6615-48c8-b87f-937471626bd0.png)
 
-  ##### 'ContactInfo' Object Class name and Parameters   
-  ![3  java extend](https://user-images.githubusercontent.com/110983629/187030981-74685bdc-e52c-4583-8a06-295f5fcdea94.png)
+  
+  ##### 'ContactInfo' Object Class name and Parameters    
 
+ ![3  contactinfo](https://user-images.githubusercontent.com/110983629/187465600-335925c7-d9bc-4bea-b13a-8101da94782c.png)
+
+  
   ##### 'TinInfo' Object Class name and Parameters   
-  ![4  java extend ](https://user-images.githubusercontent.com/110983629/187031014-4486b633-8aa7-414f-a0f1-fe6ecbdc099a.png)
+ 
+![4  tininfo](https://user-images.githubusercontent.com/110983629/187465850-4dcbc44d-18d0-4a86-b473-3a59f6eb4ed5.png)
 
-   ##### 'DriversLicense' Object Class name and Parameters   
-   ![5  java extend](https://user-images.githubusercontent.com/110983629/187031050-83fa1b41-69b6-4b06-ade3-5c96fbbf2604.png)
+  ##### 'DriversLicense' Object Class name and Parameters   
+  
+ ![5  diverlicense](https://user-images.githubusercontent.com/110983629/187466012-8cae30fe-5b0c-4c46-84fd-35a32c457d2e.png)
 
-   ##### 'EmploymentHistory' Object Class name and Parameters  
-   ![6  java extend](https://user-images.githubusercontent.com/110983629/187031086-93d8403f-8b85-43af-ba71-a3b2917f4c90.png)
+
+  ##### 'EmploymentHistory' Object Class name and Parameters  
+  
+ ![6  employmentHistory](https://user-images.githubusercontent.com/110983629/187466169-b8cab412-13b4-4e81-9474-e9f45b79c001.png)
+
 
   
 3. The **IncomeInfo** object contains the _DtOfNextPaycheck_ parameter which is the date of next paycheck and _DtOfSecondPaycheck_ parameter which is the date of next second pay check. Both of these dates are of _string_ type. The class name for the **IncomeInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo```
@@ -1175,8 +1201,6 @@ The Class Name for the **PersonInfo** object is ```markdown ICGVerifyModelsIcgVe
   
   
    ![11](https://user-images.githubusercontent.com/110983629/187033389-d529dbb2-a3b7-487b-9d28-00ec8c7c01c0.png)
-
-  
 
    The **PhoneNum** object class name and Parameters
   
