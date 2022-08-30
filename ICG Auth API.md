@@ -1,59 +1,157 @@
-
-# API Documentation (Verify API)
-# For HTTP
+# For .NET
+  
 ## Getting Started
-
+  
 ### Description
 
-Welcome to the iCheckGateway Verify API. iCheckGateway.com makes it easy to integrate any online application or back office solution for ACH check payment processing and credit card processing. Using iCheckGateway.com’s APIs, developer tools, and plugins, you can create a payment platform that is customized to the needs of your business. The integration of these APIs will allow the customers to pay by echeck, ACH transfer, or credit/debit card. 
-ICG Verify API endpoints include all the information to use the ICG Verify Service and perform ACH Verification
-
-#### Base URL
-The API uses the following base URL:
-
-> https://verify.icheckdev.com 
-
-#### Authorization 
-This API uses the following header parameters for authentication.
-|Header       | Default   |Description|
-|-------------|-----------|-----------|
-|Authorization| None      | API Access token provided by the Auth API after User authentication| 
-
-The request looks like this:
-```markdown
-curl https://verify.icheckdev.com \
-  -H 'Authorization: {AUTHORIZATION}'
- ```
+The ICG Auth API of the iCheckGateway facilitate its users to carry out different operations in their account after getting authenticated and authorized for the account. The users can organize their account setting, profile, permissions, enable/disable App TFA etc., managing their applications permissions, deletion and renewals, audience, permissions, users, portals and roles.
  
- ```markdown
- GET / HTTP/1.1
-Host: {HOST}
-Authorization: {AUTHORIZATION}
+  
+#### Building
+  
+This API requires you to install 
+  
+  ```markdown 
+  Newtonsoft Json.NET NuGet 
+  ``` 
+  
+package. If you have enabled the **automatic NuGet package restore** then all the dependencies will get installed automatically. Therefore, you will need internet access for build.
+
+**Steps to Proceed:**
+  
+1. Open the solution (ICGAPIAuth.sln) file
+2. Invoke the build process using 
+  
+  ```markdown 
+  Ctrl + Shift + B 
+  ``` 
+  
+  shortcut key or using the Build menu.
+  
+3. The build process generates a portable class library, which can be used like a normal class library. The generated library is compatible with 
+  
+     I) Windows Forms
+  
+    II) Windows RT
+  
+    III) Windows Phone 8
+  
+    IV) Silverlight 5 
+  
+     V) Xamarin iOS 
+  
+    VI) Xamarin Android and Mono
+  
+More information on how to use can be found at the **MSDN Portable Class Libraries documentation** 
+  
+#### Installation
+  
+You need to do some installation before you can use the **ICGAPIAuth.Standard** library in a new project.
+  
+ 1. Create new project: Right click on the current solution from the solution explorer and choose 
+  > Add -> New Project
+    
+![19](https://user-images.githubusercontent.com/110983629/187217207-72aba7dd-9ef8-4832-82be-73cde9735dc8.png)
+
+ 2. Next, 
+  > Choose Console Application, provide **TestConsoleProject** as the project name and click OK.
+  
+ ![20](https://user-images.githubusercontent.com/110983629/187217949-c08ed6d5-f8a8-4c30-b48f-3c5bae8a4c20.png)
+
+ 3. Set as Startup Project
+  
+ The new console project is the entry point for the eventual execution. This requires us to set the **TestConsoleProject** as the start-up project. To do this, 
+  
+  > right-click on the `TestConsoleProject` and choose `Set as StartUp Project` form the context menu.
+  
+ ![21](https://user-images.githubusercontent.com/110983629/187218304-67953c9b-a76b-452c-a77b-612cfa968118.png)
+
+  4. Add reference of the library project
+  
+  In order to use the Tester library in the new project, first we must add a project reference to the TestConsoleProject. First, 
+  
+  > right click on the `References`node in the solution explorer and click `Add Reference`.
+  
+ ![22](https://user-images.githubusercontent.com/110983629/187218682-edfe46e9-0581-44af-b7ca-89b40bb1db40.png)
+
+ > Next, a window will be displayed where we must set the `checkbox` on `Tester.Tests` and click `OK`. 
+ By doing this, we have added a reference of the `Tester.Tests` project into the new `TestConsoleProject`.
+  
+ ![23](https://user-images.githubusercontent.com/110983629/187219056-c52818fc-b1e6-486a-b6a0-74ea5c592f78.png)
+  
+4. Write a Sample code
+  
+Once the `TestConsoleProject` is created, a file named `Program.cs` will be visible in the solution explorer with an empty `Main` method. This is the entry point for the execution of the entire solution. Here, you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using Controller methods is given in the subsequent sections.
+  
+  
+ ![24](https://user-images.githubusercontent.com/110983629/187219422-f2d8ab42-2cad-4025-8182-6a9bef3b67a4.png)
+
+  
+   
+#### API Client Configuration Parameters: 
+  
+|Parameter       | Type      |Description|
+|----------------|-----------|-------------------------------------------------------|
+|`Timeout`         |`TimeSpan`   |Http client timeout. Default: `TimeSpan.FromSeconds(100)`|   
+|`authorization`   | `String`    |                                                       |
+  
+  
+The API client configuration looks like this:
+```markdown
+ ICGAPIVerify.Standard.ICGAPIVerifyClient client = new ICGAPIVerify.Standard.ICGAPIVerifyClient.Builder().Build();
 ```
+   
+#### Authorization 
+This API uses the 
+```markdown 
+  Custom Header Signature 
+```
+The following table describe the list of configured parameters for retries through the  HttpClientConfiguration in the API Client.
+  
+#### API Client Configuration Parameters: 
+  
+|Parameter            | Type               |Description|
+|---------------------|--------------------|--------------------------------------------------------------------------------------------------------------------|
+|`Timeout`            |`TimeSpan`          |	Http client timeout.Default: `100`                                                                                   |   
+|`NumberOfRetries`    |`int`                 | Number of times the request is retried. Default: `0`                                                                 |
+|`BackoffFactor`      |`int`                 |Exponential backoff factor for duration between retry calls. Default: `2`                                             |
+|`RetryInterval       |`double`              |The time interval between the endpoint calls.Default: `1`                                                             |
+|`MaximumRetryWaitTime` |`TimeSpan`          |The maximum retry wait time. Default: `0`                                                                             |
+|`StatusCodesToRetry`   |`IList\<int\>`           |List of Http status codes to invoke retry. Default: `408, 413, 429, 500, 502, 503, 504, 521, 522, 524, 408, 413, 429, 500, 502, 503, 504, 521, 522, 524`|
+|`RequestMethodsToRetry` |`IList\<HttpMethod\>`   |List of Http request methods to invoke retry. Default: `"GET", "PUT", "GET", "PUT"`|
+  
 
 ## API Endpoints
 ## ICG Verify
 ### ICG Verify Process
 #### Description
-ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated. After the account has been created,  you will need to verify the information by making a **POST /IcgVerify/Process** request
-#### POST-JSON
+     
+ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated. After the account has been created,  you will need to verify the information by accessing the intance of the **IcgVerifyController** from the API client. 
+  
 ```markdown
-curl -X POST \
-  --url 'https://verify.icheckdev.com/IcgVerify/Process' \
-  -H 'Authorization: Authorization'\
-  -H 'Accept: application/json'\
-  -H 'Content-Type: application/json' \
-  --data-raw '{
-  "bankAccount": {
-    "routingNumber": "routingNumber0",
-    "accountNumber": "accountNumber4"
-  }
-}`
+  IcgVerifyController icgVerifyController = client.IcgVerifyController;
 ```
+  
+
+#### Class-Object
+```markdown
+ var request = new ICGVerifyModelsIcgVerificationICGVerifyRequest();
+ request.BankAccount = new ICGVerifyModelsIcgVerificationICGVerifyBankAccount();
+ request.BankAccount.RoutingNumber = "routingNumber0";
+ request.BankAccount.AccountNumber = "accountNumber4";
+
+ try
+ {
+    ICGVerifyModelsICGVerifyResponse result = await icgVerifyController.ICGVerifyProcessAsync(request);
+ }
+ catch (ApiException e){};
+```
+  
 #### Response body-JSON
 {
   "Message": "Authorization has been denied for this request."
 }
+  
 
 #### Response headers-JSON
 |Header|Value|
@@ -62,11 +160,8 @@ curl -X POST \
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
-#### Verify process configuration
-![image](https://user-images.githubusercontent.com/110983629/185741727-7d22226f-cc5f-4649-a0c6-e28c24ec9858.png)
-
-
-Above are listed all the possible codes returned from the process
+ 
+Below are listed all the possible codes returned from the process
 
 |ICG Code | ICG Decision Value | Description |
 |---------|--------------------|-------------|
@@ -84,24 +179,44 @@ Above are listed all the possible codes returned from the process
 |I012|DECLINED|Account Number is less than 3 digits or contains an invalid character|
 
 
-This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/http/getting-started/how-to-get-started/authorization).
+This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/net-standard-library/getting-started/how-to-get-started/authorization).
+  
 ```markdown
-POST /IcgVerify/Process
+ICGVerifyProcessAsync(Models.ICGVerifyModelsIcgVerificationICGVerifyRequest request)
 ```
+  
+  
 #### Parameters details
-Listed below is a list of all the parameters that the end point can receive. We have request object here that collects **bankAccount*** information as the parameter. bankAccount requires **routingNumber** and **accountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **orgInfo(organization information)** and other one is **typeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type.
+The parameters for the ICG verify process in **.NET** are **BankAccount**, **RuleNum** and **GatewayLive**.  We have one required object here that collects information as the parameter which includes **RoutingNumber** and **AccountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **OrgInfo(organization information)** and other one is **TypeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type which are Checking, Savings, Personal Loan.      
 
 ##### 'request' Object Parameters
-![image](https://user-images.githubusercontent.com/110983629/185380812-6612f04c-39d8-4d0d-9d9b-63ed3eee0c69.png)
-##### 'bankAccount' Object Parameters
-![image](https://user-images.githubusercontent.com/110983629/185381223-722ea2c6-fe07-4fcf-821a-b0d83ec477e9.png)
+  
+![25](https://user-images.githubusercontent.com/110983629/187240602-4a74b5ad-f274-48f7-8b77-898cc10fa968.png)
 
+  
+The class name for the ICG verify base request is
+  
+ ```markdown
+ICGVerifyModelsIcgVerificationICGVerifyRequest
+  ```
+  
+##### 'BankAccount' Object Parameters
 
+![26](https://user-images.githubusercontent.com/110983629/187240843-0813bd45-6759-466a-b9c0-1a6dc2d195b6.png)
+
+The class name for the **BankAccount** is 
+  
+ ```markdown
+ ICGVerifyModelsIcgVerificationICGVerifyBankAccount
+  ```
+  
+  
+ 
 #### Explorer 
 
 |Names|Description|
 |-----|-----------|
-|bankAccount(required)|[ICG Verify Models Icg Verification ICG Verify Bank Account](https://developers.icheckdev.com/Verify/#/http/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|BankAccount(required)|[Models.ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/net-standard-library/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
 |ruleNum|String Rule number-assigned by MicroBilt|
 |gatewayLive|Boolean Enable or disable the live|
 
@@ -127,15 +242,23 @@ Listed below is a list of all the parameters that the end point can receive. We 
   "error": null
 }
 ```
-
-The response of the ICG verification process is 200, OK. It will contain a **Type** object that have the following parameters:
+  
+The following parameters are provided in the response from the ICG verification procedure in **.NET** to inform the user of the base request response:  
+  
   1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
   5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
   6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
   
- ##### 'Type' Object Parameters
- 
- ![2  response of simple verify](https://user-images.githubusercontent.com/110983629/185617059-6db57703-12ca-4286-8da1-6bfa70d6b586.png)
+ ##### 'ResponseType' Object Parameters
+  
+ ![27](https://user-images.githubusercontent.com/110983629/187244317-b99e5e79-18a2-44a7-ae57-9a39e2faa264.png)
 
+The class name for the **ResponseType** object is 
+  
+  ```markdown
+  ICGVerifyModelsICGVerifyResponse
+  ```
+  
+  
