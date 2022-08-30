@@ -143,6 +143,10 @@ try
 }
 catch (ApiException e){};
 ```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to produce the accurate result that were anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+
 #### API object Parameters
 This API call did not take any parameters.
 
