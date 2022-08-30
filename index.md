@@ -1224,10 +1224,13 @@ It further contains the _PersonName_, _ContactInfo_, _TinInfo_, _DriversLicense_
  ![13](https://user-images.githubusercontent.com/110983629/187469278-0baedc0c-2a1a-4cfb-8b9c-34250fb8ff4d.png)
 
 
- 5. The **CheckAmt** object contains the **Amt** check amount parameter which is of _String_ type. The class name of this object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyCheckAmt ```  
+ 5. The **CheckAmt** object contains the **Amt** check amount parameter which is of _String_ type. The class name of this object is 
   
-  ![14](https://user-images.githubusercontent.com/110983629/187033005-19498e23-06cb-49ac-bbf9-3a83a506ac07.png)
+  ```markdown 
+   ICGVerifyModelsIcgVerificationICGVerifyCheckAmt
+  ```  
   
+  ![14  checkAmt](https://user-images.githubusercontent.com/110983629/187470057-22262192-2173-4206-883e-6379565c6b1e.png)
   
   
  #### Explorer 
@@ -1235,11 +1238,11 @@ It further contains the _PersonName_, _ContactInfo_, _TinInfo_, _DriversLicense_
 
 |Names|Description|
 |-----|-----------|
-|BankAccount(required)|[ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
-|PersonInfo|[ICGVerifyModelsIcgVerificationICGVerifyPersonInfo](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-person-info) 
-|IncomeInfo|[ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-income-info)
-|References|[List<ICGVerifyModelsIcgVerificationICGVerifyReferences>](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-references)
-|CheckAmt|[ICGVerifyModelsIcgVerificationICGVerifyCheckAmt](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-check-amt)
+|BankAccount(required)|[Models.ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/net-standard-library/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|PersonInfo|[Models.ICGVerifyModelsIcgVerificationICGVerifyPersonInfo](https://developers.icheckdev.com/Verify/#/net-standard-library/models/structures/icg-verify-models-icg-verification-icg-verify-person-info)
+|IncomeInfo|[Models.ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo](https://developers.icheckdev.com/Verify/#/net-standard-library/models/structures/icg-verify-models-icg-verification-icg-verify-income-info)
+|References|[List<Models.ICGVerifyModelsIcgVerificationICGVerifyReferences>](https://developers.icheckdev.com/Verify/#/net-standard-library/models/structures/icg-verify-models-icg-verification-icg-verify-references)
+|CheckAmt|[Models.ICGVerifyModelsIcgVerificationICGVerifyCheckAmt](https://developers.icheckdev.com/Verify/#/net-standard-library/models/structures/icg-verify-models-icg-verification-icg-verify-check-amt)
 |CheckNum|Check number of string type|
 |LaneId|Lane number of string type|
 |RuleNum|String Rule number-assigned by MicroBilt|
@@ -1268,10 +1271,8 @@ It further contains the _PersonName_, _ContactInfo_, _TinInfo_, _DriversLicense_
 }
 ```
 
-
-The response of the ICG verification extend process in JAVA is 200, ok. The class name of the **ResponseType** object is ```markdown ICGVerifyModelsICGVerifyResponse ```
-It will contain a **ResponseType** object that have the following parameters:
-  
+ 
+The response of the ICG verification extend process in **.NET** is the **ResponseType** object that contains the following parameters:
   1. Code: It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
   2. decision: It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
   4. description: It will be of _string_ type which will acknowledge user about the API response in form of text information. 
@@ -1279,12 +1280,14 @@ It will contain a **ResponseType** object that have the following parameters:
   6. error: It will be of _string_ type that specifies the error if that occur during the API call. 
   
  ##### 'ResponseType' Object Parameters
-  
- ![15](https://user-images.githubusercontent.com/110983629/187036736-55938c07-4157-46cb-9abb-1ef3a193cae0.png)
-
-
-
     
+ ![15](https://user-images.githubusercontent.com/110983629/187472339-280a3e13-7fff-4e89-ac2e-e141958cbe6c.png)
+
+The class Name for the 'ResponseType' Object is 
+
+```markdown
+  ICGVerifyModelsICGVerifyResponse
+  ```
   
   
   
