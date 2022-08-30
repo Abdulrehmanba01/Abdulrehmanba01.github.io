@@ -161,6 +161,13 @@ For vieweing the response body, you need to download the text file.
   "Message": "Authorization has been denied for this request."
 }
 
+#### Verify Process Configuration
+
+![19](https://user-images.githubusercontent.com/110983629/187513032-35b406d7-7a46-41da-9de8-79b252cdbb56.png)
+
+You must confirm that the client configuration for the My Account setting procedure contains the single authorization token that must be inserted in order to get verified successfully. The authorization token will be accessible after the user authentication through the Auth API.
+
+
 
 #### Response headers-JSON
 |Header|Value|
