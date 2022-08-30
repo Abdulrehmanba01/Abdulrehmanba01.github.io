@@ -123,35 +123,40 @@ The following table describe the list of configured parameters for retries throu
 
 ## API Endpoints
 ## Account
-### ICG Verify Process
+### Account My Settings
 #### Description
      
-ICG Verify Process is the process where we validate a pair of information containing both routingNumber that must be of 9-digits and accountNumber that must be of 14 digits for the same bank that is being validated. After the account has been created,  you will need to verify the information by accessing the intance of the **IcgVerifyController** from the API client. 
-  
+In order to access the account settings, this API call will be executed where no parameters are passed through this API call. 
+
+For this API call, an instance of `AccountController` class will be accessed from the API client.
+ 
 ```markdown
-  IcgVerifyController icgVerifyController = client.IcgVerifyController;
+  AccountController accountController = client.AccountController;
 ```
-  
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
 
 #### Class-Object
 ```markdown
- var request = new ICGVerifyModelsIcgVerificationICGVerifyRequest();
- request.BankAccount = new ICGVerifyModelsIcgVerificationICGVerifyBankAccount();
- request.BankAccount.RoutingNumber = "routingNumber0";
- request.BankAccount.AccountNumber = "accountNumber4";
-
- try
- {
-    ICGVerifyModelsICGVerifyResponse result = await icgVerifyController.ICGVerifyProcessAsync(request);
- }
- catch (ApiException e){};
+try
+{
+    Dictionary<string, string> result = await accountController.AccountMySettingsAsync();
+}
+catch (ApiException e){};
 ```
-  
-#### Response body-JSON
+#### API object Parameters
+This API call did not take any parameters.
+
+
+
+#### Responses 
+
+For vieweing the response body, you need to download the text file. 
+
+#### Response body-Text File
 {
   "Message": "Authorization has been denied for this request."
 }
-  
+
 
 #### Response headers-JSON
 |Header|Value|
@@ -160,105 +165,12 @@ ICG Verify Process is the process where we validate a pair of information contai
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
- 
-Below are listed all the possible codes returned from the process
-
-|ICG Code | ICG Decision Value | Description |
-|---------|--------------------|-------------|
-|I001|ACCEPT |There is no negative information known on the account|
-|I002|DECLINED|Customer has returned item(s) in the past 12 months that were returned due to unauthorized.The number of unauthorized returns reported with also be returned in a property message field|
-|I003|DECLINED|The RVD database does not have a current unpaid return but the account has been reported as closed or a returned item that has been paid was returned as account closed|
-|I004|DECLINED|The RVD database does not have a current unpaid return but we have seen returns in the past for Account not Fount or Invalid account number at the bank|
-|I005|DECLINED|Customer has returned items(s) in the past 12 months that were returned due to being ineligible|
-|I006|DECLINED|Customer has no unpaid returns at this time in RVD but has a history of returns in the last 12 months|
-|I007|DECLINED|Account reported Closed|
-|I008|DECLINED|Bank routing number is not a vaild US routing #|
-|I009|DECLINED|Negative Data - Negative information was found|
-|I010|WARNING|The routing number submitted belongs to a financial institution; however, this financial institution does not report information to the National Shared Database.No positive or negative information found for this routing number and account number.|
-|I011|WARNING|Account number format is suspicious|
-|I012|DECLINED|Account Number is less than 3 digits or contains an invalid character|
-
-
-This endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/net-standard-library/getting-started/how-to-get-started/authorization).
-  
-```markdown
-ICGVerifyProcessAsync(Models.ICGVerifyModelsIcgVerificationICGVerifyRequest request)
-```
-  
-  
-#### Parameters details
-The parameters for the ICG verify process in **.NET** are **BankAccount**, **RuleNum** and **GatewayLive**.  We have one required object here that collects information as the parameter which includes **RoutingNumber** and **AccountNumber** as necessary fields that must be filled during the verification process. Whereas, two fields act as optional fields that are not necessary to be filled during the verification process; one is **OrgInfo(organization information)** and other one is **TypeofBankAcct (Type of bank account)**. User can enter name in *string* format for the orgInfo and select from the displayed list options for bank account type which are Checking, Savings, Personal Loan.      
-
-##### 'request' Object Parameters
-  
-![25](https://user-images.githubusercontent.com/110983629/187240602-4a74b5ad-f274-48f7-8b77-898cc10fa968.png)
-
-  
-The class name for the ICG verify base request is
-  
- ```markdown
-ICGVerifyModelsIcgVerificationICGVerifyRequest
-  ```
-  
-##### 'BankAccount' Object Parameters
-
-![26](https://user-images.githubusercontent.com/110983629/187240843-0813bd45-6759-466a-b9c0-1a6dc2d195b6.png)
-
-The class name for the **BankAccount** is 
-  
- ```markdown
- ICGVerifyModelsIcgVerificationICGVerifyBankAccount
-  ```
-  
-  
- 
-#### Explorer 
-
-|Names|Description|
-|-----|-----------|
-|BankAccount(required)|[Models.ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/net-standard-library/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
-|ruleNum|String Rule number-assigned by MicroBilt|
-|gatewayLive|Boolean Enable or disable the live|
-
-
-#### Responses 
-
-#### Response headers-JSON
-
-|Header|Value|
-|------|-----|
-|Authorization|Authorization|
-|Accept|application/json|
-|Content-type|application/json;charset=utf-8|
-
-#### Response body-JSON
-
-```markdown
- {
-  "code": null,
-  "decision": null,
-  "description": null,
-  "addendaRecords": null,
-  "error": null
-}
-```
-  
-The following parameters are provided in the response from the ICG verification procedure in **.NET** to inform the user of the base request response:  
-  
-  1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
-  2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
-  4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
-  5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
-  6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
-  
+    
  ##### 'ResponseType' Object Parameters
+There are no parameters available for the response request.  
   
- ![27](https://user-images.githubusercontent.com/110983629/187244317-b99e5e79-18a2-44a7-ae57-9a39e2faa264.png)
-
-The class name for the **ResponseType** object is 
-  
-  ```markdown
-  ICGVerifyModelsICGVerifyResponse
-  ```
+```markdown
+   Task<Dictionary<string, string>>
+```
   
   
