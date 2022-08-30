@@ -1288,6 +1288,119 @@ The class Name for the 'ResponseType' Object is
 ```markdown
   ICGVerifyModelsICGVerifyResponse
   ```
+    
+ 
+## ICG Verify Legacy
+### ICG Verify Legacy Process
+#### Description
+  
+In **.NET**, the ICG lagecy process requires **routing number** and **account number** of the consumer in order to validate the identification of the consumer for payment processing. The instance of `cgVerifyLegacyController` class is accessed for the evaluting the request parameters through the following code:
+
+ ```markdown
+  IcgVerifyLegacyController icgVerifyLegacyController = client.IcgVerifyLegacyController;
+ ```  
+  
+ The following request is employed for legacy verification process:
+  
+```markdown 
+var request = new ICGVerifyModelsIcgVerificationICGVerifyRequestLegacy();
+request.BankAccount = new ICGVerifyModelsIcgVerificationICGVerifyBankAccount();
+request.BankAccount.RoutingNumber = "routingNumber0";
+request.BankAccount.AccountNumber = "accountNumber4";
+
+try
+{
+    ICGVerifyModelsICGVerifyResponse result = await icgVerifyLegacyController.ICGVerifyLegacyProcessAsync(request);
+}
+catch (ApiException e){};
+```
+  
+The responses on this endpoint requires [authentication](https://developers.icheckdev.com/Verify/#/net-standard-library/getting-started/how-to-get-started/authorization) as shown below:
+
+```markdown 
+  ICGVerifyLegacyProcessAsync(Models.ICGVerifyModelsIcgVerificationICGVerifyRequestLegacy request)
+``` 
+  
+
+  
+#### Parameters details
+  
+The parameters for the ICG verify legacy process in JAVA includes **BankAccount**, **UpdateMerchant**, **RuleNum**, **GatewayLive**. The **BankAccount** object is required for this process call that contain the **RountingNumber** and Consumer's **AccountNumber** as a required parameters. The **RountingNumber** is the 9-digit number (_String_type). The **BankAccount** also contains the **OrgInfo** and **TypeOfBankAcct** as a non-required parameters. The following image shows the parameters for this process call.
+    
+![16](https://user-images.githubusercontent.com/110983629/187041248-6823dd17-c8a6-4a2e-9da7-72d1e7b6e1dd.png)
+
+##### 'BankAccount' Object Parameters
+  
+![17](https://user-images.githubusercontent.com/110983629/187041289-76bffe2f-972d-4584-9054-5ddf4bd7b525.png)
+
+The class name for the **BankAccount** object is 
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyBankAccount 
+  ```
+  
+The class name for the **OrgInfo** object is 
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyOrgInfo 
+  ```
+  
+The class name for the **TypeOfBankAcct** object is 
+  ```markdown 
+  TypeOfBankAcctEnum 
+  ```
+
+#### Explorer 
+
+
+|Names|Description|
+|-----|-----------|
+|BankAccount(required)|[ICGVerifyModelsIcgVerificationICGVerifyBankAccount](https://developers.icheckdev.com/Verify/#/java/models/structures/icg-verify-models-icg-verification-icg-verify-bank-account)
+|UpdateMerchant|Boolean Enable or disable for updating merchant|
+|RuleNum|String Rule number-assigned by MicroBilt|
+|GatewayLive|Boolean Enable or disable the live|
+
+
+ 
+#### Responses 
+
+#### Response headers-JSON
+
+|Header|Value|
+|------|-----|
+|Authorization|Authorization|
+|Accept|application/json|
+|Content-type|application/json;charset=utf-8|
+
+#### Response body-JSON
+
+```markdown
+ {
+  "code": null,
+  "decision": null,
+  "description": null,
+  "addendaRecords": null,
+  "error": null
+}
+```
+
+The response of this ICG legacy verification process provides the information to the user to understand whether the process is successful or not. The **ResponseType** object contains the following parameters:   
+  1. **Code:** It will be of _string_ type. This code is the identification key for each type of response, this API call returns.
+  2. **decision:** It will be of _string_ type. This parameter specifies the status of the response whether it is accepted response, declined etc as mentioned in the above table of responses. 
+  4. **description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+  5. **addendaRecords:** It will be an _object_ that further contains the key, value, description fields of string type. This object basically used for providing additional information to the consumers.
+  6. **error:** It will be of _string_ type that specifies the error if that occur during the API call. 
+  
+  The class name of the **ResponseType** object is 
+ ```markdown 
+  ICGVerifyModelsICGVerifyResponse 
+  ```
+  
+ ##### 'ResponseType' object Parameters
+ 
+![18](https://user-images.githubusercontent.com/110983629/187042084-eec78002-ba36-491a-87b3-aaee9bbd108b.png)
+
+
+  
+  
   
   
   
