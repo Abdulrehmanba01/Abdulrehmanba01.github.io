@@ -97,8 +97,8 @@ Once the `TestConsoleProject` is created, a file named `Program.cs` will be visi
   
   
 The API client configuration looks like this:
-```markdown
- ICGAPIVerify.Standard.ICGAPIVerifyClient client = new ICGAPIVerify.Standard.ICGAPIVerifyClient.Builder().Build();
+```markdown 
+ ICGAPIAuth.Standard.ICGAPIAuthClient client = new ICGAPIAuth.Standard.ICGAPIAuthClient.Builder().Build();
 ```
    
 #### Authorization 
@@ -122,7 +122,7 @@ The following table describe the list of configured parameters for retries throu
   
 
 ## API Endpoints
-## ICG Verify
+## Account
 ### ICG Verify Process
 #### Description
      
