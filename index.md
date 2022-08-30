@@ -1183,36 +1183,47 @@ It further contains the _PersonName_, _ContactInfo_, _TinInfo_, _DriversLicense_
 
 
   
-3. The **IncomeInfo** object contains the _DtOfNextPaycheck_ parameter which is the date of next paycheck and _DtOfSecondPaycheck_ parameter which is the date of next second pay check. Both of these dates are of _string_ type. The class name for the **IncomeInfo** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo```
+3. The **IncomeInfo** object contains the _DtOfNextPaycheck_ parameter which is the date of next paycheck and _DtOfSecondPaycheck_ parameter which is the date of next second pay check. Both of these dates are of _string_ type. The class name for the **IncomeInfo** object is 
   
-   ![7  java extend income info](https://user-images.githubusercontent.com/110983629/187031425-751f0c3d-f467-4768-9cc7-40db643a9c9c.png)
-  
-   The **MonthlyIncome** Object Class name and Parameters  
-   ![8](https://user-images.githubusercontent.com/110983629/187031812-35ae335e-a44e-4d12-8d78-3b9fa3a9ca45.png)
-  
-   The **PmtFreq** Object Class name and Parameters  
-   ![9](https://user-images.githubusercontent.com/110983629/187032071-5d1f2a15-36fd-48ec-ac78-fff4c36a1be8.png)
+ ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyIncomeInfo
+  ```
+ ![7  incomeinfo](https://user-images.githubusercontent.com/110983629/187467448-e20440eb-3d56-48a7-8593-4baaec91a54f.png)
 
   
-   The **PayPerPeriod** Object Class name and Parameters  
-   ![10](https://user-images.githubusercontent.com/110983629/187032128-73f8a1e2-bc14-47d9-a870-9d14845ff2cd.png)
+ The **MonthlyIncome** Object Class name and Parameters  
+   
+ ![8  ](https://user-images.githubusercontent.com/110983629/187467682-4fa72381-0984-410e-b6e6-921d7ad8ebba.png)
 
-4. The **References** object contains the **PhoneNum** object and **ContactName** parameter which is the name of the reference(_string_ type). The class name for the **References** object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyReferences```
   
+ The **PmtFreq** Object Class name and Parameters  
   
-   ![11](https://user-images.githubusercontent.com/110983629/187033389-d529dbb2-a3b7-487b-9d28-00ec8c7c01c0.png)
+ ![9](https://user-images.githubusercontent.com/110983629/187467877-e02e8c61-08f9-4946-ab79-d703228ff771.png)
+
+  
+ The **PayPerPeriod** Object Class name and Parameters  
+  
+ ![10](https://user-images.githubusercontent.com/110983629/187468157-b8578eb4-fb1e-46fb-b074-1d9bc28eabd6.png)
+
+ 
+
+4. The **References** object contains the **PhoneNum** object and **ContactName** parameter which is the name of the reference(_string_ type). The class name for the **References** object is 
+  ```markdown 
+  ICGVerifyModelsIcgVerificationICGVerifyReferences
+  ```
+  
+ ![11](https://user-images.githubusercontent.com/110983629/187468835-447a6a23-455c-4e3e-aa05-ccdae13a2645.png)
 
    The **PhoneNum** object class name and Parameters
-  
-   ![12](https://user-images.githubusercontent.com/110983629/187032709-5a2c5f97-7d43-4d9c-8107-93dd3ffd6a9a.png)
-  
-  
-   The **PhoneType** object class name and parameters
-  
-   ![13](https://user-images.githubusercontent.com/110983629/187032780-6a70b900-6527-4554-9239-d3337c2deadc.png)
+   
+ ![12](https://user-images.githubusercontent.com/110983629/187469099-c7f70d66-abac-484f-b4e8-ad373e8fa08e.png)
 
   
-  
+   The **PhoneType** object class name and parameters
+   
+ ![13](https://user-images.githubusercontent.com/110983629/187469278-0baedc0c-2a1a-4cfb-8b9c-34250fb8ff4d.png)
+
+
  5. The **CheckAmt** object contains the **Amt** check amount parameter which is of _String_ type. The class name of this object is ```markdown ICGVerifyModelsIcgVerificationICGVerifyCheckAmt ```  
   
   ![14](https://user-images.githubusercontent.com/110983629/187033005-19498e23-06cb-49ac-bbf9-3a83a506ac07.png)
