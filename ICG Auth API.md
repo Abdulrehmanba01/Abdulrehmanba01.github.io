@@ -583,11 +583,8 @@ The following table describe the parameters of the response type object:
 
 |Names|Description|
 |-----|-----------|
-|Task<Models.UserReturnModel>|[Task<Models.UserReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-return-model)|
+|ResponseType|[Task<Models.UserReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-return-model)|
  
-
-|Model(required)|[Models.UserSettingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-setting-model)
  
-
 
 
