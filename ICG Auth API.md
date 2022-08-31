@@ -185,3 +185,45 @@ There are no parameters available for the response request.
 ```
   
   
+
+
+## API Endpoints
+## Account
+### Account My Settings 2
+#### Description
+     
+This service endpoint provides customers the ability to submit the current user account setting details. Through this process, you can update your current account setting where Each user account setting is identified by the unique User Id.  
+ 
+For this process, an instance of `AccountController` class will be accessed from the API client that will pass the user account setting details to the the `AccountMySettings2Async` method in order to update it.
+ 
+ 
+```markdown
+AccountMySettings2Async(Models.UserSettingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+var model = new UserSettingModel();
+model.Key = "Key6";
+
+try
+{
+    UserSettingModel result = await accountController.AccountMySettings2Async(model);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to put the user's account current state to the system that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+ 
+
+
+
+
+
+
+
+
+
+
