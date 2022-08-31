@@ -154,7 +154,7 @@ This API call did not take any parameters.
 
 #### Responses 
 
-For vieweing the response body, you need to download the text file. 
+For viewing the response body, you need to download the text file. 
 
 #### Response body-Text File
 {
@@ -219,7 +219,7 @@ It will be included in the try and catch block to deal with any exceptions that 
  
 
 #### API object Parameters
-This endpoint will contain the `model` object as a parameter that further contains the **key**, **MValue**, **Description**, **Level**, **Enabled**, **DataType**, **UserId**. The Key is the required parameter that is of _String_Type. The MValue, Description, DataType, UserId and Level are also of _String_Type. Only the **Enabled** parameter is of Boolean Type.
+This endpoint will contain the `model` object as a parameter that further contains the **key**, **MValue**, **Description**, **Level**, **Enabled**, **DataType**, **UserId** parameters. The **Key** is the required parameter that is of _String_Type. The MValue, Description, DataType, UserId and Level are also of _String_Type. Only the **Enabled** parameter is of Boolean Type.
 
 #### Model Object Parameters 
 ![1  bankaccount_setting](https://user-images.githubusercontent.com/110983629/187688776-20e7f944-11e1-43e5-a88f-83cf75bf1858.png)
@@ -236,20 +236,24 @@ This endpoint will contain the `model` object as a parameter that further contai
 
 #### Responses 
 
-For vieweing the response body, you need to download the text file. 
+The response of this endpoint service request contains the "ResponseType" object. The class name of the ResposneType object is 
 
-#### Response body-Text File
-{
-  "Message": "Authorization has been denied for this request."
+```markdown
+UserSettingModel
+``` 
+
+#### Response body-JSON  
+```markdown
+   {
+  "Key": "Key4",
+  "Value": null,
+  "Description": null,
+  "Level": null,
+  "Enabled": null,
+  "DataType": null,
+  "UserId": null
 }
-
-#### Verify Process Configuration
-
-![19](https://user-images.githubusercontent.com/110983629/187513032-35b406d7-7a46-41da-9de8-79b252cdbb56.png)
-
-You must confirm that the client configuration for the My Account setting procedure contains the single authorization token that must be inserted in order to get verified successfully. The authorization token will be accessible after the user authentication through the Auth API.
-
-
+```
 
 #### Response headers-JSON
 |Header|Value|
@@ -259,12 +263,17 @@ You must confirm that the client configuration for the My Account setting proced
 |Content-type|application/json;charset=utf-8|
 
     
- ##### 'ResponseType' Object Parameters
-There are no parameters available for the response request.  
-  
-```markdown
-   Task<Dictionary<string, string>>
-```
+##### 'ResponseType' Object Parameters
+The following list describe the parameters of the response type object:
+1. **Key:** The key will be of String_Type that is unique for the model object.
+2. **MValue:**  The mvalue will be of String_Type that contains merchant information. 
+3. **Description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+4. **Level:** It will be of _string_ type that contains user account level information.
+5. **Enabled:** It will be of Boolean type that can be true of false based on user account setting.
+6. **DataType:** It will be of String_Type that contains the user account setting details.
+7. **UserId:** It will be of String_Type that is distinct for each user account.
+
+
   
   
 
