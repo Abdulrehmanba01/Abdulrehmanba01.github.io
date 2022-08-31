@@ -359,6 +359,57 @@ The following list describe the parameters of the response type object:
 
   
   
+### Account My Settings Delete
+#### Description
+     
+This service endpoint provides customers the ability to delete the account settings by providing the key as a parameter to this process call. The key will be unique for each customer's account setting that will point towards only one account of the customer.
+ 
+For this process, an instance of `AccountController` class will be accessed from the API client that will pass the user account setting key to the `AccountMySettingsDeleteAsync` method in order to submit it.
+ 
+ 
+```markdown
+ AccountMySettingsDeleteAsync(string key)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string key = "key0";
+try
+{
+    object result = await accountController.AccountMySettingsDeleteAsync(key);
+}
+catch (ApiException e){};
+```
+
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to delete the user's account settings that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### API Parameters
+The API parameter for this service endpoint is **Key** (String_Type). It is the required parameter to add for deleting the user's account setting. 
+ 
+![2](https://user-images.githubusercontent.com/110983629/187703187-50dab53f-35a6-4917-92da-9125c28d66b0.png)
+
+
+#### Responses 
+
+The response of this endpoint service request contains the **Task<object>**. 
+
+```markdown 
+Task<object>
+``` 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+     
+  
 
 
 
