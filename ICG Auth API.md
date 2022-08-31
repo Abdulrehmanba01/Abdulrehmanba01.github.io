@@ -218,6 +218,56 @@ It will be included in the try and catch block to deal with any exceptions that 
 
  
 
+#### API object Parameters
+This endpoint will contain the `model` object as a parameter that further contains the **key**, **MValue**, **Description**, **Level**, **Enabled**, **DataType**, **UserId**. The Key is the required parameter that is of _String_Type. The MValue, Description, DataType, UserId and Level are also of _String_Type. Only the **Enabled** parameter is of Boolean Type.
+
+#### Model Object Parameters 
+![1  bankaccount_setting](https://user-images.githubusercontent.com/110983629/187688776-20e7f944-11e1-43e5-a88f-83cf75bf1858.png)
+
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Model(required)|[Models.UserSettingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-setting-model)
+ 
+
+
+#### Responses 
+
+For vieweing the response body, you need to download the text file. 
+
+#### Response body-Text File
+{
+  "Message": "Authorization has been denied for this request."
+}
+
+#### Verify Process Configuration
+
+![19](https://user-images.githubusercontent.com/110983629/187513032-35b406d7-7a46-41da-9de8-79b252cdbb56.png)
+
+You must confirm that the client configuration for the My Account setting procedure contains the single authorization token that must be inserted in order to get verified successfully. The authorization token will be accessible after the user authentication through the Auth API.
+
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+ ##### 'ResponseType' Object Parameters
+There are no parameters available for the response request.  
+  
+```markdown
+   Task<Dictionary<string, string>>
+```
+  
+  
+
 
 
 
