@@ -274,6 +274,89 @@ The following list describe the parameters of the response type object:
 7. **UserId:** It will be of String_Type that is distinct for each user account.
 
 
+### Account My Settings 1
+#### Description
+     
+This service endpoint provides customers the ability to submit the current user account setting details. Through this process, you can add user's current account setting where each user account setting is identified by the unique User Id.  
+ 
+For this process, an instance of `AccountController` class will be accessed from the API client that will pass the user account setting details to the `AccountMySettings1Async` method in order to update it.
+ 
+ 
+```markdown
+ AccountMySettings1Async(Models.UserSettingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+var model = new UserSettingModel();
+model.Key = "Key6";
+
+try
+{
+    UserSettingModel result = await accountController.AccountMySettings1Async(model);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to add the user's account current state to the system that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### API object Parameters
+This endpoint will contain the `model` object as a parameter that further contains the **key**, **MValue**, **Description**, **Level**, **Enabled**, **DataType**, **UserId** parameters. The **Key** is the required parameter that is of _String_Type. The MValue, Description, DataType, UserId and Level are also of _String_Type. Only the **Enabled** parameter is of Boolean Type.
+
+#### Model Object Parameters 
+![1  bankaccount_setting](https://user-images.githubusercontent.com/110983629/187688776-20e7f944-11e1-43e5-a88f-83cf75bf1858.png)
+
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Model(required)|[Models.UserSettingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-setting-model)
+ 
+
+
+#### Responses 
+
+The response of this endpoint service request contains the "ResponseType" object. The class name of the ResposneType object is 
+
+```markdown 
+UserSettingModel
+``` 
+
+#### Response body-JSON  
+```markdown
+   {
+  "Key": "Key4",
+  "Value": null,
+  "Description": null,
+  "Level": null,
+  "Enabled": null,
+  "DataType": null,
+  "UserId": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'ResponseType' Object Parameters
+The following list describe the parameters of the response type object:
+1. **Key:** The key will be of String_Type that is unique for the model object.
+2. **MValue:**  The mvalue will be of String_Type that contains merchant information. 
+3. **Description:** It will be of _string_ type which will acknowledge user about the API response in form of text information. 
+4. **Level:** It will be of _string_ type that contains user account level information.
+5. **Enabled:** It will be of Boolean type that can be true of false based on user account setting.
+6. **DataType:** It will be of String_Type that contains the user account setting details.
+7. **UserId:** It will be of String_Type that is distinct for each user account.
+
   
   
 
