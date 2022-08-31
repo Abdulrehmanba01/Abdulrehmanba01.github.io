@@ -402,6 +402,7 @@ Task<object>
 ``` 
 
 #### Response headers-JSON
+  
 |Header|Value|
 |------|-----|
 |Cache-control|Private|
@@ -411,6 +412,58 @@ Task<object>
      
   
 
+
+  
+### Account My Settings 3
+#### Description
+  
+This service endpoint provides customer the ability to retrieve his account details that has been created previously. This process call will recevie the **Key**
+as a required parameter. The key will be unique for each customer's account setting that will point towards only one account of the customer.
+ 
+For this process, an instance of `AccountController` class will be accessed from the API client that will pass the **key** to the `AccountMySettings3Async` method in order to get all details of the user's account.
+ 
+ 
+```markdown
+ AccountMySettings3Async(string key)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+ string key = "key0";
+ try
+ {
+    string result = await accountController.AccountMySettings3Async(key);
+ }
+ catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to get the user's account settings detail that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### API Parameters
+The API parameter for this service endpoint is **Key** (String_Type). It is the required parameter to add for retrieving the user's account setting. 
+  
+ ![3](https://user-images.githubusercontent.com/110983629/187707105-9cd07b2b-d485-489e-90d7-51cfbafbfbe8.png)
+
+  
+
+#### Responses 
+
+The response of this endpoint service request contains the **Task<object>**. 
+
+```markdown 
+Task<object>
+``` 
+
+#### Response headers-JSON
+  
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
 
 
 
