@@ -550,7 +550,7 @@ The following table describe the parameters of the response type object:
   
 |Names|Description|
 |-----|-----------| 
-|Url|It is the URL of String Type|
+|Url|URL of String Type|
 |ID|Id of String Type|
 |UserName|User Name of String Type|
 |FullName|Full Name of user of String Type|
@@ -610,17 +610,14 @@ try
 catch (ApiException e){};
 ```
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to update user information that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. The model will be passed as a parameter to the `AccountMyProfile1Async()` method.
+The FirstName and LastName are two required parameters of the `model` object. 
 
 
-#### API object Parameters
-The API parameters of the `model` object are shown in the following image:
-  
+#### Model object Parameters 
   
   ![4](https://user-images.githubusercontent.com/110983629/187724681-40a8659b-5246-4dbd-b3f6-bb670bafc37e.png)
  ![5](https://user-images.githubusercontent.com/110983629/187724707-44c466d9-a81d-40a9-b622-9563b3dcaab2.png)
 
-  
-This endpoint does not contain any parameter.
 
 
 #### Responses 
@@ -661,7 +658,6 @@ UserReturnModel
   "TwoFactorEnabled": null,
   "IsPasswordCreated": null
 }
-
 ```
 
 #### Response headers-JSON
@@ -677,7 +673,7 @@ The following table describe the parameters of the response type object:
   
 |Names|Description|
 |-----|-----------| 
-|Url|It is the URL of String Type|
+|Url|URL of String Type|
 |ID|Id of String Type|
 |UserName|User Name of String Type|
 |FullName|Full Name of user of String Type|
