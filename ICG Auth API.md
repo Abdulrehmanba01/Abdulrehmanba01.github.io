@@ -586,5 +586,159 @@ The following table describe the parameters of the response type object:
 |ResponseType|[Task<Models.UserReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-return-model)|
  
  
+### Account My Profile 1
+#### Description
+     
+This service endpoint will update the current user details in order to store the latest information of the user in the system. This API contains the **"Model"** object as a parameter that is a required one. For this process, an instance of `AccountController` class will be accessed from the API client in order to call `AccountMyProfile1Async()` method to update the user details.
+ 
+```markdown
+ AccountMyProfile1Async(Models.ModifyUserProfileBindingModel model)
+```
 
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+var model = new ModifyUserProfileBindingModel();
+model.FirstName = "FirstName2";
+model.LastName = "LastName2";
+
+try
+{
+    UserReturnModel result = await accountController.AccountMyProfile1Async(model);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to update user information that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. The model will be passed as a parameter to the `AccountMyProfile1Async()` method.
+
+
+#### API object Parameters
+The API parameters of the `model` object are shown in the following image:
+  
+  
+  ![4](https://user-images.githubusercontent.com/110983629/187724681-40a8659b-5246-4dbd-b3f6-bb670bafc37e.png)
+  ![5](https://user-images.githubusercontent.com/110983629/187724707-44c466d9-a81d-40a9-b622-9563b3dcaab2.png)
+
+  
+This endpoint does not contain any parameter.
+
+
+#### Responses 
+
+The response of this endpoint service request contains the "ResponseType" object. The class name of the ResponseType object is 
+
+```markdown 
+UserReturnModel
+``` 
+
+#### Response body-JSON  
+```markdown 
+{
+  "Url": null,
+  "Id": null,
+  "UserName": null,
+  "FullName": null,
+  "FirstName": null,
+  "LastName": null,
+  "Email": null,
+  "MobilePhone": null,
+  "HomePhone": null,
+  "OfficePhone": null,
+  "PostalCode": null,
+  "EmailConfirmed": null,
+  "Lockout": null,
+  "Level": null,
+  "Address": null,
+  "Address2": null,
+  "City": null,
+  "State": null,
+  "Country": null,
+  "JoinDate": null,
+  "Roles": null,
+  "Settings": null,
+  "PasswordExpDate": null,
+  "CustomDaysToExpired": null,
+  "TwoFactorEnabled": null,
+  "IsPasswordCreated": null
+}
+
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'ResponseType' Object Parameters
+The following table describe the parameters of the response type object:
+  
+|Names|Description|
+|-----|-----------| 
+|Url|It is the URL of String Type|
+|ID|Id of String Type|
+|UserName|User Name of String Type|
+|FullName|Full Name of user of String Type|
+|FirstName|First Name of String Type|
+|LastName|Last Name of String Type|
+|Email|Email of String Type|
+|MobilePhone|Phone Number of String Type|
+|HomePhone|Home Phone of String Type|  
+|OfficePhone|Office Phone of String Type|
+|PostalCode|Postal Code of String Type|
+|EmailConfirmed|bool value|
+|Lockout|bool value|
+|Level|int value|
+|Address|Address of String Type|
+|Address2|Address2 of String Type|
+|City|City of String Type|
+|State|State of String Type|
+|Country|Country of String Type|
+|JoinDate|Join Date of DateTime Type|
+|Roles|Roles of List<String> Type|
+|Settings|Dictionary<string, string>|
+|PasswordExpDate|Password Expiration date of DateTime Type|
+|CustomDaysToExpired|Int Type that allow to set a custom policy for days to expired|
+|TwoFactorEnable|TwoFactorEnabled of Bool Type|
+|IsPasswordCreated|IsPasswordCreated of bool type|
+  
+  
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.UserReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-return-model)|
+ 
+ 
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
