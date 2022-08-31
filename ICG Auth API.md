@@ -192,7 +192,7 @@ There are no parameters available for the response request.
 ### Account My Settings 2
 #### Description
      
-This service endpoint provides customers the ability to submit the current user account setting details. Through this process, you can update your current account setting where Each user account setting is identified by the unique User Id.  
+This service endpoint provides customers the ability to submit the current user account setting details. Through this process, you can update your current account setting where each user account setting is identified by the unique User Id.  
  
 For this process, an instance of `AccountController` class will be accessed from the API client that will pass the user account setting details to the the `AccountMySettings2Async` method in order to update it.
  
