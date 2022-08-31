@@ -414,10 +414,10 @@ Task<object>
 ### Account My Settings 3
 #### Description
   
-This service endpoint provides customer the ability to retrieve his account details that has been created previously. This process call will recevie the **Key**
+**This service endpoint provides customer the ability to retrieve his account details that has been created previously. This process call will recevie the **Key**
 as a required parameter. The key will be unique for each customer's account setting that will point towards only one account of the customer.
  
-For this process, an instance of `AccountController` class will be accessed from the API client that will pass the **key** to the `AccountMySettings3Async` method in order to get all details of the user's account.
+For this process, an instance of `AccountController` class will be accessed from the API client that will pass the **key** to the `AccountMySettings3Async` method in order to get all details of the user's account.**
  
  
 ```markdown
