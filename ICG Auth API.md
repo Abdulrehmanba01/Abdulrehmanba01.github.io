@@ -792,10 +792,73 @@ The response of this endpoint service request contains the "ResponseType" object
 
 
 
+### Account Enable TFA
+#### Description
+  
+For secure access to the application, this service endpoint enables two-factor authentication for user accounts. The 'AccountEnableTFAAsync()' method has been used for this process, and it will take a model object as a parameter to allow access to the relevant user account in order to verify users through the Google Authenticator App. 
+An instance of `AccountController` class will be accessed from the API client. The parameters of the model get initialized in order verify the users through the AccountEnableTFAAsync method.
  
+ 
+```markdown
+ AccountEnableTFAAsync(Models.TfaAuthenticatorModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+var model = new TfaAuthenticatorModel();
+model.Code = "Code2";
+model.SecretKey = "SecretKey8";
+model.Type = "Type2";
+model.Audiences = new List<int>();
+model.Audiences.Add(178);
+
+try
+{
+    List<string> result = await accountController.AccountEnableTFAAsync(model);
+}
+catch (ApiException e){};
+```
+The model object's attributes will be declared and initialized first and then the model object will be passed to the `AccountEnableTFAAsync()`method as a parameter. It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to verify the users OTPs that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### API object Parameters
   
+This endpoint will contain the `model` object as a parameter that further contains the **Code**, **SecertKey**, **Type**, **Audiences** parameters where the Code, SecretKey and Type are the required parameters of String_Type. The Audiences is the list of integers to define the number of users whose 2 factor authentication process is enabled.  
+
+#### Model Object Parameters 
   
+![6](https://user-images.githubusercontent.com/110983629/187924670-790b62ea-78b7-446f-8354-5d6eee87748c.png)
+
+ 
+The class name of the `model` object is
   
+```markdown 
+  TfaAuthenticatorModel
+```  
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Model(required)|[Models.TfaAuthenticatorModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/tfa-authenticator-model)
+ 
+
+
+#### Responses 
+
+The response of this endpoint service request contains the "ResponseType" object that contains the `Task<List<string>>` as a parameter. It will return the list of strings for the users who has enabled the TFA (Two factor Authentication). 
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
   
   
   
