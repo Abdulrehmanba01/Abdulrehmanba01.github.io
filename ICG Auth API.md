@@ -945,7 +945,7 @@ This endpoint will contain the three parameters that includes user id, hash code
 
 #### Response
 ##### 'ResponseType' Object Parameters 
-The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return wether the user has confirmed his account by email or not.
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user has confirmed his account by email or not.
 
  
  
