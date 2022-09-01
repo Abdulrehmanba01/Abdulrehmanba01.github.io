@@ -947,6 +947,52 @@ This endpoint will contain the three parameters that includes user id, hash code
 ##### 'ResponseType' Object Parameters 
 The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user has confirmed his account by email or not.
 
+  
+### Account Confirm Email Set Password
+#### Description  
+  
+The user will have the facility to confirm his account via email using this service endpoint. The user must confirm his account by email that he provides during the registeration process of the application. It is the most effective technique to confirm and authenticate a person using his email address. The API client for this process accesses an instance of the 'AccountController' class and calls the 'AccountConfirmEmailSetPasswordAsync' method.  
+ 
+ 
+```markdown
+   AccountConfirmEmailSetPasswordAsync(
+    string userId = null,
+    string code = null,
+    string callbackurl = null)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    object result = await accountController.AccountConfirmEmailSetPasswordAsync(null, null, null);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to confirm user's email address set password that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters 
+This endpoint will contain the three parameters that includes userId, code (hash code), callbackurl. All of these three parameters are of String_Type and are not required to enter which means that can be null in process call.
+  
+![8](https://user-images.githubusercontent.com/110983629/187936383-08c2ebe6-d212-42b9-a0ef-f006afb330db.png)
+
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user has confirmed his account by email or not to set password.
+
  
  
   
