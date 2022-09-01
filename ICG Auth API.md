@@ -929,7 +929,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to confirm user's email address that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
 #### API Parameters 
-This endpoint will contain the three parameters that includes user id, hash code, callbackurl. All of these three parameters are of String_Type and are not required to enter which means that can be null.
+This endpoint will contain the three parameters that includes user id, hash code, callbackurl. All of these three parameters are of String_Type and code and user id are required to enter for this process call. 
   
 ![7](https://user-images.githubusercontent.com/110983629/187933225-55fa524b-e8b7-4ead-ac89-47a2f3021aee.png)
 
@@ -975,7 +975,8 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to confirm user's email address set password that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
 #### API Parameters 
-This endpoint will contain the three parameters that includes userId, code (hash code), callbackurl. All of these three parameters are of String_Type and are not required to enter which means that can be null in process call.
+This endpoint will contain the three parameters that includes userId, code (hash code), callbackurl. All of these three parameters are of String_Type and code and user id are required to enter for this process call. 
+  
   
 ![8](https://user-images.githubusercontent.com/110983629/187936383-08c2ebe6-d212-42b9-a0ef-f006afb330db.png)
 
@@ -1043,6 +1044,51 @@ This endpoint will contain the four parameters that includes userId, code (hash 
 The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user has confirmed his account by changed email or not.
 
  
+
+  
+### Account Confirm Change Password 
+#### Description  
+Through this service endpoint, the user will have the ability to change his account password. The necessity or potential for the user to update their account password to make their account more safe against malicious assaults may arise after creating an account in the application. It is the best technique for using a fresh password to authenticate a user. The 'AccountConfirmChangePasswordAsync' function is called by the API client for this procedure on an instance of the 'AccountController' class.
+ 
+ 
+```markdown
+   AccountConfirmChangePasswordAsync(
+    string userId = null,
+    string code = null,
+    string preToken = null,
+    string newPassword = null)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    object result = await accountController.AccountConfirmChangePasswordAsync(null, null, null, null);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to change user account password that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters 
+This endpoint will contain the four parameters that includes userId, code, preToken, and newPassword. All of these four parameters are of String_Type. The code is used to validate the user, preToken is the hash code sent to the user and the newPassword is the new password that user set out for his account.  
+ 
+![10](https://user-images.githubusercontent.com/110983629/187946577-d2c83884-f596-46d1-900d-142c67d99b30.png)
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account password has been changed or not.
  
   
   
