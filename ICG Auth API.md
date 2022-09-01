@@ -1135,7 +1135,57 @@ This endpoint will contain the only one parameters which is email address of the
 ##### 'ResponseType' Object Parameters 
 The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account get recovered through the email or not.
  
+### Account Forgot Password
+#### Description  
+
+This service endpoint will allow the user to recover the password by sending email to the user's email address. When the user forgot his account password, the system will be able to recover it by sending email to the user's email address. The user must have to provide the user name and email address in order to recover his account password. For this purpose, the 'AccountForgotPasswordAsync' method is called by the API client for this process on an instance of the 'AccountController' class.       
+ 
+```markdown
+    AccountForgotPasswordAsync(
+    string userName,
+    string email,
+    string urlCallback,
+    string audienceId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string userName = "userName2";
+string email = "email6";
+string urlCallback = "urlCallback8";
+string audienceId = "audienceId8";
+
+try
+{
+    object result = await accountController.AccountForgotPasswordAsync(userName, email, urlCallback, audienceId);
+}
+catch (ApiException e){};
+```
   
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to recover the user's account password that was anticipated to be returned. The user's email address and user name will be passed as a parameter to the method `AccountForgotPasswordAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters 
+This endpoint will contain the four parameters which include the userName, email, urlCallback, and audienceId. These four parameters are required to enter for recovering the user's account password in a secured manner. All of these parameters are of String_Type.   
+  
+ 
+![12](https://user-images.githubusercontent.com/110983629/187960953-c058067e-9aae-440c-bebb-fa781e1a715c.png)
+
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account password get recovered by sending email or not.
+   
   
   
   
