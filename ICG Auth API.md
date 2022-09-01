@@ -734,22 +734,64 @@ It will be included in the try and catch block to deal with any exceptions that 
 
 #### Model object Parameters 
 This endpoint does not take any parameters.  
- 
-
-#### Response
-##### 'ResponseType' Object Parameters 
-The response of this endpoint service request contains the "ResponseType" object. The `Task<List<string>>` is the parameter that will return the list of the strings of current user permissions. 
-
+  
 
 #### Response headers-JSON
 |Header|Value|
 |------|-----|
 |Cache-control|Private|
 |Content-Length|61|
-|Content-type|application/json;charset=utf-8|
-
-   
+|Content-type|application/json;charset=utf-8|  
  
+
+#### Response
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<List<string>>` is the parameter that will return the list of the strings of current user permissions. 
+
+ 
+ 
+
+### Account Enable App TFA
+#### Description
+This service endpoint will make the Google Authenticator app available for the user account, enabling two-factor authentication to increase account security. The 'AccountEnableAppTFAAsync()' function will be applied throughout this procedure to enable the Google Authenticator app for the user's account. The API client will obtain an instance of the 'AccountController' class and invoke the 'AccountEnableAppTFAAsync()' function.
+  
+ 
+```markdown
+    AccountEnableAppTFAAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    List<string> result = await accountController.AccountEnableAppTFAAsync();
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to enable the Google authenticator app for the user account that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+  
+#### Model object Parameters 
+This endpoint does not take any parameters.  
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters   
+The response of this endpoint service request contains the "ResponseType" object. The `Task<List<string>>` is the parameter that will return the list of the strings for enabling 2 factor authentication.
+
+
+
  
   
   
