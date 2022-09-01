@@ -861,6 +861,46 @@ The response of this endpoint service request contains the "ResponseType" object
  
   
   
+### Account Disable TFA
+#### Description
+This service endpoint will disable the two factor authentication for the user accounts. The API client will obtain an instance of the 'AccountController' class and invoke the 'AccountDisableTFAAsync()` method in order to disable the TFA.  
+  
+ 
+```markdown
+    AccountDisableTFAAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    List<string> result = await accountController.AccountDisableTFAAsync();
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to disable the two factor authentication process for the user account that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+  
+#### Parameters 
+This endpoint does not take any parameters.  
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters   
+The response of this endpoint service request contains the "ResponseType" object. The `Task<List<string>>` is the parameter that will return the list of the strings for disabling 2 factor authentication.
+
+
   
   
   
