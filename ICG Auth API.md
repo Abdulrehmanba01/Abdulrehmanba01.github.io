@@ -997,6 +997,53 @@ The response of this endpoint service request contains the "ResponseType" object
  
   
   
+### Account Confirm Change Email 
+#### Description  
+    
+The user will have the facility to confirm his account via email using this service endpoint when he wants to change his email address. The user must confirm his account by email that he provides during the registeration process of the application, but when he wants to change the email address. This changed email address should also be confirmed through the email. It is the most effective technique to confirm and authenticate a person using his email address. The API client for this process accesses an instance of the 'AccountController' class and calls the 'AccountConfirmChangeEmailAsync' method.  
+ 
+ 
+```markdown
+   AccountConfirmChangeEmailAsync(
+    string userId = null,
+    string code = null,
+    string preToken = null,
+    string callbackurl = null)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    object result = await accountController.AccountConfirmChangeEmailAsync(null, null, null, null);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to confirm user's changed email address that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters 
+This endpoint will contain the four parameters that includes userId, code (hash code), preToken, callbackurl. All of these four parameters are of String_Type and code and user id are required to enter for this process call. 
+  
+![9](https://user-images.githubusercontent.com/110983629/187940304-a9c853b1-f60d-47f6-8049-a32d23f62d39.png)
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user has confirmed his account by changed email or not.
+
+ 
+ 
   
   
   
