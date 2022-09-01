@@ -1133,7 +1133,7 @@ This endpoint will contain the only one parameters which is email address of the
 
 #### Response
 ##### 'ResponseType' Object Parameters 
-The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account password has been changed or not.
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account get recovered through the email or not.
  
   
   
