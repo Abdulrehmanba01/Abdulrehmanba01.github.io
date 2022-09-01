@@ -710,6 +710,46 @@ The following table describe the parameters of the response type object:
  
  
 
+### Account My Permissions
+#### Description
+In order to track user authenticated privileges across their account, this service endpoint will obtain the most recent user permissions. For the purpose of retrieving the actual user account permissions, this endpoint will use the 'AccountMyPermissionsAsync' function. The 'AccountMyPermissionsAsync()' function will be called by the API client by accessing an instance of the 'AccountController' class.
+  
+ 
+```markdown
+   AccountMyPermissionsAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    List<string> result = await accountController.AccountMyPermissionsAsync();
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to retrieve current user account permissions that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Model object Parameters 
+This endpoint does not take any parameters.  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<List<string>>` is the parameter that will return the list of the strings of current user permissions. 
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+   
+ 
  
   
   
