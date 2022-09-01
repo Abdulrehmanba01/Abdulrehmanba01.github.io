@@ -1092,6 +1092,51 @@ The response of this endpoint service request contains the "ResponseType" object
  
   
   
+### Account Forgot User Name 
+#### Description  
+
+This service endpoint will allow the user to recover his account if he forgot his username. In order to recover the user's account, his email address will be used for verifying the user and allow him to access his account. For this purpose, the 'AccountForgotUserNameAsync' method is called by the API client for this process on an instance of the 'AccountController' class.       
+   
+ 
+```markdown
+   AccountForgotUserNameAsync(string email)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+ string email = "email6";
+try
+{
+    object result = await accountController.AccountForgotUserNameAsync(email);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to acess user account through the email that was anticipated to be returned. The email will be passed as a parameter to the method `AccountForgotUserNameAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters 
+This endpoint will contain the only one parameters which is email address of the user who forgot his user name. The email address will be of String_Type and it is required to enter in order to recover the user's account securely. 
+ 
+![11](https://user-images.githubusercontent.com/110983629/187952042-fcd4f852-c291-4d6e-b791-bd0a0c34b9bf.png)
+
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account password has been changed or not.
+ 
+  
+  
   
   
   
