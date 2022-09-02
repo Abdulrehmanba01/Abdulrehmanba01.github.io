@@ -1298,6 +1298,51 @@ The response of this endpoint service request contains the "ResponseType" object
   
    
   
+### Account Login Tfa
+#### Description  
+This service endpoint will enable two-factor authentication, requiring the user to input a one-time pin (OTP) that is only valid for a shorter amount of time while logging in to the system. An instance of the "AccountController" class is used for this by calling the "AccountLoginTfaAsync" function. By eliminating malicious assaults, it makes using the system to log in more secure.
+ 
+```markdown
+   AccountLoginTfaAsync(
+    string preToken,
+    string code,
+    string audienceId = null)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string preToken = "preToken2";
+string code = "code8";
+
+try
+{
+    object result = await accountController.AccountLoginTfaAsync(preToken, code, null);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to login through the OTP that was anticipated to be returned. The preToken and code are declared and initialize and then passed to the `AccountLoginTfaAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters 
+The parameters of this endpoint are preToken, code and audienceid where all of them are required to enter except audienceid for logging in. All of these parameters are of String_Type. The pretoken is the token for session id and code is the code (OTP) that is sent to the user through mobile number or through the email.
+  
+ ![3](https://user-images.githubusercontent.com/110983629/188132917-9ab790e9-7af1-44f3-8bf5-a70def9b2269.png)
+
+
+#### Responses 
+ 
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return the value whether the user logged in through the valid TFA or not.
+   
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|     
+  
   
   
   
