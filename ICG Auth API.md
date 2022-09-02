@@ -1249,7 +1249,54 @@ The response of this endpoint service request contains the "ResponseType" object
   
   
   
+ 
+### Account Change Email
+#### Description  
+The user will be able to log into the application using the API key owing to this service endpoint. The API key itself serves as the user's identity, hence it must be distinct, random, and impenetrable in order to do so. Alphanumeric and special characters must be used when generating API keys. The API key serves as an identification code or authentication token when logging into the system. The 'AccountLoginApiAsync' method on an instance of the 'AccountController' class is invoked by the API client in order to do this.  
+ 
+```markdown
+    AccountLoginApiAsync(
+    string appid,
+    string apikey,
+    string audienceid)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string appid = "appid6";
+string apikey = "apikey6";
+string audienceid = "audienceid2";
+
+try
+{
+    object result = await accountController.AccountLoginApiAsync(appid, apikey, audienceid);
+}
+catch (ApiException e){};
+```
   
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to login through the API key that was anticipated to be returned. The appid, apikey and audienceid are the variables that get declared and initialize and then passed to the `AccountLoginApiAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters 
+The parameters of this endpoint are appid, apikey and audienceid where all of them are required to enter for logging in through the API key. All of these parameters are of String_Type.  
+  
+![2](https://user-images.githubusercontent.com/110983629/188129177-9096ef6f-ad00-4b8a-b2f2-2746ab2d7e04.png)
+
+
+#### Responses 
+ 
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return the value whether the user get logged in through API key or not.
+   
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|     
+  
+   
   
   
   
@@ -1257,3 +1304,10 @@ The response of this endpoint service request contains the "ResponseType" object
   
   
 
+
+  
+  
+  
+  
+  
+  
