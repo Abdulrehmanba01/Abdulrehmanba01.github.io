@@ -1664,3 +1664,74 @@ The response of this endpoint service request contains the "ResponseType" object
   
   
   
+  
+### Users Login
+#### Description  
+The user can log into the system using this service endpoint by entering their username, password, and grant type as valid credentials. Valid credentials must be entered in order to safely access the user's account and to authenticate and authorise the user. In order to do this, an instance of the AccountController class is created from the API client, and the 'UsersLoginAsync' method is invoked. 
+  
+ 
+```markdown
+   UsersLoginAsync(
+    string username,
+    string password,
+    string grantType,
+    string clientId = "f1fa7fff-92e4-4133-8d10-36868c4987ad")
+  
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "nanosassa";
+string password = "$RFVvfr4$RFVvfr4";
+string grantType = "password";
+string clientId = "f1fa7fff-92e4-4133-8d10-36868c4987ad";
+
+try
+{
+    dynamic result = await accountController.UsersLoginAsync(username, password, grantType, clientId);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to login the user into his account that was anticipated to be returned. In order to login, the username, password, grant type and clientId will be used as a parameters that will be passed to the `UsersLoginAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters  
+There are four parameters for logging into the system in which username, password and grant type are required ones. The username can be the email address of the user, password will be the account password of the user, grantType will also be the password of the user. The clientid will be the audience id that is `"f1fa7fff-92e4-4133-8d10-36868c4987ad"` by default.    
+   
+![12](https://user-images.githubusercontent.com/110983629/188172744-7308deea-7c26-4208-824a-a6c5133f5831.png)
+ 
+  
+#### Responses 
+ 
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<dynamic>` is the parameter that will return value whether the user logged into the system or not.
+   
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|     
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
