@@ -1250,7 +1250,7 @@ The response of this endpoint service request contains the "ResponseType" object
   
   
  
-### Account Change Email
+### Account Login API
 #### Description  
 The user will be able to log into the application using the API key owing to this service endpoint. The API key itself serves as the user's identity, hence it must be distinct, random, and impenetrable in order to do so. Alphanumeric and special characters must be used when generating API keys. The API key serves as an identification code or authentication token when logging into the system. The 'AccountLoginApiAsync' method on an instance of the 'AccountController' class is invoked by the API client in order to do this.  
  
