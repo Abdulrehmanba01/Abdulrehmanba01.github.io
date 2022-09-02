@@ -1619,5 +1619,48 @@ The response of this endpoint service request contains the "ResponseType" object
    
   
   
+### Account Send Register Email
+#### Description  
+This service endpoint will send register email to the user who has created his account in the application. When the user enter his detail to get registered in the platform, he will receive the registration email. Through this process call, the registration email will be send to the respective user. For this purpose, the `AccountSendRegisterEmailAsync` method is called by creating in an instance of 'AccountController' class. 
+   
+ 
+```markdown
+  AccountSendRegisterEmailAsync(string registerId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string registerId = "registerId4";
+
+try
+{
+    object result = await accountController.AccountSendRegisterEmailAsync(registerId);
+}
+catch (ApiException e){};
+```
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to send registration email to the user that was anticipated to be returned. In order to send the email, the register id will be used as a parameter that will be passed to the `AccountSendRegisterEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters  
+The registerId is the required parameter of String_Type for making this process call successful to send registration email.  
+  
+![11](https://user-images.githubusercontent.com/110983629/188168338-2c9e4a73-f5aa-43bc-9ab4-2c5c01637564.png)
+
+ 
+  
+#### Responses 
+ 
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return value whether the register email is sent to the user or not.
+   
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|     
+  
   
   
