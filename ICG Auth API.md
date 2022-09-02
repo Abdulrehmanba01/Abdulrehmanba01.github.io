@@ -1497,7 +1497,8 @@ The response of this endpoint service request contains the "ResponseType" object
   "CustomDaysToExpired": null,
   "TwoFactorEnabled": null,
   "IsPasswordCreated": null
-}```
+}
+```
 
 #### Response headers-JSON
 |Header|Value|
