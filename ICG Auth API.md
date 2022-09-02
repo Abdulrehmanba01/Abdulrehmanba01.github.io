@@ -1215,32 +1215,37 @@ catch (ApiException e){};
   
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to change user's account email address that was anticipated to be returned. The `model` used to declare and initialize the user's old email address, new email address and confirmed new email address. The model will be passed to `AccountChangeEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### Object Model Parameters 
+#### Object `Model` Parameters 
   
 The model object will contain the four parameters which include the OldEmail, NewEmail, ConfirmEmail, and CallBackUrl. These four parameters are required to enter for changing the user's account email except the CallBackUrl. All of these parameters are of String_Type where the NewEmail will have a contraint on the lenght (min-0 & max-100). 
   
+ ![1](https://user-images.githubusercontent.com/110983629/188124519-73bde4f3-5160-4887-b75e-156114d0274d.png)
+
+The class name of the `Model` object is 
+ ```markdown
+  ChangeEmailBindingModel
+  ```
+
  
-![12](https://user-images.githubusercontent.com/110983629/187960953-c058067e-9aae-440c-bebb-fa781e1a715c.png)
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model(required)|[Models.ChangeEmailBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/change-email-binding-model)
+ 
 
 
-
+#### Responses 
+ 
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's email address is changed or not.
+   
 #### Response headers-JSON
 |Header|Value|
 |------|-----|
 |Cache-control|Private|
 |Content-Length|61|
-|Content-type|application/json;charset=utf-8|  
- 
-
-#### Response
-##### 'ResponseType' Object Parameters 
-The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account password get recovered by sending email or not.
-   
-  
-  
-  
-  
-  
+|Content-type|application/json;charset=utf-8|     
   
   
   
