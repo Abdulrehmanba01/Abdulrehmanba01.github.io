@@ -1347,6 +1347,68 @@ The response of this endpoint service request contains the "ResponseType" object
   
   
   
+### Account Change Password
+#### Description  
+By using this service endpoint, the user can change his account password by submitting his previous password. If users have used the same password for several accounts on other platforms, there is a high risk of hacking and other harmful attempts. In order to successfully and securely update the user's account password, the API client calls the 'AccountChangePasswordAsync' method on an instance of the 'AccountController' class.  
+          
+ 
+```markdown
+ AccountChangePasswordAsync(Models.ChangePasswordBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+var model = new ChangePasswordBindingModel();
+model.OldPassword = "OldPassword4";
+model.NewPassword = "NewPassword2";
+model.ConfirmPassword = "ConfirmPassword0";
+
+try
+{
+    object result = await accountController.AccountChangePasswordAsync(model);
+}
+catch (ApiException e){};
+```
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to change user's account password that was anticipated to be returned. The `model` used to declare and initialize the user's old password, new password and confirmed password. The model will be passed to `AccountChangePasswordAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Object `Model` Parameters 
+  
+The model object will contain the three parameters which include the OldPassword, NewPassword, and ConfirmPassword. These three parameters are required to enter for changing the user's account password. All of these parameters are of String_Type where the NewPassword will have a contraint on the lenght (min-8 & max-128). 
+  
+![4](https://user-images.githubusercontent.com/110983629/188139823-ec7c54c4-a157-4e9c-8358-214781393dd0.png)
+
+ 
+
+The class name of the `Model` object is 
+ ```markdown
+  ChangePasswordBindingModel
+  ```
+
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model(required)|[Models.ChangePasswordBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/change-password-binding-model)
+ 
+
+
+#### Responses 
+ 
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account password is changed or not.
+   
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|     
+  
+  
   
 
 
