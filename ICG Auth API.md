@@ -1452,12 +1452,24 @@ The class name of the
   CreateUserBindingModelAnonymous
 ```  
   
-#### createUserModel
+#### createUserModel object Parameters
   
 ![5](https://user-images.githubusercontent.com/110983629/188149707-d4207f75-f48d-464f-8593-bddcf2c38235.png)
 
 ![6](https://user-images.githubusercontent.com/110983629/188149741-e883e4dd-1d66-4e33-826f-1f31cb47bd81.png)
 
+  
+  
+  
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|createUserModel (required)|[Models.CreateUserBindingModelAnonymous](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/create-user-binding-model-anonymous)| 
+ 
+    
   
   
 #### Responses 
