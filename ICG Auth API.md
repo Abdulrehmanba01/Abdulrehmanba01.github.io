@@ -1187,6 +1187,57 @@ This endpoint will contain the four parameters which include the userName, email
 The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account password get recovered by sending email or not.
    
   
+### Account Change Email
+#### Description  
+
+The user can update his account email by entering his old and new email addresses to this service endpoint. It's possible that the user wished to alter his account's email address so he could get notifications at the new address. To add a new email address to his account, the user must first submit his previous email address. The API client calls the 'AccountChangeEmailAsync' method on an instance of the 'AccountController' class in order to do this.
+          
+ 
+```markdown
+    AccountChangeEmailAsync(Models.ChangeEmailBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+var model = new ChangeEmailBindingModel();
+model.OldEmail = "OldEmail6";
+model.NewEmail = "NewEmail8";
+model.ConfirmEmail = "ConfirmEmail4";
+
+try
+{
+    object result = await accountController.AccountChangeEmailAsync(model);
+}
+catch (ApiException e){};
+```
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to change user's account email address that was anticipated to be returned. The `model` used to declare and initialize the user's old email address, new email address and confirmed new email address. The model will be passed to `AccountChangeEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Object Model Parameters 
+  
+The model object will contain the four parameters which include the OldEmail, NewEmail, ConfirmEmail, and CallBackUrl. These four parameters are required to enter for changing the user's account email except the CallBackUrl. All of these parameters are of String_Type where the NewEmail will have a contraint on the lenght (min-0 & max-100). 
+  
+ 
+![12](https://user-images.githubusercontent.com/110983629/187960953-c058067e-9aae-440c-bebb-fa781e1a715c.png)
+
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return whether the user's account password get recovered by sending email or not.
+   
+  
+  
   
   
   
