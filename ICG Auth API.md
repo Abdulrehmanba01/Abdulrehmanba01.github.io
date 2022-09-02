@@ -1447,7 +1447,7 @@ It will be included in the try and catch block to deal with any exceptions that 
 The parameter of this endpoint service contains **createUserModel** as a required object. It further contains the Email, Username, FirstName, LastName, Password, ConfirmPassword, Recaptchakey, MobilePhone, HomePhone, OfficePhone, PostalCode, Address, Address2, City, State, Country, CallBackUrl, AudienceId, Level parameters. Whereas, the **UserSettings**, **Roles**, and **Permissions** objects are further contains parameters. In all of these parameters, the Email, Username, FirstName, LastName, Password, ConfirmPassword and UserSettings are required ones. 
   
 
-The class name of the 
+The class name of the **createUserModel** is
 ```markdown
   CreateUserBindingModelAnonymous
 ```  
@@ -1459,9 +1459,20 @@ The class name of the
 ![6](https://user-images.githubusercontent.com/110983629/188149741-e883e4dd-1d66-4e33-826f-1f31cb47bd81.png)
 
   
+#### UserSettings object class name and Parameters   
   
-  
+![7](https://user-images.githubusercontent.com/110983629/188154817-2e3a29bf-ab3a-4d9b-b101-624283bc96ac.png)
 
+#### Roles object class name and Parameters   
+  
+![8](https://user-images.githubusercontent.com/110983629/188154893-0e8f5100-4ce5-4832-90cb-8262c9d61bed.png)
+
+
+#### Permissions object class name and Parameters     
+  
+![9](https://user-images.githubusercontent.com/110983629/188154938-64a5d381-2dc4-481c-9e98-b16b1b3fe571.png)
+
+  
 
 #### Explorer 
 
