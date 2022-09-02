@@ -1473,14 +1473,11 @@ The class name of the **createUserModel** is
 ![9](https://user-images.githubusercontent.com/110983629/188154938-64a5d381-2dc4-481c-9e98-b16b1b3fe571.png)
 
   
-
 #### Explorer 
 
 |Names|Description|
 |-----|-----------|
 |createUserModel (required)|[Models.CreateUserBindingModelAnonymous](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/create-user-binding-model-anonymous)| 
- 
-    
   
   
 #### Responses 
@@ -1572,7 +1569,54 @@ The following table describe the parameters of the response type object:
 |ResponseType|[Task<Models.UserReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-return-model)|
  
   
+ 
   
+  
+### Account Re Send Confirmation Email
+#### Description  
+The user will be able to resend the account confirmation email using this service endpoint. There is a chance that a network issue will prevent the user from receiving the confirmation email. The user can thus resend the account confirmation email using this service. The 'AccountController' class instance calls the 'AccountReSendConfirmationEmailAsync' function in order to do this. 
+          
+ 
+```markdown
+ AccountReSendConfirmationEmailAsync(string userId,string audienceId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string userId = "userId0";
+string audienceId = "audienceId8";
+
+try
+{
+    object result = await accountController.AccountReSendConfirmationEmailAsync(userId, audienceId);
+}
+catch (ApiException e){};
+```
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to resend confirmation email to the user that was anticipated to be returned. The user id and audience id are passed as a parameter to the `AccountReSendConfirmationEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters 
+The userId and audienceId parameters for this API request are included. Both of them must be entered in order to process the request, and they are both of the String Type.
+  
+ 
+ ![10](https://user-images.githubusercontent.com/110983629/188165226-15843895-a9f0-4318-beae-0f28a0ab94ae.png)
+
+ 
+#### Responses 
+ 
+##### 'ResponseType' Object Parameters 
+The response of this endpoint service request contains the "ResponseType" object. The `Task<object>` is the parameter that will return value whether the confirmation email is resent or not.
+   
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|     
+  
+   
   
   
   
