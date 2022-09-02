@@ -1412,6 +1412,141 @@ The response of this endpoint service request contains the "ResponseType" object
   
 
 
+### Account Register User
+#### Description 
+This service endpoint will provide the facility to the user to get registered in the system anonymously. The user will have to enter the registration details such as email, first name, last name etc. in order to get registered in the system successfully for utilizing platform's provided services. For this purpose, the `AccountRegisterUserAsync` method is called to create user account on in instance of `AccountController` class from the API client. 
+   
+ 
+```markdown
+ AccountRegisterUserAsync(Models.CreateUserBindingModelAnonymous createUserModel)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+var createUserModel = new CreateUserBindingModelAnonymous();
+createUserModel.Email = "Email8";
+createUserModel.Username = "Username4";
+createUserModel.FirstName = "FirstName8";
+createUserModel.LastName = "LastName8";
+createUserModel.Password = "Password6";
+createUserModel.ConfirmPassword = "ConfirmPassword4";
+
+try
+{
+    UserReturnModel result = await accountController.AccountRegisterUserAsync(createUserModel);
+}
+catch (ApiException e){};  
+  
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to register a user that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### API Parameters
+The parameter of this endpoint service contains **createUserModel** as a required object. It further contains the Email, Username, FirstName, LastName, Password, ConfirmPassword, Recaptchakey, MobilePhone, HomePhone, OfficePhone, PostalCode, Address, Address2, City, State, Country, CallBackUrl, AudienceId, Level parameters. Whereas, the **UserSettings**, **Roles**, and **Permissions** objects are further contains parameters. In all of these parameters, the Email, Username, FirstName, LastName, Password, ConfirmPassword and UserSettings are required ones. 
+  
+
+The class name of the 
+```markdown
+  CreateUserBindingModelAnonymous
+```  
+  
+#### createUserModel
+  
+![5](https://user-images.githubusercontent.com/110983629/188149707-d4207f75-f48d-464f-8593-bddcf2c38235.png)
+
+![6](https://user-images.githubusercontent.com/110983629/188149741-e883e4dd-1d66-4e33-826f-1f31cb47bd81.png)
+
+  
+  
+#### Responses 
+
+The response of this endpoint service request contains the "ResponseType" object. The class name of the ResponseType object is 
+
+```markdown 
+ UserReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+{
+  "Url": null,
+  "Id": null,
+  "UserName": null,
+  "FullName": null,
+  "FirstName": null,
+  "LastName": null,
+  "Email": null,
+  "MobilePhone": null,
+  "HomePhone": null,
+  "OfficePhone": null,
+  "PostalCode": null,
+  "EmailConfirmed": null,
+  "Lockout": null,
+  "Level": null,
+  "Address": null,
+  "Address2": null,
+  "City": null,
+  "State": null,
+  "Country": null,
+  "JoinDate": null,
+  "Roles": null,
+  "Settings": null,
+  "PasswordExpDate": null,
+  "CustomDaysToExpired": null,
+  "TwoFactorEnabled": null,
+  "IsPasswordCreated": null
+}```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'ResponseType' Object Parameters
+The following table describe the parameters of the response type object:
+  
+|Names|Description|
+|-----|-----------| 
+|Url|URL of String Type|
+|ID|Id of String Type|
+|UserName|User Name of String Type|
+|FullName|Full Name of user of String Type|
+|FirstName|First Name of String Type|
+|LastName|Last Name of String Type|
+|Email|Email of String Type|
+|MobilePhone|Phone Number of String Type|
+|HomePhone|Home Phone of String Type|  
+|OfficePhone|Office Phone of String Type|
+|PostalCode|Postal Code of String Type|
+|EmailConfirmed|bool value|
+|Lockout|bool value|
+|Level|int value|
+|Address|Address of String Type|
+|Address2|Address2 of String Type|
+|City|City of String Type|
+|State|State of String Type|
+|Country|Country of String Type|
+|JoinDate|Join Date of DateTime Type|
+|Roles|Roles of List<String> Type|
+|Settings|Dictionary<string, string>|
+|PasswordExpDate|Password Expiration date of DateTime Type|
+|CustomDaysToExpired|Int Type that allow to set a custom policy for days to expired|
+|TwoFactorEnable|TwoFactorEnabled of Bool Type|
+|IsPasswordCreated|IsPasswordCreated of bool type|
+  
+  
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.UserReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-return-model)|
+ 
   
   
   
