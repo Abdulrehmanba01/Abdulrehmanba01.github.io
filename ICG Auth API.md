@@ -2186,8 +2186,74 @@ The class name of the `Task<List<Models.ReturnEffecivePermissionV2>>`
 |ResponseType|[Task<List<Models.ReturnEffecivePermissionV2>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/return-effecive-permission-v2)|
  
   
+### Applications Permissions Get
+#### Description
+
+This service endpoint will allow the user to retrieve the application's permissions direclty which are assigned by role name.  For this purpose, the `ApplicationsPermissionsGetAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client.   
  
+```markdown  
+  ApplicationsPermissionsGetAsync(string appid)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string appid = "appid6";
+try
+{
+    List<ReturnEffecivePermissionV2> result = await applicationsController.ApplicationsPermissionsGetAsync(appid);
+}
+catch (ApiException e){};
+```  
   
+It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to retrieve an application's permissions (which are assigned by role name) that was anticipated to be returned. In order to get an application permissions, the appid will be used as a parameters that will be passed to the `ApplicationsEffectivePermissionsGetAsync` method.This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **appId** is the only required parameter for retrieving the specific permissions assigned by the role name of the application. It will be of String_type.   
+   
+ 
+![25](https://user-images.githubusercontent.com/110983629/188267489-3781cc67-3996-48a1-a602-c70c7bcac05c.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.ReturnEffecivePermissionV2>>` object. It will be the list of permissions that are associated with the applications and also assigned by role name.
+  
+The class name of the `Task<List<Models.ReturnEffecivePermissionV2>>`  
+```markdown 
+  ReturnEffecivePermissionV2
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+{
+  "Permissions": null,
+  "AudienceId": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<List<Models.ReturnEffecivePermissionV2>>` Object Parameters 
+
+![26](https://user-images.githubusercontent.com/110983629/188267590-4980d536-13a6-482e-b984-daae632eabe4.png)
+
+  
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.ReturnEffecivePermissionV2>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/return-effecive-permission-v2)|
+ 
+ 
   
   
   
