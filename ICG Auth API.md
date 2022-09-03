@@ -2551,6 +2551,111 @@ The following table describe the parameters of the response type object:
 
   
   
+### Audiences Post
+#### Description
+This service endpoint will allow the user to create an audience by adding its details. For this purpose, the `AudiencesPostAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+  AudiencesPostAsync(Models.CreateAudienceBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new CreateAudienceBindingModel();
+model.Description = "Description4";
+
+try
+{
+    Audience result = await audiencesController.AudiencesPostAsync(model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to create an audience that was anticipated to be returned. In order to create audience, model object is created which will be of `CreateAudienceBindingModel` type and description will be defined for the model. The `model` will be passed as a parameter to the `AudiencesPostAsync` method in order to create an audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is required parameter to enter that includes Description(String_type), Roles (List of Strings), Permissions (List of Strings), Settings object, UsersDefaultSettings object, AudienceId (String type), and SecretKey (String type). The parameters of **model** object that are required to enter for creating audience includes Description, Settings, UserDefaultSettings. 
+
+The class name of the model is   
+  
+```markdown 
+  CreateAudienceBindingModel
+```   
+  
+  
+#### model Object Parameters
+   
+![34](https://user-images.githubusercontent.com/110983629/188271650-72bb5a86-a635-48f1-9ad0-22abe872310d.png)
+
+  
+The class name of the PermissionsAssigned object is   
+  
+```markdown 
+  PermissionsBindingModel
+```   
+  
+####  Audience Settings class name and Object Parameters  
+
+![35](https://user-images.githubusercontent.com/110983629/188271709-682d9cac-702f-4c26-b20f-b2f228c7729b.png)
+
+
+
+####  User Default Settings class name and Object Parameters    
+  
+![36](https://user-images.githubusercontent.com/110983629/188271794-80157746-97c9-49ce-af7c-ca8a67abd1c6.png)
+
+  
+ ####  Audience class name and Object Parameters    
+  
+ ![37](https://user-images.githubusercontent.com/110983629/188271863-5cd05480-079e-4d89-ba60-dfea4ab56e1e.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.CreateAudienceBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/create-audience-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.Audience>` object. The class name of the ResponseType object is 
+
+```markdown 
+   Audience
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+  {
+  "Id": null,
+  "Description": null,
+  "AudienceId": null,
+  "SecretKey": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<Models.ApplicationReturnModel>` Object Parameters
+
+![38](https://user-images.githubusercontent.com/110983629/188271948-3a347a7e-8d7a-43da-be7d-f65b62e0f825.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.ApplicationReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience)|
+ 
   
   
   
