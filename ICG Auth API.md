@@ -2406,6 +2406,72 @@ The class name of the  response object "Task<Models.ApplicationReturnModel>" is
  
 
   
+### Applications Permissions Delete
+#### Description 
+The user will be able to remove all the permissions connected to the role name using this service endpoint. The role name will be used to significantly access the roles whose permissions need to be deleted in order to eliminate permissions. For this purpose, the `ApplicationsPermissionsDeleteAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
+  
+```markdown 
+   ApplicationsPermissionsDeleteAsync(
+    string appId,
+    Models.DropPermisionRoleModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string appId = "appId6";
+var model = new DropPermisionRoleModel();
+model.Permissions = new List<string>();
+model.Permissions.Add("Permissions6");
+model.Permissions.Add("Permissions7");
+
+try
+{
+    string result = await applicationsController.ApplicationsPermissionsDeleteAsync(appId, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to delete permissions (that are associated with the specific role) which was anticipated to be returned. In order to delete permissions, the model object has been created that will be of `DropPermisionRoleModel` type. And all the permissions that needs to be removed will be added into the model object. The `ApplicationsPermissionsDeleteAsync` method will be executed to delete all those permissions from the specific application which is accessed through the appId. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object and **appid** are the two required parameters of this endpoint service call. Where the appid is the role name of String_type and model contains permissions object which is of String_type.  The permissions object is actually the list of permissions that needs to be deleted.
+  
+  
+![32](https://user-images.githubusercontent.com/110983629/188270057-855f35ef-5fba-4eda-a1a5-47c9985e2d6d.png)
+
+
+The class name of the model object is
+  
+```markdown 
+  DropPermisionRoleModel
+```   
+  
+#### model Object Parameters
+
+![33](https://user-images.githubusercontent.com/110983629/188270093-8ba2f2f9-071c-46e4-bb1c-258866d78cf4.png)
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|appid|Role name of String Type|  
+|model (required)|[Models.DropPermisionRoleModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/drop-permision-role-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object that will return the value whether the permissions are deleted or not to the respective role name of the application.  
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
