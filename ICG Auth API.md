@@ -2473,9 +2473,81 @@ The response of this endpoint service request contains the `Task<string>` object
 |Content-type|application/json;charset=utf-8|
 
   
+     
   
+## API Endpoints
+## Audiences 
+### Audiences Get
+#### Description
+This service endpoint will allow the user to reterive all the audiences that are active. For this purpose, the `AudiencesGetAsync` method is called by creating an instance of `AudiencesController` class which is accessed from the API client. 
   
+```markdown  
+ AudiencesController audiencesController = client.AudiencesController;
+```   
   
+```markdown
+  AudiencesGetAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    Audience result = await audiencesController.AudiencesGetAsync();
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to get all active audiences that was anticipated to be returned. In order to get audiences, `AudiencesGetAsync` method is used that does not take any parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint does not take any parameter.   
+   
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.Audience>` object. The class name of the ResponseType object is 
+
+```markdown 
+  Audience
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+  {
+  "Id": null,
+  "Description": null,
+  "AudienceId": null,
+  "SecretKey": null
+} 
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'ResponseType' Object Parameters
+The following table describe the parameters of the response type object:
+  
+|Names|Description|
+|-----|-----------| 
+|Id|Id of int Type|
+|Description|Description of String Type|
+|AudienceId|AudienceId of String Type|
+|SecertKey|SecertKey of String Type|
+ 
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.Audience>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience)]
 
   
   
@@ -2484,6 +2556,15 @@ The response of this endpoint service request contains the `Task<string>` object
   
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+
   
   
   
