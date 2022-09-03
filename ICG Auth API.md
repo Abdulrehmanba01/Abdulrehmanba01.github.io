@@ -147,7 +147,7 @@ It will be included in the try and catch block to deal with any exceptions that 
  
 
 
-#### API object Parameters
+#### Parameters Detail  
 This API call did not take any parameters.
 
 
@@ -218,7 +218,7 @@ It will be included in the try and catch block to deal with any exceptions that 
 
  
 
-#### API object Parameters
+#### Parameters Detail  
 This endpoint will contain the `model` object as a parameter that further contains the **key**, **MValue**, **Description**, **Level**, **Enabled**, **DataType**, **UserId** parameters. The **Key** is the required parameter that is of _String_Type. The MValue, Description, DataType, UserId and Level are also of _String_Type. Only the **Enabled** parameter is of Boolean Type.
 
 #### Model Object Parameters 
@@ -302,7 +302,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to add the user's account current state to the system that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
 
 
-#### API object Parameters
+#### Parameters Detail  
 This endpoint will contain the `model` object as a parameter that further contains the **key**, **MValue**, **Description**, **Level**, **Enabled**, **DataType**, **UserId** parameters. The **Key** is the required parameter that is of _String_Type. The MValue, Description, DataType, UserId and Level are also of _String_Type. Only the **Enabled** parameter is of Boolean Type.
 
 #### Model Object Parameters 
@@ -387,7 +387,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to delete the user's account settings that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
 
 
-#### API Parameters
+#### Parameters Detail  
 The API parameter for this service endpoint is **Key** (String_Type). It is the required parameter to add for deleting the user's account setting. 
  
 ![2](https://user-images.githubusercontent.com/110983629/187703187-50dab53f-35a6-4917-92da-9125c28d66b0.png)
@@ -439,7 +439,7 @@ This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to get the user's account settings detail that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
 
 
-#### API Parameters
+#### Parameters Detail  
   
 The API parameter for this service endpoint is **Key** (String_Type). It is the required parameter to add for retrieving the user's account setting. 
   
@@ -492,7 +492,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to get user current information from the system that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
 
 
-#### API object Parameters
+#### Parameters Detail  
 This endpoint does not contain any parameter.
 
 
@@ -732,7 +732,7 @@ catch (ApiException e){};
 
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to retrieve current user account permissions that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### Model object Parameters 
+#### Parameters Detail  
 This endpoint does not take any parameters.  
   
 
@@ -774,7 +774,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to enable the Google authenticator app for the user account that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
   
-#### Model object Parameters 
+#### Parameters Detail  
 This endpoint does not take any parameters.  
   
 
@@ -823,7 +823,7 @@ catch (ApiException e){};
 The model object's attributes will be declared and initialized first and then the model object will be passed to the `AccountEnableTFAAsync()`method as a parameter. It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to verify the users OTPs that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
 
 
-#### API object Parameters
+#### Parameters Detail  
   
 This endpoint will contain the `model` object as a parameter that further contains the **Code**, **SecertKey**, **Type**, **Audiences** parameters where the Code, SecretKey and Type are the required parameters of String_Type. The Audiences is the list of integers to define the number of users whose 2 factor authentication process is enabled.  
 
@@ -928,7 +928,7 @@ catch (ApiException e){};
 
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to confirm user's email address that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail   
 This endpoint will contain the three parameters that includes user id, hash code, callbackurl. All of these three parameters are of String_Type and code and user id are required to enter for this process call. 
   
 ![7](https://user-images.githubusercontent.com/110983629/187933225-55fa524b-e8b7-4ead-ac89-47a2f3021aee.png)
@@ -974,7 +974,7 @@ catch (ApiException e){};
 
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to confirm user's email address set password that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail  
 This endpoint will contain the three parameters that includes userId, code (hash code), callbackurl. All of these three parameters are of String_Type and code and user id are required to enter for this process call. 
   
   
@@ -1025,7 +1025,7 @@ catch (ApiException e){};
 
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to confirm user's changed email address that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail  
 This endpoint will contain the four parameters that includes userId, code (hash code), preToken, callbackurl. All of these four parameters are of String_Type and code and user id are required to enter for this process call. 
   
 ![9](https://user-images.githubusercontent.com/110983629/187940304-a9c853b1-f60d-47f6-8049-a32d23f62d39.png)
@@ -1072,7 +1072,7 @@ catch (ApiException e){};
 
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to change user account password that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail   
 This endpoint will contain the four parameters that includes userId, code, preToken, and newPassword. All of these four parameters are of String_Type. The code is used to validate the user, preToken is the hash code sent to the user and the newPassword is the new password that user set out for his account.  
  
 ![10](https://user-images.githubusercontent.com/110983629/187946577-d2c83884-f596-46d1-900d-142c67d99b30.png)
@@ -1116,7 +1116,7 @@ catch (ApiException e){};
 
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to acess user account through the email that was anticipated to be returned. The email will be passed as a parameter to the method `AccountForgotUserNameAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail  
 This endpoint will contain the only one parameters which is email address of the user who forgot his user name. The email address will be of String_Type and it is required to enter in order to recover the user's account securely. 
  
 ![11](https://user-images.githubusercontent.com/110983629/187952042-fcd4f852-c291-4d6e-b791-bd0a0c34b9bf.png)
@@ -1166,7 +1166,7 @@ catch (ApiException e){};
   
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to recover the user's account password that was anticipated to be returned. The user's email address and user name will be passed as a parameter to the method `AccountForgotPasswordAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail  
 This endpoint will contain the four parameters which include the userName, email, urlCallback, and audienceId. These four parameters are required to enter for recovering the user's account password in a secured manner. All of these parameters are of String_Type.   
   
  
@@ -1278,7 +1278,7 @@ catch (ApiException e){};
   
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to login through the API key that was anticipated to be returned. The appid, apikey and audienceid are the variables that get declared and initialize and then passed to the `AccountLoginApiAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail  
 The parameters of this endpoint are appid, apikey and audienceid where all of them are required to enter for logging in through the API key. All of these parameters are of String_Type.  
   
 ![2](https://user-images.githubusercontent.com/110983629/188129177-9096ef6f-ad00-4b8a-b2f2-2746ab2d7e04.png)
@@ -1325,7 +1325,7 @@ catch (ApiException e){};
   
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to login through the OTP that was anticipated to be returned. The preToken and code are declared and initialize and then passed to the `AccountLoginTfaAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail  
 The parameters of this endpoint are preToken, code and audienceid where all of them are required to enter except audienceid for logging in. All of these parameters are of String_Type. The pretoken is the token for session id and code is the code (OTP) that is sent to the user through mobile number or through the email.
   
  ![3](https://user-images.githubusercontent.com/110983629/188132917-9ab790e9-7af1-44f3-8bf5-a70def9b2269.png)
@@ -1443,7 +1443,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to register a user that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
 
 
-#### API Parameters
+#### Parameters Detail  
 The parameter of this endpoint service contains **createUserModel** as a required object. It further contains the Email, Username, FirstName, LastName, Password, ConfirmPassword, Recaptchakey, MobilePhone, HomePhone, OfficePhone, PostalCode, Address, Address2, City, State, Country, CallBackUrl, AudienceId, Level parameters. Whereas, the **UserSettings**, **Roles**, and **Permissions** objects are further contains parameters. In all of these parameters, the Email, Username, FirstName, LastName, Password, ConfirmPassword and UserSettings are required ones. 
   
 
@@ -1597,7 +1597,7 @@ catch (ApiException e){};
   
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to resend confirmation email to the user that was anticipated to be returned. The user id and audience id are passed as a parameter to the `AccountReSendConfirmationEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters 
+#### Parameters Detail  
 The userId and audienceId parameters for this API request are included. Both of them must be entered in order to process the request, and they are both of the String Type.
   
  
@@ -1643,7 +1643,7 @@ catch (ApiException e){};
   
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to send registration email to the user that was anticipated to be returned. In order to send the email, the register id will be used as a parameter that will be passed to the `AccountSendRegisterEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters  
+#### Parameters Detail   
 The registerId is the required parameter of String_Type for making this process call successful to send registration email.  
   
 ![11](https://user-images.githubusercontent.com/110983629/188168338-2c9e4a73-f5aa-43bc-9ab4-2c5c01637564.png)
@@ -1697,7 +1697,7 @@ catch (ApiException e){};
   
 It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to login the user into his account that was anticipated to be returned. In order to login, the username, password, grant type and clientId will be used as a parameters that will be passed to the `UsersLoginAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters  
+#### Parameters Detail  
 There are four parameters for logging into the system in which username, password and grant type are required ones. The username can be the email address of the user, password will be the account password of the user, grantType will also be the password of the user. The clientid will be the audience id that is `"f1fa7fff-92e4-4133-8d10-36868c4987ad"` by default.    
    
 ![12](https://user-images.githubusercontent.com/110983629/188172744-7308deea-7c26-4208-824a-a6c5133f5831.png)
@@ -1743,7 +1743,7 @@ catch (ApiException e){};
   
 It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to get all applications details that was anticipated to be returned. In order to get applications, `ApplicationsGetAsync` method is used that does not take any parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
-#### API Parameters  
+#### Parameters Detail  
 This service endpoint does not take any parameter.   
    
  
@@ -1797,6 +1797,108 @@ The following table describe the parameters of the response type object:
  
   
 ### Applications Post
+#### Description
+This service endpoint will allow the user to create an application by adding its details. For this purpose, the `ApplicationsPostAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
+  
+```markdown
+  ApplicationsPostAsync(Models.CreateApplicationBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new CreateApplicationBindingModel();
+model.Description = "Description4";
+
+try
+{
+    ApplicationReturnModel result = await applicationsController.ApplicationsPostAsync(model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to create an application that was anticipated to be returned. In order to create application, model object is created which will be of `CreateApplicationBindingModel` type and description will be defined for the model. The `model` will be passed as a parameter to the `ApplicationsPostAsync` method in order to create an application. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **application model ** object is the required parameter to enter that includes description(String_type), Id (int type), AppId (String type), ApiKey  (String type), ExpirationDate (DateTime type), and PermissionsAssigned object. The description parameter is required that cannot be null. The minimum length for the description is 2 and maximum length is 256.    
+
+The class name of the application model is   
+  
+```markdown 
+ CreateApplicationBindingModel
+```   
+  
+  
+#### Application model Object Parameters
+  
+![13](https://user-images.githubusercontent.com/110983629/188262165-26fd057d-5b3f-474a-904d-65804fbd1ebc.png)
+
+  
+The class name of the PermissionsAssigned object is   
+  
+```markdown 
+  PermissionsBindingModel
+```   
+    
+  
+#### PermissionsAssigned Object Parameters  
+  
+![14](https://user-images.githubusercontent.com/110983629/188262175-db378b62-68a1-4ffa-bf16-01208be52243.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.CreateApplicationBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/create-application-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.ApplicationReturnModel>` object. The class name of the ResponseType object is 
+
+```markdown 
+  ApplicationReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Id": null,
+  "Description": null,
+  "AudienceId": null,
+  "AppId": null,
+  "ApiKey": null,
+  "ExpirationDate": null,
+  "UserId": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<Models.ApplicationReturnModel>` Object Parameters
+
+![15](https://user-images.githubusercontent.com/110983629/188262409-523dfbe2-15cf-4def-b018-90d3182e5124.png)
+
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.ApplicationReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/application-return-model)|
+ 
+  
+ 
+  
+
+### Applications Get 1
 #### Description
 This service endpoint will allow the user to create an application by adding its details. For this purpose, the `ApplicationsPostAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
   
@@ -1894,10 +1996,7 @@ The response of this endpoint service request contains the `Task<Models.Applicat
 |-----|-----------|
 |ResponseType|[Task<Models.ApplicationReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/application-return-model)|
  
-  
- 
-  
-  
+    
   
   
   
