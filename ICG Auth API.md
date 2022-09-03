@@ -2083,12 +2083,10 @@ The response of this endpoint service request contains the `Task<Models.Applicat
 ### Applications Delete
 #### Description
     
-This service endpoint will allow the user to update an application by editing its details. For this purpose, the `ApplicationsPutAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
+This service endpoint will allow the user to delete an application by accessing it through application name. For this purpose, the `ApplicationsDeleteAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
   
 ```markdown 
-  ApplicationsPutAsync(
-    string description,
-    Models.CreateApplicationBindingModel model)
+  ApplicationsDeleteAsync(string description)
 ```
 
 This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
@@ -2096,77 +2094,25 @@ This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/
 #### Class-Object
 ```markdown
 string description = "description0";
-var model = new CreateApplicationBindingModel();
-model.Description = "Description4";
-
 try
 {
-    ApplicationReturnModel result = await applicationsController.ApplicationsPutAsync(description, model);
+    string result = await applicationsController.ApplicationsDeleteAsync(description);
 }
 catch (ApiException e){};
 ```  
   
-It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to update an application detail that was anticipated to be returned. In order to update an application, model object is created which will be of `CreateApplicationBindingModel` type and description of the updating application will be added in the model's description. The `model` will be passed as a parameter to the `ApplicationsPutAsync` method in order to update an application. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to delete an application that was anticipated to be returned. In order to delete an application, description of the application will be used that is passed as a parameter to the `ApplicationsDeleteAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
 #### Parameters Detail  
-The **model** object is the required parameter to enter that includes description(String_type), Id (int type), AppId (String type), ApiKey  (String type), ExpirationDate (DateTime type), and PermissionsAssigned object. The description parameter is required that cannot be null. The minimum length for the description is 2 and maximum length is 256. One other parameter for updating the application is the **description** that is the application name.   
+The **description** is the only required parameter used for deleting an application. It is basically the application id that is significantly associated to one application. 
   
-  
-![20](https://user-images.githubusercontent.com/110983629/188263898-f0fd54c0-c4c9-4b73-84eb-a45574ddc52a.png)
+![22](https://user-images.githubusercontent.com/110983629/188266381-551169cb-493a-4ff5-a3b2-812c602ffa21.png)
 
-  
 
-The class name of the application model which is also known as model is   
-  
-```markdown 
- CreateApplicationBindingModel
-```   
-  
-  
-#### Application model Object Parameters
- 
-![18](https://user-images.githubusercontent.com/110983629/188263792-48f7c7f5-0b11-49cb-81c4-7d7abb4968d6.png)
-
-  
-The class name of the PermissionsAssigned object is   
-  
-```markdown 
-  PermissionsBindingModel
-```      
-  
-#### PermissionsAssigned Object Parameters  
-  
-![19](https://user-images.githubusercontent.com/110983629/188263823-11264d8a-720a-4412-b64f-92b34372bf36.png)
-
-  
-#### Explorer 
-
-|Names|Description|
-|-----|-----------|
-|model (required)|[Models.CreateApplicationBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/create-application-binding-model)|
-  
- 
 #### Responses  
 
-The response of this endpoint service request contains the `Task<Models.ApplicationReturnModel>` object. The class name of the ResponseType object is 
-
-```markdown 
-  ApplicationReturnModel
-``` 
- 
-#### Response body-JSON  
-```markdown 
- {
-  "Id": null,
-  "Description": null,
-  "AudienceId": null,
-  "AppId": null,
-  "ApiKey": null,
-  "ExpirationDate": null,
-  "UserId": null
-}
-```
-
+The response of this endpoint service request contains the `Task<string>` object. It returns the value whether the application is deleted or not.  
+  
 #### Response headers-JSON
 |Header|Value|
 |------|-----|
@@ -2174,18 +2120,7 @@ The response of this endpoint service request contains the `Task<Models.Applicat
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
-    
-##### `Task<Models.ApplicationReturnModel>` Object Parameters
-
-![21](https://user-images.githubusercontent.com/110983629/188263998-b7241a70-ca7f-44a9-98af-de4154aa910d.png)
-
- 
-#### Explorer 
-
-|Names|Description|
-|-----|-----------|
-|ResponseType|[Task<Models.ApplicationReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/application-return-model)|
-  
+   
   
   
   
