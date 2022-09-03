@@ -2333,6 +2333,78 @@ The response of this endpoint service request contains the `Task<string>` object
 
   
   
+### Applications Renew
+#### Description
+    
+This service endpoint will allow the user to renew an application by employing the application id. In order to do that the `ApplicationsRenewAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
+  
+```markdown 
+  ApplicationsRenewAsync(string appid)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/api-endpoints/applications/applications-renew)
+
+#### Class-Object
+```markdown
+string appid = "appid6";
+
+try
+{
+    ApplicationReturnModel result = await applicationsController.ApplicationsRenewAsync(appid);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to renew an application that was anticipated to be returned. In order to renew the application, the application id will be passed as a parameter to the `ApplicationsRenewAsync` method in order to renew the specific application. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **appid** parameter (String_type) is the only required parameter for renewing an application.  
+  
+![30](https://user-images.githubusercontent.com/110983629/188269178-fdf95074-b297-4108-b423-422ebfbc9b10.png)
+
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.ApplicationReturnModel>` object that returns the application that is get renewed. 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Id": null,
+  "Description": null,
+  "AudienceId": null,
+  "AppId": null,
+  "ApiKey": null,
+  "ExpirationDate": null,
+  "UserId": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+The class name of the  response object "Task<Models.ApplicationReturnModel>" is
+  
+ ```markdown  
+  ApplicationReturnModel
+ ```
+  
+##### `Task<Models.ApplicationReturnModel>` Object Parameters
+  
+![31](https://user-images.githubusercontent.com/110983629/188269366-e5d8024e-b7f1-4322-98c3-b777a15fdc99.png)
+
+ 
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.ApplicationReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/application-return-model)|
+ 
+
   
   
   
