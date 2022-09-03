@@ -1821,7 +1821,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to create an application that was anticipated to be returned. In order to create application, model object is created which will be of `CreateApplicationBindingModel` type and description will be defined for the model. The `model` will be passed as a parameter to the `ApplicationsPostAsync` method in order to create an application. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
 #### Parameters Detail  
-The **application model ** object is the required parameter to enter that includes description(String_type), Id (int type), AppId (String type), ApiKey  (String type), ExpirationDate (DateTime type), and PermissionsAssigned object. The description parameter is required that cannot be null. The minimum length for the description is 2 and maximum length is 256.    
+The **application model** object is the required parameter to enter that includes description(String_type), Id (int type), AppId (String type), ApiKey  (String type), ExpirationDate (DateTime type), and PermissionsAssigned object. The description parameter is required that cannot be null. The minimum length for the description is 2 and maximum length is 256.    
 
 The class name of the application model is   
   
