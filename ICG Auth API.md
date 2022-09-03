@@ -1716,9 +1716,84 @@ The response of this endpoint service request contains the "ResponseType" object
 |Content-type|application/json;charset=utf-8|     
    
   
+## API Endpoints
+## Applications
+### Applications Get
+#### Description
+This service endpoint will allow the user to get all applications details. For this purpose, the `ApplicationsGetAsync` method is called by creating an instance of AccountController class.  
+   
+```markdown
+  ApplicationsGetAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+ try
+{
+    List<ApplicationReturnModel> result = await applicationsController.ApplicationsGetAsync();
+}
+catch (ApiException e){};
+```  
   
+It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to get all applications details that was anticipated to be returned. In order to get applications, `ApplicationsGetAsync` method is used that does not take any parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### API Parameters  
+This service endpoint does not take any parameter.   
+   
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.ApplicationReturnModel>>` object. The class name of the ResponseType object is 
+
+```markdown 
+ ApplicationReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+{
+  "Id": null,
+  "Description": null,
+  "AudienceId": null,
+  "AppId": null,
+  "ApiKey": null,
+  "ExpirationDate": null,
+  "UserId": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'ResponseType' Object Parameters
+The following table describe the parameters of the response type object:
   
+|Names|Description|
+|-----|-----------| 
+|Id|Id of int Type|
+|Description|Description of String Type|
+|AudienceId|AudienceId of String Type|
+|AppId|Application id of String Type|
+|ApiKey|App Key of String Type|
+|ExpirationDate|Expiration date of DateTime|
+|UserId|UserId of String Type|
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.ApplicationReturnModel>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/application-return-model)|
+ 
   
+ 
+ 
   
   
   
