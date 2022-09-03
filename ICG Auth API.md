@@ -2255,7 +2255,82 @@ The class name of the `Task<List<Models.ReturnEffecivePermissionV2>>`
  
  
   
+### Applications Permissions Post
+#### Description 
+
+This service endpoint will allow the user to assign permissions to the role of the application. In order to assign permissions, the role name will be used for significantly defining to which role that specific permissions is assigned. For this purpose, the `ApplicationsPermissionsPostAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client.  
   
+```markdown 
+  ApplicationsPermissionsPostAsync(
+    string appid,
+    Models.AssignPermisionRoleModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string appid = "appid6";
+var model = new AssignPermisionRoleModel();
+
+try
+{
+    string result = await applicationsController.ApplicationsPermissionsPostAsync(appid, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to assign permissions to the specific role by role name that was anticipated to be returned. In order to assign permissions, model object and appid parameters will be passed to the `ApplicationsPermissionsPostAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object and **appid** are the two required parameters of this endpoint service call. Where the appid is the role name of String_type and model contains permissions object and TargetAudienceId. The audience id is optional to add which is of String_type.  
+  
+  
+![27](https://user-images.githubusercontent.com/110983629/188268416-201853cc-ab74-4432-a60d-a4fb7e60b246.png)
+
+
+The class name of the model object is
+  
+```markdown 
+ AssignPermisionRoleModel
+```   
+  
+#### model Object Parameters
+ 
+![28](https://user-images.githubusercontent.com/110983629/188268480-453ad34e-162d-4298-ae53-c98cb8d4a1fa.png)
+
+  
+The class name of the Permissions object is   
+  
+```markdown 
+  PermissionsBindingModel
+```      
+  
+#### Permissions Object Parameters  
+
+![29](https://user-images.githubusercontent.com/110983629/188268537-9be26796-d59f-4d17-bdcb-0678b0a7199b.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|appid|Role name of String Type|  
+|model (required)|[Models.AssignPermisionRoleModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/assign-permision-role-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object that will return the value whether the permissions are assigned or not to the respective role name.  
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
