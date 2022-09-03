@@ -1899,74 +1899,45 @@ The response of this endpoint service request contains the `Task<Models.Applicat
   
 
 ### Applications Get 1
-#### Description
-This service endpoint will allow the user to create an application by adding its details. For this purpose, the `ApplicationsPostAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
+#### Description 
+  
+This service endpoint will allow the user to retrieve an application through its description. For this purpose, the `ApplicationsGet1Async` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
   
 ```markdown
-  ApplicationsPostAsync(Models.CreateApplicationBindingModel model)
+  ApplicationsGet1Async(string description)
 ```
 
 This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
 
 #### Class-Object
 ```markdown
-var model = new CreateApplicationBindingModel();
-model.Description = "Description4";
-
+string description = "description0";
 try
 {
-    ApplicationReturnModel result = await applicationsController.ApplicationsPostAsync(model);
+    ApplicationReturnModel result = await applicationsController.ApplicationsGet1Async(description);
 }
 catch (ApiException e){};
 ```  
   
-It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to create an application that was anticipated to be returned. In order to create application, model object is created which will be of `CreateApplicationBindingModel` type and description will be defined for the model. The `model` will be passed as a parameter to the `ApplicationsPostAsync` method in order to create an application. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
-
-#### API Parameters  
-The **application model ** object is the required parameter to enter that includes description(String_type), Id (int type), AppId (String type), ApiKey  (String type), ExpirationDate (DateTime type), and PermissionsAssigned object. The description parameter is required that cannot be null. The minimum length for the description is 2 and maximum length is 256.    
-
-The class name of the application model is   
-  
-```markdown 
- CreateApplicationBindingModel
-```   
-  
-  
-#### Application model Object Parameters
-  
-![13](https://user-images.githubusercontent.com/110983629/188262165-26fd057d-5b3f-474a-904d-65804fbd1ebc.png)
+It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to retrieve application that was anticipated to be returned. In order to get application details, description of the application will be used as a parameter that will be passed to the `ApplicationsGet1Async` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
   
-The class name of the PermissionsAssigned object is   
+#### Parameters Detail  
+The **Description** is the required parameter to enter for retrieving the specific application. It will be of String_type.   
   
-```markdown 
-  PermissionsBindingModel
-```   
-    
-  
-#### PermissionsAssigned Object Parameters  
-  
-![14](https://user-images.githubusercontent.com/110983629/188262175-db378b62-68a1-4ffa-bf16-01208be52243.png)
-
-  
-#### Explorer 
-
-|Names|Description|
-|-----|-----------|
-|model (required)|[Models.CreateApplicationBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/create-application-binding-model)|
-  
+![16](https://user-images.githubusercontent.com/110983629/188263209-9bc712b4-bc17-43ea-a079-5b80e1237deb.png)
  
 #### Responses  
 
-The response of this endpoint service request contains the `Task<Models.ApplicationReturnModel>` object. The class name of the ResponseType object is 
+The response of this endpoint service request contains the `Task<Models.ApplicationReturnModel>` object. The class name of the Response object is 
 
 ```markdown 
-  ApplicationReturnModel
+ ApplicationReturnModel
 ``` 
  
 #### Response body-JSON  
 ```markdown 
- {
+{
   "Id": null,
   "Description": null,
   "AudienceId": null,
@@ -1987,7 +1958,7 @@ The response of this endpoint service request contains the `Task<Models.Applicat
     
 ##### `Task<Models.ApplicationReturnModel>` Object Parameters
 
-![15](https://user-images.githubusercontent.com/110983629/188262409-523dfbe2-15cf-4def-b018-90d3182e5124.png)
+![17](https://user-images.githubusercontent.com/110983629/188263317-cac4da2f-7753-4a89-98f9-d19238cb17c7.png)
 
  
 #### Explorer 
@@ -1995,7 +1966,6 @@ The response of this endpoint service request contains the `Task<Models.Applicat
 |Names|Description|
 |-----|-----------|
 |ResponseType|[Task<Models.ApplicationReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/application-return-model)|
- 
     
   
   
