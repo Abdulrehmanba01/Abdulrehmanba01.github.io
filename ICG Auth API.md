@@ -3443,7 +3443,49 @@ The response of this endpoint service request contains the `Task<object>` object
 
   
   
+
   
+  
+### Audiences Users Default Settings Get
+#### Description
+This service endpoint will allow the user to retrieve the users default settings for the audiences. For this purpose, the `AudiencesUsersDefaultSettingsGetAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+  AudiencesUsersDefaultSettingsGetAsync(string id)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+try
+{
+    object result = await audiencesController.AudiencesUsersDefaultSettingsGetAsync(id);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to retrieve user's audience default setting that was anticipated to be returned. To get user's default setting details, id will be passed as a parameter to the `AudiencesUsersDefaultSettingsGetAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **id** is the required parameter to enter which is audience id of String type.  
+   
+![60](https://user-images.githubusercontent.com/110983629/188485337-a0543685-c049-46b7-b021-6caacf1ccadb.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will returns the value whether the user's audience default setting is shown to the user or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
