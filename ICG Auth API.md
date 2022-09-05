@@ -3531,6 +3531,64 @@ The response of this endpoint service request contains the `Task<object>` object
   
   
   
+### Audiences Settings Updateby Key
+#### Description
+This service endpoint will allow the user to update an audience settings which will be accessed by audience key. For this purpose, the `AudiencesSettingsUpdatebyKeyAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+  AudiencesSettingsUpdatebyKeyAsync(Models.AudienceSettingBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new AudienceSettingBindingModel();
+model.Key = "Key6";
+model.MValue = "Value0";
+
+try
+{
+    object result = await audiencesController.AudiencesSettingsUpdatebyKeyAsync(model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to update an audience setting that was anticipated to be returned. In order to edit audience setting, model object is created which will be of `AudienceSettingBindingModel` type that will be passed as a parameter to the `AudiencesSettingsUpdatebyKeyAsync` method in order to update an audience setting. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is required parameter to enter that includes Key (String_type), MValue (String_type), Description (String_type), Level (String_type), Enabled (bool) and DataType (String_type). Where the Key and MValue are required to enter for updating audience setting.  
+
+The class name of the model is   
+  
+```markdown  
+  AudienceSettingBindingModel
+```   
+  
+#### model Object Parameters 
+   
+![62](https://user-images.githubusercontent.com/110983629/188488401-602661e0-bb1a-41dc-b46c-a8e87afdd190.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.AudienceSettingBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience-setting-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will returns the value whether the audience setting get updated or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
