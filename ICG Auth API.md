@@ -2590,12 +2590,6 @@ The class name of the model is
 ![34](https://user-images.githubusercontent.com/110983629/188271650-72bb5a86-a635-48f1-9ad0-22abe872310d.png)
 
   
-The class name of the PermissionsAssigned object is   
-  
-```markdown 
-  PermissionsBindingModel
-```   
-  
 ####  Audience Settings class name and Object Parameters  
 
 ![35](https://user-images.githubusercontent.com/110983629/188271709-682d9cac-702f-4c26-b20f-b2f228c7729b.png)
@@ -2645,7 +2639,7 @@ The response of this endpoint service request contains the `Task<Models.Audience
 |Content-type|application/json;charset=utf-8|
 
     
-##### `Task<Models.ApplicationReturnModel>` Object Parameters
+##### `Task<Models.Audience>` Object Parameters
 
 ![38](https://user-images.githubusercontent.com/110983629/188271948-3a347a7e-8d7a-43da-be7d-f65b62e0f825.png)
 
@@ -2654,7 +2648,7 @@ The response of this endpoint service request contains the `Task<Models.Audience
 
 |Names|Description|
 |-----|-----------|
-|ResponseType|[Task<Models.ApplicationReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience)|
+|ResponseType|[Task<Models.Audience>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience)|
  
   
 
