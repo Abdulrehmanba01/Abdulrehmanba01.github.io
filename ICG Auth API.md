@@ -3488,6 +3488,46 @@ The response of this endpoint service request contains the `Task<object>` object
 
   
   
+### Audiences Settings Getby Key
+#### Description
+By providing the key, the user can access this service endpoint to receive the audiences' default settings. For this purpose, the `AudiencesSettingsGetbyKeyAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+  AudiencesSettingsGetbyKeyAsync(string key)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string key = "key0";
+try
+{
+    object result = await audiencesController.AudiencesSettingsGetbyKeyAsync(key);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to retrieve user's audience default setting that was anticipated to be returned. To get default setting details, key will be passed as a parameter to the `AudiencesSettingsGetbyKeyAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **key** is the required parameter to enter which is unique for each audience setting.
+ 
+![61](https://user-images.githubusercontent.com/110983629/188487010-629b910e-0a4e-4627-8c6b-4b84718b5922.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will returns the value whether audience default setting is shown to the user or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
