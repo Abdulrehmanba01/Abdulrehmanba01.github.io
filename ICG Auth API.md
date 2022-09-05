@@ -3239,6 +3239,106 @@ The response of this endpoint service request contains the `Task<object>` object
 |Content-type|application/json;charset=utf-8|
 
   
+
+  
+   
+### Audiences Settings Put
+#### Description
+This service endpoint will allow the user to update an audience settings by adding its details. In order to enable the TFA (Two Factor Authentication), configure your settings with the key for TFA and make its value true for receiving each time the code when you logged into the system. For enabling the audience callback url, enter the key as "NotificationUri" and make its value true. Moreover, for enabling the notifications, enter the key as "TFAProvider" and makes its value 'EmailCode' or 'PhoneCode' for receiving notifications.
+For this purpose, the `AudiencesSettingsPutAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+ AudiencesSettingsPutAsync(
+    string id,
+    Models.AudienceSettingBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+var model = new AudienceSettingBindingModel();
+model.Key = "Key6";
+model.MValue = "Value0";
+
+try
+{
+    object result = await audiencesController.AudiencesSettingsPutAsync(id, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to update an audience setting that was anticipated to be returned. In order to edit audience setting, model object is created which will be of `AudienceSettingBindingModel` type and id. Both of them will be passed as a parameter to the `AudiencesSettingsPutAsync` method in order to update an audience setting. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is required parameter to enter that includes Key (String_type), MValue (String_type), Description (String_type), Level (String_type), Enabled (bool) and DataType (String_type). Where the Key and MValue are required to enter for updating audience setting. In order to update the audience setting, you need to enter the audience id which is also a required parameter update the setting.
+  
+  
+![55](https://user-images.githubusercontent.com/110983629/188476440-2be32eb6-cbae-42ee-941f-9fd7e28def1d.png)
+
+  
+
+The class name of the model is   
+  
+```markdown  
+  AudienceSettingBindingModel
+```   
+  
+#### model Object Parameters 
+   
+![54](https://user-images.githubusercontent.com/110983629/188476073-de3b24f2-4fcf-44f1-a416-ddd0446a1a34.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.AudienceSettingBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience-setting-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will returns the value whether the audience setting get updated or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+     
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
