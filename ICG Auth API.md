@@ -3067,7 +3067,67 @@ The response of this endpoint service request contains the `Task<object>` object
    
   
   
+### Audiences Default Settings Post
+#### Description
+This service endpoint will allow the user to assign Default Settings that will be automatically added to each new Audience. For this purpose, the `AudiencesDefaultSettingsPostAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
   
+```markdown
+AudiencesDefaultSettingsPostAsync(
+    Models.AudienceDefaultSettingBindingModel model) 
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new AudienceDefaultSettingBindingModel();
+model.Key = "Key6";
+model.MValue = "Value0";
+
+try
+{
+    object result = await audiencesController.AudiencesDefaultSettingsPostAsync(model);
+}
+catch (ApiException e){};
+  
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to assign default settings to the audiences that was anticipated to be returned. In order to assign default settings, model object is created which will be of `AudienceDefaultSettingBindingModel` type and will be passed as a parameter to the `AudiencesDefaultSettingsPostAsync` method in order to add an default settigns for each audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is the required parameter to enter that contains Key (String_Type), MValue (String_Type), Description (String_Type), Level (String_Type), Enabled (bool), DataType (String_Type), Propagate (bool). The key. MValue are the required parameters for adding the default settings of the audiences. 
+  
+The class name of the model is   
+  
+```markdown 
+   AudienceDefaultSettingBindingModel
+```   
+  
+#### model Object Parameters 
+
+![51](https://user-images.githubusercontent.com/110983629/188465544-77fddc7d-ecfc-42d9-be3a-fbe31b630467.png)
+
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.AudienceDefaultSettingBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience-default-setting-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will indicate whether the audiences default setting is added or not.
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
 
   
   
