@@ -2872,7 +2872,72 @@ The response of this endpoint service request contains the `Task<string>` object
   
   
   
+### Audiences Find
+#### Description
+This service endpoint will allow the user to retrieve an audience by entering audience description. For this purpose, the `AudiencesFindAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+  AudiencesFindAsync(string description)
+```
 
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string description = "description0";
+try
+{
+    Audience result = await audiencesController.AudiencesFindAsync(description);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to retrieve an audience details that was anticipated to be returned. In order to get an audience detail, the audience description is passed as a parameter to the method `AudiencesFindAsync` so that only the audience whose description is passed will be retrieved in result. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There is only one required parameter which is **description** that is associated with only one instance of audience. The user must need to enter the audience description for receiving the detail of the specific audience.  
+ 
+![47](https://user-images.githubusercontent.com/110983629/188457053-4d341165-a547-4bab-890f-625e9fc76172.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.Audience>` object. The class name of the ResponseType object is 
+
+```markdown 
+   Audience
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Id": null,
+  "Description": null,
+  "AudienceId": null,
+  "SecretKey": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<Models.Audience>` Object Parameters  
+    
+![40](https://user-images.githubusercontent.com/110983629/188449508-c863c9e4-78e1-4d1c-9c4c-8b0dd1afc6e6.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.Audience>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience)|
+ 
+ 
   
   
   
