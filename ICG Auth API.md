@@ -2729,7 +2729,109 @@ The response of this endpoint service request contains the `Task<Models.Audience
   
   
   
+### Audiences Put
+#### Description
+This service endpoint will allow the user to update an audience by adding its details. For this purpose, the `AudiencesPutAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
   
+```markdown
+ AudiencesPutAsync(
+    string id,
+    Models.UpdateAudienceBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+var model = new UpdateAudienceBindingModel();
+model.Description = "Description4";
+
+try
+{
+    Audience result = await audiencesController.AudiencesPutAsync(id, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to update an audience that was anticipated to be returned. In order to edit audience details, model object is created which will be of `UpdateAudienceBindingModel` type and description will be defined for the model. The `model`and audience id will be passed as a parameter to the `AudiencesPutAsync` method in order to update an audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is required parameter to enter that includes Description(String_type), Roles (List of Strings), Permissions (List of Strings), Settings object, UsersDefaultSettings object, AudienceId (String type), and SecretKey (String type). The parameters of **model** object that are required to enter for updating audience are **Description**, **Settings**, **UserDefaultSettings**. The id of audience is also passed as a separate parameter to this service endpoint for indicating which audience detail needs to be updated. 
+
+The class name of the model is   
+  
+```markdown 
+ UpdateAudienceBindingModel
+```   
+  
+#### model Object Parameters 
+  
+![41](https://user-images.githubusercontent.com/110983629/188451966-2301f2bf-06c9-4a56-8198-905c718ca91e.png)
+ 
+  
+####  Audience Settings class name and Object Parameters  
+
+![42](https://user-images.githubusercontent.com/110983629/188452272-f424c83c-4dc2-42a3-9578-17da4a015945.png)
+
+
+####  User Default Settings class name and Object Parameters    
+  
+![43](https://user-images.githubusercontent.com/110983629/188452439-fe748e6c-e8f8-48ed-bb72-53d8fde8e851.png)
+
+  
+ ####  Audience class name and Object Parameters    
+
+![44](https://user-images.githubusercontent.com/110983629/188452589-04bf9f6d-02ba-4560-a3ce-2f26043cd934.png)
+
+ 
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UpdateAudienceBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/update-audience-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.Audience>` object. The class name of the ResponseType object is 
+
+```markdown 
+   Audience
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+  {
+  "Id": null,
+  "Description": null,
+  "AudienceId": null,
+  "SecretKey": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<Models.Audience>` Object Parameters
+
+![45](https://user-images.githubusercontent.com/110983629/188453174-b9595957-56df-4865-8f4a-4a27832dfbe3.png)
+  
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.Audience>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience)|
+ 
+  
+
   
   
   
