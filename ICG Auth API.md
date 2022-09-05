@@ -3132,6 +3132,94 @@ The response of this endpoint service request contains the `Task<object>` object
   
   
   
+    
+### Audiences Default Settings Delete
+#### Description
+This service endpoint will allow the user to delete Default Settings that will be automatically added to each new Audience. Through this process, all the default settings will get removed. For this purpose, the `AudiencesDefaultSettingsDeleteAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+ AudiencesDefaultSettingsDeleteAsync(Models.AudienceDefaultSettingRemoveModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown[
+var model = new AudienceDefaultSettingRemoveModel();
+model.Key = "Key6";
+
+try
+{
+    object result = await audiencesController.AudiencesDefaultSettingsDeleteAsync(model);
+}
+catch (ApiException e){};
+  
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to delete default settings of the audiences that was anticipated to be returned. In order to remove default settings, model object is created which will be of `AudienceDefaultSettingRemoveModel` type and will be passed as a parameter to the `AudiencesDefaultSettingsDeleteAsync` method in order to remove the default settigns for each audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is the required parameter to enter that contains Key (String_Type), and Propagate (bool) parameters. The key is the required parameter for removing the default settings of the audiences. And the Propagate will specify whether this setting will be applied to all the audiences or not.
+  
+The class name of the model is   
+  
+```markdown 
+   AudienceDefaultSettingRemoveModel
+```   
+  
+#### model Object Parameters 
+
+![52](https://user-images.githubusercontent.com/110983629/188467833-f8596a87-bd74-4d17-af68-08fde7b4945c.png)
+
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.AudienceDefaultSettingRemoveModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience-default-setting-remove-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will indicate whether the audiences default setting is successfully deleted or not.
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
