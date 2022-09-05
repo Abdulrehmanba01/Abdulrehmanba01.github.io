@@ -2827,7 +2827,46 @@ The response of this endpoint service request contains the `Task<Models.Audience
   
 
   
+### Audiences Delete
+#### Description
+This service endpoint will allow the user to delete an audience by entering audience id. For this purpose, the `AudiencesDeleteAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
   
+```markdown
+  AudiencesDeleteAsync(string id)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown 
+string id = "id0";
+try
+{
+    string result = await audiencesController.AudiencesDeleteAsync(id);
+}
+catch (ApiException e){};
+  
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to delete an audience that was anticipated to be returned. In order to remove an audience, the audience id is passed as a parameter to the method `AudiencesDeleteAsync` so that only the audience whose id is passed will be deleted in result. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There is only one required parameter which is **id** that is associated with only one instance of audience. The user must need to enter the audience id for deleting the detail of the specific audience.   
+  
+![46](https://user-images.githubusercontent.com/110983629/188455410-7f03e977-b1be-442e-8719-7fa8907ab98b.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object that will returns the value whether the respective audience is deleted or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
