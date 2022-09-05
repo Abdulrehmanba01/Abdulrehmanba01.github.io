@@ -3197,6 +3197,47 @@ The response of this endpoint service request contains the `Task<object>` object
   
   
   
+    
+### Audiences Settings Get
+#### Description 
+This service endpoint will allow the user to retrieve Settings of the audience by adding the audience id so that only the specific settings of an audience can be accessed. Through this process, all the default settings will get removed. For this purpose, the `AudiencesSettingsGetAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+ AudiencesSettingsGetAsync(string id)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+try
+{
+    object result = await audiencesController.AudiencesSettingsGetAsync(id);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to retrieve settings of an audiences that was anticipated to be returned. In order to get detail of the specific audience settings, audience id is used as a parameter that will be passed to the `AudiencesSettingsGetAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail   
+The **id** is the only required parameter which will indicate the audience id of String_type. 
+   
+![53](https://user-images.githubusercontent.com/110983629/188470579-ec73fae8-0c20-4f39-876b-d17883538e2f.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will indicate whether the audiences setting is successfully retrieved or not.
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
