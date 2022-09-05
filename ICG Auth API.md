@@ -3005,8 +3005,66 @@ The response of this endpoint service request contains the `Task<List<Models.Aud
    
   
   
+### Audiences Default Settings Put
+#### Description
+This service endpoint will allow the user to assign Default Settings that will be automatically added to each new Audience. For this purpose, the `AudiencesDefaultSettingsPutAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
   
+```markdown
+ AudiencesDefaultSettingsPutAsync(Models.UpdateAudienceDefaultSettingBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new UpdateAudienceDefaultSettingBindingModel();
+try
+{
+    object result = await audiencesController.AudiencesDefaultSettingsPutAsync(model);
+}
+catch (ApiException e){};
+```  
   
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to assign default settings to the audiences that was anticipated to be returned. In order to assign default settings, model object is created which will be of `UpdateAudienceDefaultSettingBindingModel` type and will be passed as a parameter to the `AudiencesDefaultSettingsPutAsync` method in order to update an default settigns for each audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is the required parameter to enter that contains **audiencesDefaultSettings** object and **reset** parameters. The reset parameter will be of bool type for indicating whether the Audiences Default Settings should be reset or not.  
+  
+The class name of the model is   
+  
+```markdown 
+  UpdateAudienceDefaultSettingBindingModel
+```   
+  
+#### model Object Parameters 
+
+![49](https://user-images.githubusercontent.com/110983629/188462227-e091dd74-2308-4b23-aefa-f5f8e894396e.png)
+
+    
+#### AudiencesDefaultSettings class name and Object Parameters  
+
+![50](https://user-images.githubusercontent.com/110983629/188462471-937063de-1bb1-463c-a8f2-50e3af662f6e.png)
+   
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UpdateAudienceDefaultSettingBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/update-audience-default-setting-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will indicate whether the audiences default setting is updated or not.
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+   
   
   
   
