@@ -2937,7 +2937,95 @@ The response of this endpoint service request contains the `Task<Models.Audience
 |-----|-----------|
 |ResponseType|[Task<Models.Audience>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience)|
  
+
  
+### Audiences Default Settings Get
+#### Description
+This service endpoint will allow the user to retrieve the audiences default settings that will be automatically added to each new Audience when it is created. For this purpose, the `AudiencesDefaultSettingsGetAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+  AudiencesDefaultSettingsGetAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+try
+{
+    List<AudienceDefaultSetting> result = await audiencesController.AudiencesDefaultSettingsGetAsync();
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to retrieve the audiences default settings details that was anticipated to be returned. The list of audiences settings will get returned against this endpoint request. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail   
+This endpoint does not take any parameter to process and retrieve the audiences default settings 
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.AudienceDefaultSetting>>` object. The class name of the ResponseType object is 
+
+```markdown 
+  AudienceDefaultSetting
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Key": null,
+  "Value": null,
+  "Description": null,
+  "Level": null,
+  "Enabled": false,
+  "DataType": "DataType4"
+} 
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<List<Models.AudienceDefaultSetting>>` Object Parameters  
+     
+![48](https://user-images.githubusercontent.com/110983629/188459594-2ed4c7d7-9e18-420f-b6a0-9bb4b15fd3f2.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.AudienceDefaultSetting>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience-default-setting)|
+ 
+   
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
