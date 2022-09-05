@@ -3377,6 +3377,70 @@ The response of this endpoint service request contains the `Task<object>` object
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
+
+  
+### Audiences Settings Delete
+#### Description
+This service endpoint will allow the user to delete the audience setting by entering the audience Id. For this purpose, the `AudiencesSettingsDeleteAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+ AudiencesSettingsDeleteAsync(
+    string id,
+    Models.AudienceSettingRemoveModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+var model = new AudienceSettingRemoveModel();
+model.Key = "Key6";
+
+try
+{
+    object result = await audiencesController.AudiencesSettingsDeleteAsync(id, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to delete an audience setting that was anticipated to be returned. In order to remove audience setting for a specific audience, model object is created which will be of `AudienceSettingRemoveModel` type and id of string type. Both of them will be passed as a parameter to the `AudiencesSettingsDeleteAsync` method in order to delete an audience setting. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is required parameter to enter that contains Key (String_type) attribute as a parameter. In order to delete the audience setting, you need to enter the audience id which is also a required parameter for removing the audience setting. 
+  
+![58](https://user-images.githubusercontent.com/110983629/188483558-84d0acc8-e12f-4a17-bf7d-f68540a47862.png)
+
+
+The class name of the model is   
+  
+```markdown  
+   AudienceSettingRemoveModel
+```   
+  
+#### model Object Parameters 
+ 
+![59](https://user-images.githubusercontent.com/110983629/188483662-8232ea40-7a14-4bd8-a292-59440f6c221f.png)
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.AudienceSettingRemoveModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience-setting-remove-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will returns the value whether the audience setting get deleted or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
