@@ -3719,6 +3719,87 @@ This endpoint service request may response codes to indicate the success or fail
   
   
   
+### Audiences Roles Delete
+#### Description
+This service endpoint will allow the user to delete roles that are assigned to the specific audience by adding audience id. For this purpose, the `AudiencesRolesDeleteAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+   AudiencesRolesDeleteAsync(
+    string id,
+    Models.AssignRoleToAudienceModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+var model = new AssignRoleToAudienceModel();
+model.Roles = new List<string>();
+model.Roles.Add("Roles9");
+model.Roles.Add("Roles0");
+model.Roles.Add("Roles1");
+
+try
+{
+    await audiencesController.AudiencesRolesDeleteAsync(id, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to delete roles which are assigned the audience that was anticipated to be returned. In order to delete roles, id of string type and model object is created which will be of `AssignRoleToAudienceModel` type that will be passed as a parameter to the `AudiencesRolesDeleteAsync` method in order to delete roles from an audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The audience ID will be used for accessing the specific audience for which the roles needs to be removed. The **model** object is also a required parameter to enter that contains the list of role names (List<string>) assigned to the audience.
+  
+![67](https://user-images.githubusercontent.com/110983629/188648815-52a4e67e-81c1-4830-a5ae-0e4c844340f0.png)
+  
+   
+The class name of the model is   
+  
+```markdown  
+ AssignRoleToAudienceModel
+```   
+  
+  
+#### model Object Parameters 
+
+![66](https://user-images.githubusercontent.com/110983629/188648509-14d09d9d-6156-46ac-b7b4-992caa57d3c4.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.AssignRoleToAudienceModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/assign-role-to-audience-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task` that will returns the value whether the roles associated with the audience get deleted or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+|404|Not Found|`ApiException`|
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, there are 2 codes 400 and 404. Codes in the 4xx range indicate an error that failed given the information provided (e.g., bad request, Not found etc.) 
+ 
+  
+  
+  
   
   
   
