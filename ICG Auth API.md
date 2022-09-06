@@ -3671,6 +3671,9 @@ It will be included in the try and catch block to deal with any exceptions that 
 
 #### Parameters Detail  
 The audience ID will be used for accessing the specific audience for which the roles needs to be assigned. The **model** object is also a required parameter to enter that contains the list of role names (List<string>) assigned to the audience.
+  
+![65](https://user-images.githubusercontent.com/110983629/188644529-9b7db97f-fd16-495f-bb1f-1b643869a570.png)
+
 
 The class name of the model is   
   
