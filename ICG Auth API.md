@@ -3847,6 +3847,69 @@ The response of this endpoint service request contains the `Task<object>` that w
   
   
   
+### Audiences Users Post
+#### Description
+This service endpoint will allow the user to assign a user to the specific audience by adding audience id. For this purpose, the `AudiencesUsersPostAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+ AudiencesUsersPostAsync(string id, Models.UserAudienceBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+var model = new UserAudienceBindingModel();
+model.Users = new List<string>();
+model.Users.Add("Users5");
+
+try
+{
+    object result = await audiencesController.AudiencesUsersPostAsync(id, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to assign a user to the audience that was anticipated to be returned. In order to assign user, audience id and model object is created which will be of `UserAudienceBindingModel` type that will be passed as a parameter to the `AudiencesUsersPostAsync` method in order to assign user to the specific audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The audience ID will be used for accessing the specific audience for which the user needs to be assigned. The **model** object is also a required parameter to enter that contains the list of user names (List<string>) assigned to the audience.
+   
+![69](https://user-images.githubusercontent.com/110983629/188658690-adc473f0-24cf-43f7-9175-37b0fdfd3a2b.png)
+
+
+The class name of the model is   
+  
+```markdown  
+   UserAudienceBindingModel
+```   
+  
+#### model Object Parameters 
+ 
+![70](https://user-images.githubusercontent.com/110983629/188659075-6892fa0b-af47-4a27-8227-ed1efe18a5d4.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UserAudienceBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-audience-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` that will returns the value whether the user assigned to the audience or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+  
   
   
   
