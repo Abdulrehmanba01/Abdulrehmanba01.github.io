@@ -2479,7 +2479,7 @@ The response of this endpoint service request contains the `Task<string>` object
 ## Audiences 
 ### Audiences Get
 #### Description
-This service endpoint will allow the user to reterive all the audiences that are active. For this purpose, the `AudiencesGetAsync` method is called by creating an instance of `AudiencesController` class which is accessed from the API client. 
+This service endpoint will allow the user to retrieve all the audiences that are active. For this purpose, the `AudiencesGetAsync` method is called by creating an instance of `AudiencesController` class which is accessed from the API client. 
   
 ```markdown  
  AudiencesController audiencesController = client.AudiencesController;
@@ -4223,6 +4223,80 @@ This endpoint service request may response codes to indicate the success or fail
   
   
   
+## API Endpoints
+## Permissions 
+### Permissions Get
+#### Description
+This service endpoint will allow the user to retrieve all the permissions. For this purpose, the `PermissionsGetAsync` method is called by creating an instance of `PermissionsController` class which is accessed from the API client. 
+  
+```markdown  
+   PermissionsController permissionsController = client.PermissionsController;
+```   
+  
+```markdown
+   PermissionsGetAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    List<PermissionReturnModel> result = await permissionsController.PermissionsGetAsync();
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "permissionsController" object fails to get all permissions that was anticipated to be returned. In order to get permissions, `PermissionsGetAsync` method is used that does not take any parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint does not take any parameter.   
+   
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.PermissionReturnModel>>` object. The class name of the ResponseType object is 
+
+```markdown 
+   PermissionReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+  {
+  "Url": null,
+  "Id": null,
+  "Name": null,
+  "Description": null
+} 
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'ResponseType' Object Parameters
+The following table describe the parameters of the response type object:
+  
+|Names|Description|
+|-----|-----------| 
+|Url|Url of int Type|
+|Id|Id of String Type|
+|Name|name of permission of String Type|
+|Description|Description of String Type|
+ 
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.PermissionReturnModel>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/permission-return-model)]
+
   
   
   
