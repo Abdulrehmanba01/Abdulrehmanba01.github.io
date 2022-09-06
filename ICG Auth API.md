@@ -4057,7 +4057,86 @@ The response of this endpoint service request contains the `Task<Models.Audience
  
   
   
+   
+### Audiences Permissions Post
+#### Description
+This service endpoint will allow the user to assign permissions to the specific audience by acessing the audience through the audience id. For this purpose, the `AudiencesPermissionsPostAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
   
+```markdown
+  AudiencesPermissionsPostAsync(
+    string id,
+    Models.PermissionAudienceBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+var model = new PermissionAudienceBindingModel();
+model.Permissions = new List<string>();
+model.Permissions.Add("Permissions6");
+model.Permissions.Add("Permissions7");
+
+try
+{
+    await audiencesController.AudiencesPermissionsPostAsync(id, model);
+}
+catch (ApiException e){};
+  
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to assign permissions to the audience that was anticipated to be returned. In order to assign permissions, model object is created which will be of `PermissionAudienceBindingModel` type that will be passed as a parameter to the `AudiencesPermissionsPostAsync` method in order to assign roles to an audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The audience ID (String_type) will be used for accessing the specific audience for which the permission needs to be assigned. The **model** object is also a required parameter to enter that contains the list of permission (List<string>) assigned to the audience.
+  
+ 
+![75](https://user-images.githubusercontent.com/110983629/188675875-e1111db3-a8f8-49ae-9eb5-1fa3231c95a1.png)
+
+
+The class name of the model is   
+  
+```markdown  
+    PermissionAudienceBindingModel
+```   
+  
+#### model Object Parameters 
+
+![76](https://user-images.githubusercontent.com/110983629/188676098-71cb8688-f77f-41a1-bb11-b76e9fd3b10f.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.PermissionAudienceBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/permission-audience-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task` that will returns the value whether the permission assigned to the audience or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+|404|Not Found|`ApiException`|
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, there are 2 codes 400 and 404. Codes in the 4xx range indicate an error that failed given the information provided (e.g., bad request, Not found etc.) 
+ 
+ 
   
   
   
