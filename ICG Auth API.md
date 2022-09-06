@@ -3910,7 +3910,73 @@ The response of this endpoint service request contains the `Task<object>` that w
 |Content-type|application/json;charset=utf-8|
  
   
+
   
+### Audiences Users Delete
+#### Description
+This service endpoint will allow the user to delete user that are assigned to the specific audience by accessing it through audience id. For this purpose, the `AudiencesUsersDeleteAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+   AudiencesUsersDeleteAsync(string id, Models.UserAudienceBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+var model = new UserAudienceBindingModel();
+model.Users = new List<string>();
+model.Users.Add("Users5");
+
+try
+{
+    string result = await audiencesController.AudiencesUsersDeleteAsync(id, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to delete user which are assigned the audience that was anticipated to be returned. In order to delete user, audience id and model object is created which will be of `UserAudienceBindingModel` type that will be passed as a parameter to the `AudiencesUsersDeleteAsync` method in order to delete user from an audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The audience ID will be used for accessing the specific audience for which the users needs to be removed. The **model** object is also a required parameter to enter that contains the list of user names (List<string>) assigned to the audience.
+   
+  
+![71](https://user-images.githubusercontent.com/110983629/188662320-0b712cb3-3b4d-4e12-ac61-e3f4a4a471ba.png)
+
+   
+The class name of the model is   
+  
+```markdown  
+  UserAudienceBindingModel
+```   
+  
+  
+#### model Object Parameters 
+ 
+![72](https://user-images.githubusercontent.com/110983629/188662593-014d66b1-a94b-4bfd-8f34-e85de93f8c3d.png)
+
+  
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UserAudienceBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-audience-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` that will returns the value whether the users associated with the audience get deleted or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
