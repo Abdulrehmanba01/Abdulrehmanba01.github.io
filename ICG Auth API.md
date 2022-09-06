@@ -3987,6 +3987,75 @@ The response of this endpoint service request contains the `Task<string>` that w
   
   
   
+### Audiences Permissions Get
+#### Description
+This service endpoint will allow the user to retrieve permissions which are assigned to the audience. For this purpose, the `AudiencesPermissionsGetAsync` method is called by creating an instance of ApplicationsController class which is accessed from the API client. 
+  
+```markdown
+  
+ AudiencesPermissionsGetAsync(string id)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+ string id = "id0";
+
+try
+{
+    Audience result = await audiencesController.AudiencesPermissionsGetAsync(id);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "ApplicationsController" object fails to retrieve the list of permissions that was anticipated to be returned. In order to get permissions list, the audience id will be passed as a parameter to the `AudiencesPermissionsGetAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **id** is the only one required parameter to enter which is the audience id unique for each audience.  
+  
+![73](https://user-images.githubusercontent.com/110983629/188670518-f1377598-35d9-4adb-ac4e-aa495fc52770.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.Audience>` object. The class name of the ResponseType object is 
+
+```markdown 
+   Audience
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Id": null,
+  "Description": null,
+  "AudienceId": null,
+  "SecretKey": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<Models.Audience>` Object Parameters
+  
+![74](https://user-images.githubusercontent.com/110983629/188671545-41898da6-51b0-4f0b-b17c-2159b3390040.png)
+
+ 
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.Audience>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/audience)|
+ 
+  
   
   
   
