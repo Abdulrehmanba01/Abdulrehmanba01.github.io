@@ -3826,7 +3826,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to retrieve users list which are assigned the audience that was anticipated to be returned. In order to get users list, audience id will be passed as a parameter to the `AudiencesUsersGetAsync` method in order to get list of users associated with the audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
 #### Parameters Detail  
-The audience ID will be used for accessing the specific audience for which the users needs to be shown. The **model** object is also a required parameter to enter that contains the list of role names (List<string>) assigned to the audience.
+The audience ID (String_type) will be used for accessing the specific audience for which the users needs to be shown.  
   
 ![68](https://user-images.githubusercontent.com/110983629/188653973-cb24454a-9b7e-4473-aa39-9da14d6657ef.png)
  
