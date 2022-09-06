@@ -3594,6 +3594,48 @@ The response of this endpoint service request contains the `Task<object>` object
   
   
   
+### Audiences Roles Get
+#### Description
+By supplying the id, the user can use this service endpoint to receive the list of roles that have been allocated to the audience. In order to make informed decisions, it will enable users to learn about the roles that the audience plays. Create an instance of the audiencesController class, which is accessed through the API client, and call the 'AudiencesRolesGetAsync' method to do this.
+  
+```markdown
+    AudiencesRolesGetAsync(string id)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+
+try
+{
+    object result = await audiencesController.AudiencesRolesGetAsync(id);
+}
+catch (ApiException e){};
+```  
+
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to retrieve an audience roles that was anticipated to be returned. The id is passed as a parameter to the `AudiencesRolesGetAsync` method for retrieving specific roles of audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **id** is the required parameter to enter which is of String type. It actually unique for each audience to retrieve roles.
+ 
+![63](https://user-images.githubusercontent.com/110983629/188636442-48b9971c-d861-412f-b73e-c8eb5702fb1a.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will returns the value whether the audience roles retrieved or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
