@@ -3803,6 +3803,48 @@ This endpoint service request may response codes to indicate the success or fail
   
   
   
+### Audiences Users Get
+#### Description
+This service endpoint will allow the user to retrieve the list of users that are assigned to the specific audience by adding audience id. For this purpose, the `AudiencesUsersGetAsync` method is called by creating an instance of audiencesController class which is accessed from the API client. 
+  
+```markdown
+  AudiencesUsersGetAsync(string id)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string id = "id0";
+try
+{
+    object result = await audiencesController.AudiencesUsersGetAsync(id);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "audiencesController" object fails to retrieve users list which are assigned the audience that was anticipated to be returned. In order to get users list, audience id will be passed as a parameter to the `AudiencesUsersGetAsync` method in order to get list of users associated with the audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The audience ID will be used for accessing the specific audience for which the users needs to be shown. The **model** object is also a required parameter to enter that contains the list of role names (List<string>) assigned to the audience.
+  
+![68](https://user-images.githubusercontent.com/110983629/188653973-cb24454a-9b7e-4473-aa39-9da14d6657ef.png)
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` that will returns the value whether the users list associated with the audience accessed or not.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+   
+  
+  
   
   
   
