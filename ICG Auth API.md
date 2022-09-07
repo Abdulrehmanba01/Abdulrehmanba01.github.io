@@ -5088,7 +5088,91 @@ The response of this endpoint service request contains the `Task<List<Models.Rol
   
   
   
+  
+### Roles Effective Permissions Get by Id
+#### Description
+This service endpoint will allow the user to retrieve the effectivePermissions by entering the role ID. For this purpose, the `RolesEffectivePermissionsGetByIdAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client. 
+  
+```markdown
+ RolesEffectivePermissionsGetByIdAsync(
+    string id)
+```
 
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string id = "id0";
+try
+{
+    List<Permission> result = await rolesController.RolesEffectivePermissionsGetByIdAsync(id);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `rolesController` object fails to retrieve the effective permissions that was anticipated to be returned. In order to get effective permissions, `RolesEffectivePermissionsGetByIdAsync` method is used that takes the role id as a parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint requires only one parameter which is role id **id** unique for each role. It is required for the user to enter the role id which is of String type for retrieving the effective permissions.
+  
+![95](https://user-images.githubusercontent.com/110983629/188917187-a6910121-1ff3-4ddd-b91e-b2865f70a947.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.Permission>>` object. The class name of the ResponseType object is 
+
+```markdown 
+  Permission
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Id": null,
+  "Name": null,
+  "Description": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'Task<List<Models.Permission>>' Object Parameters 
+   
+![96](https://user-images.githubusercontent.com/110983629/188917751-bd6ca709-f0a9-4f3f-9de9-1c757b9083e8.png)
+  
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.Permission>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/permission)|
+  
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
