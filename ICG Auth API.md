@@ -5157,7 +5157,70 @@ The response of this endpoint service request contains the `Task<List<Models.Per
 
   
   
+### Roles Effective Permissions Get by Role Name
+#### Description
+This service endpoint will allow the user to retrieve the effectivePermissions by entering the role name. For this purpose, the `RolesEffectivePermissionsGetAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client. 
   
+```markdown
+  RolesEffectivePermissionsGetAsync(string name)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string name = "name0";
+try
+{
+    List<ReturnEffecivePermissionV2> result = await rolesController.RolesEffectivePermissionsGetAsync(name);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `rolesController` object fails to retrieve the effective permissions that was anticipated to be returned. In order to get effective permissions, `RolesEffectivePermissionsGetAsync` method is used that takes the role name as a parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint requires only one parameter which is role name **name** unique for each role. It is required for the user to enter the role name which is of String type for retrieving the effective permissions.
+  
+ 
+![97](https://user-images.githubusercontent.com/110983629/188919378-a399c807-41ff-44b3-9906-749122e56b8c.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.ReturnEffecivePermissionV2>>` object. The class name of the ResponseType object is 
+
+```markdown 
+   Return Effecive Permission V2
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+{
+  "Permissions": null,
+  "AudienceId": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'Task<List<Models.ReturnEffecivePermissionV2>>' Object Parameters 
+  
+![97](https://user-images.githubusercontent.com/110983629/188920016-262b82db-b9be-467e-8c3a-56d6d4c1e080.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.ReturnEffecivePermissionV2>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/return-effecive-permission-v2)|
+
   
   
   
