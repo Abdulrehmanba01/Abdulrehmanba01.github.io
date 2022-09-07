@@ -4327,7 +4327,7 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the "permissionsController" object fails to create permission that was anticipated to be returned. In order to create permission, model object is created which will be of `PermissionBindingModel` type and description will be defined for the model. The `model` will be passed as a parameter to the `PermissionsPostAsync` method in order to create the permission. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
 #### Parameters Detail  
-The **model** object is required parameter to enter that includes Description(String_type), Name (String_type) as a two required parameters. The **Description** cannot be empty. Its minimum Length is 2 and maximum Length is 256. And the Name can be of min Minimum Length: 2 and Maximum Length: 128. 
+The **model** object is required parameter to enter that includes Description(String_type), Name (String_type) as a two required parameters. The **Description** cannot be empty. Its minimum Length is 2 and maximum Length is 256. And the **Name** can be of min Length: 2 and Maximum Length: 128. 
   
 
 The class name of the model is   
