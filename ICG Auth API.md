@@ -4518,7 +4518,7 @@ The response of this endpoint service request contains the `Task<string>` object
   
 ### Permissions Delete
 #### Description
-This service endpoint will allow the user to delete a permission by editing its description. For this purpose, the `PermissionsDeleteAsync` method is called by creating an instance of **PermissionsController** class which is accessed from the API client. 
+This service endpoint will allow the user to delete a permission by entering its description. For this purpose, the `PermissionsDeleteAsync` method is called by creating an instance of **PermissionsController** class which is accessed from the API client. 
   
 ```markdown
    PermissionsDeleteAsync(
