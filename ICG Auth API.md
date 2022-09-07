@@ -4642,7 +4642,7 @@ try
 catch (ApiException e){};
 ```  
   
-It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to get all roles that was anticipated to be returned. In order to get permissions, `RolesGetByAudienceAsync` method is used that does not take any parameter but retrieve all roles with respect to the audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to get all roles that was anticipated to be returned. In order to get roles, `RolesGetByAudienceAsync` method is used that does not take any parameter but retrieve all roles with respect to the audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
 #### Parameters Detail  
 This service endpoint does not take any parameter.   
@@ -4685,6 +4685,61 @@ The response of this endpoint service request contains the `Task<List<Models.Rol
 |ResponseType|[Task<List<Models.RoleReturnModel>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/role-return-model)]
 
  
+
+  
+### Roles Get 
+#### Description
+This service endpoint will allow the user to retrieve the list of roles. For this purpose, the `RolesGetAsync` method is called by creating an instance of `RolesController` class which is accessed from the API client. 
+  
+```markdown
+  RolesGetAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    List<string> result = await rolesController.RolesGetAsync();
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to get the list of roles that was anticipated to be returned. In order to get roles, `RolesGetAsync` method is used that does not take any parameter but retrieve the list of roles. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint does not take any parameter.   
+   
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<string>>` object that returns the list of string items which are roles actually.
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
