@@ -5157,7 +5157,7 @@ The response of this endpoint service request contains the `Task<List<Models.Per
 
   
   
-### Roles Effective Permissions Get by Role Name
+### Roles Effective Permissions Get  
 #### Description
 This service endpoint will allow the user to retrieve the effectivePermissions by entering the role name. For this purpose, the `RolesEffectivePermissionsGetAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client. 
   
@@ -5191,7 +5191,7 @@ This service endpoint requires only one parameter which is role name **name** un
 The response of this endpoint service request contains the `Task<List<Models.ReturnEffecivePermissionV2>>` object. The class name of the ResponseType object is 
 
 ```markdown 
-   Return Effecive Permission V2
+   ReturnEffecivePermissionV2
 ``` 
  
 #### Response body-JSON  
@@ -5223,6 +5223,70 @@ The response of this endpoint service request contains the `Task<List<Models.Ret
 
   
   
+### Roles Permissions Get 
+#### Description
+This service endpoint will allow the user to retrieve the direct permissions which are assigned by role name. For this purpose, the `RolesPermissionsGetAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client. 
+  
+```markdown
+ RolesPermissionsGetAsync(string name)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string name = "name0";
+try
+{
+    List<ReturnEffecivePermissionV2> result = await rolesController.RolesPermissionsGetAsync(name);
+}
+catch (ApiException e){};
+  
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `rolesController` object fails to retrieve the direct permissions that was anticipated to be returned. In order to get direct permissions, `RolesPermissionsGetAsync` method is called that takes the role name as a parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint requires only one parameter which is role name **name** unique for each role. It is required for the user to enter the role name which is of String type for retrieving the direct permissions which are associated by the role name.
+  
+![98](https://user-images.githubusercontent.com/110983629/188922141-0275902b-8f2e-4338-a080-19c9012c817c.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.ReturnEffecivePermissionV2>>` object. The class name of the ResponseType object is 
+
+```markdown 
+   ReturnEffecivePermissionV2
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Permissions": null,
+  "AudienceId": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'Task<List<Models.ReturnEffecivePermissionV2>>' Object Parameters 
+ 
+![99](https://user-images.githubusercontent.com/110983629/188922932-a26c50fa-5d3c-4805-8a42-500a5f0f9698.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.ReturnEffecivePermissionV2>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/return-effecive-permission-v2)|
+ 
   
   
 
