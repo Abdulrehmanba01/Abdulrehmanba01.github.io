@@ -4377,6 +4377,72 @@ This endpoint service request may response codes to indicate the success or fail
   
   
   
+### Permissions Get 1
+#### Description
+This service endpoint will allow the user to retrieve the permissions by entering permission name. For this purpose, the `PermissionsGet1Async` method is called by creating an instance of **PermissionsController** class which is accessed from the API client. 
+  
+```markdown
+ PermissionsGet1Async(string name)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string name = "name0";
+try
+{
+    PermissionReturnModel result = await permissionsController.PermissionsGet1Async(name);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **permissionsController** object fails to retrieve the permission that was anticipated to be returned. In order to get permission detail, the permission name as a name is passed (as a parameter) to the method `PermissionsGet1Async` so that only the permission whose name is passed will be retrieved in result. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There is only one required parameter which is **name** that belongs to the one instance of permission. The user must need to enter the permission name for receiving the detail of the specific permission.  
+  
+![80](https://user-images.githubusercontent.com/110983629/188879991-0483d3df-1b6e-48b4-b6c4-5a4976e0c5c1.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.PermissionReturnModel>` object. The class name of the ResponseType object is 
+
+```markdown  
+  PermissionReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Url": null,
+  "Id": null,
+  "Name": null,
+  "Description": null
+ }
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<Models.PermissionReturnModel>` Object Parameters  
+
+![81](https://user-images.githubusercontent.com/110983629/188880578-02defd6e-fae4-4cfc-b757-59793d496f0d.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.PermissionReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/permission-return-model)|
+ 
+ 
   
   
   
