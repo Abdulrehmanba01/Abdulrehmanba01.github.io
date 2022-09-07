@@ -4516,5 +4516,59 @@ The response of this endpoint service request contains the `Task<string>` object
   
   
   
+### Permissions Delete
+#### Description
+This service endpoint will allow the user to delete a permission by editing its description. For this purpose, the `PermissionsDeleteAsync` method is called by creating an instance of **PermissionsController** class which is accessed from the API client. 
+  
+```markdown
+   PermissionsDeleteAsync(
+    string name,
+    string audienceId = null)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string name = "name0";
+try
+{
+    string result = await permissionsController.PermissionsDeleteAsync(name, null);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "permissionsController" object fails to delete permission that was anticipated to be returned. In order to delete a permission, the name which is permission description and audience id will be passed as parameters to the `PermissionsDeleteAsync`.This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The required parameters for this endpoint request includes **name** (String_type) which is the description of permission and **audience id** (String_type) which is guid in real.
+  
+![84](https://user-images.githubusercontent.com/110983629/188886151-298d8b49-51aa-465e-b1a9-9ebb9bce095c.png)
+
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object which returns the value whether the permission get deleted or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
