@@ -4301,8 +4301,75 @@ The following table describe the parameters of the response type object:
   
   
   
+### Permissions Post
+#### Description
+This service endpoint will allow the user to create a new permission by adding its details. For this purpose, the `PermissionsPostAsync` method is called by creating an instance of PermissionsController class which is accessed from the API client. 
+  
+```markdown
+   PermissionsPostAsync(Models.PermissionBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new PermissionBindingModel();
+model.Name = "Name8";
+model.Description = "Description4";
+
+try
+{
+    await permissionsController.PermissionsPostAsync(model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "permissionsController" object fails to create permission that was anticipated to be returned. In order to create permission, model object is created which will be of `PermissionBindingModel` type and description will be defined for the model. The `model` will be passed as a parameter to the `PermissionsPostAsync` method in order to create the permission. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is required parameter to enter that includes Description(String_type), Name (String_type) as a two required parameters. The **Description** cannot be empty. Its minimum Length is 2 and maximum Length is 256. And the Name can be of min Minimum Length: 2 and Maximum Length: 128. 
+  
+
+The class name of the model is   
+  
+```markdown 
+   PermissionBindingModel
+```   
   
   
+#### model (Permission model) Object Parameters
+   
+![79](https://user-images.githubusercontent.com/110983629/188876642-c993b88a-c194-4251-a9d2-917a26ffd4de.png)
+
+   
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.PermissionBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/permission-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task` object. 
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, there is code 400. Codes in the 4xx range indicate an error that failed given the information provided (e.g., bad request) 
+   
   
   
   
