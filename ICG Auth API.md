@@ -4947,6 +4947,68 @@ The response of this endpoint service request contains the `Task<string>` object
 |Content-type|application/json;charset=utf-8|
 
   
+### Roles Tree Get
+#### Description
+This service endpoint will allow the user to retrieve the tree of Roles by entering the Parent name of role. For this purpose, the `RolesTreeGetAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client. 
+  
+```markdown
+ RolesTreeGetAsync(string name = null)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    List<ComplexRole> result = await rolesController.RolesTreeGetAsync(null);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `rolesController` object fails to retrieve the tree of roles that was anticipated to be returned. In order to get tree of role that come under the one parent name, `RolesTreeGetAsync` method is used that take the role name as a parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint requires only one parameter which is **name** parent role name. It is optional for the user to enter the parent role name which is of String type.
+   
+![91](https://user-images.githubusercontent.com/110983629/188910899-6f21ad41-0224-4658-b86a-cf1d174f734b.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.ComplexRole>>` object. The class name of the ResponseType object is 
+
+```markdown 
+  ComplexRole
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Name": null,
+  "Id": null,
+  "ChildRoles": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'ResponseType' Object Parameters 
+  
+![92](https://user-images.githubusercontent.com/110983629/188911662-3ca89304-43b5-4b3d-9a25-a1e144438a4c.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.ComplexRole>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/complex-role)|
   
   
   
