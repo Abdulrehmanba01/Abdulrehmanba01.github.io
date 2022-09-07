@@ -4862,6 +4862,49 @@ The response of this endpoint service request contains the `Task<Models.RoleRetu
   
   
   
+### Roles Put
+#### Description
+This service endpoint will allow the user to update the role by entering role name. For this purpose, the `RolesPutAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client. 
+  
+```markdown
+ RolesPutAsync(
+    string name,
+    string newName)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string name = "name0";
+string newName = "newName4";
+
+try
+{
+    string result = await rolesController.RolesPutAsync(name, newName);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to update the role that was anticipated to be returned. In order to edit role name, the role name as a name and new role name are passed as a parameter to the method `RolesPutAsync` so that only the role whose name is passed will be updated in result. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There are two required parameters which are **name** and **newName** of string type. The user must need to enter the old role name for updating the specific role name. 
+
+![89](https://user-images.githubusercontent.com/110983629/188903963-fc59a288-6367-47bd-9081-208ead078a6f.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object that returns the value whether the new role name is updated or not.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
@@ -4873,6 +4916,14 @@ The response of this endpoint service request contains the `Task<Models.RoleRetu
   
   
   
+  
+  
+  
+  
+  
+  
+  
+
   
   
   
