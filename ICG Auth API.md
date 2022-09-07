@@ -4792,7 +4792,71 @@ The response of this endpoint service request contains the `Task<string>` object
   
   
   
+### Roles Get 1
+#### Description
+This service endpoint will allow the user to retrieve the roles by entering role name. For this purpose, the `RolesGet1Async` method is called by creating an instance of **RolesController** class which is accessed from the API client. 
   
+```markdown
+  RolesGet1Async(string name)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string name = "name0";
+
+try
+{
+    RoleReturnModel result = await rolesController.RolesGet1Async(name);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to retrieve the role that was anticipated to be returned. In order to get role detail, the role name as a name is passed as a parameter to the method `RolesGet1Async` so that only the roles whose name is passed will be retrieved in result. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There is only one required parameter which is **name** that belongs to the one instance of role. The user must need to enter the role name for receiving the detail of the specific role.  
+   
+![87](https://user-images.githubusercontent.com/110983629/188901257-1d65a67d-d8d4-4905-8614-5a25575f5aef.png)
+
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.RoleReturnModel>` object. The class name of the ResponseType object is 
+
+```markdown  
+  RoleReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+ {
+  "Id": null,
+  "Name": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<Models.RoleReturnModel>` Object Parameters  
+  
+![88](https://user-images.githubusercontent.com/110983629/188901771-90dbf582-ec17-46f1-8f75-8d05631ab39f.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.RoleReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/role-return-model)|
+ 
+
   
   
   
