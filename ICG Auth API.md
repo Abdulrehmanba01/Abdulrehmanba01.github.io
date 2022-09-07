@@ -4727,6 +4727,66 @@ The response of this endpoint service request contains the `Task<List<string>>` 
   
   
   
+### Roles Post
+#### Description
+This service endpoint will allow the user to create a new role by adding its details. For this purpose, the `RolesPostAsync` method is called by creating an instance of `RolesController` class which is accessed from the API client. 
+  
+```markdown
+    RolesPostAsync(Models.CreateRoleBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new CreateRoleBindingModel();
+model.Roles = new List<string>();
+model.Roles.Add("Roles9");
+model.Roles.Add("Roles0");
+model.Roles.Add("Roles1");
+
+try
+{
+    string result = await rolesController.RolesPostAsync(model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to create role that was anticipated to be returned. In order to create role, model object is created which will be of `CreateRoleBindingModel` type and roles will be defined for the model. The `model` will be passed as a parameter to the `RolesPostAsync` method in order to create the roles. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is required object to enter that includes Roles(List<string>) as a parameter. The user can create multiple roles at a time by adding them in linear manner. 
+
+The class name of the model is   
+  
+```markdown 
+   CreateRoleBindingModel
+```   
+  
+  
+#### model (Permission model) Object Parameters
+    
+![86](https://user-images.githubusercontent.com/110983629/188898174-c3cf3ea0-a443-445a-9c5e-1777f11e4a49.png)
+
+
+   
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.CreateRoleBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/create-role-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object that returns the value whether the roles are created or not. 
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
   
   
   
