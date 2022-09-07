@@ -4609,7 +4609,95 @@ The response of this endpoint service request contains the `Task<object>` that r
 |Content-type|application/json;charset=utf-8|
 
     
+
+  
+  
+  
+  
+  
+  
+  
+## API Endpoints
+## Roles 
+### Roles Get by Audience
+#### Description
+This service endpoint will allow the user to retrieve all the roles that includes the role id and role name. For this purpose, the `RolesGetByAudienceAsync` method is called by creating an instance of `RolesController` class which is accessed from the API client. 
+  
+```markdown  
+   RolesController rolesController = client.RolesController;
+```   
+  
+```markdown
+   RolesGetByAudienceAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    List<RoleReturnModel> result = await rolesController.RolesGetByAudienceAsync();
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to get all roles that was anticipated to be returned. In order to get permissions, `RolesGetByAudienceAsync` method is used that does not take any parameter but retrieve all roles with respect to the audience. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint does not take any parameter.   
+   
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.RoleReturnModel>>` object. The class name of the ResponseType object is 
+
+```markdown 
+    RoleReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+   {
+  "Id": null,
+  "Name": null
+  }
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
     
+##### 'ResponseType' Object Parameters
+ 
+![85](https://user-images.githubusercontent.com/110983629/188892462-5774f4a9-129a-46c6-b5c2-5a24b3b90561.png)
+
+  
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.RoleReturnModel>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/role-return-model)]
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
