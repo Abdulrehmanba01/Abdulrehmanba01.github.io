@@ -4566,9 +4566,50 @@ The response of this endpoint service request contains the `Task<string>` object
   
   
   
+## API Endpoints
+## Portal 
+### Portal Portal 
+#### Description
+This service endpoint will allow the user to retrieve the documentation static files that are ready to be deployed. For this purpose, the `PortalPortalAsync` method is called by creating an instance of `PortalController` class which is accessed from the API client. 
   
+```markdown  
+   PortalController portalController = client.PortalController;
+```   
   
+```markdown
+   PortalPortalAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+try
+{
+    object result = await portalController.PortalPortalAsync();
+}
+catch (ApiException e){};
+```  
   
+It will be included in the try and catch block to deal with any exceptions that could arise if the **portalController** object fails to retrieve all documentation files (which are ready to deploy) that was anticipated to be returned. In order to get permissions, `PortalPortalAsync` method is used that does not take any parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint does not take any parameter.   
+   
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` that returns the documentation files ready to deploy.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+    
   
   
   
