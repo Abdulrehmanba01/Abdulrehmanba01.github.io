@@ -5324,7 +5324,68 @@ The response of this endpoint service request contains the `Task<List<Models.Ret
  
   
   
+### Roles Permissions Post 
+#### Description
+This service endpoint will allow the user to assign permissions to a role by accessing it through the role name. You can retrieve a role by entering the role name that can be used as an identifier. For this purpose, the `RolesPermissionsPostAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client. 
+  
+  
+```markdown
+    RolesPermissionsPostAsync(
+    string name,
+    Models.AssignPermisionRoleModel model)
+```
 
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string name = "name0";
+var model = new AssignPermisionRoleModel();
+try
+{
+    string result = await rolesController.RolesPermissionsPostAsync(name, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `rolesController` object fails to assign permission to the role that was anticipated to be returned. In order to assign permissions, the model object of `AssignPermisionRoleModel` class used and will be passed as a parameter to `RolesPermissionsPostAsync` method along with the role name. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint requires two parameters which are role name **name** unique for each role and **model** object. It is required for the user to enter the role name which is of String type for accessing the specific role. The **model** object contains the list of permissions and audience id for assigning the permissions to the specific role of an application whose id is included in the model object.
+  
+![100](https://user-images.githubusercontent.com/110983629/189115179-84a898d8-b705-4968-bdcc-e3c541c643b4.png)
+
+  
+The class name of **model** object is:
+ 
+```markdown
+  AssignPermisionRoleModel
+```
+  
+  
+#### Model object Parameters
+  
+![101](https://user-images.githubusercontent.com/110983629/189115466-5f9c7cf1-8590-4bad-bf9e-343adb29897b.png)
+
+#### Permissions object class name and Parameters
+  
+  
+![102](https://user-images.githubusercontent.com/110983629/189115652-4a3227b5-82b0-46b9-abbc-408969e3f939.png)
+
+  
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object that returns the value whether the permissions assigned to the specific role of the application or not. 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
   
   
   
