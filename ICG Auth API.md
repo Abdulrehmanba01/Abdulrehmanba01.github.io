@@ -142,7 +142,7 @@ The paramters are listed below that are used to authenticate the user for a spec
 |Parameter| Type |Description|
 |---------|------|-----------|
 | username |String| It can be username or email address|
-|password|String||It is the password in encrypted form|
+|password|String|It is the password in encrypted form|
 |client_id|String|It is the audience id unique for each application|
 |grant_type|String|It is the grant mode which is password|
 
@@ -152,11 +152,13 @@ The response for authentication will be a token that is valid for some seconds o
 
 ### Response body
 
+```markdown 
 {
    "access_token": "{access_token_value}",
    "token_type": "bearer",
    "expires_in": 89399
 }
+```
 
 You can make API calls by including the token in each header request which is:
 
