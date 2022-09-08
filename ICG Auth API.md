@@ -5548,6 +5548,13 @@ The class name of the **model** object is
 ![106](https://user-images.githubusercontent.com/110983629/189144230-5d3d0faf-649d-408f-abe6-4a09f5f7dfd8.png)
 
   
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.ChildRoleBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/child-role-binding-model)|
+  
+  
 #### Responses  
 
 The response of this endpoint service request contains the `Task<string>` parameter that returns the value whether the list of child roles get deleted or not.
