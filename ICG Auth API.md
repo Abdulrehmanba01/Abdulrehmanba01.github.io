@@ -5418,14 +5418,22 @@ catch (ApiException e){};
 It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to delete the list of permissions that was anticipated to be returned. In order to remove permissions, the role name as a name is passed as a parameter to the method `RolesPermissionsDeleteAsync` along with the **model** object of `DropPermisionRoleModel` class. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
 
 #### Parameters Detail  
-There is only one required parameters which are **name** of string type. This parameter indicates the role name for accessing the role. The user must need to enter the role name for deleting the specific one. 
- 
-![90](https://user-images.githubusercontent.com/110983629/188906559-a22d165b-1f41-482c-ba30-6f2ab6a0c204.png)
+There is two required parameters which includes role name as **name**  of string type and **model** object. The user must need to enter the role name for deleting the specific list of permissions. The user also also add the audience id which is optional parameter to add for this process call. 
+  
+![103](https://user-images.githubusercontent.com/110983629/189119771-4ed2ce6d-c331-42f8-bc14-c6fd441e109a.png)
 
+The class name of the **model** object is  
+  
+```markdown
+  DropPermisionRoleModel
+ ```
+#### Model object parameters
+  
+![104](https://user-images.githubusercontent.com/110983629/189120054-8b874fcd-2605-4c6a-b58c-39cfbd11c9a4.png)
   
 #### Responses  
 
-The response of this endpoint service request contains the `Task<string>` object that returns the value whether the role name is deleted or not.
+The response of this endpoint service request contains the `Task<string>` parameter that returns the value whether the list of permissions get deleted or not.
   
 #### Response headers-JSON
 |Header|Value|
