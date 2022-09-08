@@ -5727,7 +5727,70 @@ The response of this endpoint service request contains the `Task<object>` that w
   
   
   
+### Roles Default Settings Delete
+#### Description 
+This service endpoint will allow the user to delete user Default Settings in a Role. As it is define that the role name is an identifier for a specific list of roles. It can also be used for removing the default setting of the user. For this purpose, the `RolesDefaultSettingsDeleteAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client.   
   
+  
+```markdown
+  RolesDefaultSettingsDeleteAsync(
+    string name,
+    Models.UserDefaultSettingRemoveModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string name = "name0";
+var model = new UserDefaultSettingRemoveModel();
+model.Key = "Key6";
+
+try
+{
+    object result = await rolesController.RolesDefaultSettingsDeleteAsync(name, model);
+}
+catch (ApiException e){};
+```  
+  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `rolesController` object fails to delete default settings of the user that was anticipated to be returned. In order to remove default settings, model object is created which will be of `UserDefaultSettingRemoveModel` type and will be passed as a parameter to the `RolesDefaultSettingsDeleteAsync` method in order to delete the default settings for the user through the role name. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.    
+
+#### Parameters Detail  
+There are two required parameters **name** and **model** object where the name will be role name of string type and model object contains the Key (string_type), AudienceId (integer_type), and Propagate (Boolean). The values of these parameters are unique for each user and by this process call, the default setting will get deleted for the user through the role name. 
+  
+![111](https://user-images.githubusercontent.com/110983629/189162312-799cca93-fda7-4e44-b0f9-8c4d66b01908.png)
+
+   
+The class name of the model is   
+  
+```markdown 
+     UserDefaultSettingRemoveModel
+```   
+  
+#### model Object Parameters 
+  
+![112](https://user-images.githubusercontent.com/110983629/189162509-2f3eee33-4181-4409-aae2-30b3023d160c.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UserDefaultSettingRemoveModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-default-setting-remove-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` that will indicate whether default setting is deleted for the user or not.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
