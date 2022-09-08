@@ -5507,6 +5507,84 @@ The response of this endpoint service request contains the `Task<object>` object
   
  
   
+### Roles Child Delete
+#### Description
+This service endpoint will allow the user to delete the list of child roles by entering the parent role name. Through this process call, only those child roles will get deleted that are associated with a parent role whose name is entered. For this purpose, the `RolesChildDeleteAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client.  
+  
+```markdown
+   RolesChildDeleteAsync(Models.ChildRoleBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new ChildRoleBindingModel();
+model.ChildRoles = new List<string>();
+model.ChildRoles.Add("ChildRoles6");
+model.ParentRoleName = "ParentRoleName0";
+
+try
+{
+    string result = await rolesController.RolesChildDeleteAsync(model);
+}
+catch (ApiException e){}; 
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to delete the list of child roles that was anticipated to be returned. In order to remove child roles, the parent role name as a name is added into the model's parent role name. And set the child roles that you wanted to delete. This model will pass to the `RolesChildDeleteAsync` method for deleting the child roles.
+  
+
+#### Parameters Detail  
+There is one required object **model** which contains child role as **ChildRoles** (list of Strings) and **ParentRoleName** (String type). The user must need to enter the parent role name for which he wanted to delete the child roles. 
+     
+  
+The class name of the **model** object is  
+  
+```markdown
+   ChildRoleBindingModel
+ ```
+#### Model object parameters
+  
+![106](https://user-images.githubusercontent.com/110983629/189144230-5d3d0faf-649d-408f-abe6-4a09f5f7dfd8.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` parameter that returns the value whether the list of child roles get deleted or not.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
