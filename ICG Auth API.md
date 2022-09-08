@@ -5446,8 +5446,66 @@ The response of this endpoint service request contains the `Task<string>` parame
   
   
   
+### Roles Child Post
+#### Description
+This service endpoint will allow the user to create a child role through the parent role. You must need to access the parent role for creating child roles. For this purpose, the `RolesChildPostAsync` method is called by creating an instance of `RolesController` class which is accessed from the API client. 
   
+```markdown
+   RolesChildPostAsync(
+    Models.CreateChildRoleBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new CreateChildRoleBindingModel();
+model.ChildRoles = new List<string>();
+model.ChildRoles.Add("ChildRoles6");
+model.ParentRoleName = "ParentRoleName0";
+
+try
+{
+    object result = await rolesController.RolesChildPostAsync(model);
+}
+catch (ApiException e){};
+```  
   
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to create child roles that was anticipated to be returned. In order to create child roles, **model** object is created which will be of `CreateChildRoleBindingModel` type and the list of string type needs to created for adding the child roles that will be defined for the **model** object. The `model` will be passed as a parameter to the `RolesChildPostAsync` method in order to create the child roles. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is required object to enter that includes ChildRoles(List<string>) and ParentRoleName (String type). The user can add multiple child roles as many as he want against one parent role name.  
+
+The class name of the model is   
+  
+```markdown 
+    CreateChildRoleBindingModel
+```   
+  
+#### model Object Parameters
+  
+![105](https://user-images.githubusercontent.com/110983629/189124366-01e1c612-54b3-49d5-bc50-258112085184.png)
+
+   
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.CreateChildRoleBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/create-child-role-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that returns the value whether the child roles are created or not for a parent role. 
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+ 
   
   
   
