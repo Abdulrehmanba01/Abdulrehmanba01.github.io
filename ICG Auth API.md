@@ -5388,6 +5388,54 @@ The response of this endpoint service request contains the `Task<string>` object
  
   
   
+### Roles Permissions Delete
+#### Description
+This service endpoint will allow the user to delete the list of permissions by entering the role name. Through this process call, only those permissions will get deleted that are associated with a role whose name is entered. For this purpose, the `RolesPermissionsDeleteAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client.  
+  
+```markdown
+  RolesPermissionsDeleteAsync(
+    string name,
+    Models.DropPermisionRoleModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string name = "name0";
+var model = new DropPermisionRoleModel();
+model.Permissions = new List<string>();
+model.Permissions.Add("Permissions6");
+model.Permissions.Add("Permissions7");
+
+try
+{
+    string result = await rolesController.RolesPermissionsDeleteAsync(name, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the **rolesController** object fails to delete the list of permissions that was anticipated to be returned. In order to remove permissions, the role name as a name is passed as a parameter to the method `RolesPermissionsDeleteAsync` along with the **model** object of `DropPermisionRoleModel` class. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There is only one required parameters which are **name** of string type. This parameter indicates the role name for accessing the role. The user must need to enter the role name for deleting the specific one. 
+ 
+![90](https://user-images.githubusercontent.com/110983629/188906559-a22d165b-1f41-482c-ba30-6f2ab6a0c204.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object that returns the value whether the role name is deleted or not.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+  
+  
   
   
   
