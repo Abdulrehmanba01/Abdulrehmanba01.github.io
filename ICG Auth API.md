@@ -2,36 +2,6 @@
   
 ## Getting Started
   
-In order to use ICG's APIs, all the applications needs to be authenticated first using Auth API through valid credentails including username and password. When user get autheitcated successfully, the system will provide the token that user can utilize for making secure API calls. 
-
-
-The paramters are listed below that are used to authenticate the user for a specific application:
-|Parameter| Type |Description|
-|---------|------|-----------|
-| username |String| It can be username or email address|
-|password|String|| It is the password in encrypted form|
-|client_id|String|It is the audience id unique for each application|
-|grant_type|String|It is the grant mode which is password|
-
-### Response 
-
-The response for authentication will be a token that is valid for some seconds only.
-
-### Response body
-
-{
-   "access_token": "{access_token_value}",
-   "token_type": "bearer",
-   "expires_in": 89399
-}
-
-You can make API calls by including the token in each header request which is:
-
-```markdown 
-   authorization: Bearer {access_token_value}
-```
-
-  
 ### Description
 
 The ICG Auth API of the iCheckGateway facilitate its users to carry out different operations in their account after getting authenticated and authorized for the account. The users can organize their account setting, profile, permissions, enable/disable App TFA etc., managing their applications permissions, deletion and renewals, audience, permissions, users, portals and roles.
@@ -163,7 +133,38 @@ For this API call, an instance of `AccountController` class will be accessed fro
 ```markdown
   AccountController accountController = client.AccountController;
 ```
-This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+In order to use ICG's APIs, all the applications needs to be authenticated first using Auth API through valid credentails including username and password. When user get authenticated successfully, the system will provide the token that user can utilize for making secure API calls. 
+
+
+The paramters are listed below that are used to authenticate the user for a specific application:
+|Parameter| Type |Description|
+|---------|------|-----------|
+| username |String| It can be username or email address|
+|password|String||It is the password in encrypted form|
+|client_id|String|It is the audience id unique for each application|
+|grant_type|String|It is the grant mode which is password|
+
+### Response 
+
+The response for authentication will be a token that is valid for some seconds only.
+
+### Response body
+
+{
+   "access_token": "{access_token_value}",
+   "token_type": "bearer",
+   "expires_in": 89399
+}
+
+You can make API calls by including the token in each header request which is:
+
+```markdown 
+   authorization: Bearer {access_token_value}
+```
+
+ 
 
 #### Class-Object
 ```markdown
