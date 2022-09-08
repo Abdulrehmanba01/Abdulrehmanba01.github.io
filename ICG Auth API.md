@@ -146,11 +146,11 @@ The paramters are listed below that are used to authenticate the user for a spec
 |client_id|String|It is the audience id unique for each application|
 |grant_type|String|It is the grant mode which is password|
 
-### Response 
+#### Response 
 
 The response for authentication will be a token that is valid for some seconds only.
 
-### Response body
+#### Response body
 
 ```markdown 
 {
@@ -190,9 +190,11 @@ This API call did not take any parameters.
 For viewing the response body, you need to download the text file. 
 
 #### Response body-Text File
+```markdown 
 {
   "Message": "Authorization has been denied for this request."
 }
+```
 
 #### Verify Process Configuration
 
