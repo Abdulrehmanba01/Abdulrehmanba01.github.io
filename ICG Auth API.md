@@ -5567,6 +5567,99 @@ The response of this endpoint service request contains the `Task<string>` parame
 |Content-type|application/json;charset=utf-8|
 
  
+
+  
+  
+  
+  
+### Roles Default Settings Put
+#### Description 
+This service endpoint will allow the user to modify User Default Setting by entering the role name. As it is define that the role name is an identifier for a specific list of roles. It can also be used for updating the default setting of the user. For this purpose, the `RolesDefaultSettingsPutAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client.   
+  
+  
+```markdown
+   RolesDefaultSettingsPutAsync(
+    string name,
+    Models.UserDefaultSettingBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string name = "name0";
+var model = new UserDefaultSettingBindingModel();
+model.Key = "string";
+model.MValue = "string";
+model.AudienceId = 1;
+model.Description = "string";
+model.Level = "string";
+model.Enabled = true;
+model.DataType = "string";
+model.Propagate = false;
+
+try
+{
+    object result = await rolesController.RolesDefaultSettingsPutAsync(name, model);
+}
+catch (ApiException e){};
+```  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `rolesController` object fails to update default settings of the user that was anticipated to be returned. In order to update default settings, model object is created which will be of `UserDefaultSettingBindingModel` type and will be passed as a parameter to the `RolesDefaultSettingsPutAsync` method in order to update an default settings for the user through the role name. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.    
+
+#### Parameters Detail  
+There are two required parameters **name** and **model** object where the name will be role name of string type and model object contains the Key (string_type), MValue (string_type), AudienceId (integer_type), Description (string_type), Level (string_type), Enabled (Boolean), DataType (string_type) and Propagate (Boolean). These parameters are unique for each user and the user can modify them if needed by accessing them through the role name. 
+  
+  
+![107](https://user-images.githubusercontent.com/110983629/189154382-b9528127-5cc7-43c9-b651-2ed7198186dc.png)
+
+  
+The class name of the model is   
+  
+```markdown 
+   UserDefaultSettingBindingModel
+```   
+  
+#### model Object Parameters 
+ 
+![108](https://user-images.githubusercontent.com/110983629/189154736-bd887433-1090-4eea-a2ed-e10c2c72a1f3.png)
+
+   
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UserDefaultSettingBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-default-setting-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` that will indicate whether the user default setting is updated or not.
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
