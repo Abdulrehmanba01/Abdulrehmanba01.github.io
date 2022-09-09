@@ -6169,7 +6169,7 @@ The response of this endpoint service request contains the `Task<Models.UserRetu
   
 ### Users Put
 #### Description 
-This service endpoint will provide the facility to the user to update a user details by accessing it through the username. The user will have to enter the user details where the roles, permissions and audiences are optional to add in order to update a user in the system successfully. For this purpose, the `UsersPutAsync` method is called to create user account on in instance of `UsersController` class from the API client. 
+This service endpoint will provide the facility to the user to update a user details by accessing it through the username. The user will have to enter the user details where the roles, permissions and audiences are optional to add in order to update a user in the system successfully. For this purpose, the `UsersPutAsync` method is called to edit user details by creating an instance of `UsersController` class from the API client. 
    
  
 ```markdown
@@ -6249,6 +6249,74 @@ The response of this endpoint service request contains the "Task<List<string>>" 
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
+  
+
+  
+### Users Delete
+#### Description 
+Through this service endpoint, you will be able to delete a user by accessing it through the username. The user will have to enter the username in order to remove a user from the system successfully. For this purpose, the `UsersDeleteAsync` method is called to delete user account by creating an the instance of `UsersController` class from the API client. 
+   
+ 
+```markdown
+   UsersDeleteAsync(
+    string username)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    string result = await usersController.UsersDeleteAsync(username);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to delete a user that was anticipated to be returned. The **username** will be passed as a parameter to the `UsersDeleteAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) as a required parameter. The user must have to enter the correct username for accessing a user and deleting it from the system.
+   
+  
+#### Responses 
+
+The response of this endpoint service request contains the "Task<string>>" that returns value whether the respective user get deleted or not.   
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
