@@ -6459,7 +6459,7 @@ The response of this endpoint service request contains the "Task<object>" that r
     
 ### Users Change Password
 #### Description 
-This service endpoint will provide the facility to update password of user by accessing the user through the username. For this purpose, the `UsersChangePasswordAsync` method is called to user's password by creating an instance of `UsersController` class from the API client. 
+This service endpoint will provide the facility to update password of user by accessing the user through the username. For this purpose, the `UsersChangePasswordAsync` method is called to change user's password by creating an instance of `UsersController` class from the API client. 
    
  
 ```markdown
@@ -6527,6 +6527,48 @@ The response of this endpoint service request contains the "Task<object>" that r
   
   
   
+
+### Users Reset Password
+#### Description 
+This service endpoint will provide the facility to reset password of user by accessing the user through the username. For this purpose, the `UsersResetPasswordAsync` method is called to reset user's password by creating an instance of `UsersController` class from the API client. 
+   
+ 
+```markdown
+ UsersResetPasswordAsync(
+    string username)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    object result = await usersController.UsersResetPasswordAsync(username);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to reset the password of a user that was anticipated to be returned. The **username** will be passed as a parameter to the `UsersResetPasswordAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) as a required parameter. When user adds the username and trigger for resetting password, the system will autogenerate the password for user's account whose username is entered.  
+ 
+![129](https://user-images.githubusercontent.com/110983629/189384197-c9351b36-06cb-4cac-a2e5-7c70598faf55.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the "Task<object>" that returns the value for the resetting the user's password.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
   
   
   
