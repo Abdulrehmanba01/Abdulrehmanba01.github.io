@@ -6561,7 +6561,7 @@ The parameter of this endpoint service contains **username** (string type) as a 
   
 #### Responses 
 
-The response of this endpoint service request contains the "Task<object>" that returns the value for the resetting the user's password.
+The response of this endpoint service request contains the **Task<object>** that returns the value for the resetting the user's password.
   
 #### Response headers-JSON
 |Header|Value|
