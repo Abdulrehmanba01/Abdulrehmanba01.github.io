@@ -6574,6 +6574,51 @@ The response of this endpoint service request contains the `Task<object>` that r
   
   
   
+
+### Users Send Confirmation Email
+#### Description 
+This service endpoint will provide the facility to send confirmation email by accessing the user through the username. For this purpose, the `UsersSendConfirmationEmailAsync` method is called to send confirmation email by creating an instance of `UsersController` class from the API client. 
+   
+ 
+```markdown
+ UsersSendConfirmationEmailAsync(
+    string username,
+    string callbackUrl = null)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    object result = await usersController.UsersSendConfirmationEmailAsync(username, null);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to send confirmation email to a user that was anticipated to be returned. The **username** will be passed as a parameter to the `UsersSendConfirmationEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) and **callbackUrl** (String type) as a required parameter. When user adds the username and trigger for sending confirmation email, the system will send the confirmation email to the user without any delay whose username is entered.
+  
+![130](https://user-images.githubusercontent.com/110983629/189387156-95ae5962-d586-42e8-a817-704f041c4fc7.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that returns the value for the sending confirmation email.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+  
   
   
   
