@@ -6387,7 +6387,71 @@ The response of this endpoint service request contains the `Task<Models.UserRetu
   
   
   
+### Users Change Email
+#### Description 
+This service endpoint will provide the facility to the user to update email by accessing user through the username. For this purpose, the `UsersChangeEmailAsync` method is called to edit user details by creating an instance of `UsersController` class from the API client. 
+   
+ 
+```markdown
+  UsersChangeEmailAsync(
+    string username,
+    Models.ChangeEmailBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+var model = new ChangeEmailBindingModel();
+model.OldEmail = "OldEmail6";
+model.NewEmail = "NewEmail8";
+model.ConfirmEmail = "ConfirmEmail4";
+
+try
+{
+    object result = await usersController.UsersChangeEmailAsync(username, model);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to change the email of a user that was anticipated to be returned. The **model** object will be created which will be of `ChangeEmailBindingModel` type and the user's username along with the updated email will be passed as a parameter to the `UsersChangeEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) and **model** as a required parameter. The model object further contains the OldEmail, NewEmail, ConfirmEmail, and CallBackUrl. Whereas, all the parameters of the model object are required except CallBackUrl. In all of these parameters, the OldEmail must be different from the new email and new email and confirm email should be same. The new email must be of Minimum Length: 0, Maximum Length: 100.
   
+![125](https://user-images.githubusercontent.com/110983629/189376377-ee8c74c2-7e24-448f-a982-3977d8f11604.png)
+
+  
+The class name of the **model** is
+```markdown
+    ChangeEmailBindingModel
+```  
+  
+#### model object Parameters
+
+![126](https://user-images.githubusercontent.com/110983629/189376589-f33a4507-9884-4d4e-8c10-058ece44e8e5.png)
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.ChangeEmailBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/change-email-binding-model)| 
+  
+  
+#### Responses 
+
+The response of this endpoint service request contains the "Task<object>" that returns the value for the changing the user's email.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
   
   
   
