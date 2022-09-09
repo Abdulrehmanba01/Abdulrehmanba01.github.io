@@ -5793,6 +5793,95 @@ The response of this endpoint service request contains the `Task<object>` that w
 
   
   
+### Roles Users Get
+#### Description 
+This service endpoint will allow the user to retrieve users details by entering the Role. As it is define that the role name is an identifier for a specific list of roles. Through this process call, the users who are associated with the role entered will be shown. For this purpose, the `RolesUsersGetAsync` method is called by creating an instance of **RolesController** class which is accessed from the API client.   
+  
+  
+```markdown
+  RolesUsersGetAsync(string name)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string name = "name0";
+try
+{
+    UserReturnModel result = await rolesController.RolesUsersGetAsync(name);
+}
+catch (ApiException e){};
+```  
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the `rolesController` object fails to retrieve the user details that was anticipated to be returned. In order to get user details of a specific role, name will be passed as a parameter to the `RolesUsersGetAsync` method in order to get the users details. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.      
+
+#### Parameters Detail  
+There is only one required parameter **name** which is the role name of string type. It is used for retrieving the users that belongs to the specific role entered.
+
+![113](https://user-images.githubusercontent.com/110983629/189345071-755d444f-1d13-41e5-872f-76c7fab95400.png)
+
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.UserReturnModel>` object. The class name of the ResponseType object is 
+
+```markdown 
+    UserReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown  
+{
+  "Url": null,
+  "Id": null,
+  "UserName": null,
+  "FullName": null,
+  "FirstName": null,
+  "LastName": null,
+  "Email": null,
+  "MobilePhone": null,
+  "HomePhone": null,
+  "OfficePhone": null,
+  "PostalCode": null,
+  "EmailConfirmed": null,
+  "Lockout": null,
+  "Level": null,
+  "Address": null,
+  "Address2": null,
+  "City": null,
+  "State": null,
+  "Country": null,
+  "JoinDate": null,
+  "Roles": null,
+  "Settings": null,
+  "PasswordExpDate": null,
+  "CustomDaysToExpired": null,
+  "TwoFactorEnabled": null,
+  "IsPasswordCreated": null
+} 
+```
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'Task<Models.UserReturnModel>' Object Parameters 
+  
+![114](https://user-images.githubusercontent.com/110983629/189346307-40aac3c8-8089-4355-9982-adb9965acf72.png)
+![115](https://user-images.githubusercontent.com/110983629/189346336-d7455aae-4381-4d1e-98a3-38aa7a92ed50.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.UserReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-return-model)|
+
   
   
   
