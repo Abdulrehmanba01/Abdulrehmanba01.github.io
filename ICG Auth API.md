@@ -6415,7 +6415,7 @@ try
 catch (ApiException e){};
 ```
 
-It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to change the email of a user that was anticipated to be returned. The **model** object will be created which will be of `ChangeEmailBindingModel` type and the user's username along with the updated email will be passed as a parameter to the `UsersChangeEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to change the email of a user that was anticipated to be returned. The **model** object will be created which will be of `ChangeEmailBindingModel` type and the user's username along with the updated email in model object will be passed as a parameter to the `UsersChangeEmailAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
 
 
 #### Parameters Detail  
@@ -6456,8 +6456,72 @@ The response of this endpoint service request contains the "Task<object>" that r
   
   
   
+    
+### Users Change Password
+#### Description 
+This service endpoint will provide the facility to update password of user by accessing the user through the username. For this purpose, the `UsersChangePasswordAsync` method is called to user's password by creating an instance of `UsersController` class from the API client. 
+   
+ 
+```markdown
+ UsersChangePasswordAsync(
+    string username,
+    Models.ChangePasswordBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+var model = new ChangePasswordBindingModel();
+model.OldPassword = "OldPassword4";
+model.NewPassword = "NewPassword2";
+model.ConfirmPassword = "ConfirmPassword0";
+
+try
+{
+    object result = await usersController.UsersChangePasswordAsync(username, model);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to change the password of a user that was anticipated to be returned. The **model** object will be created which will be of `ChangePasswordBindingModel` type and the user's username along with the updated password in model object will be passed as a parameter to the `UsersChangePasswordAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) and **model** as a required parameter. The model object further contains the OldPassword, NewPassword, ConfirmPassword. Whereas, all the parameters of the model object are required to enter. In all of these parameters, the OldPassword must be different from the new password and new password and confirm password should be same. The new password must be of Minimum Length: 8, Maximum Length: 128.
+   
+![127](https://user-images.githubusercontent.com/110983629/189380421-75621873-7422-4fb2-838b-63e75b3b22fe.png)
   
   
+The class name of the **model** is
+```markdown
+    ChangePasswordBindingModel
+```  
+  
+#### model object Parameters
+
+![128](https://user-images.githubusercontent.com/110983629/189380822-15005335-8f08-4717-a0d3-34411ff00b2d.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.ChangePasswordBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/change-password-binding-model)| 
+  
+  
+#### Responses 
+
+The response of this endpoint service request contains the "Task<object>" that returns the value for the changing the user's password.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
   
   
   
