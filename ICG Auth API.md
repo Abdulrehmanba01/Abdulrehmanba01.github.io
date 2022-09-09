@@ -5887,6 +5887,96 @@ The response of this endpoint service request contains the `Task<Models.UserRetu
   
   
   
+### Users Get
+#### Description 
+This service endpoint will allow the user to retrieve all the users details who are registered in the icheckgateway application. Through this process call, you can view the list of all users wihtout any filter applied. For this purpose, the `UsersGetAsync()` method is called by creating an instance of **UsersController** class which is accessed from the API client.   
+  
+ ```markdown
+ UsersController usersController = client.UsersController; 
+ ```
+
+  
+```markdown
+  RolesUsersGetAsync(string name)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+try
+{
+    UserReturnModel result = await usersController.UsersGetAsync();
+}
+catch (ApiException e){};
+```  
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the `usersController` object fails to retrieve the user details that was anticipated to be returned. In order to get user details registered in the system, the `UsersGetAsync` method is called through the usersController object. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.      
+
+#### Parameters Detail  
+This endpoint does not take any parameter as it is showing all the users details. 
+  
+  
+#### Responses  
+
+The response of this endpoint service request contains the `Task<Models.UserReturnModel>` object. The class name of the ResponseType object is 
+
+```markdown 
+ UserReturnModel
+``` 
+ 
+#### Response body-JSON  
+```markdown  
+{
+  "Url": null,
+  "Id": null,
+  "UserName": null,
+  "FullName": null,
+  "FirstName": null,
+  "LastName": null,
+  "Email": null,
+  "MobilePhone": null,
+  "HomePhone": null,
+  "OfficePhone": null,
+  "PostalCode": null,
+  "EmailConfirmed": null,
+  "Lockout": null,
+  "Level": null,
+  "Address": null,
+  "Address2": null,
+  "City": null,
+  "State": null,
+  "Country": null,
+  "JoinDate": null,
+  "Roles": null,
+  "Settings": null,
+  "PasswordExpDate": null,
+  "CustomDaysToExpired": null,
+  "TwoFactorEnabled": null,
+  "IsPasswordCreated": null
+} 
+```
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'Task<Models.UserReturnModel>' Object Parameters 
+  
+![114](https://user-images.githubusercontent.com/110983629/189346307-40aac3c8-8089-4355-9982-adb9965acf72.png)
+![115](https://user-images.githubusercontent.com/110983629/189346336-d7455aae-4381-4d1e-98a3-38aa7a92ed50.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<Models.UserReturnModel>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-return-model)|
+
   
   
   
