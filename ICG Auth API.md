@@ -6167,7 +6167,102 @@ The response of this endpoint service request contains the `Task<Models.UserRetu
   
   
   
+### Users Put
+#### Description 
+This service endpoint will provide the facility to the user to update a user details by accessing it through the username. The user will have to enter the user details where the roles, permissions and audiences are optional to add in order to update a user in the system successfully. For this purpose, the `UsersPutAsync` method is called to create user account on in instance of `UsersController` class from the API client. 
+   
+ 
+```markdown
+  UsersPutAsync(
+    string username,
+    Models.ModifyUserBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+var model = new ModifyUserBindingModel();
+model.FirstName = "FirstName2";
+model.LastName = "LastName2";
+
+try
+{
+    List<string> result = await usersController.UsersPutAsync(username, model);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to update a user that was anticipated to be returned. The **model** object will be created which will be of `ModifyUserBindingModel` type and the user's required details such as first name etc will be define in the model. The model is passed as a parameter to the `UsersPutAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) and **model** as a required parameter. The model object further contains the Email, Username, FirstName, LastName, Password, ConfirmPassword, MobilePhone, HomePhone, OfficePhone, PostalCode, Address, Address2, City, State, Country, CallBackUrl, Level, CustomerDaysToExpired. Whereas, the **UserSettings**, **Roles**, **Applications** and **Permissions** objects are further contains parameters. In all of these parameters, the FirstName, LastName, Applications and UserSettings are required ones. These all parameters are actually the user properties that needs to be added for updating user details. 
   
+
+The class name of the **model** is
+```markdown
+   ModifyUserBindingModel
+```  
+  
+#### model object Parameters
+   
+![116](https://user-images.githubusercontent.com/110983629/189354384-fd052795-c737-4fe5-8414-746a3fb2a964.png)
+
+![117](https://user-images.githubusercontent.com/110983629/189354420-0fd00b47-6ceb-43e0-867f-1dc20c2372c9.png)
+
+  
+#### UserSettings object class name and Parameters   
+
+![118](https://user-images.githubusercontent.com/110983629/189354650-746c14cc-fa66-48a1-9325-ed5e9bf2abec.png)  
+
+#### Roles object class name and Parameters   
+  
+![119](https://user-images.githubusercontent.com/110983629/189354817-7ddc9728-fc01-4dfa-b701-84e0dec42248.png)
+
+
+#### Permissions object class name and Parameters     
+  
+![120](https://user-images.githubusercontent.com/110983629/189354972-d7fd8c4c-36e6-4619-b9bc-9e19a3414b64.png)
+  
+
+#### Applications object class name and Parameters     
+  
+![121](https://user-images.githubusercontent.com/110983629/189355097-2a179140-8735-4df4-b10a-5dfd8d558e2f.png)
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.ModifyUserBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/modify-user-binding-model)| 
+  
+  
+#### Responses 
+
+The response of this endpoint service request contains the "Task<List<string>>" that returns the list of user details whose detail is updated. 
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
   
   
   
