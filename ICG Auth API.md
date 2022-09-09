@@ -6621,6 +6621,48 @@ The response of this endpoint service request contains the `Task<object>` that r
   
   
   
+
+### Users Get Lock Asyc
+#### Description 
+This service endpoint will provide the facility to get lock a user. For this purpose, the `UsersGetLockAsyncAsync` method is called to send confirmation email by creating an instance of `UsersController` class from the API client. 
+   
+ 
+```markdown
+ UsersGetLockAsyncAsync(
+    string username)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    object result = await usersController.UsersGetLockAsyncAsync(username);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to  lock a user that was anticipated to be returned. The **username** will be passed as a parameter to the `UsersGetLockAsyncAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) only as a required parameter. When user adds the username and trigger for locking user, the system will lock user account without any delay whose username is entered.
+ 
+![131](https://user-images.githubusercontent.com/110983629/189389716-e9a68430-d870-4ecd-b99b-55718a8465ad.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that returns the value for locking the user account.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
   
   
   
