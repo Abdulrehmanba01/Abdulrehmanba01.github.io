@@ -7712,6 +7712,58 @@ The errors that can be reported in response to this API call are listed in the e
   
   
   
+
+  
+### Users Settings Get 
+#### Description
+This service endpoint will allow the user to retrieve the permissions by entering the username. All the permissions associated with the user account get retrieved whose username is entered to access them. For this purpose, the `UsersSettingsGetAsync` method is called by creating an instance of **UsersController** class which is accessed from the API client.  
+  
+  
+```markdown 
+  UsersSettingsGetAsync(
+    string username)
+``` 
+  
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    await usersController.UsersSettingsGetAsync(username);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `usersController` object fails to retrieve the permissions that was anticipated to be returned. In order to get permissions of the user, `UsersSettingsGetAsync` method is used that takes the username as a parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail   
+This service endpoint requires only one parameter which is **username** unique for each user. It is required for the user to enter username which is of String type for retrieving all the permissions associated with it.
+   
+![151](https://user-images.githubusercontent.com/110983629/189492869-328c898c-9af7-41ac-a508-7a67c33e868d.png)
+
+#### Responses  
+ 
+The response of this endpoint service request contains the `Task` which returns the value for successfully retrieving the user's permissions.   
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+  
+#### Errors
+
+|HTTP Status Code|Error Description| Exception Class|
+|-----|-----------|----|
+|400|Bad Request|ApiException|
+ 
+The errors that can be reported in response to this API call are listed in the error table above. The 4xx demonstrates that it is possible to make a poor request while requesting a user's permissions.  
+   
   
   
   
@@ -7719,6 +7771,14 @@ The errors that can be reported in response to this API call are listed in the e
   
   
   
+  
+  
+  
+  
+  
+  
+  
+
   
   
   
