@@ -7052,7 +7052,74 @@ The errors that can be reported in response to this API call are listed in the e
   
   
   
+
   
+### Users Permissions Put
+#### Description
+This service endpoint will allow the user to update the list of permissions that are assigned to a user. You can update the permissions by accessing them through the username. For this purpose, the `UsersPermissionsPutAsync` method is called by creating an instance of **UsersController** class which is accessed from the API client. 
+  
+```markdown
+  UsersPermissionsPutAsync(
+    string username,
+    Models.UserAssignPermissionViewModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string username = "username0";
+var model = new UserAssignPermissionViewModel();
+try
+{
+    List<string> result = await usersController.UsersPermissionsPutAsync(username, model);
+}
+catch (ApiException e){}; 
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to update permissions that was anticipated to be returned. In order to update permissions, model object is created which will be of `UserAssignPermissionViewModel` type and passed as a parameter to the `UsersPermissionsPutAsync` method in order to update the permissions of a user. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There are two required parameters for this API request which includes the **username** (String_type) and **model** object. The model object further contains the list of permissions and **TargetAudienceId** which will be of string type. Moreover,  Target Audience Id is optional to add in case that we were assigning permissions in AUTH Audience to execute actions to any particular Audience (Not All).
+ 
+![139](https://user-images.githubusercontent.com/110983629/189488077-5ef28fd2-0327-4ee0-a8f6-ae00238ab836.png)
+  
+  
+The class name of the model is   
+  
+```markdown 
+    UserAssignPermissionViewModel
+```   
+  
+#### model Object Parameters
+  
+![140](https://user-images.githubusercontent.com/110983629/189488141-8210e1fb-6852-4e21-8484-6c12816e7ff4.png)
+
+    
+#### permission Object classs name and Parameters  
+  
+![141](https://user-images.githubusercontent.com/110983629/189488194-3554b3bf-2786-448c-9aaf-1fb552ae6389.png)
+  
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UserAssignPermissionViewModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-assign-permission-view-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<string>>` object which returns the list of updated permissions for the user.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+    
   
 
   
