@@ -7597,6 +7597,82 @@ The response of this endpoint service request contains the `Task<List<Models.Use
   
   
   
+### Users General Default Settings Put
+#### Description
+This service endpoint will allow the user to modify General Default Settings that can be propagated to each User in Active Audience. For this purpose, the `UsersGeneralDefaultSettingsPutAsync` method is called by creating an instance of UsersController class which is accessed from the API client. 
+  
+```markdown
+ UsersGeneralDefaultSettingsPutAsync(
+    Models.UpdateUsersGeneralDefaultSettingsBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new UpdateUsersGeneralDefaultSettingsBindingModel();
+try
+{
+    object result = await usersController.UsersGeneralDefaultSettingsPutAsync(model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to update general default settings of the user that was anticipated to be returned. In order to update general default settings, model object is created which will be of `UpdateUsersGeneralDefaultSettingsBindingModel` type and will be passed as a parameter to the `UsersGeneralDefaultSettingsPutAsync` method in order to update an General default setting for user. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is the required parameter to enter that contains UsersGeneralDefaultSettings object and Reset (bool type) parameter. The **UsersGeneralDefaultSettings** object is required to enter that further contains the  key (String_type), MValue (String_type), AudienceId (Integer_type), Description (String_type), Level (String_type), Enabled (bool_type), DataType (String_type), and Propagate (bool_type) parameters. The key and MValue are the required parameters of the UsersGeneralDefaultSettings object.
+  
+The class name of the model is   
+  
+```markdown 
+    UserDefaultSettingBindingModel
+```   
+  
+#### model Object Parameters 
+ 
+![149](https://user-images.githubusercontent.com/110983629/189492323-e5d5b701-926c-4a8a-a9d7-93ea762f2a81.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UpdateUsersGeneralDefaultSettingsBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-default-setting-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will indicate whether the users general default setting is updated or not.
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
