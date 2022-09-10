@@ -6712,6 +6712,59 @@ The response of this endpoint service request contains the `Task<object>` that r
   
   
   
+### Users unLock Asyc
+#### Description 
+This service endpoint will provide the facility to unlock a user account by accessing it through the username. When the user's account get locked due to the failed login attempts, the system will provide the facility to the admin to unlock the user account which get locked automatically. For this purpose, the `UsersUnlockAsyncAsync` method is called to unlock the account of user by creating an instance of `UsersController` class from the API client. 
+   
+ 
+```markdown
+ UsersUnlockAsyncAsync(string username)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    object result = await usersController.UsersUnlockAsyncAsync(username);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to  unlock a user that was anticipated to be returned. The **username** will be passed as a parameter to the `UsersUnlockAsyncAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) only as a required parameter. When admin adds the username and trigger for unlocking user, the system will unlock user account without any delay whose username is entered.
+ 
+![132](https://user-images.githubusercontent.com/110983629/189483711-9426eba5-7353-44a5-9de1-4ad4257e1596.png)
+  
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that returns the value for unlocking the user account.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
 
   
