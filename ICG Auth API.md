@@ -7318,6 +7318,71 @@ The response of this endpoint service request contains the `Task<List<Models.Use
   
   
   
+### Users Default Settings Put
+#### Description
+This service endpoint will allow the user to modify Default Settings that will be automatically added to each new user account. For this purpose, the `UsersDefaultSettingsPutAsync` method is called by creating an instance of UsersController class which is accessed from the API client. 
+  
+```markdown
+ UsersDefaultSettingsPutAsync(
+    Models.UserDefaultSettingBindingModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new UserDefaultSettingBindingModel();
+model.Key = "string";
+model.MValue = "string";
+model.AudienceId = 1;
+model.Description = "string";
+model.Level = "string";
+model.Enabled = true;
+model.DataType = "string";
+model.Propagate = false;
+
+try
+{
+    object result = await usersController.UsersDefaultSettingsPutAsync(model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to update default settings of the user that was anticipated to be returned. In order to update default settings, model object is created which will be of `UserDefaultSettingBindingModel` type and will be passed as a parameter to the `UsersDefaultSettingsPutAsync` method in order to update an default setting for user. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is the required parameter to enter that contains Key (String_type), MValue (String_type), AudienceId (Integer_type), Description (String_type), Level (String_type), Enabled (bool_type), DataType (String_type), and Propagate (bool_type) parameters. The key and MValue are the required parameters to enter for updating the user's default setting. 
+  
+The class name of the model is   
+  
+```markdown 
+   UserDefaultSettingBindingModel
+```   
+  
+#### model Object Parameters 
+
+![146](https://user-images.githubusercontent.com/110983629/189490747-cd6cbde8-dc4d-4013-a871-633610b22ee8.png)
+   
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UserDefaultSettingBindingModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-default-setting-binding-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will indicate whether the user default setting is updated or not.
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+  
   
   
   
