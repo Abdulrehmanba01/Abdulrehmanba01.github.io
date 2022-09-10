@@ -6712,7 +6712,7 @@ The response of this endpoint service request contains the `Task<object>` that r
   
   
   
-### Users unLock Asyc
+### Users UnLock Asyc
 #### Description 
 This service endpoint will provide the facility to unlock a user account by accessing it through the username. When the user's account get locked due to the failed login attempts, the system will provide the facility to the admin to unlock the user account which get locked automatically. For this purpose, the `UsersUnlockAsyncAsync` method is called to unlock the account of user by creating an instance of `UsersController` class from the API client. 
    
@@ -6757,7 +6757,48 @@ The response of this endpoint service request contains the `Task<object>` that r
   
   
   
+
+### Users Roles Get
+#### Description 
+By using the username, this service endpoint will make it possible to get user roles. The roles that are associated with the one user whose username is entered will be shown to you through this process call. To do this, a new instance of the 'UsersController' class is created from the API client, and the 'UsersRolesGetAsync' method is invoked to retrieve user roles.
+ 
+```markdown
+ UsersRolesGetAsync(string username)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    List<string> result = await usersController.UsersRolesGetAsync(username);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to retrieve user roles that was anticipated to be returned. The **username** will be passed as a parameter to the `UsersRolesGetAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+
+
+#### Parameters Detail  
+The parameter of this endpoint service contains **username** (string type) only as a required parameter. When user adds the username and trigger for getting user roles, the system will show the list of roles that are associated with the user whose username is entered. 
+
+![133](https://user-images.githubusercontent.com/110983629/189484498-77985c0f-525d-4b9a-a8de-102b0a193b34.png)
+
   
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<List<string>>` that returns the list of user roles.
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+    
   
   
   
