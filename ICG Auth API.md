@@ -6942,6 +6942,57 @@ The response of this endpoint service request contains the `Task<string>` object
   
   
   
+### Users Effective Permissions Get 
+#### Description
+This service endpoint will allow the user to retrieve the effectivePermissions by entering the username. These effective permissions will be associated with the one user whose username is entered to access them. For this purpose, the `UsersEffectivePermissionsGetAsync` method is called by creating an instance of **UsersController** class which is accessed from the API client.  
+  
+  
+```markdown
+ UsersEffectivePermissionsGetAsync(string username)
+``` 
+  
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    await usersController.UsersEffectivePermissionsGetAsync(username);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the `usersController` object fails to retrieve the effective permissions that was anticipated to be returned. In order to get effective permissions of the user, `UsersEffectivePermissionsGetAsync` method is used that takes the username as a parameter. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+This service endpoint requires only one parameter which is **username** unique for each user. It is required for the user to enter username which is of String type for retrieving the effective permissions.
+  
+![138](https://user-images.githubusercontent.com/110983629/189486633-b9515c4e-104c-4f3b-934b-66af04c0b8b9.png)
+  
+  
+#### Responses  
+ 
+The response of this endpoint service request contains the `Task` which returns the value for successfully retrieving the user's effective permissions.   
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+  
+#### Errors
+
+|HTTP Status Code|Error Description| Exception Class|
+|-----|-----------|----|
+|400|Bad Request|ApiException|
+ 
+The errors that can be reported in response to this API call are listed in the error table above. The 4xx demonstrates that it is possible to make a poor request while requesting a user's actual permissions.  
+
+  
 
   
   
