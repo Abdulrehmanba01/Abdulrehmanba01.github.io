@@ -7238,6 +7238,81 @@ The response of this endpoint service request contains the "ResponseType" object
 
   
   
+  
+  
+  
+  
+  
+  
+  
+### Users Default Settings Get
+#### Description
+This service endpoint will allow the user to retrieve the default settings of the user that will be automatically added to each new user account when it is created. For this purpose, the `UsersDefaultSettingsGetAsync` method is called by creating an instance of **UsersController** class which is accessed from the API client. 
+  
+```markdown
+ UsersDefaultSettingsGetAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+try
+{
+    List<UserDefaultSetting> result = await usersController.UsersDefaultSettingsGetAsync();
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to retrieve the user's default settings details that was anticipated to be returned. The list of default settings will get returned against this endpoint request through method `UsersDefaultSettingsGetAsync` invoked. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail   
+This endpoint does not take any parameter to process and retrieve the user default settings 
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<Models.UserDefaultSetting>>` object. The class name of the ResponseType object is 
+
+```markdown 
+   UserDefaultSetting
+``` 
+ 
+#### Response body-JSON  
+```markdown 
+  {
+  "Id": null,
+  "Key": null,
+  "Value": null,
+  "Description": null,
+  "AudienceId": null,
+  "Level": null,
+  "Enabled": false,
+  "DataType": "DataType4",
+  "Audience": null
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### `Task<List<Models.UserDefaultSetting>>` Object Parameters  
+  
+![145](https://user-images.githubusercontent.com/110983629/189489953-ab064730-d03f-4758-a216-1ca94aec7bb1.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|ResponseType|[Task<List<Models.UserDefaultSetting>>](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-default-setting)|
+
+  
+  
 
   
   
