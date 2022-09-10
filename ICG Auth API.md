@@ -7457,7 +7457,64 @@ The response of this endpoint service request contains the `Task<object>` object
   
 
   
+
+### Users Default Settings Delete
+#### Description
+This service endpoint will allow the user to delete Default Settings of a user by adding the required key in the input field. For this purpose, the `UsersDefaultSettingsDeleteAsync` method is called by creating an instance of UsersController class which is accessed from the API client. 
   
+```markdown
+ UsersDefaultSettingsDeleteAsync(
+    Models.UserDefaultSettingRemoveModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+var model = new UserDefaultSettingRemoveModel();
+model.Key = "Key6";
+try
+{
+    object result = await usersController.UsersDefaultSettingsDeleteAsync(model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to remove default settings of the user that was anticipated to be returned. In order to delete default settings, model object is created which will be of `UserDefaultSettingRemoveModel` type and will be passed as a parameter to the `UsersDefaultSettingsDeleteAsync` method in order to delete an default setting for user. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+The **model** object is the required parameter to enter that contains Key (String_type), AudienceId (Integer_type), and Propagate (bool_type) parameters. The key is the required parameter to enter for removing the user's default setting. 
+  
+The class name of the model is   
+  
+```markdown 
+     UserDefaultSettingRemoveModel
+```   
+  
+#### model Object Parameters 
+ 
+![147](https://user-images.githubusercontent.com/110983629/189491424-c7456952-fd1b-4985-9d2b-0b27dbbd0593.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UserDefaultSettingRemoveModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-default-setting-remove-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<object>` object that will indicate whether the user default setting is deleted or not.
+  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+    
   
   
   
