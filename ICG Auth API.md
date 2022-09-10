@@ -7129,6 +7129,79 @@ The response of this endpoint service request contains the `Task<List<string>>` 
   
   
 
+### Users Permissions Delete
+#### Description
+This service endpoint will allow the user to delete the list of permissions that are assigned to a user. You can delete the permissions by accessing them through the username. For this purpose, the `UsersPermissionsDeleteAsync` method is called by creating an instance of **UsersController** class which is accessed from the API client. 
+  
+```markdown
+  UsersPermissionsDeleteAsync(
+    string username,
+    Models.UserDropPermissionViewModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string username = "username0";
+var model = new UserDropPermissionViewModel();
+try
+{
+    string result = await usersController.UsersPermissionsDeleteAsync(username, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to delete permissions that was anticipated to be returned. In order to remove permissions, model object is created which will be of `UserDropPermissionViewModel` type and passed as a parameter to the `UsersPermissionsDeleteAsync` method in order to remove the permissions of a user. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There are two required parameters for this API request which includes the **username** (String_type) and **model** object. The model object further contains the list of permissions and **TargetAudienceId** which will be of string type. Moreover,  Target Audience Id is optional in case that we were assigning permissions in AUTH Audience to execute actions to any particular Audience (Not All). And the username must be entered for deleting the permissions associated with it.
+ 
+![142](https://user-images.githubusercontent.com/110983629/189488631-f40e35ed-c2d1-47c8-b788-53208bc35434.png)
+
+  
+The class name of the model is   
+  
+```markdown 
+   UserDropPermissionViewModel
+```   
+  
+#### model Object Parameters
+  
+![143](https://user-images.githubusercontent.com/110983629/189488831-55d4ce96-5d66-4e29-85d4-5af583322d39.png)
+
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.UserDropPermissionViewModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/user-drop-permission-view-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object which returns the value for deleting the permissions.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
   
   
   
