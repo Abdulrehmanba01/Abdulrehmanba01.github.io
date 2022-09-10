@@ -6783,7 +6783,6 @@ It will be included in the try and catch block to deal with any exceptions that 
 
 #### Parameters Detail  
 The parameter of this endpoint service contains **username** (string type) only as a required parameter. When user adds the username and trigger for getting user roles, the system will show the list of roles that are associated with the user whose username is entered. 
-
 ![133](https://user-images.githubusercontent.com/110983629/189484498-77985c0f-525d-4b9a-a8de-102b0a193b34.png)
 
   
@@ -6801,6 +6800,76 @@ The response of this endpoint service request contains the `Task<List<string>>` 
     
   
   
+### Users Roles Put
+#### Description
+This service endpoint will allow the user to update the list of roles that are assigned to a user. You can update the roles by accessing the user through the username. For this purpose, the `UsersRolesPutAsync` method is called by creating an instance of **UsersController** class which is accessed from the API client. 
+  
+```markdown
+   UsersRolesPutAsync(
+    string username,
+    Models.AddRolesViewModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string username = "username0";
+var model = new AddRolesViewModel();
+model.RolesToAdd = new List<RolesBindingModel>();
+
+var modelRolesToAdd0 = new RolesBindingModel();
+model.RolesToAdd.Add(modelRolesToAdd0);
+
+var modelRolesToAdd1 = new RolesBindingModel();
+model.RolesToAdd.Add(modelRolesToAdd1);
+
+try
+{
+    List<string> result = await usersController.UsersRolesPutAsync(username, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to update roles that was anticipated to be returned. In order to update roles, model object is created which will be of `AddRolesViewModel` type and list of roles will be defined for the model through the `RolesToAdd.Add` method. The `model` will be passed as a parameter to the `UsersRolesPutAsync` method in order to update the roles of a user. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There are two required parameters for this API request which includes the **username** (String_type) and **model** object. The model object further contains the array of roles that needs to be updated for the user. Moreover, the audience id is an optional parameter to add for updating the roles. 
+
+![134](https://user-images.githubusercontent.com/110983629/189485185-3158de0b-3a43-4b6d-a08b-9349d9e1025d.png)
+
+
+The class name of the model is   
+  
+```markdown 
+    AddRolesViewModel
+```   
+  
+  
+#### model Object Parameters
+  
+![135](https://user-images.githubusercontent.com/110983629/189485230-1cdbfdbd-f56c-4c7b-87a7-c9c11673c79e.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.AddRolesViewModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/add-roles-view-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<List<string>>` object which returns the list of updated roles for the user.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+  
   
   
   
@@ -6814,6 +6883,13 @@ The response of this endpoint service request contains the `Task<List<string>>` 
   
   
   
+  
+  
+  
+  
+  
+  
+
   
   
   
