@@ -7771,7 +7771,7 @@ The errors that can be reported in response to this API call are listed in the e
   
 ### Users Settings Put 
 #### Description
-By using his username to access it, the user will be able to edit the user settings that have been allocated to him. You must fill out all the new information requested in the input fields described in the parameters section in order to update user settings. By establishing an instance of the **UsersController** class, which is accessed via the API client, the 'UsersSettingsPutAsync' method is called for this purpose.
+By using the username to access setting, the user will be able to edit the user settings that have been allocated to him. You must fill out all the new information requested in the input fields described in the parameters section in order to update user settings. By establishing an instance of the **UsersController** class, which is accessed via the API client, the 'UsersSettingsPutAsync' method is called for this purpose.
   
   
 ```markdown 
@@ -7822,7 +7822,55 @@ The response of this endpoint service request contains the `Task<object>` which 
   
   
   
+
+### Users Settings Value Put 
+#### Description 
+The value that is present in each user account's setting can be updated by the user using this API. By entering a new value in the input field, you may change the value. To edit a user value in settings, you must complete all the information prompted in the input fields listed in the parameters section. The 'UsersSettingsValuePutAsync' function is used for this by creating an instance of the **UsersController** class, which is accessible through the API client.
   
+  
+```markdown 
+   UsersSettingsValuePutAsync(
+    string key,
+    string mValue,
+    string newValue)
+``` 
+  
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string key = "key0";
+string mValue = "value2";
+string newValue = "newValue2";
+
+try
+{
+    object result = await usersController.UsersSettingsValuePutAsync(key, mValue, newValue);
+}
+catch (ApiException e){};
+```  
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the `usersController` object fails to update the value in settings details that was anticipated to be returned. In order to edit value, `UsersSettingsValuePutAsync` method is called that takes the key, mValue and newValue as a parameters. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail   
+This api request contains the key (String_type), mValue (String_type), and newValue (String_type). All of these parameters are required for updating the mValue in the user settings. 
+  
+ 
+![153](https://user-images.githubusercontent.com/110983629/189493652-a0746886-95be-4ba7-82fd-29523941fa4e.png)
+
+  
+#### Responses  
+ 
+The response of this endpoint service request contains the `Task<object>` which returns the value for successfully updating the mValue in user settings.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+    
   
   
   
