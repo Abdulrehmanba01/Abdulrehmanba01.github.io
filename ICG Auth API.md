@@ -7877,13 +7877,71 @@ The response of this endpoint service request contains the `Task<object>` which 
 
   
   
+
+
+### Users Set Redis Cache
+#### Description 
+This endpoint service request will allow the user to define the redis cache for the link expiration date. In order to do that, there are two things that needs to be added which are the userId and key. The 'UsersSetRedisCacheAsync' method is used for this by creating an instance of the **UsersController** class, which is accessible through the API client.
   
+    
+```markdown 
+ UsersSetRedisCacheAsync(
+    string key,
+    string userId)
+``` 
+  
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string key = "key0";
+string userId = "userId0";
+
+try
+{
+    object result = await usersController.UsersSetRedisCacheAsync(key, userId);
+}
+catch (ApiException e){};
+```  
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the `usersController` object fails to set the redis cache that was anticipated to be returned. In order to do that, `UsersSetRedisCacheAsync` method is called that takes the key, userid as a parameters. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail   
+This api request contains the key (String_type), mValue (String_type), and newValue (String_type). All of these parameters are required for updating the mValue in the user settings. 
+  
+![154](https://user-images.githubusercontent.com/110983629/189494140-d0c8d439-c539-4c6e-a77a-b3c08beb89c2.png)
+  
+#### Responses  
+ 
+The response of this endpoint service request contains the `Task<object>` which returns the value for successfully setting the redis cache for the link expiration date.  
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+    
   
   
   
   
   
 
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
