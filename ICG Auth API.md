@@ -7192,6 +7192,50 @@ The response of this endpoint service request contains the `Task<string>` object
   
   
   
+### Users Disable TFA
+#### Description
+This service endpoint will disable the two factor authentication for the user account by accessing it through the username. The API client will obtain an instance of the 'UsersController' class and invoke the 'UsersDisableTFAAsync` method in order to disable the TFA.  
+  
+ 
+```markdown
+   UsersDisableTFAAsync(
+    string username)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization) 
+
+#### Class-Object
+```markdown
+string username = "username0";
+try
+{
+    List<string> result = await usersController.UsersDisableTFAAsync(username);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to disable the two factor authentication process for the user account that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+  
+#### Parameters 
+There is only one required parameter which is **username** (String type) for disabling the TFA for only one user account whose username is provided.
+  
+![144](https://user-images.githubusercontent.com/110983629/189489424-4ba7ff1d-ac81-4bdc-aa11-ce0c25e0845a.png)
+
+  
+  
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|  
+ 
+
+#### Response
+##### 'ResponseType' Object Parameters   
+The response of this endpoint service request contains the "ResponseType" object. The `Task<List<string>>` is the parameter that will return the list of the strings for disabling 2 factor authentication.
+
   
   
 
