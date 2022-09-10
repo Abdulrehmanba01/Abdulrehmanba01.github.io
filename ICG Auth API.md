@@ -6872,6 +6872,72 @@ The response of this endpoint service request contains the `Task<List<string>>` 
   
   
   
+### Users Roles Delete
+#### Description
+This service endpoint will allow the user to delete the list of roles that are assigned to a user. You can delete the roles by accessing the user roles through the username. For this purpose, the `UsersRolesDeleteAsync` method is called by creating an instance of **UsersController** class which is accessed from the API client. 
+  
+```markdown
+   UsersRolesDeleteAsync(
+    string username,
+    Models.RemoveRolesViewModel model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+
+#### Class-Object
+```markdown
+string username = "username0";
+var model = new RemoveRolesViewModel();
+model.RolesToRemove = new List<string>();
+model.RolesToRemove.Add("RolesToRemove3");
+model.RolesToRemove.Add("RolesToRemove2");
+
+try
+{
+    string result = await usersController.UsersRolesDeleteAsync(username, model);
+}
+catch (ApiException e){};
+```  
+  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "usersController" object fails to delete roles that was anticipated to be returned. In order to delete roles, model object is created which will be of `RemoveRolesViewModel` type and list of roles that needs to be deleted will be defined for the model through the `RolesToRemove.Add` method. The `model` will be passed as a parameter to the `UsersRolesDeleteAsync` method in order to delete the roles of a user. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+
+#### Parameters Detail  
+There are two required parameters for this API request which includes the **username** (String_type) and **model** object. The model object further contains the array of roles that needs to be removed for the user.  
+   
+![136](https://user-images.githubusercontent.com/110983629/189485915-9d89aa8f-249f-439e-a660-e0bf82131c19.png)
+
+  
+The class name of the model is   
+  
+```markdown 
+     RemoveRolesViewModel
+```   
+  
+  
+#### model Object Parameters
+
+![137](https://user-images.githubusercontent.com/110983629/189486036-02635249-e0dd-4a3d-97d8-504c1b469166.png)
+
+    
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.RemoveRolesViewModel](https://developers.icheckdev.com/auth/#/net-standard-library/models/structures/remove-roles-view-model)|
+  
+ 
+#### Responses  
+
+The response of this endpoint service request contains the `Task<string>` object which returns value for deleting the roles of the user.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+  
   
   
   
