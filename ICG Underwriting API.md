@@ -181,3 +181,88 @@ For viewing the response body, you need to download the text file.
   
   
 
+
+
+
+
+
+
+### Prospect Document Check Status
+#### Description
+
+This API call will be made in order to verify that the document is signed. It just needs one parameter, which is the prospect document id. To do this, the API Client will create an instance of the class 'ProspectDocumentController' for invoking the 'ProspectDocumentCheckStatusAsync' method.
+ 
+
+```markdown
+ ProspectDocumentCheckStatusAsync(int prospectId)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    object result = await prospectDocumentController.ProspectDocumentCheckStatusAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDocumentController" object fails to verify the document is signed that were anticipated to be returned. The proposed id will be passed as a parameter to the `ProspectDocumentPostAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This API call uses an int-type prospect id as the only mandatory parameter. The prospoct document id is a unique for each prospect document. This ID will be used to access a specific document in order to send it for signing.
+
+ 
+![2](https://user-images.githubusercontent.com/110983629/189976765-40ae42f2-eb71-4be7-9a23-02dd5c802891.png)
+
+
+#### Responses 
+
+For viewing the response body, you need to download the text file. 
+
+#### Response body-Text File
+```markdown 
+{
+  "Message": "Authorization has been denied for this request."
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|*/*; charset=utf-8|
+
+    
+ ##### 'ResponseType' Object Parameters 
+ The Response of this API request returns `Task<object>` that indicate the signed document is verified or not.
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
