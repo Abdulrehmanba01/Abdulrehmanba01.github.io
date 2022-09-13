@@ -147,7 +147,7 @@ try
 }
 catch (ApiException e){};
 ```
-It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDocumentController" object fails to send document for sign that were anticipated to be returned. The proposed id will be passed as a parameter to the `ProspectDocumentPostAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDocumentController" object fails to send document for sign that was anticipated to be returned. The prospect id will be passed as a parameter to the `ProspectDocumentPostAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
  
 
 #### Parameters Detail   
@@ -207,7 +207,7 @@ try
 }
 catch (ApiException e){};
 ```
-It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDocumentController" object fails to verify the document is signed that were anticipated to be returned. The proposed id will be passed as a parameter to the `ProspectDocumentPostAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDocumentController" object fails to verify the document is signed that was anticipated to be returned. The prospect id will be passed as a parameter to the `ProspectDocumentPostAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
  
 
 #### Parameters Detail   
@@ -242,6 +242,60 @@ For viewing the response body, you need to download the text file.
   
 
 
+### Prospect Document Send Reminder
+#### Description
+
+This API call will be made in order to send reminder to the user who has to signed the document. It just needs one parameter, which is the prospect document id. To do this, the API Client will create an instance of the class 'ProspectDocumentController' for invoking the 'ProspectDocumentSendReminderAsync' method.
+ 
+
+```markdown
+ ProspectDocumentSendReminderAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+
+try
+{
+    object result = await prospectDocumentController.ProspectDocumentSendReminderAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDocumentController" object fails to send reminder that was anticipated to be returned. The prospect id will be passed as a parameter to the `ProspectDocumentSendReminderAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This API call uses an int-type prospect id as the only mandatory parameter. The prospoct document id is a unique for each prospect document. This ID will be used to access a specific document in order to verified the signed document.
+
+ ![3](https://user-images.githubusercontent.com/110983629/189979572-df8b4620-4fb7-4852-9063-1061d7c59c5d.png)
+
+
+#### Responses 
+
+For viewing the response body, you need to download the text file. 
+
+#### Response body-Text File
+```markdown 
+{
+  "Message": "Authorization has been denied for this request."
+}
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|*/*; charset=utf-8|
+
+    
+ ##### 'ResponseType' Object Parameters 
+ The Response of this API request returns `Task<object>` that indicate the reminder is sent or not.
+  
 
 
 
