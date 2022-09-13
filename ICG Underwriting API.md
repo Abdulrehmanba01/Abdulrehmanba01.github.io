@@ -361,6 +361,87 @@ For viewing the response body, you need to download the text file.
 
 
 
+## API Endpoints
+## Prospect Dropbox Files
+### Prospect Dropbox Files Get Prospect Dropbox Files
+#### Description
+With the use of this service endpoint, merchants can retrieve prospect Dropbox files. These files will provide a description of each file for the current prospect, including filename, fileId, size, etc.
+The 'ProspectDropboxFilesGetProspectDropboxFilesAsync' method of the 'ProspectDropboxFilesController' class will be called by the API client for this process in order to retrieve the files description.
+
+
+```markdown
+ ProspectDropboxFilesGetProspectDropboxFilesAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectDropboxFile result = await prospectDropboxFilesController.ProspectDropboxFilesGetProspectDropboxFilesAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDropboxFilesController" object fails to retrieve the current prospect files description that was anticipated to be returned. The prospect id will be passed as a parameter to the `ProspectDropboxFilesGetProspectDropboxFilesAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail   
+The parameters of this endpoint service includes **prospectId** (int Type) which is unique identifier for each prospect. It is required for the user enter the prospect id for retrieving the description of all files
+  
+![4](https://user-images.githubusercontent.com/110983629/189987344-6b51409b-133e-4929-9e75-cd2c542d6d50.png)
+
+  
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectDropboxFile>` object. The class name of this object is 
+
+```markdown
+ ICGBusinessEntitiesProspectDropboxFile
+``` 
+
+#### Response body-JSON  
+```markdown
+ {
+  "Id": null,
+  "ProspectId": null,
+  "FileTypeId": null,
+  "FileSubtypeId": null,
+  "FileName": null,
+  "FileId": null,
+  "AddedBy": null,
+  "AddedUTCDate": null,
+  "AddedMethod": null,
+  "ServerModifiedDate": null,
+  "Comment": null,
+  "Size": null
+}      
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+    
+##### 'Task<Models.ICGBusinessEntitiesProspectDropboxFile>' Object Parameters
+
+![5](https://user-images.githubusercontent.com/110983629/189988133-447c0f25-2389-4b1f-b005-74aa318e6d24.png)
+
+ 
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Task<Models.ICGBusinessEntitiesProspectDropboxFile>|[Task<Models.ICGBusinessEntitiesProspectDropboxFile>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-dropbox-file)
+ 
+
 
 
 
