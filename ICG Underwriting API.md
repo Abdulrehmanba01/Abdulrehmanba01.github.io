@@ -122,18 +122,21 @@ The following table describe the list of configured parameters for retries throu
   
 
 ## API Endpoints
-## Account
-### Account My Settings
+## Prospect Document 
+### Prospect Document Post
 #### Description
      
-In order to access the account settings, this API call will be executed where no parameters are passed through this API call. 
+In order to send document for sign digitally, this API call will be executed that requires one parameter which is the prospect document id. 
 
-For this API call, an instance of `AccountController` class will be accessed from the API client.
- 
 ```markdown
-  AccountController accountController = client.AccountController;
+int prospectId = 118;
+try
+{
+    object result = await prospectDocumentController.ProspectDocumentPostAsync(prospectId);
+}
+catch (ApiException e){};
 ```
-This endpoint requires [Authentication](https://developers.icheckdev.com/auth/#/net-standard-library/getting-started/how-to-get-started/authorization)
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started)
 
 In order to use ICG's APIs, all the applications needs to be authenticated first using Auth API through valid credentails including username and password. When user get authenticated successfully, the system will provide the token that user can utilize for making secure API calls. 
 
