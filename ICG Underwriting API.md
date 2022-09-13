@@ -353,7 +353,7 @@ For viewing the response body, you need to download the text file.
 
     
  ##### 'ResponseType' Object Parameters 
- The Response of this API request returns `Task<object>` that indicate the document PDF is generated and retrieved or not.
+ The Response of this API request returns `Task<object>` that indicate the document PDF generated get retrieved or not.
   
 
 
