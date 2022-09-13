@@ -447,6 +447,82 @@ The response of this endpoint service request contains the `Task<Models.ICGBusin
 
 
 
+### Prospect Dropbox Files Delete Prospect Dropbox Files
+#### Description
+With the use of this service endpoint, merchants can delete a file from the prospect Dropbox files. The user will not able to access the removed file anymore. 
+The 'ProspectDropboxFilesDeleteProspectDropboxFilesAsync' method of the 'ProspectDropboxFilesController' class will be called by the API client for this process in order to delete the file.
+
+
+```markdown
+ ProspectDropboxFilesDeleteProspectDropboxFilesAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectDropboxFileDeleteRequest model)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var model = new ICGBusinessEntitiesProspectDropboxFileDeleteRequest();
+
+try
+{
+    object result = await prospectDropboxFilesController.ProspectDropboxFilesDeleteProspectDropboxFilesAsync(prospectId, model);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDropboxFilesController" object fails to delete the file that was anticipated to be returned. The prospect id and model object will be passed as parameters to the `ProspectDropboxFilesDeleteProspectDropboxFilesAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail   
+The parameters of this endpoint service request requires two parameters which are **prospectId** (int type) and **model** object. The model object will further contains the information (such as file id and file name) of the file that is intended to be delete. 
+  
+![6](https://user-images.githubusercontent.com/110983629/189991408-781bf818-f366-48d7-92b4-bc9c70f2e076.png)
+
+
+The class name of the **model** object is 
+```markdown
+ICGBusinessEntitiesProspectDropboxFileDeleteRequest
+```
+
+#### model object parameters
+
+![7](https://user-images.githubusercontent.com/110983629/189991859-8c18547b-e163-409a-8da2-f55276affc82.png)
+
+
+    
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|model (required)|[Models.ICGBusinessEntitiesProspectDropboxFileDeleteRequest](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-dropbox-file-delete-request)|
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will determine whether the file get deleted or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
