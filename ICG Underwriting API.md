@@ -125,9 +125,20 @@ The following table describe the list of configured parameters for retries throu
 ## Prospect Document 
 ### Prospect Document Post
 #### Description
-     
-In order to send document for sign digitally, this API call will be executed that requires one parameter which is the prospect document id. 
 
+This API call will be made in order to send the document for electronic signature. It just needs one parameter, which is the prospect document id. To do this, the API Client will create an instance of the class 'ProspectDocumentController' and use the method 'ProspectDocumentPostAsync'.
+
+
+```markdown
+ProspectDocumentController prospectDocumentController = client.ProspectDocumentController;
+```
+
+```markdown
+ ProspectDocumentPostAsync(int prospectId)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
 ```markdown
 int prospectId = 118;
 try
@@ -136,56 +147,14 @@ try
 }
 catch (ApiException e){};
 ```
-This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started)
-
-In order to use ICG's APIs, all the applications needs to be authenticated first using Auth API through valid credentails including username and password. When user get authenticated successfully, the system will provide the token that user can utilize for making secure API calls. 
-
-
-The paramters are listed below that are used to authenticate the user for a specific application:
-|Parameter| Type |Description|
-|---------|------|-----------|
-| username |String| It can be username or email address|
-|password|String|It is the password in encrypted form|
-|client_id|String|It is the audience id unique for each application|
-|grant_type|String|It is the grant mode which is password|
-
-#### Response 
-
-The response for authentication will be a token that is valid for some seconds only.
-
-#### Response body
-
-```markdown 
-{
-   "access_token": "{access_token_value}",
-   "token_type": "bearer",
-   "expires_in": 89399
-}
-```
-
-You can make API calls by including the token in each header request which is:
-
-```markdown 
-   authorization: Bearer {access_token_value}
-```
-
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDocumentController" object fails to send document for sign that were anticipated to be returned. The proposed id will be passed as a parameter to the `ProspectDocumentPostAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
  
 
-#### Class-Object
-```markdown
-try
-{
-    Dictionary<string, string> result = await accountController.AccountMySettingsAsync();
-}
-catch (ApiException e){};
-```
-It will be included in the try and catch block to deal with any exceptions that could arise if the "accountController" object fails to produce the accurate result that were anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
- 
+#### Parameters Detail   
+This API call uses an int-type prospect id as the only mandatory parameter. The prospoct document id is a unique for each prospect document. This ID will be used to access a specific document in order to send it for signing.
 
 
-#### Parameters Detail  
-This API call did not take any parameters.
-
+![1](https://user-images.githubusercontent.com/110983629/189973237-2a1f4ea2-b964-41b6-898b-de3aa8f4182a.png)
 
 
 #### Responses 
@@ -199,28 +168,16 @@ For viewing the response body, you need to download the text file.
 }
 ```
 
-#### Verify Process Configuration
-
-![19](https://user-images.githubusercontent.com/110983629/187513032-35b406d7-7a46-41da-9de8-79b252cdbb56.png)
-
-You must confirm that the client configuration for the My Account setting procedure contains the single authorization token that must be inserted in order to get verified successfully. The authorization token will be accessible after the user authentication through the Auth API.
-
-
-
 #### Response headers-JSON
 |Header|Value|
 |------|-----|
 |Cache-control|Private|
 |Content-Length|61|
-|Content-type|application/json;charset=utf-8|
+|Content-type|*/*; charset=utf-8|
 
     
- ##### 'ResponseType' Object Parameters
-There are no parameters available for the response request.  
-  
-```markdown
-   Task<Dictionary<string, string>>
-```
+ ##### 'ResponseType' Object Parameters 
+ The Response of this API request returns `Task<object>` that indicate the document is sent for sign or not.
   
   
 
