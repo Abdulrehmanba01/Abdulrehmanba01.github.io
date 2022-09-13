@@ -680,6 +680,72 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+### Prospect Dropbox Files Update Comment
+#### Description
+With the use of this service endpoint, users can update the comment of a file that is accessed from Dropbox files by entering the fileId, and prospect id.
+The 'ProspectDropboxFilesUpdateCommentAsync' method of the 'ProspectDropboxFilesController' class will be called by the API client for this process in order to delete the file.
+
+
+```markdown
+ ProspectDropboxFilesUpdateCommentAsync(
+    int prospectId,
+    string fileId,
+    Models.ICGBusinessEntitiesProspectDropboxFileComment commentData)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+string fileId = "fileId6";
+var commentData = new ICGBusinessEntitiesProspectDropboxFileComment();
+
+try
+{
+    object result = await prospectDropboxFilesController.ProspectDropboxFilesUpdateCommentAsync(prospectId, fileId, commentData);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDropboxFilesController" object fails to update the comment on file that was anticipated to be returned. The prospect id, fileid and model object will be passed as parameters to the `ProspectDropboxFilesUpdateCommentAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail   
+The parameters of this endpoint service request requires three parameters which are **prospectId** (int type), **fileId** (String type), and **commentData** object. The commentData object will further contains the comment that user has edited on the file.
+  
+  
+![11](https://user-images.githubusercontent.com/110983629/190001092-98865aee-7661-4833-ba31-d7fb0a1605e8.png)
+
+
+The class name of the **commentData** object is 
+```markdown
+ ICGBusinessEntitiesProspectDropboxFileComment
+```
+
+#### commentData object parameters
+ 
+![12](https://user-images.githubusercontent.com/110983629/190001280-b6652be2-e478-4530-92d6-2d1796caa097.png)
+
+ 
+    
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|commentData (required)|[Models.ICGBusinessEntitiesProspectDropboxFileComment](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-dropbox-file-comment)|
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will determine whether the comment on file get updated or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
 
 
 
