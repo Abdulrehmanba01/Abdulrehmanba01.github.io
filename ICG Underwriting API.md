@@ -546,7 +546,7 @@ try
 catch (ApiException e){};
 ```
 
-It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDropboxFilesController" object fails to upload a file that was anticipated to be returned. The prospectId, typeId and subtypeId will be passed as parameters to the `ProspectDropboxFilesUploadAsync` method for uploading file into the specific prospect of specific type. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDropboxFilesController" object fails to upload a file that was anticipated to be returned. The prospectId, typeId and subtypeId will be passed as parameters to the `ProspectDropboxFilesUploadAsync` method for uploading file into the specific prospect. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
  
 
 #### Parameters Detail   
@@ -571,6 +571,53 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+
+### Prospect Dropbox Files Get Dropbox File
+#### Description
+With the use of this service endpoint, User can retrieve a file from the Dropbox that you have uploaded before in the dropbox by entering the prospect id and file id.
+The 'ProspectDropboxFilesGetDropboxFileAsync' method of the 'ProspectDropboxFilesController' class will be called by the API client for this process in order to get the file.
+
+
+```markdown
+  ProspectDropboxFilesGetDropboxFileAsync(
+    int prospectId,
+    string fileId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+string fileId = "fileId6";
+
+try
+{
+    object result = await prospectDropboxFilesController.ProspectDropboxFilesGetDropboxFileAsync(prospectId, fileId);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDropboxFilesController" object fails to retrieve a file that was anticipated to be returned. The prospectId, fileId will be passed as parameters to the `ProspectDropboxFilesGetDropboxFileAsync` method for getting file of the specific prospect type. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+The parameters of this endpoint service request requires two parameters which are **prospectId** (int type), and **fileId** (int type). The prospectid is unique for each prospect, fileid is unique for each file uploaded into the dropbox.
+   
+   
+![9](https://user-images.githubusercontent.com/110983629/189997593-61948d75-f14a-4087-abc2-e946e9a32e80.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will determine whether the file get retrieved from the dropbox or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
 
 
 
