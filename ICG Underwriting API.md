@@ -510,7 +510,84 @@ The response of this endpoint service request contains the `Task<object>` that w
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
+
+
+
+
+
+
+
+
+### Prospect Dropbox Files Upload
+#### Description
+With the use of this service endpoint, User can upload a file in the Dropbox as well as also a row will be inserted into the database for uploading file into the dropbox.  
+The 'ProspectDropboxFilesUploadAsync' method of the 'ProspectDropboxFilesController' class will be called by the API client for this process in order to upload the file and inserting row in the database.
+
+
+```markdown
+ ProspectDropboxFilesUploadAsync(
+    int prospectId,
+    int typeId,
+    int subtypeId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+int typeId = 190;
+int subtypeId = 220;
+
+try
+{
+    object result = await prospectDropboxFilesController.ProspectDropboxFilesUploadAsync(prospectId, typeId, subtypeId);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectDropboxFilesController" object fails to upload a file that was anticipated to be returned. The prospectId, typeId and subtypeId will be passed as parameters to the `ProspectDropboxFilesUploadAsync` method for uploading file into the specific prospect of specific type. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
  
+
+#### Parameters Detail   
+The parameters of this endpoint service request requires three parameters which are **prospectId** (int type), **typeId** (int type), and **subtypeId** (int type). The prospectid is unique for each prospect, typeId is unique for each file type Id and subtypeId can be zero if the uploading file does not have any sub type.
+  
+![8](https://user-images.githubusercontent.com/110983629/189995473-9a5da728-c816-43ee-989d-89b8f9626001.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will determine whether the file get uploaded in the dropbox or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
