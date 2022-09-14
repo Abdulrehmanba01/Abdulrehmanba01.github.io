@@ -908,6 +908,64 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectStatusUpdateRespo
 
 
 
+### Prospect Extras Get Prospect Summary
+#### Description
+This service endpoint will allow the user to retrieve the prospect summary of a prospect by entering the prospect id which is unique for each prospect. For this purpose, an instance of `ProspectExtrasController` class is created by the API client for invoking the `ProspectExtrasGetProspectSummaryAsync` method.
+
+```markdown
+ ProspectExtrasGetProspectSummaryAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectSalesRep result = await prospectExtrasController.ProspectExtrasGetProspectSummaryAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectExtrasController" object fails to retrieve summary of the prospect that was anticipated to be returned. The prospectId will be passed as a parameter to the `ProspectExtrasGetProspectSummaryAsync` method. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail    
+
+The parameters of this endpoint includes the **prospectId** (int type) that is required for the prospect to enter for retrieving the prospect summary.
+
+![19](https://user-images.githubusercontent.com/110983629/190188642-23c2371a-09ec-488c-bdd6-bd87d8a19ad6.png)
+
+ 
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectSalesRep>` that will return the summary of the prospect whose id is entered.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectSalesRep>** object is 
+```markdown
+    ICGBusinessEntitiesProspectSalesRep
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectSalesRep> object parameters
+  
+![20](https://user-images.githubusercontent.com/110983629/190189664-fe81cef1-8688-4e49-8488-25907e5828c0.png)
+
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Task<Models.ICGBusinessEntitiesProspectSalesRep>|[Task<Models.ICGBusinessEntitiesProspectSalesRep>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-sales-rep)|
+
 
 
 
