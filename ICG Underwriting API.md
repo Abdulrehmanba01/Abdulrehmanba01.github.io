@@ -752,6 +752,94 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+## API Endpoints
+## Prospect Extras
+### Prospect Extras Get Parameters
+#### Description
+This service endpoint will allow the user to retrieve all the parameters, master tables, static things used by the prospect that comes from the database. For this purpose, an instance of `ProspectExtrasController` class is created by the API client for invoking the `ProspectExtrasGetParametersAsync` method.
+
+```markdown
+ProspectExtrasController prospectExtrasController = client.ProspectExtrasController;
+```
+
+```markdown
+  ProspectExtrasGetParametersAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+try
+{
+    ICGBusinessEntitiesProspectParameters result = await prospectExtrasController.ProspectExtrasGetParametersAsync();
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectExtrasController" object fails to retrieve prospect extras that was anticipated to be returned. These extras will include the all the parameters, master tables, static things used by the prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail   
+This endpoint does not take any parameter.
+
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectParameters>` that will provide all the parameters to the user that are associated with the prospect.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectParameters>** object is 
+```markdown
+  ICGBusinessEntitiesProspectParameters
+```
+
+#### ICGBusinessEntitiesProspectParameters object parameters
+ 
+![13](https://user-images.githubusercontent.com/110983629/190173660-807e4496-a61c-4c24-975b-82fe84306bfb.png)
+
+####  Isos Class name and object parameters
+
+![14](https://user-images.githubusercontent.com/110983629/190174185-13cea1d6-7092-4d56-9241-60accb8113de.png)
+
+
+#### SalesReps Class name and object parameters
+
+
+![15](https://user-images.githubusercontent.com/110983629/190174222-c5709f19-4076-49aa-aced-5158d5a557a6.png)
+
+
+    
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Task<Models.ICGBusinessEntitiesProspectParameters>|[Task<Models.ICGBusinessEntitiesProspectParameters>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-parameters)|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
