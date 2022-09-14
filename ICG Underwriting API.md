@@ -977,6 +977,51 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectSalesRep>** objec
 
 
 
+## API Endpoints
+## Prospect Generate Pdf
+### Prospect Generate Pdf Generate Pdf File
+#### Description
+This service endpoint will allow the user to generate the PDF file for the prospect. For this purpose, an instance of `ProspectGeneratePdfController` class is created by the API client for invoking the `ProspectGeneratePdfGeneratePdfFileAsync` method.
+
+```markdown
+ ProspectGeneratePdfController prospectGeneratePdfController = client.ProspectGeneratePdfController;
+```
+
+```markdown
+  ProspectGeneratePdfGeneratePdfFileAsync(
+    int id)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int id = 112;
+try
+{
+    object result = await prospectGeneratePdfController.ProspectGeneratePdfGeneratePdfFileAsync(id);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectGeneratePdfController" object fails to generate the PDF file for prospect that was anticipated to be returned. The id will be passed as parameter to `ProspectGeneratePdfGeneratePdfFileAsync` method for generating the PDF file. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail   
+This endpoint requires only one parameter which is id for generating the PDF file of the prospect.
+
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will indicate whether the PDF file get generated or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
 
 
 
