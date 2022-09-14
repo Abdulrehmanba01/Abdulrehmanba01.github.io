@@ -827,6 +827,79 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectParameters>** obj
 
 
 
+### Prospect Extras Update Status
+#### Description
+This service endpoint will allow the user to update the status of the prospect by entering the prospect id which is unique for each prospect. For this purpose, an instance of `ProspectExtrasController` class is created by the API client for invoking the `ProspectExtrasUpdateStatusAsync` method.
+
+```markdown
+ ProspectExtrasUpdateStatusAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectStatusUpdateRequest statusUpdate)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var statusUpdate = new ICGBusinessEntitiesProspectStatusUpdateRequest();
+
+try
+{
+    ICGBusinessEntitiesProspectStatusUpdateResponse result = await prospectExtrasController.ProspectExtrasUpdateStatusAsync(prospectId, statusUpdate);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectExtrasController" object fails to update the prospect status that was anticipated to be returned. The statusUpdate is the object of `ICGBusinessEntitiesProspectStatusUpdateRequest` type and prospectId will be passed as parameters to the `ProspectExtrasUpdateStatusAsync` method. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail   
+The parameters of this endpoint includes the **prospectId** (int type), **statusUpdate** object. The statusUpdate object further contains the ProspectStatusId (int type) and Message (String type). 
+
+![16](https://user-images.githubusercontent.com/110983629/190181736-38015d24-0b00-4041-9c69-14729d5272a7.png)
+
+The class name of statusUpdate object
+
+```markdown
+ICGBusinessEntitiesProspectStatusUpdateRequest
+```
+
+#### statusUpdate Object Parameters  
+![17](https://user-images.githubusercontent.com/110983629/190182514-bd12ce33-6eec-4d39-8059-ca2776ec756a.png)
+
+
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectStatusUpdateResponse>` that will update the status of the prospect.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectStatusUpdateResponse>** object is 
+```markdown
+   ICGBusinessEntitiesProspectStatusUpdateResponse
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectStatusUpdateResponse> object parameters
+ 
+![18](https://user-images.githubusercontent.com/110983629/190183476-5ab23c9d-16bb-435d-9475-7b5a12c5c564.png)
+
+
+    
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Task<Models.ICGBusinessEntitiesProspectStatusUpdateResponse>|[Task<Models.ICGBusinessEntitiesProspectStatusUpdateResponse>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-status-update-response)|
+
+
+
 
 
 
