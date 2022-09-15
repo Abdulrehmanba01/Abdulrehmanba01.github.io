@@ -1104,7 +1104,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectCompletionInforma
 
 |Names|Description|
 |-----|-----------|
-|Task<Models.ICGBusinessEntitiesProspectCompletionInformation>|[Task<Models.ICGBusinessEntitiesProspectCompletionInformation>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-completion-information)|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectCompletionInformation>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-completion-information)|
 
 
 
@@ -1182,7 +1182,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult
 
 |Names|Description|
 |-----|-----------|
-|Task<Models.ICGBusinessEntitiesProspectIntegrationResult>|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
 |Models.ICGModelsUnderwritingProspect|[Models.ICGModelsUnderwritingProspect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect)|
 
 
@@ -1261,7 +1261,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult
 
 |Names|Description|
 |-----|-----------|
-|Task<Models.ICGBusinessEntitiesProspectIntegrationResult>|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
 |Models.ICGModelsUnderwritingProspect|[Models.ICGModelsUnderwritingProspect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect)|
 
 
@@ -1341,7 +1341,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult
 
 |Names|Description|
 |-----|-----------|
-|Response|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
 |Prospect object in Response|[Models.ICGModelsUnderwritingProspect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect)|
 
 
@@ -1574,7 +1574,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspect>** object is
 
 |Names|Description|
 |-----|-----------|
-|Response|[Task<Models.ICGBusinessEntitiesProspect>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect)| 
+|Response Type|[Task<Models.ICGBusinessEntitiesProspect>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect)| 
 
 
 
@@ -1660,7 +1660,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectLog>** object is
 
 |Names|Description|
 |-----|-----------|
-|Response|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult> ](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-log)|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult> ](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-log)|
  
 
 
@@ -1742,7 +1742,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectMessageSent>** ob
 
 |Names|Description|
 |-----|-----------|
-|Response|[Task<Models.ICGBusinessEntitiesProspectMessageSent>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-message-sent)|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectMessageSent>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-message-sent)|
  
 
 
@@ -1753,8 +1753,84 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectMessageSent>** ob
 
 
 
+### Prospect Messages Post
+#### Description
+This service endpoint will allow the user to send a message to the user. This message will also get saved when user send a message. For this purpose, an instance of `ProspectMessagesController` class is created by the API client for invoking the `ProspectMessagesPostAsync` method.
+
+```markdown
+  ProspectMessagesPostAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectMessage message)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var message = new ICGBusinessEntitiesProspectMessage();
+
+try
+{
+    ICGBusinessEntitiesProspectMessage result = await prospectMessagesController.ProspectMessagesPostAsync(prospectId, message);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectMessagesController" object fails to send a message that was anticipated to be returned. The prospectId and message will be passed as parameters to `ProspectMessagesPostAsync` method for sending a message which is associated with the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
 
 
+#### Parameters Detail     
+This endpoint requires only two parameters which are **prospectId** (int type) and **message** object for sending and saving the message of the prospect.
+ 
+![38](https://user-images.githubusercontent.com/110983629/190448195-38b2d7cc-48c4-4c9d-af19-eaf88db3677b.png)
+
+The class name of the **message** object is
+
+```markdown
+ICGBusinessEntitiesProspectMessage
+```
+
+
+#### message object parameters
+
+![39](https://user-images.githubusercontent.com/110983629/190448764-0381559f-b579-41d2-9cdf-b0d4fc0d8e59.png)
+
+
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectMessage>` that will returns the message which is sent and saved.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+#### Response Body
+```markdown
+ {
+  "ProspectId": null,
+  "FromUserName": null,
+  "ToUserName": null,
+  "Message": null
+}
+```
+  
+The class name of the **Task<Models.ICGBusinessEntitiesProspectMessage>** object is 
+```markdown
+      ICGBusinessEntitiesProspectMessage
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectMessage>object parameters
+  
+![40](https://user-images.githubusercontent.com/110983629/190449551-755856f3-5a56-4afb-acac-6495aeb299ff.png)
+
+
+ 
 
 
 
