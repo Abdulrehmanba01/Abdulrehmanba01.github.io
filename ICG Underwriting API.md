@@ -1269,6 +1269,90 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult
 
 
 
+### Prospect Integration Update Prospect Merchant Id
+#### Description 
+This service endpoint will allow the user to update prospect merchant id after doing integration with the ASC. In order to update the merchant id, prospect will be accessed through the prospect id which is a unique identifier for each prospect. An instance of `ProspectIntegrationController` class is created by the API client for invoking the `ProspectIntegrationUpdateProspectMerchantIdAsync` method.
+
+
+```markdown 
+ProspectIntegrationUpdateProspectMerchantIdAsync(
+    int prospectId,
+    int merchantId,
+    string merchantCode)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+int merchantId = 72;
+string merchantCode = "merchantCode6";
+try
+{
+    ICGBusinessEntitiesProspectIntegrationResult result = await prospectIntegrationController.ProspectIntegrationUpdateProspectMerchantIdAsync(prospectId, merchantId, merchantCode);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectIntegrationController" object fails to update the merchant id that was anticipated to be returned. The prospectId, merchantId and merchantCode will be passed as parameters to `ProspectIntegrationUpdateProspectMerchantIdAsync` method for updating the merchant id of the specific merchant associated with the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail    
+
+The parameter of this endpoint includes the **prospectId** (int type), **merchantId** (int type), **merchantCode** (String type) that are required to enter for accessing the specific prospect of the specific merchant.
+  
+![25](https://user-images.githubusercontent.com/110983629/190424550-a9502449-4929-4582-97ad-f31bed5f22ee.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectIntegrationResult>` that will returns the results along with prospect data for which the merchant id is updated.
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+ {
+  "Success": null,
+  "ErrorMessage": null,
+  "NewSubmition": null,
+  "Prospect": null
+}
+```
+  
+The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult>** object is 
+```markdown
+     ICGBusinessEntitiesProspectIntegrationResult
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectIntegrationResult> object parameters
+ 
+![26](https://user-images.githubusercontent.com/110983629/190425524-1b66c1da-95e1-4e47-8c6e-41f5da3ba580.png)
+
+   
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
+|Prospect object in Response|[Models.ICGModelsUnderwritingProspect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect)|
+
+
+
+
+
+
+
+
+
+
 
 
 
