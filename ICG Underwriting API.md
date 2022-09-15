@@ -1113,6 +1113,79 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectCompletionInforma
 
 
 
+### Prospect Integration Submit Elavon
+#### Description 
+
+This service endpoint will allow the user to initiates the processing to Elavon by entering the prospect id which is unique for each prospect. For this purpose, an instance of `ProspectIntegrationController` class is created by the API client for invoking the `ProspectIntegrationSubmitElavonAsync` method.
+
+
+```markdown
+    ProspectIntegrationSubmitElavonAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectIntegrationResult result = await prospectIntegrationController.ProspectIntegrationSubmitElavonAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectIntegrationController" object fails to initiate the process to Elavon for prospect that was anticipated to be returned. The prospectId will be passed as parameter to `ProspectIntegrationSubmitElavonAsync` method for starting the Elavon process. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail    
+
+The parameter of this endpoint includes the **prospectId** (int type) that is required for accessing the specific prospect to start the elavon process. 
+ 
+![21](https://user-images.githubusercontent.com/110983629/190408707-000bda82-023b-46f3-a17d-03074ae3f950.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectIntegrationResult>` that will returns the data of elavon processing. 
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+{
+  "Success": null,
+  "ErrorMessage": null,
+  "NewSubmition": null,
+  "Prospect": null
+}
+```
+  
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult>** object is 
+```markdown
+     ICGBusinessEntitiesProspectIntegrationResult
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectIntegrationResult> object parameters
+  
+![23](https://user-images.githubusercontent.com/110983629/190412848-4ba5cf25-8166-40ad-8469-8e838db8f02d.png)
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Task<Models.ICGBusinessEntitiesProspectIntegrationResult>|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
+|Models.ICGModelsUnderwritingProspect|[Models.ICGModelsUnderwritingProspect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect)|
+
+
 
 
 
