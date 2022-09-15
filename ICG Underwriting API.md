@@ -1583,6 +1583,110 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspect>** object is
 
 
 
+## API Endpoints
+## Prospect Logs
+### Prospect Logs Get Prospect Logs
+#### Description
+This service endpoint will allow the user to retrieve prospect logs by entering the prospect id which is a unique identifier for each prospect. For this purpose, an instance of `ProspectLogsController` class is created by the API client for invoking the `ProspectLogsGetProspectLogsAsync` method.
+
+```markdown
+ ProspectLogsController prospectLogsController = client.ProspectLogsController;
+```
+
+```markdown
+  ProspectLogsGetProspectLogsAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectLog result = await prospectLogsController.ProspectLogsGetProspectLogsAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectLogsController" object fails to retrieve prospect logs that was anticipated to be returned. The prospectId will be passed as parameter to `ProspectLogsGetProspectLogsAsync` method for getting the specific logs. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail    
+This endpoint requires only one parameter which is **prospectId** (int type) for retrieving the prospect logs details.
+
+![34](https://user-images.githubusercontent.com/110983629/190437098-d52ecccf-06b8-4386-adf4-e3fc9db21655.png)
+
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectLog>` that will returns the prospect logs to the user.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectId": null,
+  "UtcDate": null,
+  "UserName": null,
+  "ProspectStatusId": null,
+  "ProspectStatus": null,
+  "ProspectLogTypeId": null,
+  "ProspectLogType": null,
+  "Message": null
+}
+```
+  
+The class name of the **Task<Models.ICGBusinessEntitiesProspectLog>** object is 
+```markdown
+      ICGBusinessEntitiesProspectLog
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectIntegrationResult> object parameters
+ 
+![35](https://user-images.githubusercontent.com/110983629/190442796-4e435695-88d1-4fff-a8ad-ef506144ff7b.png)
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult> ](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-log)|
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
