@@ -1947,6 +1947,57 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+### Prospect Ofac Search Get Ofac Result
+#### Description
+This service endpoint will allow the user to get Ofac result by entering the prospect id. You can retrieve results by entering the prospect id which is a unique identifier for each prospect. For this purpose, an instance of `ProspectOfacSearchController` class is created by the API client for invoking the `ProspectOfacSearchGetOfacResultAsync` method.
+
+```markdown
+  ProspectOfacSearchGetOfacResultAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    object result = await prospectOfacSearchController.ProspectOfacSearchGetOfacResultAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectOfacSearchController" object fails to get Ofac result that was anticipated to be returned. The prospectId will be passed as parameter to `ProspectOfacSearchSearchOfacAsync` method for getting the respective Ofac result of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail     
+This endpoint requires only one parameter which is **prospectId** (int type) for retrieving the Ofac result.
+
+![36](https://user-images.githubusercontent.com/110983629/190445193-037f2977-3443-47fb-9477-90bd640d30dc.png)
+
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will returns the Ofac results to the user.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
