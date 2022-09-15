@@ -1271,7 +1271,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult
 
 ### Prospect Integration Update Prospect Merchant Id
 #### Description 
-This service endpoint will allow the user to update prospect merchant id after doing integration with the ASC. In order to update the merchant id, prospect will be accessed through the prospect id which is a unique identifier for each prospect. An instance of `ProspectIntegrationController` class is created by the API client for invoking the `ProspectIntegrationUpdateProspectMerchantIdAsync` method.
+This service endpoint will allow the user to update prospect merchant id after doing integration with the Administration Service Console (ASC). In order to update the merchant id, prospect will be accessed through the prospect id which is a unique identifier for each prospect. An instance of `ProspectIntegrationController` class is created by the API client for invoking the `ProspectIntegrationUpdateProspectMerchantIdAsync` method.
 
 
 ```markdown 
