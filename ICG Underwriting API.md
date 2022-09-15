@@ -1830,9 +1830,66 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectMessage>** object
 ![40](https://user-images.githubusercontent.com/110983629/190449551-755856f3-5a56-4afb-acac-6495aeb299ff.png)
 
 
+
+### Prospect Messages Get Prospect Users
+#### Description
+This service endpoint will provide facility to retrieve all users that are associated with a prospect by accessing them through the prospect id. For this purpose, an instance of `ProspectMessagesController` class is created by the API client for invoking the `ProspectMessagesGetProspectUsersAsync` method.
+
+```markdown
+  ProspectMessagesGetProspectUsersAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectUser result = await prospectMessagesController.ProspectMessagesGetProspectUsersAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectMessagesController" object fails to retrieve all users that was anticipated to be returned. The prospectId will be passed as parameter to `ProspectMessagesGetProspectUsersAsync` method for accessing specific users which are associated with the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail      
+This endpoint requires only one parameter which is **prospectId** (int type) for retrieving all users.
+   
+![41](https://user-images.githubusercontent.com/110983629/190452907-f836b076-a93e-4f7c-ac89-8f346312563d.png)
  
 
+#### Responses 
 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectUser>` that will returns the users who are associated with the prospect.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectId": null,
+  "UserName": null
+}
+```
+  
+The class name of the **Task<Models.ICGBusinessEntitiesProspectUser>** object is 
+```markdown
+  ICGBusinessEntitiesProspectUser
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectUser> object parameters
+   
+![42](https://user-images.githubusercontent.com/110983629/190453598-50145b52-e8d9-48b2-998e-ec76014a282d.png)
 
 
 
