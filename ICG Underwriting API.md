@@ -1193,6 +1193,88 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult
 
 
 
+### Prospect Integration Submit Admin Console
+#### Description 
+This service endpoint will allow the user to submit the prospect to the admin console. In order to submit the prospect, it will be accessed through the prospect id which is a unique identifier for the prospect. An instance of `ProspectIntegrationController` class is created by the API client for invoking the `ProspectIntegrationSubmitAdminConsoleAsync` method.
+
+
+```markdown
+   ProspectIntegrationSubmitAdminConsoleAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectIntegrationResult result = await prospectIntegrationController.ProspectIntegrationSubmitAdminConsoleAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectIntegrationController" object fails to submit the prospect to the admin console that was anticipated to be returned. The prospectId will be passed as parameter to `ProspectIntegrationSubmitAdminConsoleAsync` method for submitting the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail    
+
+The parameter of this endpoint includes the **prospectId** (int type) that is required for accessing the specific prospect to submit it to admin. 
+ 
+![21](https://user-images.githubusercontent.com/110983629/190408707-000bda82-023b-46f3-a17d-03074ae3f950.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectIntegrationResult>` that will returns the prospect data which is submitting to admin. 
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+ {
+  "Success": null,
+  "ErrorMessage": null,
+  "NewSubmition": null,
+  "Prospect": null
+}
+```
+  
+The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult>** object is 
+```markdown
+    ICGBusinessEntitiesProspectIntegrationResult
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectIntegrationResult> object parameters
+
+![24](https://user-images.githubusercontent.com/110983629/190418160-e9753a27-a632-4083-90d2-7c55c8df919f.png)
+
+   
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Task<Models.ICGBusinessEntitiesProspectIntegrationResult>|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
+|Models.ICGModelsUnderwritingProspect|[https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect)|
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
