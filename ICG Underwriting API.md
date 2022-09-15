@@ -1262,7 +1262,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectIntegrationResult
 |Names|Description|
 |-----|-----------|
 |Task<Models.ICGBusinessEntitiesProspectIntegrationResult>|[Task<Models.ICGBusinessEntitiesProspectIntegrationResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-integration-result)|
-|Models.ICGModelsUnderwritingProspect|[https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect)|
+|Models.ICGModelsUnderwritingProspect|[Models.ICGModelsUnderwritingProspect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-models-underwriting-prospect)|
 
 
 
