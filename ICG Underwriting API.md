@@ -1021,7 +1021,106 @@ The response of this endpoint service request contains the `Task<object>` that w
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
+
+
+
+
+
+
+## API Endpoints
+## Prospect Integration
+### Prospect Integration Get Prospect Percentage of Completion
+#### Description
+This service endpoint will allow the user to retrieve the Percentage of completion and Missing fields for the prospect.In order to do that, an instance of `ProspectIntegrationController` class is created by the API client for invoking the `ProspectIntegrationGetProspectPercentageOfCompletionAsync` method.
+
+```markdown
+  ProspectIntegrationController prospectIntegrationController = client.ProspectIntegrationController;
+```
+
+If permission FEATURE_MERCHANTS_NEW is assign to user going to get percentage including new features fields. 
+
+```markdown
+   ProspectIntegrationGetProspectPercentageOfCompletionAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectCompletionInformation result = await prospectIntegrationController.ProspectIntegrationGetProspectPercentageOfCompletionAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectIntegrationController" object fails to retrieve percentage of completion and missing fields for prospect that was anticipated to be returned. The id will be passed as parameter to `ProspectIntegrationGetProspectPercentageOfCompletionAsync` method for getting the data of missing fields. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail    
+
+The parameters of this endpoint includes the **prospectId** (int type) that is required for the prospect to enter for retrieving the percentage of completion along with the missing fields.
  
+![21](https://user-images.githubusercontent.com/110983629/190408707-000bda82-023b-46f3-a17d-03074ae3f950.png)
+
+  
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectCompletionInformation>` that will returns the completion percentage with the missing fields of the specific prospect.
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+{
+  "IsUpdated": null,
+  "PercentageOfCompletionMissingFields": null,
+  "PercentageOfCompletionMissingFiles": null,
+  "Id": null,
+  "MerchantName": null,
+  "FieldsPercentageOfCompletion": null,
+  "FilesPercentageOfCompletion": null
+}
+```
+  
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectCompletionInformation>** object is 
+```markdown
+     ICGBusinessEntitiesProspectCompletionInformation
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectCompletionInformation> object parameters
+  
+![22](https://user-images.githubusercontent.com/110983629/190409346-a8a658e4-27e3-414d-8d59-a1b7fcc381c2.png)
+  
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Task<Models.ICGBusinessEntitiesProspectCompletionInformation>|[Task<Models.ICGBusinessEntitiesProspectCompletionInformation>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-completion-information)|
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
