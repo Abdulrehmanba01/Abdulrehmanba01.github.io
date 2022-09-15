@@ -1899,7 +1899,8 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectUser>** object is
 ## Prospect Ofac Search
 ### Prospect Ofac Search Search Ofac
 #### Description
-This service endpoint will allow the user to search Ofac for prospect by entering the prospect id. You can retrieve results by entering the prospect id which is a unique identifier for each prospect. For this purpose, an instance of `ProspectOfacSearchController` class is created by the API client for invoking the `ProspectOfacSearchSearchOfacAsync` method.
+This service endpoint will allow the user to search Ofac for prospect by entering the prospect id. In accordance with US foreign policy and national security objectives, the Office of Foreign Assets Control ("OFAC") of the US Department of the Treasury administers and enforces economic and trade sanctions against specific foreign nations and regimes, terrorists, global drug traffickers, individuals involved in the proliferation of WMD, as well as other threats to US national security, foreign policy, or economy.
+You can retrieve results by entering the prospect id which is a unique identifier for each prospect. For this purpose, an instance of `ProspectOfacSearchController` class is created by the API client for invoking the `ProspectOfacSearchSearchOfacAsync` method.
 
 ```markdown
   ProspectOfacSearchController prospectOfacSearchController = client.ProspectOfacSearchController;
