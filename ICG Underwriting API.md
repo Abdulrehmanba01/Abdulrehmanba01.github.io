@@ -1668,6 +1668,82 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectLog>** object is
 
 
 
+## API Endpoints
+## Prospect Messages
+### Prospect Messages Get Prospect Messages
+#### Description
+This service endpoint will allow the user to retrieve the messages that are sent for the prospect. You can access them by entering the prospect id which is a unique identifier for each prospect. For this purpose, an instance of `ProspectMessagesController` class is created by the API client for invoking the `ProspectMessagesGetProspectMessagesAsync` method.
+
+```markdown
+ ProspectMessagesController prospectMessagesController = client.ProspectMessagesController;
+```
+
+```markdown
+   ProspectMessagesGetProspectMessagesAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectMessageSent result = await prospectMessagesController.ProspectMessagesGetProspectMessagesAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectMessagesController" object fails to retrieve messages of the prospect that was anticipated to be returned. The prospectId will be passed as parameter to `ProspectMessagesGetProspectMessagesAsync` method for getting the messages of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail     
+This endpoint requires only one parameter which is **prospectId** (int type) for retrieving the messages of the prospect.
+
+![36](https://user-images.githubusercontent.com/110983629/190445193-037f2977-3443-47fb-9477-90bd640d30dc.png)
+
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectMessageSent>` that will returns the messages details to the user.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "SentDate": null,
+  "ProspectId": null,
+  "FromUserName": null,
+  "ToUserName": null,
+  "Message": null
+}
+```
+  
+The class name of the **Task<Models.ICGBusinessEntitiesProspectMessageSent>** object is 
+```markdown
+       ICGBusinessEntitiesProspectMessageSent
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectMessageSent> object parameters
+ 
+![37](https://user-images.githubusercontent.com/110983629/190445583-a50d53f7-f5af-48fb-8ecd-4429392dd433.png)
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response|[Task<Models.ICGBusinessEntitiesProspectMessageSent>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-message-sent)|
+ 
 
 
 
