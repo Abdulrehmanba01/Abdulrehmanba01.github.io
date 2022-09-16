@@ -2351,8 +2351,73 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+## API Endpoints
+## Prospect Scores
+### Prospect Scores Get Prospect Scores 
+#### Description 
+This service endpoint will allow the user to retrieve prospect scores details including prospect categories and scores categories by entering the prospect id. To acquire that, an instance of `ProspectScoresController` class is created by the API client for calling the `ProspectScoresGetProspectScoresAsync` method.
 
 
+```markdown 
+ ProspectScoresController prospectScoresController = client.ProspectScoresController;
+```
+
+```markdown 
+ ProspectScoresGetProspectScoresAsync(int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectScoresCategories result = await prospectScoresController.ProspectScoresGetProspectScoresAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresController" object fails to get prospect scores that was anticipated to be returned. The prospect id will be passed as parameter to `ProspectScoresGetProspectScoresAsync` method in order to successfully retrieve scores of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires only one parameter **prospectId** which is unique foe each prospect for getting scores details.
+
+![52](https://user-images.githubusercontent.com/110983629/190669605-92ff8676-6918-4f30-9cc3-73f7d360436f.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoresCategories>` that further contains **ProspectScoreCategories** and **ScoreCategories** objects.
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectScoresCategories>** object is
+```markdown
+   ICGBusinessEntitiesProspectScoresCategories
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "ProspectScoreCategories": null,
+  "ScoreCategories": null
+}
+```
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoresCategories>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-scores-categories)|
+
+  
 
 
 
