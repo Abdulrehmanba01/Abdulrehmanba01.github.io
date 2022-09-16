@@ -2525,7 +2525,7 @@ It will be included in the try and catch block to deal with any exceptions that 
 
 #### Parameters Detail      
  
-This endpoint requires two parameters which includes **prospectId** (int type), **scoreCategoryId** (int type) for accessing the comments of the score category of specific category.
+This endpoint requires two parameters which includes **prospectId** (int type), **scoreCategoryId** (int type) for accessing the comments of the score category of specific prospect.
  
 ![55](https://user-images.githubusercontent.com/110983629/190679328-5ea02c0b-d462-4a5d-8841-d85c5bbc938b.png)
  
@@ -2561,7 +2561,6 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategoryComm
 }
 ```
 
-
 #### Explorer 
 
 |Names|Description|
@@ -2569,6 +2568,91 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategoryComm
 |Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category-comment)|
 
 
+
+
+
+
+### Prospect Scores Create Prospect Score Comment
+#### Description 
+This service endpoint will allow the user to create the prospect Scores Category comment by accessing the specific score category of the prospect through the prospect id and score category id. To acquire that, an instance of `ProspectScoresController` class is created by the API client for calling the `ProspectScoresCreateProspectScoreCommentAsync` method.
+ 
+```markdown 
+ ProspectScoresCreateProspectScoreCommentAsync(
+    int prospectId,
+    int scoreCategoryId,
+    Models.ICGBusinessEntitiesProspectScoreCategoryComment comment)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+int scoreCategoryId = 16;
+var comment = new ICGBusinessEntitiesProspectScoreCategoryComment();
+
+try
+{
+    ICGBusinessEntitiesProspectScoreCategoryComment result = await prospectScoresController.ProspectScoresCreateProspectScoreCommentAsync(prospectId, scoreCategoryId, comment);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresController" object fails to add new comment for the prospect score category that was anticipated to be returned. The prospect id, score category id and comment object will be passed as parameter to `ProspectScoresCreateProspectScoreCommentAsync` method in order to successfully retrieve the comments of the specific prospect score category. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+ 
+This endpoint requires three required parameters which includes **prospectId** (int type), **scoreCategoryId** (int type) and **comment** object. The comment object further contains the id, ProspectScoreCategoryId, UserName, Comment, and CreationUTCDate in order to add new comment for the score category of specific prospect.
+  
+![57](https://user-images.githubusercontent.com/110983629/190684826-ecd1c680-aedf-40f6-8f39-247e31500991.png)
+
+
+The class name of **comment** object is
+
+```markdown
+   ICGBusinessEntitiesProspectScoreCategoryComment
+```
+
+#### comment object parameters
+
+![58](https://user-images.githubusercontent.com/110983629/190685150-64e047de-9bb0-4be4-8f1e-2c0e3da3c92b.png)
+
+  
+  
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>` that returns the detail of comment which needs to be added for the prospect score category.
+
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>** object is
+```markdown
+    ICGBusinessEntitiesProspectScoreCategoryComment
+```
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectScoreCategoryId": null,
+  "UserName": null,
+  "Comment": null,
+  "CreationUTCDate": null
+}
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category-comment)|
 
 
 
