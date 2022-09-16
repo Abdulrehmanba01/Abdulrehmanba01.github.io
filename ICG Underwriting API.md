@@ -2289,6 +2289,61 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+### Prospect Plaid Public Token Exchange
+#### Description 
+This service endpoint will allow the user to exchange the link token for plaid. It is an anonymous method that helps you to securely connect financial accounts with the apps. To acquire that, an instance of `ProspectPlaidEmailController` class is created by the API client for calling the `ProspectPlaidPublicTokenExchangeAsync` method.
+
+```markdown 
+ProspectPlaidPublicTokenExchangeAsync(
+    Models.ICGEntitiesPlaidPublicTokenExchange data)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+var data = new ICGEntitiesPlaidPublicTokenExchange();
+try
+{
+    object result = await prospectPlaidEmailController.ProspectPlaidPublicTokenExchangeAsync(data);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectPlaidEmailController" object fails to exchange link token that was anticipated to be returned. The **data** object is created which is of `ICGEntitiesPlaidPublicTokenExchange` type and passed as parameter to `ProspectPlaidPublicTokenExchangeAsync` method in order to successfully exchange token anonymously. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+ 
+
+#### Parameters Detail     
+This endpoint requires only one parameter which is **data** object that further contains the EmailToken, PublicToken, AccountId, AccountMask, AccountName, 
+AccountSubType, AccountType, IntitutionId, InstitutionName, and LinkSessionId where all of these are of string type.
+   
+![51](https://user-images.githubusercontent.com/110983629/190665189-2404e074-6f75-4931-93d6-c05c4f8defff.png)
+
+ 
+The class name of **data** object is 
+```markdown
+     ICGEntitiesPlaidPublicTokenExchange
+```
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|data|[Models.ICGEntitiesPlaidPublicTokenExchange](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-entities-plaid-public-token-exchange)|
+  
+ 
+ 
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will returns the value whether the token link get exchanged or not.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
 
 
 
