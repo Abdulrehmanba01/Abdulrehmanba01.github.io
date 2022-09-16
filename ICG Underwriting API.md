@@ -2421,6 +2421,76 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoresCategories>
 
 
 
+### Prospect Scores Set Prospect Score
+#### Description 
+This service endpoint will allow the user to set prospect score value by accessing the specific score category of the prospect entering the prospect id and score category id. To acquire that, an instance of `ProspectScoresController` class is created by the API client for calling the `ProspectScoresSetProspectScoreAsync` method.
+ 
+```markdown 
+ ProspectScoresGetProspectScoresAsync(int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+int scoreCategoryId = 16;
+var score = new ICGBusinessEntitiesProspectScoreCategory();
+
+try
+{
+    ICGBusinessEntitiesProspectScoreCategory result = await prospectScoresController.ProspectScoresSetProspectScoreAsync(prospectId, scoreCategoryId, score);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresController" object fails to set prospect scores that was anticipated to be returned. The prospect id and score category id will be passed as parameter to `ProspectScoresSetProspectScoreAsync` method in order to successfully define the score of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+ 
+This endpoint requires three parameters which includes **prospectId** (int type), **scoreCategoryId** (int type) and **score** object. The score object further contains the Id, prospectId, ScoreCategoryId and Score parameters of int type. And it is essential to add all parameter's value for defining the score of the specific category of prospect.
+ 
+![53](https://user-images.githubusercontent.com/110983629/190675211-07e6a541-abaf-4f49-b3ad-ead9f3c93211.png)
+
+#### Score object class name and parameters
+
+![54](https://user-images.githubusercontent.com/110983629/190675475-17ec6ca6-51f6-419b-aed9-3d3c75f82ca7.png)
+
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategory>` that returns the value which is defind for the score. 
+
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategory>** object is
+```markdown
+    ICGBusinessEntitiesProspectScoreCategory
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectId": null,
+  "ScoreCategoryId": null,
+  "Score": null
+}
+```
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreCategory>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category)|
 
 
 
