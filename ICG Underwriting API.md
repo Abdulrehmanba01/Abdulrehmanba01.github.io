@@ -2082,6 +2082,52 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectOfacSearchResult>
  
 
 
+## API Endpoints
+## Prospect Plaid Email
+### Prospect Plaid Get Prospect Emails for Plaid Email
+#### Description 
+This service endpoint will allow the user to retrieve the data in order to create the Plaid Registration Email. Through this, you can get prospect emails for plaid emails which enables you to connect your financial accounts securely with the apps you want to use frequently. For this purpose, an instance of `ProspectPlaidEmailController` class is created by the API client for calling the `ProspectPlaidGetProspectEmailsForPlaidEmailAsync` method.
+
+```markdown
+   ProspectPlaidEmailController prospectPlaidEmailController = client.ProspectPlaidEmailController;
+```
+
+```markdown
+  ProspectPlaidGetProspectEmailsForPlaidEmailAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    object result = await prospectPlaidEmailController.ProspectPlaidGetProspectEmailsForPlaidEmailAsync(prospectId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectPlaidEmailController" object fails to get prospect emails that was anticipated to be returned. The prospectId will be passed as parameter to `ProspectPlaidGetProspectEmailsForPlaidEmailAsync` method for getting all the email of the respective prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+ 
+
+#### Parameters Detail     
+This endpoint requires only one parameter which is **prospectId** (int type) for retrieving the prospect emails.
+ 
+![46](https://user-images.githubusercontent.com/110983629/190649723-96690664-02fd-4043-ab2f-f54ae3d87364.png)
+ 
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will returns the prospect emails data to create plaid email.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
 
 
 
