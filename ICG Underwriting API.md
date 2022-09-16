@@ -2026,7 +2026,7 @@ It will be included in the try and catch block to deal with any exceptions that 
 
 
 #### Parameters Detail  
-This endpoint requires six parameters which includes **prospectId** (int type), name (String Type), minScore (int type), requestDate (DateTime type), searchTypeId (int type), and principalOwnerId (int type). Where the principalOwnerId is optional to add for adding the Ofac search results.
+This endpoint requires six parameters which includes **prospectId** (int type), **name** (String Type), **minScore** (int type), **requestDate** (DateTime type), **searchTypeId** (int type), and **principalOwnerId** (int type). Where the principalOwnerId is optional to add for adding the Ofac search results.
  
 ![43](https://user-images.githubusercontent.com/110983629/190645281-adc5600f-24ab-45ba-b8c2-cb391b90af67.png)
 
