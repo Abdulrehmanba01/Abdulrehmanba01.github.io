@@ -1899,7 +1899,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectUser>** object is
 ## Prospect Ofac Search
 ### Prospect Ofac Search Search Ofac
 #### Description
-This service endpoint will allow the user to search Ofac for prospect by entering the prospect id. In accordance with US foreign policy and national security objectives, the Office of Foreign Assets Control ("OFAC") of the US Department of the Treasury administers and enforces economic and trade sanctions against specific foreign nations and regimes, terrorists, global drug traffickers, individuals involved in the proliferation of WMD, as well as other threats to US national security, foreign policy, or economy.
+This service endpoint will allow the user to search Ofac for prospect by entering the prospect id. In accordance with US foreign policy and national security objectives, the Office of Foreign Assets Control ("OFAC") of the US Department of the Treasury administers and enforces economic and trade sanctions against specific foreign nations and regimes, terrorists, global drug traffickers, individuals involved in the proliferation of WMD, as well as other threats to US national security, foreign policy, or economy. Through this Ofac, we review the merchant's background.
 You can retrieve results by entering the prospect id which is a unique identifier for each prospect. For this purpose, an instance of `ProspectOfacSearchController` class is created by the API client for invoking the `ProspectOfacSearchSearchOfacAsync` method.
 
 ```markdown
@@ -1950,7 +1950,7 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 ### Prospect Ofac Search Get Ofac Result
 #### Description
-This service endpoint will allow the user to get Ofac result by entering the prospect id. You can retrieve results by entering the prospect id which is a unique identifier for each prospect. For this purpose, an instance of `ProspectOfacSearchController` class is created by the API client for invoking the `ProspectOfacSearchGetOfacResultAsync` method.
+This service endpoint will allow the user to get Ofac result by entering the prospect id for merchants. You can retrieve results by entering the prospect id which is a unique identifier for each prospect. For this purpose, an instance of `ProspectOfacSearchController` class is created by the API client for invoking the `ProspectOfacSearchGetOfacResultAsync` method.
 
 ```markdown
   ProspectOfacSearchGetOfacResultAsync(
@@ -1987,6 +1987,104 @@ The response of this endpoint service request contains the `Task<object>` that w
 |Cache-control|Private|
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+### Prospect Ofac Search Add Ofac Search Result
+#### Description 
+To track and monitor the list of merchants whose Ofac search results are recorded, the user will be able to add Ofac search results using this API endpoint. Its main objective is to look into and evaluate the merchant's record. The API client creates an instance of the "ProspectOfacSearchController" class for this purpose and calls the "ProspectOfacSearchAddOfacSearchResultAsync" function.
+
+```markdown
+ ProspectOfacSearchAddOfacSearchResultAsync(
+    int prospectId,
+    string name,
+    int minScore,
+    DateTime requestDate,
+    int searchTypeId,
+    int? principalOwnerId = null)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+string name = "name0";
+int minScore = 242;
+DateTime requestDate = DateTime.Parse("2016-03-13T12:52:32.123Z");
+int searchTypeId = 36;
+try
+{
+    ICGBusinessEntitiesProspectOfacSearchResult result = await prospectOfacSearchController.ProspectOfacSearchAddOfacSearchResultAsync(prospectId, name, minScore, requestDate, searchTypeId, null);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectOfacSearchController" object fails to add Ofac search result that was anticipated to be returned. The prospectId, name, minScore, date and search type will be passed as parameters to `ProspectOfacSearchAddOfacSearchResultAsync` method for adding Ofac search result of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+
+
+#### Parameters Detail  
+This endpoint requires six parameters which includes **prospectId** (int type), name (String Type), minScore (int type), requestDate (DateTime type), searchTypeId (int type), and principalOwnerId (int type). Where the principalOwnerId is optional to add for adding the Ofac search results.
+ 
+![43](https://user-images.githubusercontent.com/110983629/190645281-adc5600f-24ab-45ba-b8c2-cb391b90af67.png)
+
+ 
+#### Responses 
+
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectOfacSearchResult>` that will returns the Ofac search results added into the system. 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectId": null,
+  "ProspectOfacSearchTypeId": null,
+  "PrincipalOwnerId": null,
+  "UserName": null,
+  "RequestDate": null,
+  "RequestBody": null,
+  "ResponseBody": null,
+  "HasRecordFound": null,
+  "ProspectOfacResultList": null
+}
+```
+  
+The class name of the **Task<Models.ICGBusinessEntitiesProspectOfacSearchResult>** object is 
+```markdown
+    ICGBusinessEntitiesProspectOfacSearchResult  
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectOfacSearchResult> object parameters
+  
+![44](https://user-images.githubusercontent.com/110983629/190645844-6c77e64b-9817-476f-8db2-a159e855df39.png)
+
+  
+#### ProspectOfacResultList object class name and parameters
+    
+![45](https://user-images.githubusercontent.com/110983629/190646144-4aab9d66-0de2-4ba3-b441-49f2c69b2760.png)
+  
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectOfacSearchResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-ofac-search-result)|
+ 
+
+
+
+
+
 
 
 
