@@ -2238,6 +2238,52 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+### Prospect Plaid Create Link Token
+#### Description 
+This service endpoint will allow the user to create the link token for plaid. It is an anonymous method that enables you to securely connect financial accounts with the apps. To acquire that, an instance of `ProspectPlaidEmailController` class is created by the API client for calling the `ProspectPlaidCreateLinkTokenAsync` method.
+
+```markdown
+   ProspectPlaidCreateLinkTokenAsync(
+    Models.ICGAPIUnderwritingWebAPIModelsPlaidCreateLinkToken data)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+var data = new ICGAPIUnderwritingWebAPIModelsPlaidCreateLinkToken();
+try
+{
+    object result = await prospectPlaidEmailController.ProspectPlaidCreateLinkTokenAsync(data);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectPlaidEmailController" object fails to create link token that was anticipated to be returned. The **data** object is created which is of `ICGAPIUnderwritingWebAPIModelsPlaidCreateLinkToken` type and passed as parameter to `ProspectPlaidCreateLinkTokenAsync` method in order to create token anonymously. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+ 
+
+#### Parameters Detail     
+This endpoint requires only one parameter which is **data** object that further contains the user id of string type.
+  
+  
+![50](https://user-images.githubusercontent.com/110983629/190661835-86998aab-76da-439e-ad75-d06638431863.png)
+
+ 
+The class name of **data** object is 
+```markdown
+    ICGAPIUnderwritingWebAPIModelsPlaidCreateLinkToken
+```
+ 
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will returns the value whether the token link created or not.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
 
 
 
