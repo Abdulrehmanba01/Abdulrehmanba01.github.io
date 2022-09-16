@@ -2187,6 +2187,82 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+### Prospect Plaid Validate Email Token
+#### Description 
+This service endpoint will allow the user to validate the email token that is used for sending the plaid emails. It is an anonymous method that verifies if the token is valid or not. To acquire that, an instance of `ProspectPlaidEmailController` class is created by the API client for calling the `ProspectPlaidValidateEmailTokenAsync` method.
+
+```markdown
+   ProspectPlaidValidateEmailTokenAsync(
+    Models.ICGAPIUnderwritingWebAPIModelsPlaidEmailTokenVerification verificationToken)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+var verificationToken = new ICGAPIUnderwritingWebAPIModelsPlaidEmailTokenVerification();
+try
+{
+    object result = await prospectPlaidEmailController.ProspectPlaidValidateEmailTokenAsync(verificationToken);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectPlaidEmailController" object fails to validate the email token that was anticipated to be returned. The **verificationToken** object is created which is of `ICGAPIUnderwritingWebAPIModelsPlaidEmailTokenVerification` type and passed as parameter to `ProspectPlaidValidateEmailTokenAsync` method in order to verify plaid email token. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+ 
+
+#### Parameters Detail     
+This endpoint requires only one parameter which is **verificationToken** object that further contains the token of string type.
+  
+![49](https://user-images.githubusercontent.com/110983629/190657668-3dedfb41-956f-46c5-8bd2-f010b4b5060e.png)
+
+ 
+The class name of **verificationToken** object is 
+```markdown
+   ICGAPIUnderwritingWebAPIModelsPlaidEmailTokenVerification
+```
+ 
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will returns the value whether the email token get verified or not.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
