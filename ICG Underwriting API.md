@@ -2423,7 +2423,7 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoresCategories>
 
 ### Prospect Scores Set Prospect Score
 #### Description 
-This service endpoint will allow the user to set prospect score value by accessing the specific score category of the prospect entering the prospect id and score category id. To acquire that, an instance of `ProspectScoresController` class is created by the API client for calling the `ProspectScoresSetProspectScoreAsync` method.
+This service endpoint will allow the user to set prospect score value by accessing the specific score category of the prospect through the prospect id and score category id. To acquire that, an instance of `ProspectScoresController` class is created by the API client for calling the `ProspectScoresSetProspectScoreAsync` method.
  
 ```markdown 
  ProspectScoresGetProspectScoresAsync(int prospectId)
@@ -2495,6 +2495,78 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategory>** 
 
 
 
+
+
+### Prospect Scores Get Prospect Score Comments
+#### Description 
+This service endpoint will allow the user to retrieve the prospect Scores Category comments by accessing the specific score category of the prospect through the prospect id and score category id. To acquire that, an instance of `ProspectScoresController` class is created by the API client for calling the `ProspectScoresGetProspectScoreCommentsAsync` method.
+ 
+```markdown 
+ ProspectScoresGetProspectScoreCommentsAsync(
+    int prospectId,
+    int scoreCategoryId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+int scoreCategoryId = 16;
+try
+{
+    ICGBusinessEntitiesProspectScoreCategoryComment result = await prospectScoresController.ProspectScoresGetProspectScoreCommentsAsync(prospectId, scoreCategoryId);
+}
+catch (ApiException e){};
+ 
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresController" object fails to retrieve the comments that was anticipated to be returned. The prospect id and score category id will be passed as parameter to `ProspectScoresGetProspectScoreCommentsAsync` method in order to successfully retrieve the comments of the specific prospect score category. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+ 
+This endpoint requires two parameters which includes **prospectId** (int type), **scoreCategoryId** (int type) for accessing the comments of the score category of specific category.
+ 
+![55](https://user-images.githubusercontent.com/110983629/190679328-5ea02c0b-d462-4a5d-8841-d85c5bbc938b.png)
+ 
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>` that returns the detail of the comments.
+
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>** object is
+```markdown
+     ICGBusinessEntitiesProspectScoreCategoryComment
+```
+
+![56](https://user-images.githubusercontent.com/110983629/190680343-edb9031d-531a-47a1-a150-2fc6927afd5f.png)
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectScoreCategoryId": null,
+  "UserName": null,
+  "Comment": null,
+  "CreationUTCDate": null
+}
+```
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category-comment)|
 
 
 
