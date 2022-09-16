@@ -2130,6 +2130,60 @@ The response of this endpoint service request contains the `Task<object>` that w
 
 
 
+### Prospect Plaid Send Prospect Plaid Email
+#### Description 
+This service endpoint will allow the user to send prospect pliad emails to the users who got registered for plaid emails. Through this, you can process to save and send the plaid emails with the Url. For this purpose, an instance of `ProspectPlaidEmailController` class is created by the API client for calling the `ProspectPlaidSendProspectPlaidEmailAsync` method.
+
+```markdown
+   ProspectPlaidSendProspectPlaidEmailAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectPlaidRegistrationEmailToSend email)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var email = new ICGBusinessEntitiesProspectPlaidRegistrationEmailToSend();
+
+try
+{
+    object result = await prospectPlaidEmailController.ProspectPlaidSendProspectPlaidEmailAsync(prospectId, email);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectPlaidEmailController" object fails to send prospect plaid emails that was anticipated to be returned. The **email** object is created which is of `ICGBusinessEntitiesProspectPlaidRegistrationEmailToSend` type and passed as parameter to `ProspectPlaidSendProspectPlaidEmailAsync` method along with the prospect id in order to send pliad emails. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+ 
+
+#### Parameters Detail     
+This endpoint requires two parameter which includes **prospectId** (int type) and **email** object that further contains the list of recipient's emails for sending plaid emails.
+  
+![47](https://user-images.githubusercontent.com/110983629/190653383-b5affb29-ab82-469e-8197-f577ee9a7dc3.png)
+
+The class name of **email** object is 
+```markdown
+   ICGBusinessEntitiesProspectPlaidRegistrationEmailToSend
+```
+
+
+#### email object parameters
+
+![48](https://user-images.githubusercontent.com/110983629/190653677-3fd6b3c1-04a9-448c-b8d3-71e219ba74a8.png)
+
+#### Responses 
+
+The response of this endpoint service request contains the `Task<object>` that will returns the value for sent prospect plaid emails.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
 
 
 
