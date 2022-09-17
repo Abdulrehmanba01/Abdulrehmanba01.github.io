@@ -2977,6 +2977,98 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreAverageBankB
 
 
 
+### Prospect Scores Average Bank Balance Save Manual Prospect Score Average Bank Balance Values
+#### Description 
+This service endpoint will allow the user to save Manual Prospect Score for the specific tax id in order to update the bank balance average score. To acquire that, an instance of `ProspectScoresAverageBankBalanceController` class is created by the API client for calling the `ProspectScoresAverageBankBalanceSaveManualProspectScoreAverageBankBalanceValuesAsync` method.
+
+
+```markdown  
+ProspectScoresAverageBankBalanceSaveManualProspectScoreAverageBankBalanceValuesAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResultValuesManualUpdate bankBalancesManualUpdate)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var bankBalancesManualUpdate = new ICGBusinessEntitiesProspectScoreAverageBankBalanceResultValuesManualUpdate();
+try
+{
+    ICGBusinessEntitiesProspectScoreAverageBankBalanceResult result = await prospectScoresAverageBankBalanceController.ProspectScoresAverageBankBalanceSaveManualProspectScoreAverageBankBalanceValuesAsync(prospectId, bankBalancesManualUpdate);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresAverageBankBalanceController" object fails to update average bank balance score that was anticipated to be returned. The prospect id and bankBalancesManualUpdate object will be passed as parameters to `ProspectScoresAverageBankBalanceSaveManualProspectScoreAverageBankBalanceValuesAsync` method to update the score. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail       
+This endpoint requires two parameters **prospectId** (int type) and **bankBalancesManualUpdate**  object. The bankBalancesManualUpdate will further contain comment and ProspectScoreAverageBankBalanceResultValues object. The **ProspectScoreAverageBankBalanceResultValues** object includes the list of average bank balance result values.
+ 
+![66](https://user-images.githubusercontent.com/110983629/190852368-dd4e839b-4f7a-436f-b53d-ad0b59f3aadb.png)
+
+   
+The class name of the **bankBalancesManualUpdate** object is
+```markdown
+ ICGBusinessEntitiesProspectScoreAverageBankBalanceResultValuesManualUpdate
+```
+ 
+ ####  bankBalancesManualUpdate parameters 
+ 
+ ![67](https://user-images.githubusercontent.com/110983629/190852409-735a5292-56c0-4ac5-ad65-9ac92cba93e5.png)
+
+
+####  ProspectScoreAverageBankBalanceResultValues object class name and parameters 
+
+![68](https://user-images.githubusercontent.com/110983629/190852480-e9764687-a285-42e9-84a8-d23ee05821a7.png)
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|bankBalancesManualUpdate|[Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResultValuesManualUpdate](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-average-bank-balance-result-values-manual-update)|
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResult>` that returns the values for updating prospect average bank balance values.
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResult>** object is
+```markdown
+     ICGBusinessEntitiesProspectScoreAverageBankBalanceResult
+``` 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "ProspectScoreCategory": null,
+  "PlaidRequqest": null,
+  "ProspectScoreAverageBankBalanceResultValues": null,
+  "Id": null,
+  "ProspectScoreCategoryId": null,
+  "Score": null,
+  "RequestedMaxSingle": null,
+  "AverageBankAccountBalance": null,
+  "PercentageBalanceToRequestedMaxSingle": null,
+  "HasPlaidMerchantToken": null,
+  "HasRunPlaidService": null
+}
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-average-bank-balance-result)|
 
 
 
