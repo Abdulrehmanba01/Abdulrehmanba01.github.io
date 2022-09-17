@@ -2885,6 +2885,126 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery>*
 
 
 
+### Prospect Scores Average Bank Balance Save Manual Prospect Score Average Bank Balance
+#### Description 
+This service endpoint will allow the user to save Manual Prospect Score by entering the tax id in order to update the bank balance average score. To acquire that, an instance of `ProspectScoresAverageBankBalanceController` class is created by the API client for calling the `ProspectScoresAverageBankBalanceSaveManualProspectScoreAverageBankBalanceAsync` method.
+
+
+```markdown 
+ ProspectScoresAverageBankBalanceSaveManualProspectScoreAverageBankBalanceAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResultManualUpdate scoreManualUpdate)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var scoreManualUpdate = new ICGBusinessEntitiesProspectScoreAverageBankBalanceResultManualUpdate();
+try
+{
+    ICGBusinessEntitiesProspectScoreAverageBankBalanceResult result = await prospectScoresAverageBankBalanceController.ProspectScoresAverageBankBalanceSaveManualProspectScoreAverageBankBalanceAsync(prospectId, scoreManualUpdate);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresAverageBankBalanceController" object fails to update average bank balance score that was anticipated to be returned. The prospect id and scoreManualUpdate object will be passed as parameters to `ProspectScoresAverageBankBalanceSaveManualProspectScoreAverageBankBalanceAsync` method to update the score manually. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail       
+This endpoint requires two parameters **prospectId** (int type) and **scoreManualUpdate**  object. The scoreManualUpdate will further contain score and comment for updating the score manually of the specific prospect. 
+ 
+ 
+![64](https://user-images.githubusercontent.com/110983629/190850262-2af88981-e241-4353-ac97-cc352294b33b.png)
+
+The class name of the **scoreManualUpdate** object is
+```markdown
+ICGBusinessEntitiesProspectScoreAverageBankBalanceResultManualUpdate
+```
+ 
+ #### scoreManualUpdate parameters
+
+ ![65](https://user-images.githubusercontent.com/110983629/190850335-0a7347aa-78fb-41dc-b0e7-d06f130e9fb3.png)
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|scoreManualUpdate|[Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResultManualUpdate](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-average-bank-balance-result-manual-update)|
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResult>` that returns the values for manually updating prospect score.
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResult>** object is
+```markdown
+    ICGBusinessEntitiesProspectScoreAverageBankBalanceResult
+``` 
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "ProspectScoreCategory": null,
+  "PlaidRequqest": null,
+  "ProspectScoreAverageBankBalanceResultValues": null,
+  "Id": null,
+  "ProspectScoreCategoryId": null,
+  "Score": null,
+  "RequestedMaxSingle": null,
+  "AverageBankAccountBalance": null,
+  "PercentageBalanceToRequestedMaxSingle": null,
+  "HasPlaidMerchantToken": null,
+  "HasRunPlaidService": null
+}
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreAverageBankBalanceResult>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-average-bank-balance-result)|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
