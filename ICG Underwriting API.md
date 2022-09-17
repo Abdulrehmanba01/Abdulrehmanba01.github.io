@@ -3212,6 +3212,69 @@ The class name of the Task<Models.ICGBusinessEntitiesProspectScoreCategory> obje
 
 
 
+### Prospect Scores Business Type Recalculate Prospect Score Business Type
+#### Description  
+This service endpoint will allow the user to recalculate prospect business type score by accessing it through the prospect id which is a unique identifier for the prospect. To acquire that, an instance of `ProspectScoresBusinessTypesController` class is created by the API client for calling the `ProspectScoresBusinessTypeRecalculateProspectScoreBusinessTypeAsync` method.
+
+```markdown 
+  ProspectScoresBusinessTypeRecalculateProspectScoreBusinessTypeAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectScoreCategory result = await prospectScoresBusinessTypesController.ProspectScoresBusinessTypeRecalculateProspectScoreBusinessTypeAsync(prospectId);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresBusinessTypesController" object fails to recalculate business type score that was anticipated to be returned. The prospect id and score object will be passed as parameter to `ProspectScoresBusinessTypeRecalculateProspectScoreBusinessTypeAsync` method in order to successfully provide business type score values of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires one parameter **prospectId** (int type) for recalculating scores.
+   
+![72](https://user-images.githubusercontent.com/110983629/190854533-54051a75-6049-4712-966b-a0c9a0ee1d44.png)
+
+ 
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategory>` that returns the values for set of scores of business type that gets recalculated.
+
+The class name of the Task<Models.ICGBusinessEntitiesProspectScoreCategory> object is
+```markdown
+    ICGBusinessEntitiesProspectScoreCategory
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectId": null,
+  "ScoreCategoryId": null,
+  "Score": null
+}
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreCategory>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category)|
+
 
 
 
