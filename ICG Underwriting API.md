@@ -2797,7 +2797,106 @@ The response of this endpoint service request contains the `Task<object>` that r
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
+
+
+
+### Prospect Scores Average Bank Balance Recalculate Prospect Score Average Bank Balance
+#### Description 
+This service endpoint will allow the user to recalculate the average bank balance score by entering the prospect id in order to get the new score. To acquire that, an instance of `ProspectScoresAverageBankBalanceController` class is created by the API client for calling the `ProspectScoresAverageBankBalanceRecalculateProspectScoreAverageBankBalanceAsync` method.
+
+
+```markdown 
+ ProspectScoresAverageBankBalanceRecalculateProspectScoreAverageBankBalanceAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectScoreTaxIdQuery result = await prospectScoresAverageBankBalanceController.ProspectScoresAverageBankBalanceRecalculateProspectScoreAverageBankBalanceAsync(prospectId);
+}
+catch (ApiException e){};
  
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresAverageBankBalanceController" object fails to recalculate average bank balance scores that was anticipated to be returned. The prospect id will be passed as parameter to `ProspectScoresAverageBankBalanceRecalculateProspectScoreAverageBankBalanceAsync` method in order to successfully retrieve bank balance score values which are recalculated. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires only one parameter **prospectId** which is unique for each prospect for getting avergae bank balance scores detail which is recalculated by the system.
+
+![62](https://user-images.githubusercontent.com/110983629/190849533-95966ee2-5e81-4f6f-8735-c2c0c1a0a70a.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery>` that returns the values for average bank balance score in order to review the recalculated scores. 
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery>** object is
+```markdown
+   ICGBusinessEntitiesProspectScoreTaxIdQuery
+```
+
+
+![63](https://user-images.githubusercontent.com/110983629/190849679-b9662e5e-d9aa-46a1-b680-b9541869bb24.png)
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+{
+  "ProspectScoreCategory": null,
+  "ProspectScoreTaxIdQueryValidation": null,
+  "ProspectScoreTaxIdQueryScores": null,
+  "Id": null,
+  "ProspectScoreCategoryId": null,
+  "ScoreTaxIdQueryResultId": null,
+  "Tin": null,
+  "LegalName": null,
+  "Street1": null,
+  "Street2": null,
+  "City": null,
+  "State": null,
+  "ZipCode": null,
+  "UserName": null,
+  "CreatedUtcDate": null
+}
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-tax-id-query)|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
