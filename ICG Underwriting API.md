@@ -2381,7 +2381,7 @@ It will be included in the try and catch block to deal with any exceptions that 
  
 
 #### Parameters Detail      
-This endpoint requires only one parameter **prospectId** which is unique foe each prospect for getting scores details.
+This endpoint requires only one parameter **prospectId** which is unique for each prospect for getting scores details.
 
 ![52](https://user-images.githubusercontent.com/110983629/190669605-92ff8676-6918-4f30-9cc3-73f7d360436f.png)
 
@@ -2742,6 +2742,79 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategoryComm
 |Names|Description|
 |-----|-----------|
 |Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category-comment)|
+
+
+
+
+
+
+
+## API Endpoints
+## Prospect Scores Average Bank Balance
+### Prospect Scores Average Bank Balance Get Prospect Average Bank Balance Score
+#### Description 
+This service endpoint will allow the user to retrieve the average bank balance score for the automatic or manual set of scores by entering the prospect id. To acquire that, an instance of `ProspectScoresAverageBankBalanceController` class is created by the API client for calling the `ProspectScoresAverageBankBalanceGetProspectAverageBankBalanceScoreAsync` method.
+
+
+```markdown  
+   ProspectScoresAverageBankBalanceController prospectScoresAverageBankBalanceController = client.ProspectScoresAverageBankBalanceController;
+```
+
+```markdown 
+  ProspectScoresAverageBankBalanceGetProspectAverageBankBalanceScoreAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    object result = await prospectScoresAverageBankBalanceController.ProspectScoresAverageBankBalanceGetProspectAverageBankBalanceScoreAsync(prospectId);
+}
+catch (ApiException e){};
+ 
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresAverageBankBalanceController" object fails to get average bank balance scores that was anticipated to be returned. The prospect id will be passed as parameter to `ProspectScoresAverageBankBalanceGetProspectAverageBankBalanceScoreAsync` method in order to successfully retrieve bank balance score values of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires only one parameter **prospectId** which is unique for each prospect for getting avergae bank balance scores details.
+
+
+![61](https://user-images.githubusercontent.com/110983629/190848507-b608be2d-a9f7-4cf0-b4a1-35af9a9aadda.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<object>` that returns the values for average bank balance score that are added automatically or manually. 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
