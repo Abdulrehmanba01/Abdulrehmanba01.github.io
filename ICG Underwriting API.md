@@ -2663,6 +2663,97 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategoryComm
 
 
 
+### Prospect Scores Run Score Manual Tools
+#### Description 
+This service endpoint will allow the user to run the score manual tools which select the categories for all the users. To acquire that, an instance of `ProspectScoresController` class is created by the API client for calling the `ProspectScoresRunScoreManualToolsAsync` method.
+ 
+```markdown 
+  ProspectScoresRunScoreManualToolsAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectScoreRunToolsRequest categories)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var categories = new ICGBusinessEntitiesProspectScoreRunToolsRequest();
+categories.ScoreCategoryIds = new List<int>();
+categories.ScoreCategoryIds.Add(41);
+categories.ScoreCategoryIds.Add(42);
+try
+{
+    ICGBusinessEntitiesProspectScoreCategoryComment result = await prospectScoresController.ProspectScoresRunScoreManualToolsAsync(prospectId, categories);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresController" object fails to add score categories for the prospect that was anticipated to be returned. The **categories** object is created which will be of `ICGBusinessEntitiesProspectScoreRunToolsRequest` type. And passed as parameter to `ProspectScoresRunScoreManualToolsAsync` method in order to insert the score categories to run the tools. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+ 
+This endpoint includes two required parameters that are **prospectId** (int type), **categories** object. The categories object further contains the list of categories along with the user id in order to run the tools. The respective prospect whose id is entered should be on status in review.
+ 
+![59](https://user-images.githubusercontent.com/110983629/190847623-734c4473-7a86-4ef7-8a77-298bfa0adfa9.png)
+
+
+The class name of **categories** object is
+
+```markdown
+    ICGBusinessEntitiesProspectScoreRunToolsRequest
+```
+
+#### categories object parameters
+ 
+ ![60](https://user-images.githubusercontent.com/110983629/190847657-551d80ae-1a54-49f8-8f55-15f28076333d.png)
+
+   
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>` that returns the detail of categories along with the user id which needs to be save for the running the tools.
+
+The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>** object is
+```markdown
+     ICGBusinessEntitiesProspectScoreCategoryComment
+```
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectScoreCategoryId": null,
+  "UserName": null,
+  "Comment": null,
+  "CreationUTCDate": null
+}
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreCategoryComment>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category-comment)|
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
