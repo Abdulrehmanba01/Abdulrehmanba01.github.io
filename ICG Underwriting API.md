@@ -3131,6 +3131,83 @@ The response of this endpoint service request contains the `Task<object>` that r
 
 
 
+### Prospect Scores Business Type Set Prospect Score Business Type
+#### Description  
+This service endpoint will allow the user to update a business type score by accessing it through the prospect id which is a unique identifier for the prospect. You can update the business type score only if it is restricted. To acquire that, an instance of `ProspectScoresBusinessTypesController` class is created by the API client for calling the `ProspectScoresBusinessTypeSetProspectScoreBusinessTypeAsync` method.
+
+```markdown 
+    ProspectScoresBusinessTypeSetProspectScoreBusinessTypeAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectScoreCategory score)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var score = new ICGBusinessEntitiesProspectScoreCategory();
+try
+{
+    ICGBusinessEntitiesProspectScoreCategory result = await prospectScoresBusinessTypesController.ProspectScoresBusinessTypeSetProspectScoreBusinessTypeAsync(prospectId, score);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresBusinessTypesController" object fails to update business type score that was anticipated to be returned. The prospect id and score object will be passed as parameter to `ProspectScoresBusinessTypeSetProspectScoreBusinessTypeAsync` method in order to successfully update business type score values of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires two parameters **prospectId** (int type) and **score** object which further contains Id, ProspectId, ScoreCategoryId, and Score of int type. 
+  
+![70](https://user-images.githubusercontent.com/110983629/190853791-6cf09595-b88c-4b24-bf52-7575f411c0a9.png)
+
+
+The score object class name is
+```markdown
+     ICGBusinessEntitiesProspectScoreCategory
+```
+
+
+#### score object parameters
+
+![71](https://user-images.githubusercontent.com/110983629/190853837-095e3820-63c7-42e2-912f-cbf42c4811f0.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategory>` that returns the values for set of scores of business type that gets updated.
+
+The class name of the Task<Models.ICGBusinessEntitiesProspectScoreCategory> object is
+```markdown
+   ICGBusinessEntitiesProspectScoreCategory
+```
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+{
+  "Id": null,
+  "ProspectId": null,
+  "ScoreCategoryId": null,
+  "Score": null
+}
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreCategory>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category)|
+
+
+
 
 
 
