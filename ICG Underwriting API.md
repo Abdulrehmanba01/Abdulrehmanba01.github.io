@@ -3077,6 +3077,73 @@ The class name of the **Task<Models.ICGBusinessEntitiesProspectScoreAverageBankB
 
 
 
+## API Endpoints
+## Prospect Scores Business Types
+### Prospect Scores Business Type Get Prospect Business Type Score
+#### Description 
+This service endpoint will allow the user to retrieve the Business Type Score values for the automatic set of score for a prospect by entering the prospect id. To acquire that, an instance of `ProspectScoresBusinessTypesController` class is created by the API client for calling the `ProspectScoresBusinessTypeGetProspectBusinessTypeScoreAsync` method.
+
+
+```markdown  
+   ProspectScoresBusinessTypesController prospectScoresBusinessTypesController = client.ProspectScoresBusinessTypesController;
+```
+
+```markdown 
+   ProspectScoresBusinessTypeGetProspectBusinessTypeScoreAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    object result = await prospectScoresBusinessTypesController.ProspectScoresBusinessTypeGetProspectBusinessTypeScoreAsync(prospectId);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresBusinessTypesController" object fails to retrieve business type scores that was anticipated to be returned. The prospect id will be passed as parameter to `ProspectScoresBusinessTypeGetProspectBusinessTypeScoreAsync` method in order to successfully retrieve business type score values of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires only one parameter **prospectId** which is unique for each prospect in order to get automatic set of score values. 
+ 
+![69](https://user-images.githubusercontent.com/110983629/190853161-de6647f4-fa8e-435b-b473-3e1302dbcbb8.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<object>` that returns the values for set of scores of business type.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
