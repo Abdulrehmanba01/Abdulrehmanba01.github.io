@@ -3538,6 +3538,98 @@ The response of this endpoint service request contains the `Task<object>` that r
 
 
 
+### Prospect Scores Equifax Owner Credit Save Score Equifax Owner Credit Response
+#### Description 
+This service endpoint will allow the user to save Equifax owner credit score by accessing the prospect through the prospect id. To acquire that, an instance of `ProspectScoresEquifaxOwnerCreditController` class is created by the API client for calling the `ProspectScoresEquifaxOwnerCreditSaveScoreEquifaxOwnerCreditResponseAsync` method.
+
+```markdown  
+  ProspectScoresEquifaxOwnerCreditSaveScoreEquifaxOwnerCreditResponseAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse response)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var response = new ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse();
+try
+{
+    ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse result = await prospectScoresEquifaxOwnerCreditController.ProspectScoresEquifaxOwnerCreditSaveScoreEquifaxOwnerCreditResponseAsync(prospectId, response);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresEquifaxOwnerCreditController" object fails to save equifax owner score that was anticipated to be returned. The prospect id and response object will be passed as parameters to `ProspectScoresEquifaxOwnerCreditSaveScoreEquifaxOwnerCreditResponseAsync` method in order to successfully save owner details of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires two parameters **prospectId** which is unique for each prospect and **response** object that further contains model, owner, ResponseValidator, ProspectDropboxFile objects, and Id (int type), UserId (int type), ResponseJsonBody (string type), CreateUtcDate (DateTime type), ModelId (int type), OwnerId (int type), ICGScore (int type), Recalculate (bool type), ProspectDropboxFileId (string type), ReportPDFLink (string type).
+ 
+ 
+![83](https://user-images.githubusercontent.com/110983629/191011411-8df23c9c-fab3-4789-9e35-5621a40e19c2.png)
+
+The class name of **response** object is
+```markdown
+   ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse
+```
+
+#### response object parameters
+
+![84](https://user-images.githubusercontent.com/110983629/191011593-0f39af52-9f4d-4983-9dd6-f11570072e13.png)
+
+ 
+ 
+ #### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|response|[Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-equifax-owner-credit-response)|
+
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse>` that returns the value for saving Score Equifax Owner Credit Response dwtails.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+{
+  "Model": null,
+  "Owner": null,
+  "ResponseValidator": null,
+  "ProspectDropboxFile": null,
+  "Id": null,
+  "UserId": null,
+  "ResponseJsonBody": null,
+  "CreateUtcDate": null,
+  "ModelId": null,
+  "OwnerId": null,
+  "ICGScore": null,
+  "Recalculate": null,
+  "ProspectDropboxFileId": null,
+  "ReportPDFLink": null
+}
+```
+The class name of **Task<Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse>** object is
+```markdown
+    ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse
+```
+
+ #### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-equifax-owner-credit-response)|
+
+
 
 
 
