@@ -3767,6 +3767,65 @@ The response of this endpoint service request contains the `Task<object>` that r
 
 
 
+### Prospect Scores Equifax Owner Credit Get Score Equifax Owner Credit PDF Response
+#### Description 
+This service endpoint will allow the user to retrieve the owner details in form of the PDF by accessing the prospect through the prospect id. The owner may contain equifax score but it is not required. To acquire that, an instance of `ProspectScoresEquifaxOwnerCreditController` class is created by the API client for calling the `ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditPDFResponseAsync` method.
+
+```markdown  
+  ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditPDFResponseAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectPrincipalOwner owner)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var owner = new ICGBusinessEntitiesProspectPrincipalOwner();
+try
+{
+    object result = await prospectScoresEquifaxOwnerCreditController.ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditPDFResponseAsync(prospectId, owner);
+}
+catch (ApiException e){};
+``` 
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresEquifaxOwnerCreditController" object fails to retrieve PDF for owner detail that was anticipated to be returned. The prospect id and owner object will be passed as parameters to `ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditPDFResponseAsync` method in order to successfully get owner details of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.   
+ 
+
+#### Parameters Detail      
+This endpoint requires two parameters **prospectId** which is unique for each prospect and **owner** object that further contains Id (int type), ProspectId (int type), Title (string type), FirstName (string type), MiddleName (string type), LastName (string type), PercentageOfOwnership (double type), Ssn (string type), HomeAddress1 (string type), HomeAddress2 (string type), City (string type), State (string type), ZipCode (string type), DateOfBirth (DateTime type), Phone (string type), Email (string type), NameofBusiness (string type), Edited (bool type). 
+   
+![86](https://user-images.githubusercontent.com/110983629/191046312-f669024f-8775-42de-b25d-9b807e536e0a.png)
+
+The class name of **owner** object is
+
+```markdown
+   ICGBusinessEntitiesProspectPrincipalOwner
+```
+
+#### owner object parameters
+
+![87](https://user-images.githubusercontent.com/110983629/191046760-9167f33c-11fa-4e85-8955-de240a132b00.png)
+
+
+ #### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|owner|[Models.ICGBusinessEntitiesProspectPrincipalOwner](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-principal-owner)|
+
+
+
+#### Responses 
+The response of this endpoint service request contains the `Task<object>` that returns the PDF for the owner of the specific prospect.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
 
 
 
