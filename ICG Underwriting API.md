@@ -3485,6 +3485,55 @@ The response of this endpoint service request contains the `Task<object>` that r
 
  
 
+## API Endpoints
+## Prospect Scores Equifax Owner Credit
+### Prospect Scores Equifax Owner Credit Get Score Equifax Owner Credit Response
+#### Description 
+This service endpoint will allow the user to retrieve the list of owners that may contain the equifax score. This is due to the fact that there may be an owner that does not had equifax score. To acquire all the owners list, an instance of `ProspectScoresEquifaxOwnerCreditController` class is created by the API client for calling the `ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditResponseAsync` method.
+
+
+```markdown  
+   ProspectScoresEquifaxOwnerCreditController prospectScoresEquifaxOwnerCreditController = client.ProspectScoresEquifaxOwnerCreditController;
+```
+
+```markdown  
+  ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditResponseAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    object result = await prospectScoresEquifaxOwnerCreditController.ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditResponseAsync(prospectId);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresEquifaxOwnerCreditController" object fails to retrieve owners list that was anticipated to be returned. The prospect id will be passed as parameter to `ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditResponseAsync` method in order to successfully retrieve owners list of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires only one parameter **prospectId** which is unique for each prospect in order to get the list of owners that may be an equifax credit owner or not.
+ 
+![82](https://user-images.githubusercontent.com/110983629/191008754-edc1ceb1-e652-444f-8d6c-9b98384c8c71.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<object>` that returns the values for equifax credit owner.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
 
 
 
