@@ -3424,11 +3424,66 @@ The class name of the Task<Models.ICGBusinessEntitiesProspectScoreBusinessTypeVa
 
 
 
+### Prospect Scores Business Type Add Descriptor to Code Pair
+#### Description   
+This service endpoint will allow the user to add a descriptor to the code pair. As there are many code pairs associated with the descriptors, ScoreBusinessTypeDescriptorId will be used which is a unique identifier for the descriptor business type values.
+To acquire that, an instance of `ProspectScoresBusinessTypesController` class is created by the API client for calling the `ProspectScoresBusinessTypeAddDescriptorToCodePairAsync` method.
+
+```markdown 
+  ProspectScoresBusinessTypeAddDescriptorToCodePairAsync(
+    Models.ICGBusinessEntitiesScoreBusinessTypeCodeDescriptor scoreBusinessTypeCodeDescriptor)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+var scoreBusinessTypeCodeDescriptor = new ICGBusinessEntitiesScoreBusinessTypeCodeDescriptor();
+try
+{
+    object result = await prospectScoresBusinessTypesController.ProspectScoresBusinessTypeAddDescriptorToCodePairAsync(scoreBusinessTypeCodeDescriptor);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresBusinessTypesController" object fails to add descriptor to the code pair that was anticipated to be returned. The scoreBusinessTypeCodeDescriptor object will be passed as parameter to `ProspectScoresBusinessTypeAddDescriptorToCodePairAsync` method in order to successfully add descriptor. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires one parameter which is **scoreBusinessTypeCodeDescriptor** object that further contains the **ScoreBusinessTypeCode** object, **ScoreBusinessTypeDescriptor** object, Id (int type), **ScoreBusinessTypeCodeId** (int type), and **ScoreBusinessTypeDescriptorId** (int type).
+   
+#### scoreBusinessTypeCodeDescriptor object parameters
+ 
+![79](https://user-images.githubusercontent.com/110983629/191005827-6d562f6e-7f44-499b-9c0b-835ce5a2b742.png)
+
+The class name of scoreBusinessTypeCodeDescriptor object is 
+
+```markdown
+    ICGBusinessEntitiesScoreBusinessTypeCodeDescriptor
+```
+
+#### ScoreBusinessTypeCode object class name and parameters
+  
+ ![80](https://user-images.githubusercontent.com/110983629/191006028-155847fc-ec0c-483f-ad4e-89bea236bbee.png)
+
+ 
+#### ScoreBusinessTypeDescriptor object class name and parameters
+ 
+![81](https://user-images.githubusercontent.com/110983629/191006082-aeae26af-7b8d-48df-9658-f2d9d50f8679.png)
 
 
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<object>` that returns the descriptor value which is added for the code pair. 
 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
 
-
+ 
 
 
 
