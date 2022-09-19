@@ -3833,9 +3833,64 @@ The response of this endpoint service request contains the `Task<object>` that r
 
 
 
+### Prospect Scores Equifax Owner Credit Upload PDF to Drop Box
+#### Description 
+This service endpoint will allow the user to upload PDF to the drop box by accessing the report through the prospect id. The report will contain credit owner report data. The owner may contain equifax score but it is not required. To acquire that, an instance of `ProspectScoresEquifaxOwnerCreditController` class is created by the API client for calling the `ProspectScoresEquifaxOwnerCreditUploadPDFToDropBoxAsync` method.
+
+```markdown  
+  ProspectScoresEquifaxOwnerCreditUploadPDFToDropBoxAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse response)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var response = new ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse();
+try
+{
+    object result = await prospectScoresEquifaxOwnerCreditController.ProspectScoresEquifaxOwnerCreditUploadPDFToDropBoxAsync(prospectId, response);
+}
+catch (ApiException e){};
+``` 
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresEquifaxOwnerCreditController" object fails to upload PDF that was anticipated to be returned. The prospect id and owner object will be passed as parameters to `ProspectScoresEquifaxOwnerCreditUploadPDFToDropBoxAsync` method in order to successfully upload owner details of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.   
+ 
+
+#### Parameters Detail      
+This endpoint requires two parameters **prospectId** which is unique for each prospect and **response** object that further contains model, owner, ResponseValidator, ProspectDropboxFile, objects along with Id (int type), UserId (int type), ResponseJsonBody (string type), CreateUtcDate (DateTime type), ModelId (int type), OwnerId (int type), ICGScore (int type), Recalculate (bool type), ProspectDropboxFileId (string type), ReportPDFLink (string type).
+ 
+ ![88](https://user-images.githubusercontent.com/110983629/191054893-382b117e-f13f-42ec-9f47-a0f076699241.png)
+
+ 
+The class name of **response** object is
+
+```markdown
+    ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse
+```
+
+#### response object parameters
+ 
+![89](https://user-images.githubusercontent.com/110983629/191055144-b46d3d2f-fedd-47ea-8864-6b31aa0c0e8f.png)
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|response|[Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-equifax-owner-credit-response)|
 
 
+#### Responses 
+The response of this endpoint service request contains the `Task<object>` that returns the value for uploading PDF for the owner on the drop box.
 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
 
 
 
