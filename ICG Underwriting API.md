@@ -3700,6 +3700,97 @@ The class name of **Task<Models.ICGBusinessEntitiesProspectScoreCategory>** obje
 
 
 
+### Prospect Scores Equifax Owner Credit Get Score Equifax Owner Credit Response S Sn Control
+#### Description 
+This service endpoint will allow the user to retrieve the list of owners credit by accessing the prospect through the prospect id. The owner list may contain equifax score but it is not required. To acquire that, an instance of `ProspectScoresEquifaxOwnerCreditController` class is created by the API client for calling the `ProspectScoresEquifaxOwnerCreditSetAllScoreEquifaxOwnerCreditResponseAsync` method.
+
+```markdown  
+  ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditResponseSSnControlAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectPrincipalOwner owner)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var owner = new ICGBusinessEntitiesProspectPrincipalOwner();
+try
+{
+    object result = await prospectScoresEquifaxOwnerCreditController.ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditResponseSSnControlAsync(prospectId, owner);
+}
+catch (ApiException e){};
+``` 
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresEquifaxOwnerCreditController" object fails to retrieve owner list that was anticipated to be returned. The prospect id and owner object will be passed as parameters to `ProspectScoresEquifaxOwnerCreditGetScoreEquifaxOwnerCreditResponseSSnControlAsync` method in order to successfully get owners list of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.   
+ 
+
+#### Parameters Detail      
+This endpoint requires two parameters **prospectId** which is unique for each prospect and owner object that further contains Id (int type), ProspectId (int type), Title (string type), FirstName
+string
+MiddleName
+string
+LastName
+string
+PercentageOfOwnership
+double?
+Ssn
+string
+HomeAddress1
+string
+HomeAddress2
+string
+City
+string
+State
+string
+ZipCode
+string
+DateOfBirth
+DateTime?
+Phone
+string
+Email
+string
+NameofBusiness
+string
+Edited
+bool?
+  
+![85](https://user-images.githubusercontent.com/110983629/191017276-34eaa71c-469b-40d2-95d0-195559d19e6b.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategory>` that returns the value for the list of owners for calculating Score Equifax Owner Credit Response.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+{
+  "Id": null,
+  "ProspectId": null,
+  "ScoreCategoryId": null,
+  "Score": null
+} 
+```
+The class name of **Task<Models.ICGBusinessEntitiesProspectScoreCategory>** object is
+```markdown
+     ICGBusinessEntitiesProspectScoreCategory
+```
+
+ #### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGBusinessEntitiesProspectScoreCategory>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category)|
+
 
 
 
