@@ -3727,42 +3727,31 @@ It will be included in the try and catch block to deal with any exceptions that 
  
 
 #### Parameters Detail      
-This endpoint requires two parameters **prospectId** which is unique for each prospect and owner object that further contains Id (int type), ProspectId (int type), Title (string type), FirstName
-string
-MiddleName
-string
-LastName
-string
-PercentageOfOwnership
-double?
-Ssn
-string
-HomeAddress1
-string
-HomeAddress2
-string
-City
-string
-State
-string
-ZipCode
-string
-DateOfBirth
-DateTime?
-Phone
-string
-Email
-string
-NameofBusiness
-string
-Edited
-bool?
-  
-![85](https://user-images.githubusercontent.com/110983629/191017276-34eaa71c-469b-40d2-95d0-195559d19e6b.png)
+This endpoint requires two parameters **prospectId** which is unique for each prospect and **owner** object that further contains Id (int type), ProspectId (int type), Title (string type), FirstName (string type), MiddleName (string type), LastName (string type), PercentageOfOwnership (double type), Ssn (string type), HomeAddress1 (string type), HomeAddress2 (string type), City (string type), State (string type), ZipCode (string type), DateOfBirth (DateTime type), Phone (string type), Email (string type), NameofBusiness (string type), Edited (bool type). 
+   
+![86](https://user-images.githubusercontent.com/110983629/191046312-f669024f-8775-42de-b25d-9b807e536e0a.png)
 
- 
+The class name of **owner** object is
+
+```markdown
+   ICGBusinessEntitiesProspectPrincipalOwner
+```
+
+#### owner object parameters
+
+![87](https://user-images.githubusercontent.com/110983629/191046760-9167f33c-11fa-4e85-8955-de240a132b00.png)
+
+
+ #### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|owner|[Models.ICGBusinessEntitiesProspectPrincipalOwner](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-principal-owner)|
+
+
+
 #### Responses 
-The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategory>` that returns the value for the list of owners for calculating Score Equifax Owner Credit Response.
+The response of this endpoint service request contains the `Task<object>` that returns the value for the list of owners of the specific prospect.
 
 #### Response headers-JSON
 |Header|Value|
@@ -3771,26 +3760,7 @@ The response of this endpoint service request contains the `Task<Models.ICGBusin
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
 
-#### Response Body
-```markdown
-{
-  "Id": null,
-  "ProspectId": null,
-  "ScoreCategoryId": null,
-  "Score": null
-} 
-```
-The class name of **Task<Models.ICGBusinessEntitiesProspectScoreCategory>** object is
-```markdown
-     ICGBusinessEntitiesProspectScoreCategory
-```
-
- #### Explorer 
-
-|Names|Description|
-|-----|-----------|
-|response type|[Task<Models.ICGBusinessEntitiesProspectScoreCategory>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category)|
-
+ 
 
 
 
