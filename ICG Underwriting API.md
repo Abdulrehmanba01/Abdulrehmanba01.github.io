@@ -3281,8 +3281,46 @@ The class name of the Task<Models.ICGBusinessEntitiesProspectScoreCategory> obje
 
 
 
+### Prospect Scores Business Type Get Score Business Type Codes
+#### Description  
+This service endpoint will allow the user to retrieve the list of Descriptors that match the list of Code Pairs sent. To acquire that, an instance of `ProspectScoresBusinessTypesController` class is created by the API client for calling the `ProspectScoresBusinessTypeGetScoreBusinessTypeCodesAsync` method.
 
+```markdown 
+ ProspectScoresBusinessTypeGetScoreBusinessTypeCodesAsync(
+    int scoreBusinessTypeCodeId)
+```
 
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int scoreBusinessTypeCodeId = 186;
+try
+{
+    object result = await prospectScoresBusinessTypesController.ProspectScoresBusinessTypeGetScoreBusinessTypeCodesAsync(scoreBusinessTypeCodeId);
+}
+catch (ApiException e){};
+```
+If the "prospectScoresBusinessTypesController" object is unable to obtain the expected list of descriptors, it will be included in the try and catch block to handle any exceptions that may occur. In order to effectively return a list of descriptors that match with the code pairs, the scoreBusinessTypeCodeId will be supplied as a parameter to the 'ProspectScoresBusinessTypeGetScoreBusinessTypeCodesAsync' method. To avoid unhandled exceptions, user error, or application crashes, the try catch block will handle any exceptions that are thrown. 
+ 
+
+#### Parameters Detail      
+This endpoint requires one parameter **ScoreBusinessTypeCodeId** (int type) for showing the list of code pairs.
+    
+![73](https://user-images.githubusercontent.com/110983629/190999581-95c0ab03-b264-40ec-add8-4189bb977f8a.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<object>` that returns the values for set of code pairs which are matched with the descriptors. 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
 
 
 
