@@ -3324,6 +3324,101 @@ The response of this endpoint service request contains the `Task<object>` that r
 
 
 
+### Prospect Scores Business Type Update Code Descriptor
+#### Description   
+This service endpoint will allow the user to update the code pair/descriptor from a given ProspectScoreBusinessTypeValue. As there are many code pairs, prospectScoreBusinessTypeValueId will be used which is a unique identifier for the prospect score business type values.
+To acquire that, an instance of `ProspectScoresBusinessTypesController` class is created by the API client for calling the `ProspectScoresBusinessTypeUpdateCodeDescriptorAsync` method.
+
+```markdown 
+  ProspectScoresBusinessTypeUpdateCodeDescriptorAsync(
+    int prospectScoreBusinessTypeValueId,
+    Models.ICGBusinessEntitiesProspectScoreBusinessTypeValue prospectScoreBusinessTypeValue)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectScoreBusinessTypeValueId = 0;
+var prospectScoreBusinessTypeValue = new ICGBusinessEntitiesProspectScoreBusinessTypeValue();
+try
+{
+    ICGBusinessEntitiesProspectScoreBusinessTypeValue result = await prospectScoresBusinessTypesController.ProspectScoresBusinessTypeUpdateCodeDescriptorAsync(prospectScoreBusinessTypeValueId, prospectScoreBusinessTypeValue);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresBusinessTypesController" object fails to update the code pairs that was anticipated to be returned. The prospectScoreBusinessTypeValueId and  prospectScoreBusinessTypeValue object will be passed as parameters to `ProspectScoresBusinessTypeUpdateCodeDescriptorAsync` method in order to successfully update business type score values of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires two parameters **prospectScoreBusinessTypeValueId** (int type) and **prospectScoreBusinessTypeValue** object that further contains the **ProspectScoreCategory** object, **ScoreBusinessTypeCodeDescriptor** object, Id (int type), **ProspectScoreCategoryId** (int type), **ScoreBusinessTypeCodeDescriptorId** (int type), **BusinessTypeValueResultId** (int type), **Score** (int type), **CreatedUtcDate** (DateTime type), **UserName** (string type).
+  
+![74](https://user-images.githubusercontent.com/110983629/191002122-57ec8056-86fd-4960-995f-89af5fbf353e.png)
+
+
+#### prospectScoreBusinessTypeValue object parameters
+
+![75](https://user-images.githubusercontent.com/110983629/191002343-e0422b40-7659-48b1-8454-2e9229330010.png)
+
+The class name of prospectScoreBusinessTypeValue object is 
+
+```markdown
+   ICGBusinessEntitiesProspectScoreBusinessTypeValue
+```
+
+#### ProspectScoreCategory object class name and parameters
+ 
+![76](https://user-images.githubusercontent.com/110983629/191002561-b5250986-3846-4242-ad3c-3a8ccb78e81a.png)
+
+ 
+ 
+#### ScoreBusinessTypeCodeDescriptor object class name and parameters
+
+![77](https://user-images.githubusercontent.com/110983629/191002694-e254835c-2c1c-4626-bed9-1d2b0055c731.png)
+
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreBusinessTypeValue>` that returns the values for set of code pairs/descriptors of business type that gets updated.
+
+The class name of the Task<Models.ICGBusinessEntitiesProspectScoreBusinessTypeValue> object is
+```markdown
+     ICGBusinessEntitiesProspectScoreBusinessTypeValue
+```
+
+![78](https://user-images.githubusercontent.com/110983629/191003204-b3d23e35-bc08-4b8e-b895-49942d85d62c.png)
+
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body
+```markdown
+ {
+  "ProspectScoreCategory": null,
+  "ScoreBusinessTypeCodeDescriptor": null,
+  "Id": null,
+  "ProspectScoreCategoryId": null,
+  "ScoreBusinessTypeCodeDescriptorId": null,
+  "BusinessTypeValueResultId": null,
+  "Score": null,
+  "CreatedUtcDate": null,
+  "UserName": null
+}
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response Type|[Task<Models.ICGBusinessEntitiesProspectScoreBusinessTypeValue>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-business-type-value)|
+
 
 
 
