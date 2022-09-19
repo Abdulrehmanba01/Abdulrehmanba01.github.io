@@ -3590,7 +3590,7 @@ The class name of **response** object is
 
  
 #### Responses 
-The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse>` that returns the value for saving Score Equifax Owner Credit Response dwtails.
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCreditResponse>` that returns the value for saving Score Equifax Owner Credit Response details.
 
 #### Response headers-JSON
 |Header|Value|
@@ -3633,6 +3633,67 @@ The class name of **Task<Models.ICGBusinessEntitiesProspectScoreEquifaxOwnerCred
 
 
 
+
+
+### Prospect Scores Equifax Owner Credit Set All Score Equifax Owner Credit Response
+#### Description 
+This service endpoint will allow the user to calculate score for all the equifax owners credit by accessing the prospect through the prospect id. To acquire that, an instance of `ProspectScoresEquifaxOwnerCreditController` class is created by the API client for calling the `ProspectScoresEquifaxOwnerCreditSetAllScoreEquifaxOwnerCreditResponseAsync` method.
+
+```markdown  
+  ProspectScoresEquifaxOwnerCreditSetAllScoreEquifaxOwnerCreditResponseAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectScoreCategory result = await prospectScoresEquifaxOwnerCreditController.ProspectScoresEquifaxOwnerCreditSetAllScoreEquifaxOwnerCreditResponseAsync(prospectId);
+}
+catch (ApiException e){};
+``` 
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresEquifaxOwnerCreditController" object fails to calculate equifax owner score that was anticipated to be returned. The prospect id will be passed as parameter to `ProspectScoresEquifaxOwnerCreditSetAllScoreEquifaxOwnerCreditResponseAsync` method in order to successfully and accurately calculate score of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.   
+ 
+
+#### Parameters Detail      
+This endpoint requires only one parameter **prospectId** which is unique for each prospect for calculating the equifax owner credit score.
+  
+![85](https://user-images.githubusercontent.com/110983629/191017276-34eaa71c-469b-40d2-95d0-195559d19e6b.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreCategory>` that returns the value for the list of owners for calculating Score Equifax Owner Credit Response.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+{
+  "Id": null,
+  "ProspectId": null,
+  "ScoreCategoryId": null,
+  "Score": null
+} 
+```
+The class name of **Task<Models.ICGBusinessEntitiesProspectScoreCategory>** object is
+```markdown
+     ICGBusinessEntitiesProspectScoreCategory
+```
+
+ #### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGBusinessEntitiesProspectScoreCategory>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-category)|
 
 
 
