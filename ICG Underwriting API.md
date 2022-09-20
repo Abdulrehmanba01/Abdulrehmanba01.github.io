@@ -3818,7 +3818,7 @@ The response of this endpoint service request contains the `Task<object>` that r
 ## Prospect Scores Tax Id
 ### Prospect Scores Tax Id Get Prospect Tax Id Score
 #### Description 
-This service endpoint will allow the user to retrieve the Tax Id Score values for the automatic set of score for a prospect by entering the prospect id which is unique for each prospect. To acquire all the owners list, an instance of `ProspectScoresTaxIdController` class is created by the API client for calling the `ProspectScoresTaxIdGetProspectTaxIdScoreAsync` method.
+This service endpoint will allow the user to retrieve the Tax Id Score values for the automatic set of score for a prospect by entering the prospect id which is unique for each prospect. For this purpose, an instance of `ProspectScoresTaxIdController` class is created by the API client for calling the `ProspectScoresTaxIdGetProspectTaxIdScoreAsync` method.
 
 
 ```markdown  
@@ -3863,6 +3863,85 @@ The response of this endpoint service request contains the `Task<object>` that r
 
 
 
+
+
+
+### Prospect Scores Tax Id Recalculate Prospect Score Tax Id
+#### Description 
+This service endpoint will allow the user to recalculate the score for Tax Id and get the new score values for a prospect by entering the prospect id which is unique for each prospect. For this purpose, an instance of `ProspectScoresTaxIdController` class is created by the API client for calling the `ProspectScoresTaxIdRecalculateProspectScoreTaxIdAsync` method.
+
+
+```markdown  
+ ProspectScoresTaxIdRecalculateProspectScoreTaxIdAsync(
+    int prospectId)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+try
+{
+    ICGBusinessEntitiesProspectScoreTaxIdQuery result = await prospectScoresTaxIdController.ProspectScoresTaxIdRecalculateProspectScoreTaxIdAsync(prospectId);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresTaxIdController" object fails to recalculate tax id score values that was anticipated to be returned. The prospect id will be passed as parameter to `ProspectScoresTaxIdRecalculateProspectScoreTaxIdAsync` method in order to successfully retrieve score values for the automatic set of score of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires only one parameter **prospectId** which is unique for each prospect in order to recalculate the score for tax id.
+  
+![90](https://user-images.githubusercontent.com/110983629/191237237-8b9570f2-02cf-46a2-a00c-d51170b9b76c.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery>` that returns the values for recalculated score values.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+ {
+  "ProspectScoreCategory": null,
+  "ProspectScoreTaxIdQueryValidation": null,
+  "ProspectScoreTaxIdQueryScores": null,
+  "Id": null,
+  "ProspectScoreCategoryId": null,
+  "ScoreTaxIdQueryResultId": null,
+  "Tin": null,
+  "LegalName": null,
+  "Street1": null,
+  "Street2": null,
+  "City": null,
+  "State": null,
+  "ZipCode": null,
+  "UserName": null,
+  "CreatedUtcDate": null
+}
+```
+The class name of **Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery>** object is
+```markdown
+     ICGBusinessEntitiesProspectScoreTaxIdQuery
+```
+
+#### Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery> Parameters  
+
+![91](https://user-images.githubusercontent.com/110983629/191238093-f298c86e-c4a0-4a40-af3d-789c64393f72.png)
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-tax-id-query)|
 
 
 
