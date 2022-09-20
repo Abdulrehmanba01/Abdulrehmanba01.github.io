@@ -4083,6 +4083,48 @@ The response of this endpoint service request contains the `Task` that returns t
 
 
 
+## API Endpoints
+## Prospect Status
+### O Data Prospect Status
+#### Description 
+This service endpoint will allow the user to retrieve the statuses of the prospects so that you can get information about the prospect data with respect to the statuses. For this purpose, an instance of `ProspectStatusController` class is created by the API client for calling the `ODataProspectStatusAsync` method.
+
+
+```markdown  
+   ProspectStatusController prospectStatusController = client.ProspectStatusController;
+```
+
+```markdown  
+   ODataProspectStatusAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+try
+{
+    await prospectStatusController.ODataProspectStatusAsync();
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectStatusController" object fails to retrieve prospect statuses that was anticipated to be returned. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint does not require any parameter.
+  
+#### Responses 
+The response of this endpoint service request contains the `Task` that returns the prospect statuses for each Prospect.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
 
 
 
