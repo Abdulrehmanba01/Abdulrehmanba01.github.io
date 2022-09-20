@@ -4131,6 +4131,48 @@ The response of this endpoint service request contains the `Task` that returns t
 
 
 
+## API Endpoints
+## Prospect Entities
+### O Data Prospect Entities
+#### Description 
+This service endpoint will allow the user to retrieve all the data of the prospect which is present in the prospect entities so that you can get information about the prospect data without applying any filter. For this purpose, an instance of `ProspectEntitiesController` class is created by the API client for calling the `ODataProspectEntitiesAsync` method.
+
+
+```markdown   
+   ProspectEntitiesController prospectEntitiesController = client.ProspectEntitiesController;
+```
+
+```markdown  
+   ODataProspectEntitiesAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+try
+{
+    await prospectEntitiesController.ODataProspectEntitiesAsync();
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectEntitiesController" object fails to retrieve prospect data that was anticipated to be returned. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint does not require any parameter.
+  
+#### Responses 
+The response of this endpoint service request contains the `Task` that returns the prospect data for each Prospect.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
 
 
 
