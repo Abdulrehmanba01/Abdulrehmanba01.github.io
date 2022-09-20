@@ -3947,6 +3947,86 @@ The class name of **Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQuery>** ob
 
 
 
+### Prospect Scores Tax Id Save Manual Prospect Score Tax Id
+#### Description 
+This service endpoint will allow the user to update the score manually for Tax Id and get the new score values for a prospect by entering the prospect id which is unique for each prospect. For this purpose, an instance of `ProspectScoresTaxIdController` class is created by the API client for calling the `ProspectScoresTaxIdSaveManualProspectScoreTaxIdAsync` method.
+
+
+```markdown  
+ ProspectScoresTaxIdSaveManualProspectScoreTaxIdAsync(
+    int prospectId,
+    Models.ICGBusinessEntitiesProspectScoreTaxIdQueryScore score)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int prospectId = 118;
+var score = new ICGBusinessEntitiesProspectScoreTaxIdQueryScore();
+
+try
+{
+    ICGBusinessEntitiesProspectScoreTaxIdQueryScore result = await prospectScoresTaxIdController.ProspectScoresTaxIdSaveManualProspectScoreTaxIdAsync(prospectId, score);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectScoresTaxIdController" object fails to update score for the tax id that was anticipated to be returned. The prospect id and updated score will be passed as parameters to `ProspectScoresTaxIdSaveManualProspectScoreTaxIdAsync` method in order to successfully update score values manually. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires two parameters **prospectId** (int type) which is unique for each prospect and **score** object for updating score data that includes Id (int type), ProspectScoreTaxIdQueryId (int type), Score (int type), IsAutomaticScore (bool type), Comment (string type), UserName (string type), CreatedUtcDate (DateTime type). 
+   
+   
+ ![92](https://user-images.githubusercontent.com/110983629/191240924-edc14116-9010-4d46-b7b6-02aa75779bd9.png)
+
+The class name of score object is 
+```markdown
+    ICGBusinessEntitiesProspectScoreTaxIdQueryScore
+```
+
+
+#### score object parameters
+
+![93](https://user-images.githubusercontent.com/110983629/191241406-f2c84432-f0cc-41d5-b205-950a749df8aa.png)
+
+
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQueryScore>` that returns the values for update score data.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body
+```markdown
+ {
+  "Id": null,
+  "ProspectScoreTaxIdQueryId": null,
+  "Score": null,
+  "IsAutomaticScore": null,
+  "Comment": null,
+  "UserName": null,
+  "CreatedUtcDate": null
+}
+```
+The class name of **Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQueryScore>** object is
+```markdown
+      ICGBusinessEntitiesProspectScoreTaxIdQueryScore
+```
+ 
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQueryScore>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect-score-tax-id-query-score)|
+
+
 
 
 
