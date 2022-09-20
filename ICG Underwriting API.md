@@ -4928,6 +4928,50 @@ The response of this endpoint service request contains the `Task` that returns t
 
 
 
+### O Data Prospects 4
+#### Description 
+This service endpoint will allow the user to delete single item from the prospect in order to remove prospect information from the system. For this purpose, an instance of `ProspectsController` class is created by the API client for calling the `ODataProspects4Async` method.
+
+```markdown  
+   ODataProspects4Async(
+    int key,
+    int message)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int key = 120;
+int message = 16;
+try
+{
+    await prospectsController.ODataProspects4Async(key, message);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectsController" object fails to delete one prospect item that was anticipated to be returned. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail       
+This endpoint requires two parameters which are **key** (int type) and **message** (int type). The key and message both are actually the prospect id which is a unique identifier for prospect.  
+ 
+ 
+![97](https://user-images.githubusercontent.com/110983629/191281108-2ce2cd37-5d72-4c92-83b5-d84df9bd94fb.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task` that returns the one item/instance of prospect which get deleted by the user.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
 
 
 
