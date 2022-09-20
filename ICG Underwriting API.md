@@ -4639,6 +4639,231 @@ The class name of **Task<Models.ICGBusinessEntitiesProspect>** is
 
 
 
+### O Data Prospects 2
+#### Description 
+This service endpoint will allow the user to  retrieve single item from the prospect in order to take informed decisions based on the one single item of the prospect. For this purpose, an instance of `ProspectsController` class is created by the API client for calling the `ODataProspects2Async` method.
+
+```markdown  
+  ODataProspects2Async(
+    int key)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int key = 120;
+try
+{
+    ICGBusinessEntitiesProspect result = await prospectsController.ODataProspects2Async(key);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectsController" object fails to retrieve one prospect item that was anticipated to be returned. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires one parameter which is **key** (int type). It is actually the prospect id which is a unique identifier for prospect.
+
+
+![95](https://user-images.githubusercontent.com/110983629/191270742-cfb60c47-76f8-45d6-9485-0501fc9dfdb7.png)
+ 
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesProspect>` that returns the one item/instance of prospect.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+#### Response Body -JSON
+```markdown
+{
+  "PrincipalOwners": null,
+  "Users": null,
+  "ContactsEmailNoticeList": null,
+  "Ach": null,
+  "CC": null,
+  "ProcessorCode": null,
+  "ProspectProducts": null,
+  "ProspectProductValues": null,
+  "ProspectSettings": null,
+  "ProspectCampaigns": null,
+  "ProspectIntermediaryBusinessOwnerships": null,
+  "CustomFields": null,
+  "CustomPaymentPortals": null,
+  "ProspectAdobeDocuments": null,
+  "CallbackFunction": null,
+  "Id": null,
+  "ProspectTypeId": null,
+  "ProspectStatusId": null,
+  "IsACH": null,
+  "IsCC": null,
+  "FeeModelId": null,
+  "MerchantName": null,
+  "Iso": null,
+  "ReferalPartner": null,
+  "SalesRepName": null,
+  "SalesRepEmail": null,
+  "SalesRepCode": null,
+  "NotesForUnderwriting": null,
+  "DbaName": null,
+  "LegalBusinessName": null,
+  "FederalTaxId": null,
+  "SicCode": null,
+  "NaicsCode": null,
+  "BusinessAddress1": null,
+  "BusinessAddress2": null,
+  "City": null,
+  "State": null,
+  "ZipCode": null,
+  "MonthEstablished": null,
+  "YearEstablished": null,
+  "StateOrganization": null,
+  "BusinessPhoneNumber": null,
+  "CustomerServicePhoneNumber": null,
+  "MerchantWebsiteURL": null,
+  "NoMerchantWebsiteURL": null,
+  "TypeBusiness": null,
+  "DetailedInfoPayment": null,
+  "TypeOwnershipsId": null,
+  "TaxClassificationsId": null,
+  "TaxClassificationsTypeId": null,
+  "HadAdminHearing": null,
+  "AdminHearingReson": null,
+  "ContactFirstName": null,
+  "ContactLastName": null,
+  "ContactTitle": null,
+  "ContactEmail": null,
+  "ContactPhone": null,
+  "ContactExtension": null,
+  "AREmail": null,
+  "POAEmail": null,
+  "TechnicalContactEmail": null,
+  "TechnicalContactName": null,
+  "IsBusinessContactPreferred": null,
+  "BusinessContactEmail": null,
+  "BusinessContactName": null,
+  "IsOwnerOfficerContactPreferred": null,
+  "OwnerOfficerContactEmail": null,
+  "OwnerOfficerContactName": null,
+  "FeeScheduleGatewaySetupFee": null,
+  "FeeScheduleGatewayMonthlyFee": null,
+  "HasFeeScheduleCustomPaymentPortal": null,
+  "FeeScheduleCustomPaymentPortal": null,
+  "HasFeeScheduleICGInvoicing": null,
+  "FeeScheduleICGInvoicing": null,
+  "HasFeeScheduleQuickBooksPlugin": null,
+  "FeeScheduleQuickBooksPlugin": null,
+  "HasFeeScheduleQuickBooksOnline": null,
+  "FeeScheduleQuickBooksOnline": null,
+  "HasFeeScheduleWooCommercePlugin": null,
+  "FeeScheduleWooCommercePlugin": null,
+  "HasFeeScheduleIVRFee": null,
+  "FeeScheduleIVRFee": null,
+  "HasFeeScheduleSMSProcessingFee": null,
+  "FeeScheduleSMSProcessingFee": null,
+  "HasFeeScheduleMagtekUSBSwiper": null,
+  "FeeScheduleMagtekUSBSwiper": null,
+  "HasFeeScheduleMobileSwiper": null,
+  "FeeScheduleMobileSwiper": null,
+  "HasLockboxProcessingFeesStandard": null,
+  "LockboxProcessingFeesStandard": null,
+  "HasLockboxProcessingFeesLarge": null,
+  "LockboxProcessingFeesLarge": null,
+  "IsIcgVerify": null,
+  "IcgVerifyVerificationFee": null,
+  "IcgVerifyEstimatedNVerificationsPerMonth": null,
+  "IcgVerifyPurposeOfUsingVerificationServices": null,
+  "IsIcgVerifyTypeServiceAPIAccess": null,
+  "IsIcgVerifyTypeServiceManuallyRunning": null,
+  "IcgVerifyBillingOptionsId": null,
+  "SettlementAccountBank": null,
+  "SettlementAccountRouting": null,
+  "SettlementAccountNumber": null,
+  "SettlementAccountType": null,
+  "IsBillingAccountSameAsSettlement": null,
+  "BillingAccountBank": null,
+  "BillingAccountRouting": null,
+  "BillingAccountNumber": null,
+  "BillingAccountType": null,
+  "PaymentModelSettlementAccountBank": null,
+  "PaymentModelSettlementAccountRouting": null,
+  "PaymentModelSettlementAccountNumber": null,
+  "IsPaymentModelBillingAccountSameAsSettlement": null,
+  "PaymentModelBillingAccountBank": null,
+  "PaymentModelBillingAccountRouting": null,
+  "PaymentModelBillingAccountNumber": null,
+  "PaymentPortalTypeId": null,
+  "IsICGInvoicing": null,
+  "MerchantPaymentURL": null,
+  "ContactRequirementPortalName": null,
+  "ContactRequirementPortalPhone": null,
+  "PaymentPortalNotes": null,
+  "CreatedUtcDate": null,
+  "CreatedUser": null,
+  "CurrentLoggedUser": null,
+  "CurrentUser": null,
+  "CurrentAdmin": null,
+  "ElavonIntegrationApplicationId": null,
+  "ElavonIntegrationMerchantNumber": null,
+  "PercentageCompletionFields": null,
+  "PercentageCompletionFiles": null,
+  "CanIntegrateWithElavon": null,
+  "AdminConsoleMerchantCode": null,
+  "AdminConsoleMerchantPaymentFeeCode": null,
+  "AdminConsoleMerchantId": null,
+  "RelationshipManager": null,
+  "RecurringOption": null,
+  "RecurringFrequency": null,
+  "AchConvenienceFee": null,
+  "IsAchConvenienceFeeTypeFlat": null,
+  "IsAchConvenienceFeeTypePercentage": null,
+  "AchConvenienceFeeAmount": null,
+  "CreditDebitCardConvenienceFeeOption": null,
+  "IsCreditDebitCardConvenienceFeeFlat": null,
+  "IsCreditDebitCardConvenienceFeePercentage": null,
+  "CreditDebitCardConvenienceFeeAmount": null,
+  "AnnualReviewStatus": null,
+  "HasPlaidMerchantToken": null,
+  "IsAuthVerify": null,
+  "AccountBalanceVerify": null,
+  "IdentityVerify": null,
+  "WixWebSiteFee": null,
+  "HasWixWebSiteFee": null,
+  "HasInvoicingOptions": null,
+  "FeeInvoicingOptions": null,
+  "HasEmailInvoicing": null,
+  "FeeEmailInvoicing": null,
+  "HasSmsInvoicing": null,
+  "FeeSmsInvoicing": null,
+  "HasFeeScheduleSMSNotify": null,
+  "FeeScheduleSMSNotify": null,
+  "HasIcgProcessPaymentToken": null,
+  "IcgProcessPaymentToken": null,
+  "AssignUserId": null
+}
+```
+
+The class name of **Task<Models.ICGBusinessEntitiesProspect>** is
+```markdown
+   ICGBusinessEntitiesProspect
+```
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGBusinessEntitiesProspect>](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect)|
+
+
+
+
 
 
 
