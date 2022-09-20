@@ -4867,6 +4867,162 @@ The class name of **Task<Models.ICGBusinessEntitiesProspect>** is
 
 
 
+### O Data Prospects 3
+#### Description 
+This service endpoint will allow the user to update single item from the prospect in order to add latest prospect information in the system. For this purpose, an instance of `ProspectsController` class is created by the API client for calling the `ODataProspects3Async` method.
+
+```markdown  
+   ODataProspects3Async(
+    int key,
+    Models.ICGBusinessEntitiesProspect prospect)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int key = 120;
+var prospect = new ICGBusinessEntitiesProspect();
+try
+{
+    await prospectsController.ODataProspects3Async(key, prospect);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectsController" object fails to update one prospect item that was anticipated to be returned. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail       
+This endpoint requires two parameters which are **key** (int type) and **prospect** object. The key is actually the prospect id which is a unique identifier for prospect. And the **prospect** object further contains the attributes/parameters for the prospect instance that needs to be updated. 
+
+![96](https://user-images.githubusercontent.com/110983629/191277898-f9218b65-b8d1-48ab-99ab-1d1def54b034.png)
+
+The class name for the prospect object is
+```markdown
+    ICGBusinessEntitiesProspect
+```
+
+ 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|prospect object|[Models.ICGBusinessEntitiesProspect](https://developers.icheckdev.com/UW/#/net-standard-library/models/structures/icg-business-entities-prospect)|
+
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task` that returns the one item/instance of prospect which get updated by the user.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
