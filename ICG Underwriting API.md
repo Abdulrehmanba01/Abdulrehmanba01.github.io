@@ -4030,6 +4030,67 @@ The class name of **Task<Models.ICGBusinessEntitiesProspectScoreTaxIdQueryScore>
 
 
 
+## API Endpoints
+## Prospects Scores Average Bank Balances Plaid Transaction 
+### O Data Prospects Scores Average Bank Balances Plaid Transaction
+#### Description 
+This service endpoint will allow the user to retrieve the single item from ProspectsScoresAverageBankBalancesPlaidTransaction so that you can get information about the plaid transaction of average bank balances. For this purpose, an instance of `ProspectsScoresAverageBankBalancesPlaidTransactionController` class is created by the API client for calling the `ODataProspectsScoresAverageBankBalancesPlaidTransactionAsync` method.
+
+
+```markdown  
+   ProspectsScoresAverageBankBalancesPlaidTransactionController prospectsScoresAverageBankBalancesPlaidTransactionController = client.ProspectsScoresAverageBankBalancesPlaidTransactionController;
+```
+
+```markdown  
+ ODataProspectsScoresAverageBankBalancesPlaidTransactionAsync(
+    int key)
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+int key = 120;
+try
+{
+    await prospectsScoresAverageBankBalancesPlaidTransactionController.ODataProspectsScoresAverageBankBalancesPlaidTransactionAsync(key);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectsScoresAverageBankBalancesPlaidTransactionController" object fails to retrieve single item that was anticipated to be returned. The key will be passed as parameter to `ODataProspectsScoresAverageBankBalancesPlaidTransactionAsync` method in order to successfully retrieve plaid transaction of the specific prospect. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint requires only one parameter **key** (int type) which is unique for each plaid transaction of avergae bank balance score.
+  
+![94](https://user-images.githubusercontent.com/110983629/191245102-71669990-69e7-49ed-a24b-4ea869dce22d.png)
+
+  
+#### Responses 
+The response of this endpoint service request contains the `Task` that returns the item for Prospect Scores Average Bank Balances Plaid Transaction.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
