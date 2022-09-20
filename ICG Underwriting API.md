@@ -4164,6 +4164,56 @@ It will be included in the try and catch block to deal with any exceptions that 
 This endpoint does not require any parameter.
   
 #### Responses 
+The response of this endpoint service request contains the `Task` that returns the prospect data for each Prospect entity.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+
+
+
+## API Endpoints
+## Prospects
+### O Data Prospects
+#### Description 
+This service endpoint will allow the user to retrieve all the items of the prospect which is present in the prospect so that you can get information about the prospect data without applying any filter. For this purpose, an instance of `ProspectsController` class is created by the API client for calling the `ODataProspectsAsync()` method.
+
+
+```markdown    
+   ProspectsController prospectsController = client.ProspectsController;
+```
+
+```markdown  
+   ODataProspectsAsync()
+```
+
+This endpoint requires [Authentication](https://developers.icheckdev.com/UW/#/net-standard-library/getting-started/how-to-get-started) 
+
+#### Class-Object
+```markdown
+try
+{
+    List<ICGBusinessEntitiesProspect> result = await prospectsController.ODataProspectsAsync();
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "prospectsController" object fails to retrieve prospect data that was anticipated to be returned. And try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.  
+ 
+
+#### Parameters Detail      
+This endpoint does not require any parameter.
+  
+#### Responses 
 The response of this endpoint service request contains the `Task` that returns the prospect data for each Prospect.
 
 #### Response headers-JSON
@@ -4172,6 +4222,18 @@ The response of this endpoint service request contains the `Task` that returns t
 |Cache-control|Private|
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
