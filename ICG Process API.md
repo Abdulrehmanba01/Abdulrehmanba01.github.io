@@ -298,6 +298,78 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Merchants Merchant Provisioning
+#### Description
+ 
+This API endpoint will be allow the user to retrieve the data about merchant provisioning. To accomplish that, the API Client will create an instance of the class `MerchantsController` for invoking the method `MerchantsMerchantProvisioningAsync`.
+
+```markdown
+  MerchantsMerchantProvisioningAsync()
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+try
+{
+    List<ICGDataEntitiesMerchantsProvisioning> result = await merchantsController.MerchantsMerchantProvisioningAsync();
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "merchantsController" object fails to get the merchant provisions that was anticipated to be returned. There will be no parameter passed to the `MerchantsIsMerchantReadyAsync` method call. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This endpoint does not require any parameter.
+
+#### Responses 
+The response of this endpoint service request contains the `Task<List<Models.ICGDataEntitiesMerchantsProvisioning>>` object that returns the value for merchant provisioning.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
+#### Response body-JSON
+```markdown
+ {
+  "id": null,
+  "data": "data0",
+  "created": null
+}
+```
+The class name of **Task<List<Models.ICGDataEntitiesMerchantsProvisioning>>** object is
+```markdown
+    ICGDataEntitiesMerchantsProvisioning
+```
+
+#### Task<List<Models.ICGDataEntitiesMerchantsProvisioning>> object parameters
+ 
+ ![6](https://user-images.githubusercontent.com/110983629/191519323-035a7632-39b4-43ea-809d-1180257d7e41.png)
+
+
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response type|[Task<List<Models.ICGDataEntitiesMerchantsProvisioning>>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-data-entities-merchants-provisioning)
+ 
+
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
 
 
 
