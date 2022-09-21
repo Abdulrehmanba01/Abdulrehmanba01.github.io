@@ -395,7 +395,7 @@ try
 }
 catch (ApiException e){};
 ```
-It will be included in the try and catch block to deal with any exceptions that could arise if the "merchantsController" object fails to get the merchant provisions that was anticipated to be returned. The content object will be passed as parametet to the `MerchantsMerchantProvisioning1Async` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+It will be included in the try and catch block to deal with any exceptions that could arise if the "merchantsController" object fails to get the merchant provisions that was anticipated to be returned. The content object will be passed as parameter to the `MerchantsMerchantProvisioning1Async` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
  
 
 #### Parameters Detail    
@@ -460,6 +460,86 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+
+
+### Merchants Merchant Provisioning 2
+#### Description
+ 
+This API endpoint will be allow the user to retrieve the data about merchant provisioning by entering the name and filter details. To accomplish that, the API Client will create an instance of the class `MerchantsController` for invoking the method `MerchantsMerchantProvisioning2Async`.
+
+```markdown
+    MerchantsMerchantProvisioning2Async(
+    string filter,
+    string name)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string filter = "filter4";
+string name = "name0";
+try
+{
+    List<ICGDataEntitiesMerchantsProvisioning> result = await merchantsController.MerchantsMerchantProvisioning2Async(filter, name);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "merchantsController" object fails to get the merchant provisions that was anticipated to be returned. The filter and name will be passed as parameter to the `MerchantsMerchantProvisioning2Async` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail     
+This endpoint requires **filter** (string type) and **name** (string type)  where the name will be the used for retrieving the merchant Provisioning. and filter will used for retrieving the specific merchant provision details. 
+
+![9](https://user-images.githubusercontent.com/110983629/191525718-261da011-12b2-47df-a1e4-d95c158e26ac.png)
+
+
+
+#### Responses 
+The response of this endpoint service request contains the `Task<List<Models.ICGDataEntitiesMerchantsProvisioning>>` object that returns the value for merchant provisioning.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
+#### Response body-JSON
+```markdown
+ {
+  "id": null,
+  "data": "data0",
+  "created": null
+}
+```
+The class name of **Task<List<Models.ICGDataEntitiesMerchantsProvisioning>>** object is
+```markdown
+     ICGDataEntitiesMerchantsProvisioning
+```
+
+#### Task<Models.ICGDataEntitiesMerchantsProvisioning> object parameters
+  
+![8](https://user-images.githubusercontent.com/110983629/191522828-3b6cadea-3223-494f-b69c-552a0b76e64f.png)
+
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|Response type|[Task<Models.ICGDataEntitiesMerchantsProvisioning>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-data-entities-merchants-provisioning)
+ 
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
