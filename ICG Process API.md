@@ -692,6 +692,45 @@ The response of this endpoint service request contains the `Task<bool>` object t
 
 
 
+### O Data Settlements Reports Groups
+#### Description
+ 
+This API endpoint will allow the user to retrieve all items from the settlement report group. To accomplish that, the API Client will create an instance of the class `SettlementsReportsGroupsController` for invoking the method `ODataSettlementsReportsGroupsAsync`.
+ 
+
+```markdown
+  ODataSettlementsReportsGroupsAsync()
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+try
+{
+    await settlementsReportsGroupsController.ODataSettlementsReportsGroupsAsync();
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "settlementsReportsGroupsController" object fails to retrieve settlement data that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint does not take any parameter.
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task` object that returns data for the settlement reports.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
+
+
 
 
 
