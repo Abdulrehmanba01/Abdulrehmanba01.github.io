@@ -150,6 +150,79 @@ The response of this endpoint service request contains the `Task<Models.ICGTrans
  
 
 
+  
+## API Endpoints
+## Merchants
+### Merchants Activate Merchant
+#### Description
+ 
+This API endpoint will be allow the user to activate merchant for executing the transactions. In order to activate merchant, the merchant code which is a unique identifier will be employed. To accomplish that, the API Client will create an instance of the class `MerchantsController` and invoking the method `MerchantsActivateMerchantAsync`.
+
+
+```markdown
+  MerchantsController merchantsController = client.MerchantsController;
+```
+
+```markdown
+  MerchantsActivateMerchantAsync(
+    string code)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string code = "code8";
+try
+{
+    string result = await merchantsController.MerchantsActivateMerchantAsync(code);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "merchantsController" object fails to activate merchant that was anticipated to be returned. The merchant code will be passed as a parameter to the `MerchantsActivateMerchantAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This API call requires **code** (string type) as the mandatory parameter to activate the merchant for processing his transactions successfully. 
+
+![4](https://user-images.githubusercontent.com/110983629/191505904-70e9b921-d52a-4f99-aacd-c7ffbab6657d.png)
+
+#### Responses 
+The response of this endpoint service request contains the `Task<string>` object that returns the value for activating the merchant account for transactions.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
