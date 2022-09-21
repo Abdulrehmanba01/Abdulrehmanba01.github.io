@@ -593,6 +593,58 @@ The response of this endpoint service request contains the `Task<object>` object
 
 
 
+## API Endpoints
+## Settlements 
+### Settlements Detail Update Settlement Detail 
+#### Description
+ 
+This API endpoint will allow the user to update the settlement details through the Processor Settlement identifier which is unique for each settlement. To accomplish that, the API Client will create an instance of the class `SettlementsController` for invoking the method `SettlementsDetailUpdateSettlementDetailAsync`.
+
+
+```markdown
+  SettlementsController settlementsController = client.SettlementsController;
+```
+
+```markdown
+   SettlementsDetailUpdateSettlementDetailAsync(int id)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int id = 112;
+try
+{
+    bool? result = await settlementsController.SettlementsDetailUpdateSettlementDetailAsync(id);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "settlementsController" object fails to update settlements that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires only one parameter which is **id** (int type) that is Processor Settlement identifier for updating the settlement. 
+
+![10](https://user-images.githubusercontent.com/110983629/191534379-a2068234-0cec-4e38-bc7f-b04e0f6c4089.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<bool>` object that returns value whether the settlement get updated or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
+
+
+
+
+
+
 
 
 
