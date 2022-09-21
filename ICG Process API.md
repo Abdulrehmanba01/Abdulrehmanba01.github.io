@@ -731,6 +731,56 @@ The response of this endpoint service request contains the `Task` object that re
 
 
 
+### O Data Settlements Reports Groups 1
+#### Description
+ 
+This API endpoint will allow the user to retrieve one item from the settlement report group by entering the unique settlement report group id. To accomplish that, the API Client will create an instance of the class `SettlementsReportsGroupsController` for invoking the method `ODataSettlementsReportsGroups1Async`.
+ 
+
+```markdown
+   ODataSettlementsReportsGroups1Async(
+    int key)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int key = 120;
+try
+{
+    await settlementsReportsGroupsController.ODataSettlementsReportsGroups1Async(key);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "settlementsReportsGroupsController" object fails to retrieve settlement data that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This endpoint requires only one parameter **key** (int type) for retrieving one instance of the settlement report group.
+
+![12](https://user-images.githubusercontent.com/110983629/191541044-17981a59-2ce0-4ceb-bed2-659a60179541.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task` object that returns data for the one settlement report.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 
