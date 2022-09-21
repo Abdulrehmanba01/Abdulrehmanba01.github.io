@@ -643,6 +643,53 @@ The response of this endpoint service request contains the `Task<bool>` object t
 
 
 
+## API Endpoints
+## Settlements Reports Groups  
+### Settlements Detail Run Job Now
+#### Description
+ 
+This API endpoint will allow the user to run job now through the groupid. To accomplish that, the API Client will create an instance of the class `SettlementsReportsGroupsController` for invoking the method `SettlementsDetailRunJobNowAsync`.
+
+
+```markdown
+ SettlementsReportsGroupsController settlementsReportsGroupsController = client.SettlementsReportsGroupsController;
+```
+
+```markdown
+ SettlementsDetailRunJobNowAsync(
+    int groupid)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int groupid = 40;
+try
+{
+    bool? result = await settlementsReportsGroupsController.SettlementsDetailRunJobNowAsync(groupid);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "settlementsReportsGroupsController" object fails to run job that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires only one parameter which is **groupid** (int type) that is mandatory for executing the job properly.
+ 
+ ![11](https://user-images.githubusercontent.com/110983629/191537088-0718d0da-60bc-4159-a1eb-4848070fd453.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<bool>` object that returns value whether the the job get executed or not.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
 
 
 
