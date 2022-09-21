@@ -217,12 +217,80 @@ The response of this endpoint service request contains the `Task<string>` object
 
 
 
+### Merchants Is Merchant Ready
+#### Description
+ 
+This API endpoint will be allow the user to verify that the merchant is ready for making transactions or not. In order to verify specific merchant, the merchant code which is a unique identifier will be employed. To accomplish that, the API Client will create an instance of the class `MerchantsController` and invoking the method `MerchantsIsMerchantReadyAsync`.
+
+```markdown
+ MerchantsIsMerchantReadyAsync(
+    string code)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string code = "code8";
+try
+{
+    ICGTransactionsModelsResponsesMerchantReadyResponse result = await merchantsController.MerchantsIsMerchantReadyAsync(code);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "merchantsController" object fails to verify merchant that was anticipated to be returned. The merchant code will be passed as a parameter to the `MerchantsIsMerchantReadyAsync` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This API call requires **code** (string type) as the mandatory parameter to verify the merchant for processing his transactions successfully. It is the pre-requisite for making transaction successfully.
+
+![4](https://user-images.githubusercontent.com/110983629/191505904-70e9b921-d52a-4f99-aacd-c7ffbab6657d.png)
+
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesMerchantReadyResponse>` object that returns the value for verifying the merchant account for transactions.
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
+#### Response body-JSON
+```markdown
+{
+  "Ready": null,
+  "Message": null
+}
+```
+The class name of **Task<Models.ICGTransactionsModelsResponsesMerchantReadyResponse>** object is
+```markdown
+   ICGTransactionsModelsResponsesMerchantReadyResponse
+```
+
+#### Task<Models.ICGTransactionsModelsResponsesMerchantReadyResponse> object parameters
+
+![5](https://user-images.githubusercontent.com/110983629/191512079-ba8916bc-f1a2-4a53-a6b6-aae11ad12abe.png)
 
 
+#### Explorer 
+
+|Names|Description|
+|-----|-----------|
+|Response type|[Task<Models.ICGTransactionsModelsResponsesMerchantReadyResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-merchant-ready-response)
+ 
 
 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
 
-
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
