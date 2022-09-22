@@ -1063,6 +1063,84 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokens Get Credit Card Token List
+#### Description
+This API endpoint will allow the user to retrieve the credit card token list of a merchant by accessing it through the merchant's site identifier. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensGetCreditCardTokenListAsync`.
+
+```markdown 
+   TokensGetCreditCardTokenListAsync(
+    string siteId)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteId = "siteId8";
+try
+{
+    List<ICGBusinessEntitiesCreditCardTokens> result = await tokensController.TokensGetCreditCardTokenListAsync(siteId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to retrieve the credit card token list that was anticipated to be returned. The siteId will be passed as parameter to the method `TokensGetCreditCardTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires only one parameter which is **siteId** (string type). The siteId will be the merchant's site id whose credit card token list need to be retrieved. 
+  
+![17](https://user-images.githubusercontent.com/110983629/191771741-0098e22d-daee-452d-9c4d-7b4578d05f47.png)
+
+  
+#### Responses 
+The response of this endpoint service request contains the **Task<List<Models.ICGBusinessEntitiesCreditCardTokens>>** object that returns list of merchant credit card token. 
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body-JSON
+```markdown
+ {
+  "Id": null,
+  "SiteId": "SiteId0",
+  "Token": null,
+  "Number": "Number0",
+  "Name": "Name0",
+  "ExpDate": null,
+  "Display": null,
+  "Address": null,
+  "ZipCode": null,
+  "CardInfo": null
+}
+```
+
+The class name of Task<List<Models.ICGBusinessEntitiesCreditCardTokens>> is
+```markdown
+   ICGBusinessEntitiesCreditCardTokens
+```
+
+
+#### Task<List<Models.ICGBusinessEntitiesCreditCardTokens>> object parameters
+ 
+![18](https://user-images.githubusercontent.com/110983629/191772677-11b74d34-1a73-4d43-938c-ba81e4576998.png)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
 
 
 
