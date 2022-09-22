@@ -782,7 +782,7 @@ The response of this endpoint service request contains the `Task` object that re
 ### Tokens Save Credit Card Token
 #### Description
  
-This API endpoint will allow the user to save the credit card token. For successfully saving credit card token, you need to follow the constriants that are applied on the token, address, zipcode, cardnumber etc. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensSaveCreditCardTokenAsync`.
+This API endpoint will allow the user to save the credit card token. For successfully saving credit card token, you need to follow the constraints that are applied on the token, address, zipcode, cardnumber etc. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensSaveCreditCardTokenAsync`.
 
 
 ```markdown 
@@ -811,7 +811,7 @@ It will be included in the try and catch block to deal with any exceptions that 
  
 
 #### Parameters Detail   
-This endpoint requires only one parameter which is **model** object that further contains the Id (int type), SiteId (string type), Token (string type), Number (string type), Name (string type), ExpDate (int type), Display (string type), Address (string type), ZipCode (string type), and CardInfo (string type). All of these parameters, the SiteId, Number, Name are required for the user to enter for saving the credit card token. 
+This endpoint requires only one parameter which is **model** object that further contains the Id (int type), SiteId (string type), Token (string type), Number (string type), Name (string type), ExpDate (int type), Display (string type), Address (string type), ZipCode (string type), and CardInfo (string type). From all of these parameters, the SiteId, Number, Name are required for the user to enter for saving the credit card token. 
 
 The class name of **model** object is
 ```markdown
@@ -839,6 +839,85 @@ The response of this endpoint service request contains the `Task<string>` object
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
  
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
+### Tokens Update Credit Card Token
+#### Description
+This API endpoint will allow the user to update the credit card token. For successfully editing credit card token, you need to follow the constraints that are applied on the token, address, zipcode, cardnumber etc. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensUpdateCreditCardTokenAsync`.
+
+```markdown
+   TokensUpdateCreditCardTokenAsync(
+    Models.ICGBusinessEntitiesCreditCardTokens model)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+var model = new ICGBusinessEntitiesCreditCardTokens();
+model.SiteId = "SiteId8";
+model.Number = "Number8";
+model.Name = "Name8";
+
+try
+{
+    string result = await tokensController.TokensUpdateCreditCardTokenAsync(model);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to update the credit card token that was anticipated to be returned. The model object of `ICGBusinessEntitiesCreditCardTokens` type will be passed as parameter to the method `TokensSaveCreditCardTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires only one parameter which is **model** object that further contains the Id (int type), SiteId (string type), Token (string type), Number (string type), Name (string type), ExpDate (int type), Display (string type), Address (string type), ZipCode (string type), and CardInfo (string type). From all of these parameters, the SiteId, Number, Name are required for the user to enter for updating the credit card token. 
+
+The class name of **model** object is
+```markdown
+   ICGBusinessEntitiesCreditCardTokens
+```
+
+#### model object parameters
+
+![13](https://user-images.githubusercontent.com/110983629/191744592-f6a67ae8-2be6-4fa4-907d-e8f6c94b2652.png)
+
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|model|[Models.ICGBusinessEntitiesCreditCardTokens](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-credit-card-tokens)
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<string>` object that returns value for updating token details.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
