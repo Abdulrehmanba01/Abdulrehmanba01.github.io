@@ -680,7 +680,7 @@ This endpoint requires only one parameter which is **groupid** (int type) that i
 
  
 #### Responses 
-The response of this endpoint service request contains the `Task<bool>` object that returns value whether the the job get executed or not.
+The response of this endpoint service request contains the `Task<bool>` object that returns value whether the job get executed or not.
  
 #### Response headers-JSON
 |Header|Value|
@@ -771,6 +771,75 @@ The response of this endpoint service request contains the `Task` object that re
 |Content-Length|61|
 |Content-type|application/json;charset=utf-8|
  
+
+
+
+
+
+
+## API Endpoints
+## Tokens 
+### Tokens Save Credit Card Token
+#### Description
+ 
+This API endpoint will allow the user to save the credit card token. For successfully saving credit card token, you need to follow the constriants that are applied on the token, address, zipcode, cardnumber etc. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensSaveCreditCardTokenAsync`.
+
+
+```markdown 
+    TokensController tokensController = client.TokensController;
+```
+
+```markdown
+  TokensSaveCreditCardTokenAsync(
+    Models.ICGBusinessEntitiesCreditCardTokens model)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+var model = new ICGBusinessEntitiesCreditCardTokens();
+model.SiteId = "SiteId8";
+model.Number = "Number8";
+model.Name = "Name8";
+try
+{
+    string result = await tokensController.TokensSaveCreditCardTokenAsync(model);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to save the credit card token that was anticipated to be returned. The model object of `ICGBusinessEntitiesCreditCardTokens` type will be passed as parameter to the method `TokensSaveCreditCardTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires only one parameter which is **model** object that further contains the Id (int type), SiteId (string type), Token (string type), Number (string type), Name (string type), ExpDate (int type), Display (string type), Address (string type), ZipCode (string type), and CardInfo (string type). All of these parameters, the SiteId, Number, Name are required for the user to enter for saving the credit card token. 
+
+The class name of **model** object is
+```markdown
+  ICGBusinessEntitiesCreditCardTokens
+```
+
+#### model object parameters
+
+![13](https://user-images.githubusercontent.com/110983629/191744592-f6a67ae8-2be6-4fa4-907d-e8f6c94b2652.png)
+
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|model|[Models.ICGBusinessEntitiesCreditCardTokens](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-credit-card-tokens)
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<string>` object that returns value for saving token.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+
 
 
 
