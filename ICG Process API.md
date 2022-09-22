@@ -943,7 +943,7 @@ try
 }
 catch (ApiException e){};
 ```
-It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to delete the credit card token that was anticipated to be returned. The siteId and token of will be passed as parameters to the method `TokensDeleteCreditCardTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to delete the credit card token that was anticipated to be returned. The siteId and token will be passed as parameters to the method `TokensDeleteCreditCardTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
  
 
 #### Parameters Detail   
@@ -976,6 +976,86 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+
+
+### Tokens Get Credit Card Token
+#### Description
+This API endpoint will allow the user to retrieve the credit card token details of a merchant by accessing it through the merchant's site identifier and credit card token. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensDeleteCreditCardTokenAsync`.
+
+```markdown 
+   TokensGetCreditCardTokenAsync(
+    string siteId,
+    string token)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteId = "siteId8";
+string token = "token6";
+
+try
+{
+    ICGBusinessEntitiesCreditCardTokens result = await tokensController.TokensGetCreditCardTokenAsync(siteId, token);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to retrieve the credit card token details that was anticipated to be returned. The siteId and token will be passed as parameters to the method `TokensGetCreditCardTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires two parameters which are **siteId** (string type) and **token** (string type). The siteId will be the merchant's site id whose credit card token details need to be retrieved. 
+  
+![15](https://user-images.githubusercontent.com/110983629/191762772-d37456b0-bb40-410d-96d0-5f15856fef4f.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesCreditCardTokens>` object that returns detail of merchant credit card token. 
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body-JSON
+```markdown
+{
+  "Id": null,
+  "SiteId": "SiteId0",
+  "Token": null,
+  "Number": "Number0",
+  "Name": "Name0",
+  "ExpDate": null,
+  "Display": null,
+  "Address": null,
+  "ZipCode": null,
+  "CardInfo": null
+}
+``` 
+The class name of Task<Models.ICGBusinessEntitiesCreditCardTokens> is
+```markdown
+   ICGBusinessEntitiesCreditCardTokens
+```
+
+
+#### Task<Models.ICGBusinessEntitiesCreditCardTokens> object parameters
+
+![16](https://user-images.githubusercontent.com/110983629/191764742-e36ae96e-ec44-4a1f-824e-9f952a35e886.png)
+ 
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
