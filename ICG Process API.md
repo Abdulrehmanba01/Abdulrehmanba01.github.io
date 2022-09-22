@@ -924,7 +924,7 @@ This endpoint service request may response codes to indicate the success or fail
 
 ### Tokens Delete Credit Card Token
 #### Description
-This API endpoint will allow the user to delete the credit card token. For successfully deleting credit card token, you need to employ the merchant's site identifier and credit card token. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensDeleteCreditCardTokenAsync`.
+This API endpoint will allow the user to delete the credit card token. For successfully deleting credit card token, you need to provide the merchant's site identifier and credit card token. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensDeleteCreditCardTokenAsync`.
 
 ```markdown 
    TokensDeleteCreditCardTokenAsync(
@@ -947,26 +947,13 @@ It will be included in the try and catch block to deal with any exceptions that 
  
 
 #### Parameters Detail   
-This endpoint requires two parameters which are **siteId** and **token** that further contains the Id (int type), SiteId (string type), Token (string type), Number (string type), Name (string type), ExpDate (int type), Display (string type), Address (string type), ZipCode (string type), and CardInfo (string type). From all of these parameters, the SiteId, Number, Name are required for the user to enter for updating the credit card token. 
+This endpoint requires two parameters which are **siteId** (string type) and **token** (string type). The siteId will be the merchant's site id whose credit card token need to be deleted. 
+ 
+![14](https://user-images.githubusercontent.com/110983629/191760246-e5efafc4-ccbb-4e54-a1b7-0cb9a61898b2.png)
 
-The class name of **model** object is
-```markdown
-   ICGBusinessEntitiesCreditCardTokens
-```
-
-#### model object parameters
-
-![13](https://user-images.githubusercontent.com/110983629/191744592-f6a67ae8-2be6-4fa4-907d-e8f6c94b2652.png)
-
-
-#### Explorer 
-
-|Name|Description|
-|-----|-----------|
-|model|[Models.ICGBusinessEntitiesCreditCardTokens](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-credit-card-tokens)
  
 #### Responses 
-The response of this endpoint service request contains the `Task<string>` object that returns value for updating token details.
+The response of this endpoint service request contains the `Task<string>` object that returns value for deleting the merchant's credit card token.
  
 #### Response headers-JSON
 |Header|Value|
