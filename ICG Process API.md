@@ -1587,8 +1587,9 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
-
-
+### Tokens Tokenize PAN Only
+#### Description
+  
 
 
 
