@@ -1374,7 +1374,56 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokens Delete Check Token
+#### Description
+This API endpoint will allow the user to delete the check token. For successfully deleting check token, you need to provide the merchant's site identifier and specific check token. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensDeleteCheckTokenAsync`.
 
+```markdown 
+    TokensDeleteCheckTokenAsync(
+    string siteId,
+    string token)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteId = "siteId8";
+string token = "token6";
+try
+{
+    string result = await tokensController.TokensDeleteCheckTokenAsync(siteId, token);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to delete the check token that was anticipated to be returned. The siteId and token will be passed as parameters to the method `TokensDeleteCheckTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires two parameters which are **siteId** (string type) and **token** (string type). The siteId will be the merchant's site id whose check need to be deleted. 
+  
+![23](https://user-images.githubusercontent.com/110983629/191978150-4559302c-553d-46c0-a819-b2fae0c3afd1.png)
+
+   
+#### Responses 
+The response of this endpoint service request contains the `Task<string>` object that returns value for deleting the merchant's specific check token.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
