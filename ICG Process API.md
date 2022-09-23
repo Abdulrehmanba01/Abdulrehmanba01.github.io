@@ -1303,8 +1303,72 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokens Update Check Token
+#### Description
+This API endpoint will allow the user to update the check token. For successfully editing check token, you need to follow the constraints that are applied on the token, Authorization, Account, AccounType etc. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensUpdateCheckTokenAsync`.
 
+```markdown
+   TokensUpdateCheckTokenAsync(
+    Models.ICGBusinessEntitiesCheckTokens model)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
 
+#### Class-Object
+```markdown
+var model = new ICGBusinessEntitiesCheckTokens();
+model.SiteId = "SiteId8";
+model.Account = "Account6";
+model.AccountType = "AccountType2";
+model.Routing = "Routing8";
+
+try
+{
+    string result = await tokensController.TokensUpdateCheckTokenAsync(model);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to update the check token that was anticipated to be returned. The model object of `ICGBusinessEntitiesCheckTokens` type will be passed as parameter to the method `TokensUpdateCheckTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires only one parameter which is **model** object that further contains the Id (int type), SiteId (string type), Token (string type), Authorization (string type), Account (string type), AccountType (int type), Routing (string type), and Display (string type). From all of these parameters, the SiteId, Account, AccountType, and Routing are required for the user to enter for updating the check token. 
+
+The class name of **model** object is
+```markdown
+   ICGBusinessEntitiesCheckTokens
+```
+
+#### model object parameters
+ 
+![22](https://user-images.githubusercontent.com/110983629/191976200-020c9ee8-2cd2-492d-9554-2ae0523d0de1.png)
+
+ 
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|model|[Models.ICGBusinessEntitiesCheckTokens](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-check-tokens)
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<string>` object that returns value for updating check token details.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
