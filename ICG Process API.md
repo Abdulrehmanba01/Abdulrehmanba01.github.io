@@ -1147,6 +1147,119 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokens Get All Credit Card Token Listby Date
+#### Description
+This API endpoint will allow the user to retrieve the credit card token list of the merchants accessing them by entering the start date and end date. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensGetAllCreditCardTokenListbyDateAsync`.
+
+```markdown 
+   TokensGetAllCreditCardTokenListbyDateAsync(
+    string siteId,
+    DateTime start,
+    DateTime end)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteId = "siteId8";
+DateTime start = DateTime.Parse("2016-03-13T12:52:32.123Z");
+DateTime end = DateTime.Parse("2016-03-13T12:52:32.123Z");
+
+try
+{
+    List<ICGBusinessEntitiesCreditCardTokens> result = await tokensController.TokensGetAllCreditCardTokenListbyDateAsync(siteId, start, end);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to retrieve the specific credit card token list that was anticipated to be returned. The siteId, start and end will be passed as parameters to the method `TokensGetAllCreditCardTokenListbyDateAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires three parameters which are **siteId** (string type), **start** (DateTime type) and **end** (DateTime type). The siteId will be the merchant's site id whose credit card token list need to be retrieved, and the start and end are two dates through which the token get employed by the merchant.
+   
+![19](https://user-images.githubusercontent.com/110983629/191963902-d88f9542-316b-4d45-b46a-d7ec74f04510.png)
+
+  
+#### Responses 
+The response of this endpoint service request contains the **Task<List<Models.ICGBusinessEntitiesCreditCardTokens>>** object that returns list of merchant credit card token list for the specified dates.
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body-JSON
+```markdown
+ {
+  "Id": null,
+  "SiteId": "SiteId0",
+  "Token": null,
+  "Number": "Number0",
+  "Name": "Name0",
+  "ExpDate": null,
+  "Display": null,
+  "Address": null,
+  "ZipCode": null,
+  "CardInfo": null
+}
+```
+
+The class name of Task<List<Models.ICGBusinessEntitiesCreditCardTokens>> is
+```markdown
+    ICGBusinessEntitiesCreditCardTokens
+```
+
+
+#### Task<List<Models.ICGBusinessEntitiesCreditCardTokens>> object parameters
+  
+![20](https://user-images.githubusercontent.com/110983629/191964443-16519201-c6b5-41ad-810c-f423ad18f363.png)
+  
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
