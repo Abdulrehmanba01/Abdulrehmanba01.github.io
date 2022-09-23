@@ -1508,6 +1508,86 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokens Get Check Token List
+#### Description
+This API endpoint will allow the user to retrieve the check token list of a merchant by accessing it through the merchant's site identifier. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensGetCheckTokenListAsync`.
+
+```markdown 
+   TokensGetCheckTokenListAsync(
+    string siteId)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteId = "siteId8";
+try
+{
+    List<ICGBusinessEntitiesCheckTokens> result = await tokensController.TokensGetCheckTokenListAsync(siteId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to retrieve the check token list that was anticipated to be returned. The siteId will be passed as parameter to the method `TokensGetCheckTokenListAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires only one parameter which is **siteId** (string type). The siteId will be the merchant's site id whose check token list need to be retrieved. 
+  
+![26](https://user-images.githubusercontent.com/110983629/191984337-ab21368c-230a-4fa5-a510-4636407f234e.png)
+
+  
+#### Responses 
+The response of this endpoint service request contains the **Task<List<Models.ICGBusinessEntitiesCheckTokens>>** object that returns list of merchant check tokens. 
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body-JSON
+```markdown
+ {
+  "Id": null,
+  "SiteId": "SiteId0",
+  "Token": null,
+  "Authorization": null,
+  "Account": "Account8",
+  "AccountType": "AccountType0",
+  "Routing": "Routing6",
+  "Display": null
+}
+```
+
+The class name of Task<List<Models.ICGBusinessEntitiesCheckTokens>> is
+```markdown
+    ICGBusinessEntitiesCheckTokens
+```
+
+
+#### Task<List<Models.ICGBusinessEntitiesCheckTokens>> object parameters
+  
+![27](https://user-images.githubusercontent.com/110983629/191984935-9874fc69-b4cd-4e42-b22c-9cb1481e4031.png)
+
+  
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
+
 
 
 
