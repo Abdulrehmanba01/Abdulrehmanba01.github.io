@@ -980,7 +980,7 @@ This endpoint service request may response codes to indicate the success or fail
 
 ### Tokens Get Credit Card Token
 #### Description
-This API endpoint will allow the user to retrieve the credit card token details of a merchant by accessing it through the merchant's site identifier and credit card token. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensDeleteCreditCardTokenAsync`.
+This API endpoint will allow the user to retrieve the credit card token details of a merchant by accessing it through the merchant's site identifier and credit card token. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensGetCreditCardTokenAsync`.
 
 ```markdown 
    TokensGetCreditCardTokenAsync(
@@ -1427,8 +1427,81 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokens Get Check Token
+#### Description
+This API endpoint will allow the user to retrieve the check token details of a merchant by accessing it through the merchant's site identifier and check token. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensGetCheckTokenAsync`.
+
+```markdown 
+    TokensGetCheckTokenAsync(
+    string siteId,
+    string token)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteId = "siteId8";
+string token = "token6";
+try
+{
+    ICGBusinessEntitiesCheckTokens result = await tokensController.TokensGetCheckTokenAsync(siteId, token);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to retrieve the check token details that was anticipated to be returned. The siteId and token will be passed as parameters to the method `TokensGetCheckTokenAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires two parameters which are **siteId** (string type) and **token** (string type). The siteId will be the merchant's site id whose check token details need to be retrieved. 
+   
+![24](https://user-images.githubusercontent.com/110983629/191980596-63fbb165-5a43-446f-9615-7769e5fa0a50.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesCheckTokens>` object that returns detail of merchant check token. 
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body-JSON
+```markdown
+ {
+  "Id": null,
+  "SiteId": "SiteId0",
+  "Token": null,
+  "Authorization": null,
+  "Account": "Account8",
+  "AccountType": "AccountType0",
+  "Routing": "Routing6",
+  "Display": null
+}
+``` 
+The class name of Task<Models.ICGBusinessEntitiesCheckTokens> is
+```markdown
+    ICGBusinessEntitiesCheckTokens
+```
 
 
+#### Task<Models.ICGBusinessEntitiesCheckTokens> object parameters
+ 
+![25](https://user-images.githubusercontent.com/110983629/191981155-520c9a5f-0131-4e7a-95b4-3dec622f58f2.png)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
