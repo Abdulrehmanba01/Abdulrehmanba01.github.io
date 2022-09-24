@@ -1590,7 +1590,7 @@ This endpoint service request may response codes to indicate the success or fail
 ### Tokens Tokenize PAN Only
 #### Description
   
-This API endpoint will allow the user to save the tokenize PAN of the Merchant. For successfully saving tokenize PAN. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensTokenizePANOnlyAsync`.
+This API endpoint will allow the user to save the tokenize PAN of the Merchant. For successfully saving tokenize PAN, the merchant's site ID needs to provided. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensTokenizePANOnlyAsync`.
 
 ```markdown 
     TokensTokenizePANOnlyAsync(
