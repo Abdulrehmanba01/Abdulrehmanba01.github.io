@@ -1590,7 +1590,7 @@ This endpoint service request may response codes to indicate the success or fail
 ### Tokens Tokenize PAN Only
 #### Description
   
-This API endpoint will allow the user to save the tokenize PAN of the Merchant. For successfully saving tokenize PAN, the merchant's site ID needs to provided. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensTokenizePANOnlyAsync`.
+This API endpoint will allow the user to save the tokenize PAN of the Merchant. For successfully saving tokenize PAN, the merchant's site ID needs to provided along with the account details. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensTokenizePANOnlyAsync`.
 
 ```markdown 
     TokensTokenizePANOnlyAsync(
@@ -1740,6 +1740,70 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokenize DDA Only
+#### Description
+  
+This API endpoint will allow the user to save the tokenize DDA (demand deposit amount) of the Merchant. It is an easy way to securely make payments online. For successfully saving tokenize DDA, the merchant's site ID needs to provided along with the account details. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensTokenizeDDAOnlyAsync`.
+
+```markdown  
+   TokensTokenizeDDAOnlyAsync(
+    Models.ICGBusinessEntitiesDdaTokens model)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+var model = new ICGBusinessEntitiesDdaTokens();
+try
+{
+    string result = await tokensController.TokensTokenizeDDAOnlyAsync(model);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to save the Tokenize DDA that was anticipated to be returned. The model object of `ICGBusinessEntitiesDdaTokens` type will be passed as parameter to the method `TokensTokenizeDDAOnlyAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires one parameter which is **model** object that further contains the Id (int type), SiteId (string type), Token (string type), Acc (string type), and AccDisplay (string type). The token length will be minimum: 0, maximum: 32, Acc length will be minimum: 3, maximum: 17, and AccDisplay length will be minimum: 0, maximum: 25. 
+ 
+
+The class name of **model** object is
+```markdown
+   ICGBusinessEntitiesDdaTokens    
+```
+
+#### model object parameters
+ 
+![31](https://user-images.githubusercontent.com/110983629/192094105-76a2e770-f02d-4d08-891d-b1ffbbdb42d2.png)
+
+ 
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|model|[Models.ICGBusinessEntitiesDdaTokens](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-dda-tokens)
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<string>` object that returns value for saving tokenize DDA details of merchant.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
