@@ -1891,10 +1891,78 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokens Get All Expired Credit Card Tokens
+#### Description 
+This API endpoint will allow the user to retrieve the list of all expired credit card tokens of the merchants in order to get information of how many tokens get expired. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensGetAllExpiredCreditCardTokensAsync`.
+
+```markdown 
+  TokensGetAllExpiredCreditCardTokensAsync()
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+try
+{
+    List<ICGBusinessEntitiesExpiredCreditCardTokens> result = await tokensController.TokensGetAllExpiredCreditCardTokensAsync();
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to retrieve the expired credit card token list that was anticipated to be returned. No parameter is needed for calling the method `TokensGetAllExpiredCreditCardTokensAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint does not take any parameters.  
+  
+#### Responses 
+The response of this endpoint service request contains the **Task<List<Models.ICGBusinessEntitiesExpiredCreditCardTokens>>** object that returns list of all expired merchant's credit card token. 
+ 
+
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body-JSON
+```markdown
+ {
+  "Id": null,
+  "MerchantId": null,
+  "SiteId": null,
+  "CustomerId": null,
+  "CustomerCardId": null,
+  "CreditCardTokenId": null,
+  "Token": null,
+  "Name": null,
+  "ExpDate": null,
+  "Display": null,
+  "Date": null
+}
+```
+
+The class name of Task<List<Models.ICGBusinessEntitiesExpiredCreditCardTokens>> is
+```markdown
+    ICGBusinessEntitiesExpiredCreditCardTokens
+```
 
 
+####  Task<List<Models.ICGBusinessEntitiesExpiredCreditCardTokens>> object parameters
+  
+![34](https://user-images.githubusercontent.com/110983629/192096269-1e5881f5-978b-4512-afc8-309ef3fa629a.png)
 
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
 
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
