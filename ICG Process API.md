@@ -1590,6 +1590,68 @@ This endpoint service request may response codes to indicate the success or fail
 ### Tokens Tokenize PAN Only
 #### Description
   
+This API endpoint will allow the user to save the tokenize PAN of the Merchant. For successfully saving tokenize PAN. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensTokenizePANOnlyAsync`.
+
+```markdown 
+    TokensTokenizePANOnlyAsync(
+    Models.ICGBusinessEntitiesPanTokens model)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+var model = new ICGBusinessEntitiesPanTokens();
+try
+{
+    string result = await tokensController.TokensTokenizePANOnlyAsync(model);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to save the Tokenize PAN that was anticipated to be returned. The model object of `ICGBusinessEntitiesPanTokens` type will be passed as parameter to the method `TokensTokenizePANOnlyAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires one parameter which is **model** object that further contains the Id (int type), SiteId (string type), Token (string type), Pan (string type), and PanDisplay (string type). Token will be of Minimum Length: 0, Maximum Length: 32, Pan will be of Minimum Length: 13, Maximum Length: 20 and PanDisplay will be of Minimum Length: 0, Maximum Length: 25. 
+
+The class name of **model** object is
+```markdown
+  ICGBusinessEntitiesPanTokens    
+```
+
+#### model object parameters
+
+![28](https://user-images.githubusercontent.com/110983629/192091777-4a5bff89-bbd6-4086-8db2-b1d1532548f6.png)
+
+  
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|model|[Models.ICGBusinessEntitiesPanTokens](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-pan-tokens)
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<string>` object that returns value for saving tokenize PAN.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
 
 
 
