@@ -1658,6 +1658,113 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Tokens Validate PAN Token Bin
+#### Description
+  
+This API endpoint will allow the user to validate a PAN Token Bin of the Merchant. For successfully verifying the PAN bin, the merchant's site ID needs to provided. To accomplish that, the API Client will create an instance of the class `TokensController` for invoking the method `TokensValidatePANTokenBinAsync`.
+
+```markdown 
+    TokensValidatePANTokenBinAsync(
+    string siteID,
+    string token)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteID = "siteID6";
+string token = "token6";
+try
+{
+    ICGBusinessEntitiesPanTokens result = await tokensController.TokensValidatePANTokenBinAsync(siteID, token);
+}
+catch (ApiException e){};
+```
+
+It will be included in the try and catch block to deal with any exceptions that could arise if the "tokensController" object fails to validate PAN token bin that was anticipated to be returned. The siteID and token will be passed as parameters to the method `TokensValidatePANTokenBinAsync` for specifically validating a PAN bin of the merchant. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail   
+This endpoint requires two parameters which are **siteID** (string type) and **token** (string type). The siteID will be merchant's site identifier and token is actually the merchant's PAN. 
+
+![29](https://user-images.githubusercontent.com/110983629/192092994-001949f6-25d1-497e-ad2b-dc3a4b46518a.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesPanTokens>` object that returns value for validating merchant's PAN.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+#### Response Body-JSON
+```markdown
+ {
+  "Id": null,
+  "SiteId": null,
+  "Token": null,
+  "Pan": null,
+  "PanDisplay": null
+ }
+```
+
+The class name of response type Task<Models.ICGBusinessEntitiesPanTokens> is
+```markdown
+  ICGBusinessEntitiesPanTokens
+```
+
+#### Task<Models.ICGBusinessEntitiesPanTokens> object parameter
+
+![30](https://user-images.githubusercontent.com/110983629/192093283-b3791e29-47d7-4881-9912-0ae300a8f6f6.png)
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|model|[Task<Models.ICGBusinessEntitiesPanTokens>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-pan-tokens)
+ 
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
