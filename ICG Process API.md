@@ -2625,6 +2625,95 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Process Force
+#### Description 
+By submitting the approval code and confirmation code, the user can force a transaction using this API endpoint. A forced transaction is a sort of offline transaction that can avoid the authorization tokenization procedure that usually goes along with normal transactions. The API Client will do this by creating an instance of the class "TransactionsController" and calling the function "ProcessForceAsync" on it. 
+ 
+```markdown 
+  ProcessForceAsync(
+    string confirmationCode,
+    string approvalCode)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string confirmationCode = "confirmationCode6";
+string approvalCode = "approvalCode0";
+
+try
+{
+    ICGTransactionsModelsResponsesForceResponse result = await transactionsController.ProcessForceAsync(confirmationCode, approvalCode);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to process force transaction that was anticipated to be returned. The confirmationCode and approvalcode will be passed as parameters to the method `ProcessForceAsync` for making force payment. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail     
+This endpoint requires **confirmationCode** (string type) and **approvalCode** (string type) as a required parameters where the confirmation code is used to authenticate the user and approval code for making transaction successful.
+  
+![43](https://user-images.githubusercontent.com/110983629/192319262-9ff077f5-9c4d-43a3-8397-5a71be00ad43.png)
+
+
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesForceResponse>` object that returns value for processing force payment of a merchant.
+
+The class name of Task<Models.ICGTransactionsModelsResponsesForceResponse> is
+```markdown
+  ICGTransactionsModelsResponsesForceResponse
+```
+
+#### Task<Models.ICGTransactionsModelsResponsesForceResponse> object parameters
+  
+![44](https://user-images.githubusercontent.com/110983629/192319854-b4babfc4-19b2-427f-a704-daad3f0c18d6.png)
+
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+ {
+  "RawRequest": null,
+  "RawResponse": null,
+  "TransactionAmount": null,
+  "TransactionDate": null,
+  "Status": null,
+  "StatusMessage": null,
+  "ErrorData": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGTransactionsModelsResponsesForceResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-force-response)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
+
+
+
+
 
 
 
