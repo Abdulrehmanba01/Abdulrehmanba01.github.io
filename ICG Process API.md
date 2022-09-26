@@ -2338,6 +2338,91 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Process Process Dcc  
+#### Description 
+This API endpoint will allow the user to process Dcc transaction by providing process request id. Through the Dcc transaction, the merchants can make payments through eligible cards to pay in the base currency of the card. For successfully processing Dcc payment, you need to provide the payment details such as transaction amount, type, Metadata etc. To accomplish that, the API Client will create an instance of the class `TransactionsController` for invoking the method `ProcessProcessDccAsync`.
+  
+```markdown 
+    ProcessProcessDccAsync(
+    string id,
+    bool cancelDcc)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string id = "id0";
+bool cancelDcc = false;
+
+try
+{
+    ICGTransactionsModelsResponsesProcessResponse result = await transactionsController.ProcessProcessDccAsync(id, cancelDcc);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to process Dcc payment that was anticipated to be returned. The id and cancelDcc will be passed as parameters to the method `ProcessProcessDccAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This endpoint requires **id** (string type) and **cancelDcc** (bool type) as a required parameters where the id is the process request id unique for each request and cancelDcc is the bool value that cancelling the Dcc payment processing.
+
+![38](https://user-images.githubusercontent.com/110983629/192302472-74fa55c3-e6fc-4a05-a7df-b74f36f57178.png)
+
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesProcessResponse>` object that returns value for processing Dcc payment of a merchant.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+{
+  "TransactionAmount": null,
+  "TransactionDate": null,
+  "RawRequest": null,
+  "RawResponse": null,
+  "Status": null,
+  "StatusMessage": null,
+  "ConfirmationCode": null,
+  "ApprovalCode": null,
+  "CvcResponse": null,
+  "AvsResponse": null,
+  "CardDisplay": null,
+  "CardType": null,
+  "Arpc": null,
+  "ErrorData": null,
+  "IssuerScript": null,
+  "IssuerScript2": null,
+  "ApplicationId": null,
+  "ReferenceNumber": null,
+  "ExtraData": null,
+  "TransactionId": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGTransactionsModelsResponsesProcessResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-process-response)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
 
 
 
