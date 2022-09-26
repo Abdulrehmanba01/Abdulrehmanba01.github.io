@@ -2428,6 +2428,101 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+###  Process Reversal
+#### Description 
+This API endpoint will allow the user to reverse the process of making transaction by providing confirmation code and transaction amount. The merchant will receive the confirmation code for reversing the transaction that will expire after sometime. To accomplish that, the API Client will create an instance of the class `TransactionsController` for invoking the method `ProcessReversalAsync`.
+  
+```markdown 
+   ProcessReversalAsync(
+    string confirmationCode,
+    double amount)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string confirmationCode = "confirmationCode6";
+double amount = 56.78;
+try
+{
+    ICGTransactionsModelsResponsesProcessResponse result = await transactionsController.ProcessReversalAsync(confirmationCode, amount);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to process a reverse transaction that was anticipated to be returned. The confirmationCode and amount will be passed as parameters to the method `ProcessReversalAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This endpoint requires **confirmationCode** (string type) and **amount** (double type) as a required parameters where the confirmation code is authenticate the user for reverse payment processing and amount is the transaction amount that need to be reversed.
+ 
+![39](https://user-images.githubusercontent.com/110983629/192309009-ac6f14a7-aaed-4af8-ba2a-fb6d0aaddf51.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesProcessResponse>` object that returns value for processing reverse payment of a merchant.
+
+The class name of Task<Models.ICGTransactionsModelsResponsesProcessResponse> is
+```markdown
+   ICGTransactionsModelsResponsesProcessResponse
+```
+
+#### Task<Models.ICGTransactionsModelsResponsesProcessResponse> object parameters
+
+![40](https://user-images.githubusercontent.com/110983629/192312146-38a5f24e-6340-477c-b62d-4275c09c097a.png)
+
+
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+{
+  "TransactionAmount": null,
+  "TransactionDate": null,
+  "RawRequest": null,
+  "RawResponse": null,
+  "Status": null,
+  "StatusMessage": null,
+  "ConfirmationCode": null,
+  "ApprovalCode": null,
+  "CvcResponse": null,
+  "AvsResponse": null,
+  "CardDisplay": null,
+  "CardType": null,
+  "Arpc": null,
+  "ErrorData": null,
+  "IssuerScript": null,
+  "IssuerScript2": null,
+  "ApplicationId": null,
+  "ReferenceNumber": null,
+  "ExtraData": null,
+  "TransactionId": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGTransactionsModelsResponsesProcessResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-process-response)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
 
 
 
