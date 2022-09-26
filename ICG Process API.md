@@ -2234,6 +2234,106 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Process Process 
+#### Description 
+This API endpoint will allow the user to process payment request by providing DDA token of the merchant account along with the bank routing number. For successfully processing payment, you need to provide the payment details such as transaction amount, type, Metadata etc. To accomplish that, the API Client will create an instance of the class `TransactionsController` for invoking the method `ProcessProcessAsync`.
+  
+```markdown 
+   ProcessProcessAsync(
+    Models.ICGAPIProcessWebAPIModelsTransactionsProcessRequest request)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+var request = new ICGAPIProcessWebAPIModelsTransactionsProcessRequest();
+request.Amount = 131.88;
+request.Type = TypeEnum.V;
+
+try
+{
+    ICGTransactionsModelsResponsesProcessResponse result = await transactionsController.ProcessProcessAsync(request);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to process payment that was anticipated to be returned. The request object of `ICGAPIProcessWebAPIModelsTransactionsProcessRequest` type will be passed as parameter to the method `ProcessProcessAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This endpoint requires **request** object that further includes Amount (double type), Laneid (string type), CashBackAmount (double type), description (string type), Metadata (string type), DeviceSerialNumber (string type) parameters along with the type, Invoices, customer, method, Imetadata objects. From all of these parameters, Transaction amount, transaction type that can be debit/sales or credit/refund are mandatory to process the payment request.
+
+
+The class name of **request** object is
+```markdown
+    ICGAPIProcessWebAPIModelsTransactionsProcessRequest
+```
+
+#### request object parameters
+
+![35](https://user-images.githubusercontent.com/110983629/192098751-3cb4b57e-fa53-4254-8d5b-173c7e8baf31.png)
+
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|request|[Models.ICGAPIProcessWebAPIModelsTransactionsProcessRequest](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-api-process-web-api-models-transactions-process-request)
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesProcessResponse>` object that returns value for processing payment of a merchant.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+ {
+  "TransactionAmount": null,
+  "TransactionDate": null,
+  "RawRequest": null,
+  "RawResponse": null,
+  "Status": null,
+  "StatusMessage": null,
+  "ConfirmationCode": null,
+  "ApprovalCode": null,
+  "CvcResponse": null,
+  "AvsResponse": null,
+  "CardDisplay": null,
+  "CardType": null,
+  "Arpc": null,
+  "ErrorData": null,
+  "IssuerScript": null,
+  "IssuerScript2": null,
+  "ApplicationId": null,
+  "ReferenceNumber": null,
+  "ExtraData": null,
+  "TransactionId": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGTransactionsModelsResponsesProcessResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-process-response)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
 
 
 
