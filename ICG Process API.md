@@ -2148,6 +2148,91 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Process Process Batch Status
+#### Description
+This API endpoint will allow the user to retrieve the status of previously created Batch payment in which many of the payment requests get processed by once. For successfully getting status of bulk payments, you need to provide the unique batch id. To accomplish that, the API Client will create an instance of the class `TransactionsController` for invoking the method `ProcessProcessBatchStatusAsync`.  
+
+```markdown 
+    ProcessProcessBatchStatusAsync(
+    string batchId)
+```
+ 
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string batchId = "batchId2";
+try
+{
+    ICGAPIProcessWebAPIModelsTransactionsBatchProcessModel result = await transactionsController.ProcessProcessBatchStatusAsync(batchId);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to retrieve bulk payment status that was anticipated to be returned. The batchid will be passed as parameter to the method `ProcessProcessBatchStatusAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This endpoint requires only one parameter which is **batchId** (String type). It is unique for each batch payment done by the user previously.
+ 
+![36](https://user-images.githubusercontent.com/110983629/192291494-9b5c7df9-53aa-452b-aa1b-5b7d1aebc43a.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGAPIProcessWebAPIModelsTransactionsBatchProcessModel>` object that returns status value for processing payment.
+
+The class name of the Task<Models.ICGAPIProcessWebAPIModelsTransactionsBatchProcessModel> object is
+```markdown
+   ICGAPIProcessWebAPIModelsTransactionsBatchProcessModel
+```
+
+![37](https://user-images.githubusercontent.com/110983629/192292189-4e88a604-47e4-4bb4-b81d-9ec14696d79c.png)
+
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+ {
+  "BatchId": null,
+  "TotalTransactions": null,
+  "TotalSales": null,
+  "TotalRefunds": null,
+  "ProcessedTransactions": null,
+  "ApprovedTransactions": null,
+  "DeclinedTransactions": null,
+  "StartDatetime": null,
+  "EndDatetime": null,
+  "ElapsedTime": null,
+  "RemainingTime": null,
+  "Responses": null,
+  "Transactions": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGAPIProcessWebAPIModelsTransactionsBatchProcessModel>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-api-process-web-api-models-transactions-batch-process-model)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
 
 
 
