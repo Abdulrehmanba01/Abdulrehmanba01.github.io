@@ -2528,6 +2528,111 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Process Dcc Refusal
+#### Description 
+This API endpoint will make the merchant's payment refusal if there may be an issue found such as incorrect personal details (customer details), or any Suspected fraud. The merchant will receive the confirmation code for refusing the transaction that will expire after sometime. To accomplish that, the API Client will create an instance of the class `TransactionsController` for invoking the method `ProcessDccRefusalAsync`.
+  
+```markdown 
+   ProcessDccRefusalAsync(
+    string confirmationCode)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string confirmationCode = "confirmationCode6";
+try
+{
+    ICGTransactionsModelsResponsesProcessResponse result = await transactionsController.ProcessDccRefusalAsync(confirmationCode);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to refuse Dcc transaction that was anticipated to be returned. The confirmationCode will be passed as parameter to the method `ProcessDccRefusalAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This endpoint requires **confirmationCode** (string type) as a required parameter where the confirmation code is used to authenticate the user for Refusal Dcc payment processing.
+ 
+![41](https://user-images.githubusercontent.com/110983629/192315948-49acf5e3-4bc7-401f-8231-54e47986c540.png)
+  
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesProcessResponse>` object that returns value for processing Refusal payment of a merchant.
+
+The class name of Task<Models.ICGTransactionsModelsResponsesProcessResponse> is
+```markdown
+    ICGTransactionsModelsResponsesProcessResponse
+```
+
+#### Task<Models.ICGTransactionsModelsResponsesProcessResponse> object parameters
+ 
+![42](https://user-images.githubusercontent.com/110983629/192316443-d5f6564e-0cde-4efe-8ed2-969d996c0ece.png)
+
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+ {
+  "TransactionAmount": null,
+  "TransactionDate": null,
+  "RawRequest": null,
+  "RawResponse": null,
+  "Status": null,
+  "StatusMessage": null,
+  "ConfirmationCode": null,
+  "ApprovalCode": null,
+  "CvcResponse": null,
+  "AvsResponse": null,
+  "CardDisplay": null,
+  "CardType": null,
+  "Arpc": null,
+  "ErrorData": null,
+  "IssuerScript": null,
+  "IssuerScript2": null,
+  "ApplicationId": null,
+  "ReferenceNumber": null,
+  "ExtraData": null,
+  "TransactionId": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGTransactionsModelsResponsesProcessResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-process-response)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
