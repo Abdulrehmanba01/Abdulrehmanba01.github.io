@@ -3148,6 +3148,9 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Transaction Scheduled Update Transaction Scheduled Status
+#### Description  
+
 
 
 
