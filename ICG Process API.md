@@ -2809,6 +2809,110 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Process Capture
+#### Description 
+This endpoint will allow the user to capture the transaction of the merchant by entering the confirmation code, transaction amount, and tip. The API Client will do this by creating an instance of the class "TransactionsController" and calling the function "ProcessCaptureAsync" on it. 
+ 
+```markdown 
+ ProcessCaptureAsync(
+    string confirmationCode,
+    double amount,
+    double tip)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string confirmationCode = "confirmationCode6";
+double amount = 56.78;
+double tip = 171.08;
+
+try
+{
+    ICGTransactionsModelsResponsesCaptureResponse result = await transactionsController.ProcessCaptureAsync(confirmationCode, amount, tip);
+}
+catch (ApiException e){};
+``` 
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to capture the transaction that was anticipated to be returned. The confirmationCode, amount and tip will be passed as parameters to the method `ProcessCaptureAsync` for making payment. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail     
+This endpoint requires **confirmationCode** (string type), **amount** (double type) and **tip** (double type) as a required parameters where the confirmation code is used to authenticate the user and transaction amount that needs to be submitted and tip is the amount that you wished to submit with the actual payment amount.
+  
+![47](https://user-images.githubusercontent.com/110983629/192514123-54fd3953-8bfd-4cd0-9ab8-39485094cbc5.png)
+
+
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesCaptureResponse>` object that returns value for capturing payment of a merchant.
+
+The class name of Task<Models.ICGTransactionsModelsResponsesCaptureResponse> is
+```markdown
+    ICGTransactionsModelsResponsesCaptureResponse
+```
+
+####  Task<Models.ICGTransactionsModelsResponsesCaptureResponse> object parameters
+    
+![48](https://user-images.githubusercontent.com/110983629/192514662-298744f4-f786-4081-8581-ce3f9d27c56d.png)
+
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+  {
+  "RawRequest": null,
+  "RawResponse": null,
+  "TransactionAmount": null,
+  "TransactionDate": null,
+  "Status": null,
+  "StatusMessage": null,
+  "ErrorData": null,
+  "ApprovalCode": null,
+  "ReferenceNumber": null,
+  "ConfirmationCode": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGTransactionsModelsResponsesCaptureResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-capture-response)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
