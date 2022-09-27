@@ -3150,6 +3150,58 @@ This endpoint service request may response codes to indicate the success or fail
 
 ### Transaction Scheduled Update Transaction Scheduled Status
 #### Description  
+The user can update the schedule transaction status that can be an upcoming one-time, recurring, and instalment transactions using this API endpoint. Future payments that are scheduled to occur just once are known as one-time payments. The transactions that are planned for a specified, repeating time interval in the future are known as recurring transactions. This will be done by the API Client calling the method "TransactionScheduledUpdateTransactionScheduledStatusAsync" by creating an instance of the class "TransactionsController".
+  
+```markdown 
+    TransactionScheduledUpdateTransactionScheduledStatusAsync(
+    int transactionScheduledId,
+    int status)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int transactionScheduledId = 4;
+int status = 204;
+
+try
+{
+    int? result = await transactionsController.TransactionScheduledUpdateTransactionScheduledStatusAsync(transactionScheduledId, status);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to update the payment that was anticipated to be returned. The transactionScheduledId, status will be passed as parameters to the method `TransactionScheduledUpdateTransactionScheduledStatusAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail     
+This endpoint requires **transactionScheduledId** (int type), and **status** (int type). The transactionScheduledId will be unique identifier for each transaction which is scheduled. The status can be Scheduled, Processing, Processed, Declined, Cancelled, and Error for a payment transaction. You can change the status value for by accessing it through transactionScheduledId through this endpoint.
+
+![54](https://user-images.githubusercontent.com/110983629/192538725-54964af9-6234-4894-9982-ce80bfff6385.png)
+
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<int>` object that returns value for changing transaction status of a merchant.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+  
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+|404|Not Found|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request, not found etc.) 
+
 
 
 
