@@ -3080,12 +3080,71 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Transaction Scheduled Process Scheduled
+#### Description  
+The user can schedule upcoming one-time, recurring, and instalment transactions using this API endpoint. Future payments that are scheduled to occur just once are known as one-time payments. The transactions that are planned for a specified, repeating time interval in the future are known as recurring transactions. You must submit payment information, including the transaction amount, type, metadata, etc., in order for the payment to be processed successfully. This will be done by the API Client calling the method "TransactionScheduledProcessScheduledAsync" by creating an instance of the class "TransactionsController".
+  
+```markdown 
+    TransactionScheduledProcessScheduledAsync(
+    Models.ICGTransactionsModelsRequestsProcessScheduleRequest request)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+var request = new ICGTransactionsModelsRequestsProcessScheduleRequest();
+request.Amount = 131.88;
+request.Type = Type3Enum.V;
+try
+{
+    string result = await transactionsController.TransactionScheduledProcessScheduledAsync(request);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to schedule payment that was anticipated to be returned. The request object of `ICGTransactionsModelsRequestsProcessScheduleRequest` type will be passed as parameter to the method `TransactionScheduledProcessScheduledAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail    
+This endpoint requires **request** object that further includes TransactionScheduledId (int type), Amount (double type), Laneid (string type), CashBackAmount (double type), description (string type), Metadata (string type), DeviceSerialNumber (string type) parameters along with the type, Invoices, customer, method, Imetadata objects. From all of these parameters, Transaction amount, transaction type that can be debit/sales or credit/refund are mandatory to process the payment request.
 
 
+The class name of **request** object is
+```markdown
+   ICGTransactionsModelsRequestsProcessScheduleRequest
+```
 
+#### request object parameters
 
+![53](https://user-images.githubusercontent.com/110983629/192531176-963dbc89-4208-4b5e-be9f-d802d2dc317e.png)
 
+ 
+#### Explorer 
 
+|Name|Description|
+|-----|-----------|
+|request|[Models.ICGTransactionsModelsRequestsProcessScheduleRequest](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-requests-process-schedule-request)
+ 
+#### Responses 
+The response of this endpoint service request contains the `Task<string>` object that returns value for scheduling payment of a merchant.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+  
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
