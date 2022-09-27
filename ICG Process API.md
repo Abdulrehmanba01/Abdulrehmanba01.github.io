@@ -2903,6 +2903,88 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Process Void
+#### Description 
+This endpoint will give the user the ability to cancel a merchant transaction before it is processed through the merchant's debit or credit card account. When a transaction is cancelled, it briefly appears on the merchant's account as a pending transaction while the procedure is being finished.
+The API Client will do this by creating an instance of the class "TransactionsController" and calling the function "ProcessVoidAsync" on it. 
+ 
+```markdown 
+ ProcessVoidAsync(
+    string confirmationCode,
+    double amount)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string confirmationCode = "confirmationCode6";
+double amount = 56.78;
+try
+{
+    ICGTransactionsModelsResponsesVoidResponse result = await transactionsController.ProcessVoidAsync(confirmationCode, amount);
+}
+catch (ApiException e){};
+```  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to void a transaction that was anticipated to be returned. The confirmationCode, and amount will be passed as parameters to the method `ProcessVoidAsync` for making transaction nullified. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail     
+This endpoint requires **confirmationCode** (string type), and **amount** (double type) as a required parameters where the confirmation code is used to authenticate the user and amount is the transaction amount that needs to be submitted.
+   
+![49](https://user-images.githubusercontent.com/110983629/192519717-f8166173-2efe-4d54-8f5c-23571fc41f64.png)
+   
+
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesVoidResponse>` object that returns value for making payment void of a merchant.
+
+The class name of Task<Models.ICGTransactionsModelsResponsesVoidResponse> is
+```markdown
+     ICGTransactionsModelsResponsesVoidResponse
+```
+
+#### Task<Models.ICGTransactionsModelsResponsesVoidResponse> object parameters
+
+![50](https://user-images.githubusercontent.com/110983629/192520028-ccc4556d-5e1c-4037-b7fc-11bb182047b3.png)
+
+     
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+ {
+  "RawRequest": null,
+  "RawResponse": null,
+  "TransactionAmount": null,
+  "TransactionDate": null,
+  "Status": null,
+  "StatusMessage": null,
+  "ErrorData": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGTransactionsModelsResponsesVoidResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-void-response)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
 
 
 
