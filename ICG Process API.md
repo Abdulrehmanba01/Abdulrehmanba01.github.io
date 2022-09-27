@@ -3270,10 +3270,9 @@ Here is the list of errors that the API might throw.
 |HTTP Status Code|Error Description| Exception Class|
 |------|-----|----------|
 |400|Bad Request|`ApiException`|
-|404|Not Found|`ApiException`|
  
 
-This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request, not found etc.) 
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
