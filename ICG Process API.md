@@ -2988,6 +2988,96 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Process Refund
+#### Description 
+By providing the transaction's confirmation code and the amount, the user will be able to cancel a merchant transaction using this service. The merchant's bank account receives the money back. It is typical for the merchant to face a slight delay as the bank may need a few days to deposit the refunded payments. 
+ 
+The API Client will do this by creating an instance of the class "TransactionsController" and calling the function "ProcessRefundAsync" on it. 
+ 
+```markdown 
+ ProcessRefundAsync(
+    string confirmationCode,
+    double amount)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string confirmationCode = "confirmationCode6";
+double amount = 56.78;
+
+try
+{
+    ICGTransactionsModelsResponsesRefundResponse result = await transactionsController.ProcessRefundAsync(confirmationCode, amount);
+}
+catch (ApiException e){};
+```  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to refund a transaction that was anticipated to be returned. The confirmationCode, and amount will be passed as parameters to the method `ProcessRefundAsync` for making transaction refunded. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail     
+This endpoint requires **confirmationCode** (string type), and **amount** (double type) as a required parameters where the confirmation code is used to authenticate the user for a unique transaction and amount is the transaction amount that needs to be submitted. 
+
+![51](https://user-images.githubusercontent.com/110983629/192525254-1a937d53-bfdc-4c52-8870-f8b8c70e4dc2.png)
+
+
+#### Responses 
+The response of this endpoint service request contains the `Task<Models.ICGTransactionsModelsResponsesRefundResponse>` object that returns value for refunding payment of a merchant.
+
+The class name of Task<Models.ICGTransactionsModelsResponsesRefundResponse> is
+```markdown
+    ICGTransactionsModelsResponsesRefundResponse  
+```
+
+#### Task<Models.ICGTransactionsModelsResponsesRefundResponse> object parameters
+ 
+![52](https://user-images.githubusercontent.com/110983629/192525528-d1bc0bfb-2f38-4ae9-8432-3423b59325a2.png)
+
+ 
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON 
+```markdown
+ {
+  "RawRequest": null,
+  "RawResponse": null,
+  "TransactionAmount": null,
+  "TransactionDate": null,
+  "Status": null,
+  "StatusMessage": null,
+  "ConfirmationCode": null,
+  "ApprovalCode": null,
+  "CvcResponse": null,
+  "AvsResponse": null,
+  "ReferenceNumber": null,
+  "ErrorData": null
+}
+``` 
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|response type|[Task<Models.ICGTransactionsModelsResponsesRefundResponse>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-transactions-models-responses-refund-response)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
 
 
 
