@@ -3307,7 +3307,7 @@ This endpoint requires **methodType** (string type) which can be a card or check
 
 
 #### Responses  
-The response of this endpoint service request contains the `Task<List<Models.ICGBusinessEntitiesTransactionsScheduled>>` object that returns value for retrieving all transactions scheduled later.
+The response of this endpoint service request contains the `Task<List<Models.ICGBusinessEntitiesTransactionsScheduled>>` object that returns value for retrieving all transactions scheduled previously.
  
 #### Response headers-JSON
 |Header|Value|
@@ -3477,6 +3477,56 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+
+### Transaction Scheduled Delete Scheduled Card Transaction
+#### Description   
+This endpoint service request will provide the facility to the user to delete a scheduled transaction by entering the id which is unique identifier for each scheduled transaction. You can delete a card transaction which has been scheduled before. This will be done by the API Client calling the method "TransactionScheduledDeleteScheduledCardTransactionAsync" by creating an instance of the class "TransactionsController".
+  
+```markdown 
+     TransactionScheduledDeleteScheduledCardTransactionAsync(
+    int id)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int id = 112;
+try
+{
+    string result = await transactionsController.TransactionScheduledDeleteScheduledCardTransactionAsync(id);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to delete the scheduled card transaction that was anticipated to be returned. The id will be passed as parameter to the method `TransactionScheduledDeleteScheduledCardTransactionAsync` in order to access one unique scheduled payment. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+ 
+
+#### Parameters Detail      
+This endpoint requires **id** (int type) which is a unique scheduled transaction identifier for removing the scheduled payment details.
+ 
+![56](https://user-images.githubusercontent.com/110983629/192564213-30c0bc88-c578-4276-bc39-1f719f0d19fe.png)
+
+
+#### Responses  
+The response of this endpoint service request contains the  `Task<string>` object that returns the value for successfully deleting the scheduled transaction.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+  
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
 
 
 
