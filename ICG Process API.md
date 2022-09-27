@@ -3378,6 +3378,99 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Transaction Scheduled Get Transaction Scheduled by Id
+#### Description  
+This endpoint service request will provide the facility to the user to retrieve the scheduled transaction by entering the id which is unique identifier for each scheduled transaction. This will be done by the API Client calling the method "TransactionScheduledGetTransactionScheduledByIdAsync" by creating an instance of the class "TransactionsController".
+  
+```markdown 
+    TransactionScheduledGetTransactionScheduledByIdAsync(int id)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int id = 112;
+try
+{
+    ICGBusinessEntitiesTransactionsScheduled result = await transactionsController.TransactionScheduledGetTransactionScheduledByIdAsync(id);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to retrieve the scheduled payment that was anticipated to be returned. The id will be passed as parameter to the method `TransactionScheduledGetTransactionScheduledAsync` in order to access one unique scheduled payment. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes. 
+ 
+
+#### Parameters Detail      
+This endpoint requires **id** (int type) which is a unique scheduled transaction identifier for retrieving the payment details.
+ 
+![56](https://user-images.githubusercontent.com/110983629/192564213-30c0bc88-c578-4276-bc39-1f719f0d19fe.png)
+
+
+#### Responses  
+The response of this endpoint service request contains the `Task<Models.ICGBusinessEntitiesTransactionsScheduled>` object that returns details of the transaction which is scheduled.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON  
+```markdown
+ {
+  "Id": null,
+  "MerchantId": null,
+  "ProcessorId": null,
+  "CustomerId": null,
+  "BillingTypeId": null,
+  "BillingType": null,
+  "StartDate": null,
+  "LastBilled": null,
+  "NextBill": null,
+  "ScheduleTypeId": null,
+  "NumberofPayments": null,
+  "RemainingPayments": null,
+  "StatusId": null,
+  "Status": null,
+  "InvoiceNumber": null,
+  "FromIp": null,
+  "Description": null,
+  "TransactionType": null,
+  "Amount": null,
+  "Authorization": null,
+  "Creation": null,
+  "Modification": null,
+  "TransactionsScheduledCard": null,
+  "TransactionsScheduledCheck": null,
+  "TransactionsScheduledCustomer": null,
+  "TransactionsScheduledCustomerAddress": null
+}
+```
+  
+ The class name of Task<Models.ICGBusinessEntitiesTransactionsScheduled> object is
+ ```markdown
+     ICGBusinessEntitiesTransactionsScheduled
+ ```
+ 
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|Respose type|[Task<Models.ICGBusinessEntitiesTransactionsScheduled>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-transactions-scheduled)
+
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+|404|Not Found|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request, not found etc.) 
+
 
 
 
