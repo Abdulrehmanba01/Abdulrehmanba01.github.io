@@ -4115,6 +4115,45 @@ The response of this endpoint service request contains the `Task` object that ad
 
 
 
+### O Data Settlements Reports 3
+#### Description      
+This endpoint service request will provide the facility to the user to retrieve one item from SettlementsReport in order to get information about the specific merchant settlement. This will be done by the API Client calling the method "ODataSettlementsReports3Async" by creating an instance of the class "SettlementsReportsController".
+
+```markdown 
+    ODataSettlementsReports3Async(
+    int key)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int key = 120;
+try
+{
+    await settlementsReportsController.ODataSettlementsReports3Async(key);
+}
+catch (ApiException e){};
+```  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "settlementsReportsController" object fails to retrieve one item of settlement report that was anticipated to be returned. The key will be passed as parameter to the `ODataSettlementsReports3Async` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail       
+This endpoint requires **key** (int type) which is settlement report id unique for each settlement report.
+ 
+![66](https://user-images.githubusercontent.com/110983629/193067061-24facff2-7f80-4cf8-8702-96ad76bede1c.png)
+
+
+#### Responses  
+The response of this endpoint service request contains the `Task` object that return single settlement report details.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
 
 
 
