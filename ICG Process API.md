@@ -3587,6 +3587,102 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Transaction Scheduled Get Expiring Scheduled Transactions
+#### Description  
+This endpoint service request will provide the facility to the user to retrieve all expired scheduled transactions by merchant's site identifier. The merchant's site identifier will be distinct that is used to get merchant's expired transactions. This will be done by the API Client calling the method "TransactionScheduledGetExpiringScheduledTransactionsAsync" by creating an instance of the class "TransactionsController".
+  
+```markdown 
+   TransactionScheduledGetExpiringScheduledTransactionsAsync(
+    string siteId,
+    DateTime start,
+    DateTime end)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteId = "siteId8";
+DateTime start = DateTime.Parse("2016-03-13T12:52:32.123Z");
+DateTime end = DateTime.Parse("2016-03-13T12:52:32.123Z");
+
+try
+{
+    List<ICGBusinessEntitiesExpiringTransactionsScheduled> result = await transactionsController.TransactionScheduledGetExpiringScheduledTransactionsAsync(siteId, start, end);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to retrieve all the expired scheduled payments that was anticipated to be returned. The start and end date will be passed as parameters to the method `TransactionScheduledGetExpiringScheduledTransactionsAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail      
+
+This endpoint requires **siteId** (string type), **start** (DateTime type), and **end** (DateTime type) parameters. The siteId is the merchant's site identifier for retrieving all the expired scheduled transactions of the merchant. 
+
+![58](https://user-images.githubusercontent.com/110983629/193024457-ee05586f-83ba-4cbc-8b45-7cd876a24c3c.png)
+
+
+
+#### Responses  
+The response of this endpoint service request contains the `Task<List<Models.ICGBusinessEntitiesExpiringTransactionsScheduled>>` object that returns detail of all expired transactions scheduled previously of the merchant.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+#### Response Body-JSON  
+```markdown
+ {
+  "CustomerId": null,
+  "CompanyName": null,
+  "TransactionsScheduledId": null,
+  "Token": null,
+  "Number": null,
+  "Name": null,
+  "ExpDate": null,
+  "Display": null,
+  "Address": null,
+  "ZipCode": null,
+  "EntryMode": null,
+  "PaymentType": null,
+  "CardInfo": null
+}
+```
+  
+ The class name of Task<List<Models.ICGBusinessEntitiesExpiringTransactionsScheduled>> object is
+ ```markdown
+     ICGBusinessEntitiesExpiringTransactionsScheduled
+ ```
+ 
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|Respose type|[Task<List<Models.ICGBusinessEntitiesExpiringTransactionsScheduled>>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-entities-expiring-transactions-scheduled)
+
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+|404|Not Found|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request, not found etc.) 
+
+
+
+
+
+
+
+
+
 
 
 
