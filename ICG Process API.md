@@ -4158,6 +4158,55 @@ The response of this endpoint service request contains the `Task` object that re
 
 
 
+### O Data Settlements Reports 4
+#### Description      
+This endpoint service request will provide the facility to the user to update one item from SettlementsReport in order to add latest information about the specific merchant settlement. This will be done by the API Client calling the method "ODataSettlementsReports4Async" by creating an instance of the class "SettlementsReportsController".
+
+```markdown 
+    ODataSettlementsReports4Async(
+    int key,
+    int settlementReport)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int key = 120;
+int settlementReport = 252;
+try
+{
+    await settlementsReportsController.ODataSettlementsReports4Async(key, settlementReport);
+}
+catch (ApiException e){};
+```  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "settlementsReportsController" object fails to update one item of settlement report that was anticipated to be returned. The key and settlementreport will be passed as parameters to the `ODataSettlementsReports4Async` method. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail       
+This endpoint requires **key** (int type) and **settlementReport** (int type) which is settlement report id unique for each settlement report.
+  
+![67](https://user-images.githubusercontent.com/110983629/193068503-5b0961bb-190a-485b-be69-2d05e539e0e8.png)
+
+
+#### Responses  
+The response of this endpoint service request contains the `Task` object that return value for updating single settlement report.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+
+
+
+
+
+
+
+
+
 
 
 
