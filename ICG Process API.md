@@ -3615,9 +3615,8 @@ It will be included in the try and catch block to deal with any exceptions that 
  
 
 #### Parameters Detail      
-
-This endpoint requires **siteId** (string type), **start** (DateTime type), and **end** (DateTime type) parameters. The siteId is the merchant's site identifier for retrieving all the expired scheduled transactions of the merchant. 
-
+This endpoint requires **siteId** (string type), **start** (DateTime type), and **end** (DateTime type) parameters. The siteId is the merchant's site identifier for retrieving all the expired scheduled transactions of the merchant. The start is the start date and end is the end date for retrieving specific scheduled expired transactions. 
+ 
 ![58](https://user-images.githubusercontent.com/110983629/193024457-ee05586f-83ba-4cbc-8b45-7cd876a24c3c.png)
 
 
