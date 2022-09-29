@@ -5,6 +5,21 @@
 ### Description
 
 Welcome to the iCheckGateway Verify API. iCheckGateway.com makes it easy to integrate any online application or back office solution for ACH check payment processing and credit card processing. Using iCheckGateway.com’s APIs, developer tools, and plugins, you can create a payment platform that is customized to the needs of your business. The integration of these APIs will allow the customers to pay by echeck, ACH transfer, or credit/debit card. 
+
+
+### Sandbox Account Process  
+For the third party clients who want to utilize ICG services, they need to follow the following **sandbox process** for acquiring authentication and authorized for effectively using our services.  
+
+#### DEV/Stage Environments 
+
+The first thing is to **create a new user account** in the stage envrionment which is similiar to the production one. For this purpose, visit [ICG Partnerzone site](https://partnerzone.icheckdev.com), once registered, login and see the partnerzone menu.
+
+![imagen.png](/.attachments/imagen-67575b7e-b938-4add-bcb2-711f8c427353.png)
+ 
+
+
+## ICG Verify API
+ 
 ICG Verify API endpoints include all the information to use the ICG Verify Service and perform ACH Verification
 
 #### Base URL
