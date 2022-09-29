@@ -11,11 +11,20 @@ Welcome to the iCheckGateway Verify API. iCheckGateway.com makes it easy to inte
 For the third party clients who want to utilize ICG services, they need to follow the following **sandbox process** for acquiring authentication and authorized for effectively using our services.  
 
 #### DEV/Stage Environments 
-
-The first thing is to **create a new user account** in the stage envrionment which is similiar to the production one. For this purpose, visit [ICG Partnerzone site](https://partnerzone.icheckdev.com), once registered, login and see the partnerzone menu.
-
-![imagen.png](/.attachments/imagen-67575b7e-b938-4add-bcb2-711f8c427353.png)
+1. The first thing is to **create a new user account** in the ICG Partnerzone site! The partner site is actually the stage environment where you need to get registered. For this purpose, visit [ICG Partnerzone site](https://partnerzone.icheckdev.com), once registered, login and see the partnerzone menu as shown in the below image.
  
+![1  sandbox](https://user-images.githubusercontent.com/110983629/193082800-0bda374a-ef5d-46b7-be89-efb3d3e5f171.png)
+
+
+2. After getting registered, You need to enable your account to do sandbox request by **sending an email to the ICG Administration**. This email will contain all the information about the services, operations you want to perform in ICG employing ICG APIs along with your account email address.
+
+**For example:**
+* Process API => Where you can create ACH/CC transactions.
+* Verify API => Where you can do ACH Verification request providing Routing/Account Numbers
+
+
+ 
+
 
 
 ## ICG Verify API
