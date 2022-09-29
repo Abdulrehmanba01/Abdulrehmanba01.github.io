@@ -1,5 +1,4 @@
 # API Documentation (Verify API)
-# For HTTP
 ## Getting Started
 
 ### Description
@@ -40,7 +39,7 @@ Once the client has done all the preparations, consuming the sandbox endpoints, 
  
 
 
-
+# For HTTP
 ## ICG Verify API
  
 ICG Verify API endpoints include all the information to use the ICG Verify Service and perform ACH Verification
