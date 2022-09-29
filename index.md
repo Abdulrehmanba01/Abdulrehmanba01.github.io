@@ -22,6 +22,20 @@ For the third party clients who want to utilize ICG services, they need to follo
 * Process API => Where you can create ACH/CC transactions.
 * Verify API => Where you can do ACH Verification request providing Routing/Account Numbers
 
+3. The third step is to verify your email by the ICG admin. He will provide you with the Audience Ids of each of the APIs you have been granted with permissions, this identifier is needed to perform the user authentication in the next step.
+4. Once you have your account converted into sandbox, you are allowed to do request to the above API's, but first in order to do request you have to call our Authentication API, for more information about the authentication process, refer to [Auth API Login](https://developers.icheckdev.com/Auth/#/http/api-endpoints/account/users-login).
+
+
+At this point the user should be able to do request and test our services, implement their own clients and validate all the information sent and received is correct. Once this is over, they are ready to go to **Production and use our services in LIVE**.
+ 
+ 
+ 
+#### GO TO PRODUCTION 
+Once the client has done all the preparations, consuming the sandbox endpoints, and they are ready to go to production, they will have to follow the below steps:
+1. User has to login to the **partnerzone** in Sandbox site, with the user account that worked as sandbox, that will be used in production.
+2. Under the Tools menu, there is an option Sandbox Account
+* Here there is a page where you can see an option **"Promote to Production"**, this option will create a user account in production with the same characteristics and permissions that the one in sandbox, and also will sent an email to the ICG Admin to notice this.
+3. ICG Admin receive the Email and will grant all the needed permissions to the account in production, and will provide the Client with the Audience ID of the production API's.
 
  
 
