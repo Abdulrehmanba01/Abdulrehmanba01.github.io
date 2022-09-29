@@ -3905,6 +3905,84 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Transaction Get Batch Transaction List
+#### Description     
+This endpoint service request will provide the facility to the user to retrieve the list of transactions that are executed in batch of the merchant by accessing them through the merchant identifier. The batch transaction list will provide the information of how many transaction get processed, how many of them get approved, declined etc. This will be done by the API Client calling the method "TransactionGetBatchTransactionListAsync" by creating an instance of the class "TransactionsController".
+  
+```markdown 
+  TransactionGetBatchTransactionListAsync(
+    string siteId)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+string siteId = "siteId8";
+try
+{
+    List<ICGModelsTransactionsTransactionBatch> result = await transactionsController.TransactionGetBatchTransactionListAsync(siteId);
+}
+catch (ApiException e){};
+``` 
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to retrieve batch transaction details that was anticipated to be returned. The siteId will be passed as parameter to the method `TransactionGetBatchTransactionListAsync` for retrieving specific batch transaction of a merchant. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+ 
+
+#### Parameters Detail       
+This endpoint requires only one parameter which is **siteId** (string type) which unique for each merchant used to get batch transaction here.
+ 
+![62](https://user-images.githubusercontent.com/110983629/193044302-c03a89b4-d6ce-46e1-b429-26ffb05ff841.png)
+
+
+#### Responses  
+The response of this endpoint service request contains the `Task<List<Models.ICGModelsTransactionsTransactionBatch>>` object that returns details of batch transaction of merchant.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+The class name of Task<List<Models.ICGModelsTransactionsTransactionBatch>> is
+```markdown
+   ICGModelsTransactionsTransactionBatch
+```
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|Response type|[Task<List<Models.ICGModelsTransactionsTransactionBatch>>](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-models-transactions-transaction-batch)
+
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
