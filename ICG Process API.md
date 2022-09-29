@@ -3838,6 +3838,70 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Transaction Scheduled Update Name Addressof Scheduled Transaction
+#### Description    
+This endpoint service request will provide the facility to the user to update the customer's name and address details which is associated with the scheduled transaction. The scheduled transaction identifier will be used to access the specific scheduled transaction. This will be done by the API Client calling the method "TransactionScheduledUpdateNameAddressofScheduledTransactionAsync" by creating an instance of the class "TransactionsController".
+  
+```markdown 
+   TransactionScheduledUpdateNameAddressofScheduledTransactionAsync(
+    Models.ICGBusinessModelsTransactionScheduledCustomerUpdateModel model)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+var model = new ICGBusinessModelsTransactionScheduledCustomerUpdateModel();
+model.TransactionsScheduledId = 80;
+model.FirstName = "FirstName2";
+model.LastName = "LastName2";
+model.Address = "Address0";
+
+try
+{
+    await transactionsController.TransactionScheduledUpdateNameAddressofScheduledTransactionAsync(model);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to update name and address details that was anticipated to be returned. The model object of `ICGBusinessModelsTransactionScheduledCustomerUpdateModel` type will be passed as parameter to the method `TransactionScheduledUpdateNameAddressofScheduledTransactionAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail       
+This endpoint requires only one parameter which is **model** object that further contains the TransactionsScheduledId (int type), FirstName (string type), LastName (string type), Address (string type), City (string type), State (string type), ZipCode (string type), and Country (string type). The parameters that are required to enter are TransactionsScheduledId, FirstName, LastName and Address of the customer.
+
+![61](https://user-images.githubusercontent.com/110983629/193040070-e4c94639-1342-4133-99e3-9f9142d8232d.png)
+
+
+#### Explorer 
+
+|Name|Description|
+|-----|-----------|
+|model object|[Models.ICGBusinessModelsTransactionScheduledCustomerUpdateModel](https://developers.icheckdev.com/Process/#/net-standard-library/models/structures/icg-business-models-transaction-scheduled-customer-update-model)
+
+#### Responses  
+The response of this endpoint service request contains the `Task` object that returns value for updating details of transactions scheduled previously of the customer.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+ 
+ 
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
+
+
+
 
 
 
