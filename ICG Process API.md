@@ -3779,6 +3779,60 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+### Transaction Scheduled Update Exp Dateof Scheduled Transaction
+#### Description   
+This endpoint service request will provide the facility to the user to update expiry date of scheduled transaction by accessing it through scheduled transaction identifier. The endpoint will bring the scheduled card transactions detail of the customer for updating expiry date. This will be done by the API Client calling the method "TransactionScheduledUpdateExpDateofScheduledTransactionAsync" by creating an instance of the class "TransactionsController".
+  
+```markdown 
+    TransactionScheduledUpdateExpDateofScheduledTransactionAsync(
+    int id,
+    string expdate)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int id = 112;
+string expdate = "expdate4";
+
+try
+{
+    await transactionsController.TransactionScheduledUpdateExpDateofScheduledTransactionAsync(id, expdate);
+}
+catch (ApiException e){};
+```
+It will be included in the try and catch block to deal with any exceptions that could arise if the "transactionsController" object fails to update expiry date of scheduled payments that was anticipated to be returned. The id and expdate will be passed as parameters to the method `TransactionScheduledUpdateExpDateofScheduledTransactionAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+
+#### Parameters Detail       
+This endpoint requires two parameters which are **id** (int type) which is the unique identifier for the scheduled transaction and expdate (string type) that needs to be updated. 
+
+![60](https://user-images.githubusercontent.com/110983629/193035375-4621cc63-07e1-439b-bcd9-04c87d50af90.png)
+
+
+
+#### Responses  
+The response of this endpoint service request contains the `Task` object that returns value for successfully updating the expiry date of scheduled transaction of the customer.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+  
+
+#### Errors
+  
+Here is the list of errors that the API might throw.
+  
+|HTTP Status Code|Error Description| Exception Class|
+|------|-----|----------|
+|400|Bad Request|`ApiException`|
+ 
+
+This endpoint service request may response codes to indicate the success or failure of an API request. In the above table, the 400 code in the 4xx range indicate an error that failed given the information provided (e.g., bad request etc.) 
+
 
 
 
