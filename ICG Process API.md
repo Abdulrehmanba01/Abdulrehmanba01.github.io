@@ -4073,6 +4073,45 @@ The response of this endpoint service request contains the `Task` object that re
 
 
 
+### O Data Settlements Reports 2
+#### Description     
+This endpoint service request will provide the facility to the user to retrieve add a new SettlementsReport in order to add information about the merchants settlements in key value pair. This will be done by the API Client calling the method "ODataSettlementsReports2Async" by creating an instance of the class "SettlementsReportsController".
+
+```markdown 
+   ODataSettlementsReports2Async(
+    object settlementReport)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+object settlementReport = ApiHelper.JsonDeserialize<Object>("{\"key1\":\"val1\",\"key2\":\"val2\"}");
+try
+{
+    await settlementsReportsController.ODataSettlementsReports2Async(settlementReport);
+}
+catch (ApiException e){};
+```  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "settlementsReportsController" object fails to add settlement report that was anticipated to be returned. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+ 
+
+#### Parameters Detail       
+This endpoint requires **settlementReport** object that further contains keys and their respective values.
+
+![65](https://user-images.githubusercontent.com/110983629/193061125-2ab44201-8ce7-4387-a9d1-b1aa7da46ccb.png)
+
+
+#### Responses  
+The response of this endpoint service request contains the `Task` object that add settlement report details.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
 
 
 
