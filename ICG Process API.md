@@ -3973,6 +3973,59 @@ This endpoint service request may response codes to indicate the success or fail
 
 
 
+## API Endpoints
+## Reconciliation  
+### O Data Reconciliation
+#### Description     
+This endpoint service request will provide the facility to the user to retrieve the single item from Reconciliation of the merchant through the merchant code. This will be done by the API Client calling the method "ODataReconciliationAsync" by creating an instance of the class "ReconciliationController".
+
+```markdown 
+   ReconciliationController reconciliationController = client.ReconciliationController;
+```
+
+```markdown 
+  ODataReconciliationAsync(
+    int date,
+    int to,
+    string merchantCode,
+    string status)
+```
+This endpoint requires [Authentication](https://developers.icheckdev.com/Process/#/net-standard-library/getting-started/how-to-get-started)
+
+#### Class-Object
+```markdown
+int date = 66;
+int to = 254;
+string merchantCode = "merchantCode6";
+string status = "status8";
+
+try
+{
+    await reconciliationController.ODataReconciliationAsync(date, to, merchantCode, status);
+}
+catch (ApiException e){};
+```  
+It will be included in the try and catch block to deal with any exceptions that could arise if the "reconciliationController" object fails to retrieve reconciliation item details that was anticipated to be returned. The date, to, merchantCode and status will be passed as parameters to the method `ODataReconciliationAsync`. This try catch block will take care of any exceptions that are thrown in order to prevent unhandled exceptions, user error, or application crashes.
+ 
+ 
+
+#### Parameters Detail       
+This endpoint requires parameters which are **date** (string type), **to** (int type), **merchantCode** (string type), and **status** (string type). 
+
+![63](https://user-images.githubusercontent.com/110983629/193056187-f1cc87a4-7d87-4c03-9879-1fe84053cb71.png)
+
+
+#### Responses  
+The response of this endpoint service request contains the `Task` object that returns value for getting the reconciliation item.
+ 
+#### Response headers-JSON
+|Header|Value|
+|------|-----|
+|Cache-control|Private|
+|Content-Length|61|
+|Content-type|application/json;charset=utf-8|
+
+ 
 
 
 
